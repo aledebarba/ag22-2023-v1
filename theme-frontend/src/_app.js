@@ -13,7 +13,6 @@ const Main = () => {
 	let pagesModules = [];
 
 	pages.forEach( ( page ) => {
-		console.log( page )
 		pagesModules.push( {
 			Page: React.lazy( async () => {
 				try {

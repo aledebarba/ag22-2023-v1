@@ -5071,9 +5071,9 @@ const Header = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].header.
   "minHeight": "100vh",
   "width": "100vw",
   "overflow": "hidden",
-  "backgroundImage": "linear-gradient(to right, var(--tw-gradient-stops))",
+  "backgroundImage": "linear-gradient(to bottom, var(--tw-gradient-stops))",
   "--tw-gradient-from": "#60a5fa",
-  "--tw-gradient-to": "#2563eb",
+  "--tw-gradient-to": "#111827",
   "--tw-gradient-stops": "var(--tw-gradient-from), var(--tw-gradient-to)",
   "paddingTop": "30vh"
 });
@@ -5082,7 +5082,7 @@ const Title = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].h1.withC
   componentId: "sc-1au5rsk-1"
 })({
   "textAlign": "center",
-  "fontSize": "3rem",
+  "fontSize": "6rem",
   "lineHeight": "1",
   "--tw-text-opacity": "1",
   "color": "rgb(255 255 255 / var(--tw-text-opacity))"
@@ -5107,6 +5107,17 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+/**
+ * This function is used to render the single page content WHEN the page does not have a JSX file to render it.
+ * Notes: 
+ * 			- This function is called by _app.jsx to create routes for all pages that do not have a JSX file.
+ * 			- Probably the only motive to even touch this file is to add custom styling to the page.
+ * @name SinglePage
+ * @param {string} slug
+ * @returns jsx
+ * 
+ */
 const SinglePage = ({
   slug
 }) => {
@@ -5118,7 +5129,6 @@ const SinglePage = ({
     }).then(pageContent => {
       setPageContent(pageContent[0].content.rendered);
       setPage(pageContent[0]);
-      console.log(pageContent[0]);
     });
   }, []);
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(StyledSinglePage, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
@@ -5129,17 +5139,16 @@ const SinglePage = ({
     }
   })));
 };
+
+// basic styling system for the page
 const StyledSinglePage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "page__StyledSinglePage",
   componentId: "sc-vlmgwe-0"
-})(["", " width:clamp( 300px,80%,1200px );margin:0 auto;h1,h2,h3,h4,h5,h6{font-weight:bold;margin:2rem 0 0 0;}h1{", "}h2{", "}h3{", "}h4{", "}h5{", "}h6{", "}p{", "}"], {
+})(["", " width:clamp( 300px,80%,1200px );margin:0 auto;h1,h2,h3,h4,h5,h6{font-weight:bold;margin:2rem 0 0 0;}h1{", "}h2{", "}h3{", "}h4{", "}h5{", "}h6{", "}p{", "}bold{", "}"], {
   "minHeight": "100vh",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(241 239 232 / var(--tw-bg-opacity))",
   "padding": "2rem"
-}, {
-  "fontSize": "3rem",
-  "lineHeight": "1"
 }, {
   "fontSize": "2.25rem",
   "lineHeight": "2.5rem"
@@ -5156,10 +5165,15 @@ const StyledSinglePage = styled_components__WEBPACK_IMPORTED_MODULE_2__["default
   "fontSize": "1.125rem",
   "lineHeight": "1.75rem"
 }, {
+  "fontSize": "1rem",
+  "lineHeight": "1.5rem"
+}, {
   "marginTop": "0.5rem",
   "marginBottom": "0.5rem",
   "--tw-text-opacity": "1",
   "color": "rgb(10 10 10 / var(--tw-text-opacity))"
+}, {
+  "fontWeight": "700"
 });
 /* harmony default export */ __webpack_exports__["default"] = (SinglePage);
 
@@ -9397,7 +9411,6 @@ const Main = () => {
   const pages = _utils_functions__WEBPACK_IMPORTED_MODULE_2__._app.pages();
   let pagesModules = [];
   pages.forEach(page => {
-    console.log(page);
     pagesModules.push({
       Page: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(async () => {
         try {

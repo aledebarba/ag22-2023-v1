@@ -1,33 +1,67 @@
 import tw from 'twin.macro'
+import apiFetch from '@wordpress/api-fetch'
+import { useEffect, useState } from 'react'
 
 const Sandbox = () => {
-    return (
-        <StyledSandbox css={`
 
-            opacity: 0;
+    const [ projeto, setData ] = useState( null )
+    
+    useEffect( ()=>{
+
+        apiFetch( { path: 'wp/v2/pages?slug=home' } )
+        .then( data => {
+            const pageElements = document.createElement( 'div' )
+            pageElements.innerHTML = data[0].content.rendered
+            const info = JSON.parse( pageElements.querySelector('pre').innerText );
+            setData( info )
+
+        } )
+        .catch( error => {
+            console.log( error )
+        } )
+
+
+    }, [] )
+
+    return (
+        <Content css={`
+
+            opacity: 1;
             font-size: 5rem;
             animation: fadein 3s infinite linear;
 
-            @keyframes fadein {
+            /* @keyframes fadein {
                 0%   {opacity: 0; transform: scale(0.5); }
                 50%  {opacity: 1; transform: scale(2); }
                 100%  {opacity: 0; transform: scale(3);}
-            }
-        `}>
-            Sandbox
-        </StyledSandbox>
+            } */
+        `}>   
+        { projeto  && <>
+            <Title>
+                { projeto.title }
+            </Title>
+        </> }
+        
+        </Content>
     )
 }
 
-
-const StyledSandbox = tw.div`
-    bg-black
+const Title = tw.h1`
+    text-customWhite
+`
+const Content = tw.div`
+    bg-customBlack
     h-screen
-    w-screen
-    grid
-    place-items-center
+    w-[95vw]
+    flex
+    flex-col
+    items-center
+    justify-center
+    gap-8
+    px-16
+    mx-auto
     text-4xl
-    text-white
+    text-pink-500
     rounded-[100rem]
 `
 

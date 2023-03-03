@@ -1,7 +1,7 @@
 {
 	"name": "theme_frontend",
 	"version": "0.0.1",
-	"description": "Hysteria Custom Theme Frontend Code - ReactJS",
+	"description": "Wordpress + React Custom Theme",
 	"main": "_app.js",
 	"babelMacros": {
 		"twin": {

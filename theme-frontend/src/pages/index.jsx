@@ -1,7 +1,6 @@
 import tw from 'twin.macro';
 
-const Index = () => {
-    
+const Index = () => {    
     return (
 		<main>
 			<Header>
@@ -12,19 +11,18 @@ const Index = () => {
     );
 };
 
-
 const Header = tw.header`
 	w-screen
 	min-h-screen
 	overflow-hidden	
-	bg-gradient-to-r
+	bg-gradient-to-b
 	from-blue-400
-	to-blue-600
+	to-gray-900
 	pt-[30vh]
 `
 
 const Title = tw.h1`
-	text-5xl
+	text-8xl
 	text-center
 	text-white
 `
