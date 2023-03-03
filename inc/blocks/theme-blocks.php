@@ -46,13 +46,11 @@ class CreateWPCBlock {
     }
 
     function theHTML( $attributes ) { 
-        
         $data = json_encode($attributes);
         $res = <<<HTML
-            <pre class='data-{$this->name}'>$data</pre>
+            <pre data-type='data-{$this->name}' data-id="x" class="display: none">$data</pre>
         HTML;
         return $res;
-
     }
 }
 

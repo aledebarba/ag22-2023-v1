@@ -5,7 +5,7 @@ function addHysteriaCustomPostTypes() {
     // Projeto Post Type: holds the projects main informations to be displayed anywhere in website
     register_post_type( 'projeto', array(
         'show_in_rest' => true,
-        'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail'),
+        'supports' => array('title','editor', 'excerpt', 'author', 'thumbnail'),
         'rewrite' => array('slug' => 'projetos'),
         'has_archive' => true,
         'public' => true,
@@ -41,7 +41,7 @@ function addHysteriaCustomPostTypes() {
 
       // create a rest api endpoint for the custom post type
         add_action( 'rest_api_init', function () {
-            register_rest_route('wpc/v3', '/projeto', [
+            register_rest_route('database/v1', '/projeto', [
                 'methods' => 'GET',
                 'callback' => 'wpc_projeto_callback'
             ]);
