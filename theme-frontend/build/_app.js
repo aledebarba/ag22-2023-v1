@@ -4993,6 +4993,31 @@ var _StyledButton = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
 
 /***/ }),
 
+/***/ "./src/components/header/nav.jsx":
+/*!***************************************!*\
+  !*** ./src/components/header/nav.jsx ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Headermenu": () => (/* binding */ Headermenu)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+const Headermenu = ({
+  children
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledNav, null, children);
+};
+var _StyledNav = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("nav").withConfig({
+  displayName: "nav___StyledNav",
+  componentId: "sc-hhus11-0"
+})(["display:flex;flex-direction:row;justify-content:center;align-items:center;padding:16px 32px;gap:8px;border:2px solid #E62337;border-radius:8px;color:#E62337;font-family:'MartianGroteskW05-sWdxBd';font-style:normal;font-weight:800;font-size:16px;line-height:16px;background-color:transparent;margin:0 auto;"]);
+
+/***/ }),
+
 /***/ "./src/components/loading.jsx":
 /*!************************************!*\
   !*** ./src/components/loading.jsx ***!
@@ -5231,9 +5256,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _components_button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../components/button */ "./src/components/button.jsx");
 /* harmony import */ var _iconify_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @iconify/react */ "./node_modules/.pnpm/@iconify+react@4.1.0_react@18.2.0/node_modules/@iconify/react/dist/iconify.mjs");
+/* harmony import */ var _components_header_nav__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/header/nav */ "./src/components/header/nav.jsx");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
 
 
 
@@ -5243,7 +5269,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const Index = () => {
-  return /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement("nav", null, /*#__PURE__*/React.createElement("figure", null), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Quem Somos"), /*#__PURE__*/React.createElement("li", null, "Servi\xE7os"), /*#__PURE__*/React.createElement("li", null, "Cases"), /*#__PURE__*/React.createElement("li", null, "Clientes"), /*#__PURE__*/React.createElement("li", null, "Trabalhe Conosco"), /*#__PURE__*/React.createElement("li", null, "Contato"))), /*#__PURE__*/React.createElement("header", null, /*#__PURE__*/React.createElement("h1", null, /*#__PURE__*/React.createElement(_StyledSpan, null, "Marcas Reais"), /*#__PURE__*/React.createElement(_StyledSpan2, null, "Para Clientes Reais"), /*#__PURE__*/React.createElement(_StyledSpan3, null, "Com Resultados Reais")), /*#__PURE__*/React.createElement("p", null, "Queremos fazer sua marca conquistar o mundo. Mas para isso acontecer voc\xEA precisa saber: se seu cliente vai parar para te ouvir, \xE9 melhor voc\xEA ter algo bom para dizer."), /*#__PURE__*/React.createElement("p", null, "Faz sentido, n\xE3o \xE9?"), /*#__PURE__*/React.createElement(_components_button__WEBPACK_IMPORTED_MODULE_0__.Button, null, "Fale agora com a gente"), /*#__PURE__*/React.createElement(_StyledDiv, null, /*#__PURE__*/React.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  return /*#__PURE__*/React.createElement("main", null, /*#__PURE__*/React.createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_2__.Headermenu, null, /*#__PURE__*/React.createElement("figure", null), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, "Quem Somos"), /*#__PURE__*/React.createElement("li", null, "Servi\xE7os"), /*#__PURE__*/React.createElement("li", null, "Cases"), /*#__PURE__*/React.createElement("li", null, "Clientes"), /*#__PURE__*/React.createElement("li", null, "Trabalhe Conosco"), /*#__PURE__*/React.createElement("li", null, "Contato"))), /*#__PURE__*/React.createElement("header", null, /*#__PURE__*/React.createElement("h1", null, /*#__PURE__*/React.createElement(_StyledSpan, null, "Marcas Reais"), /*#__PURE__*/React.createElement(_StyledSpan2, null, "Para Clientes Reais"), /*#__PURE__*/React.createElement(_StyledSpan3, null, "Com Resultados Reais")), /*#__PURE__*/React.createElement("p", null, "Queremos fazer sua marca conquistar o mundo. Mas para isso acontecer voc\xEA precisa saber: se seu cliente vai parar para te ouvir, \xE9 melhor voc\xEA ter algo bom para dizer."), /*#__PURE__*/React.createElement("p", null, "Faz sentido, n\xE3o \xE9?"), /*#__PURE__*/React.createElement(_components_button__WEBPACK_IMPORTED_MODULE_0__.Button, null, "Fale agora com a gente"), /*#__PURE__*/React.createElement(_StyledDiv, null, /*#__PURE__*/React.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_1__.Icon, {
     icon: "bi:mouse",
     width: "1.5rem"
   }), /*#__PURE__*/React.createElement("p", null, "Role para baixo"))), /*#__PURE__*/React.createElement("section", {
@@ -5265,36 +5291,24 @@ const Header = ({
   color,
   label
 }) => {
-  return /*#__PURE__*/React.createElement("header", null, /*#__PURE__*/React.createElement(_StyledP, {
-    $_css: color
-  }, label), children);
+  return /*#__PURE__*/React.createElement("header", null, children);
 };
-const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1.withConfig({
-  displayName: "pages__Title",
-  componentId: "sc-1au5rsk-0"
-})({
-  "textAlign": "center",
-  "fontSize": "6rem",
-  "lineHeight": "1",
-  "--tw-text-opacity": "1",
-  "color": "rgb(0 0 0 / var(--tw-text-opacity))"
-});
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
-var _StyledSpan = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("span").withConfig({
+var _StyledSpan = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])("span").withConfig({
   displayName: "pages___StyledSpan",
-  componentId: "sc-1au5rsk-1"
+  componentId: "sc-1au5rsk-0"
 })(["display:block;"]);
-var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("span").withConfig({
+var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])("span").withConfig({
   displayName: "pages___StyledSpan2",
-  componentId: "sc-1au5rsk-2"
+  componentId: "sc-1au5rsk-1"
 })(["display:block;color:red;"]);
-var _StyledSpan3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("span").withConfig({
+var _StyledSpan3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])("span").withConfig({
   displayName: "pages___StyledSpan3",
-  componentId: "sc-1au5rsk-3"
+  componentId: "sc-1au5rsk-2"
 })(["display:block;"]);
-var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("div").withConfig({
+var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])("div").withConfig({
   displayName: "pages___StyledDiv",
-  componentId: "sc-1au5rsk-4"
+  componentId: "sc-1au5rsk-3"
 })({
   "display": "flex",
   "alignItems": "center",
@@ -5302,10 +5316,6 @@ var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledP = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("p").withConfig({
-  displayName: "pages___StyledP",
-  componentId: "sc-1au5rsk-5"
-})(["color:", ";"], p => p.$_css);
 
 /***/ }),
 

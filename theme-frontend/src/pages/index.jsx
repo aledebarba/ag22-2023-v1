@@ -1,13 +1,15 @@
 import tw from 'twin.macro';
 import { Button } from '../components/button';
 import { Icon } from '@iconify/react';
+import { Headermenu } from '../components/header/nav';
+import styled from 'styled-components';
 
 
 const Index = () => {
 	return (
 		<main>
 
-			<nav>
+			<Headermenu>
 				<figure></figure>
 				<ul>
 					<li>Quem Somos</li>
@@ -17,7 +19,7 @@ const Index = () => {
 					<li>Trabalhe Conosco</li>
 					<li>Contato</li>
 				</ul>
-			</nav>
+			</Headermenu>
 
 			<header>
 				<h1>
@@ -61,7 +63,6 @@ const Index = () => {
 const Header = ({ children, color, label }) => {
 	return (
 		<header>
-			<p css={`color: ${color};`}>{label}</p>
 			{
 				children
 			}
@@ -69,11 +70,5 @@ const Header = ({ children, color, label }) => {
 	)
 }
 
-
-const Title = tw.h1`
-	text-8xl
-	text-center
-	text-black
-`
 
 export default Index;
