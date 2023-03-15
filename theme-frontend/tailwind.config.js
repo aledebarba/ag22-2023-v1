@@ -15,13 +15,13 @@ module.exports = {
     },   
     extend: {
         colors: {
-          customPink: "#e85ca2",
-          customBlue: "#61ebf5",
-          customBlack: "#2d2d2d",   
-          customRose: "#facada",
-          customWhite: "#d8d8d8",
-          customCoral: "#ff6d50",
-          customGray: "#8d8d8d",
+          ag22Pink: "#e85ca2",
+          ag22Blue: "#61ebf5",
+          ag22Black: "#2d2d2d",   
+          ag22Rose: "#facada",
+          ag22White: "#d8d8d8",
+          ag22Coral: "#ff6d50",
+          ag22Gray: "#8d8d8d",
         }
       }
   },
