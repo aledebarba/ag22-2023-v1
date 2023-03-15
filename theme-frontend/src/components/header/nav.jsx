@@ -6,8 +6,6 @@ export const Headermenu = ({ children }) => {
                 flex-direction: row;
                 justify-content: center;
                 align-items: center;
-                padding: 16px 32px;
-                gap: 8px;
                 border: 2px solid #E62337;
                 border-radius: 8px;
                 color: #E62337;
@@ -22,5 +20,28 @@ export const Headermenu = ({ children }) => {
         >
             {children}
         </nav>
+    )
+}
+
+export const Menuitems = ({ children }) => {
+    return (
+        <ul css={`
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+        `}>
+        {children}
+        </ul>
+    )
+}
+
+export const Li = ({children}) => {
+    return (
+        <li css={`
+            text-decoration: none;
+            list-style: none;
+        `}>
+            {children}
+        </li>
     )
 }

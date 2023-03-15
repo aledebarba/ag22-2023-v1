@@ -1,8 +1,7 @@
 import tw from 'twin.macro';
 import { Button } from '../components/button';
 import { Icon } from '@iconify/react';
-import { Headermenu } from '../components/header/nav';
-import styled from 'styled-components';
+import { Headermenu, Menuitems, Li } from '../components/header/nav';
 
 
 const Index = () => {
@@ -11,14 +10,9 @@ const Index = () => {
 
 			<Headermenu>
 				<figure></figure>
-				<ul>
-					<li>Quem Somos</li>
-					<li>Serviços</li>
-					<li>Cases</li>
-					<li>Clientes</li>
-					<li>Trabalhe Conosco</li>
-					<li>Contato</li>
-				</ul>
+				<Menuitems>
+					<Li>Quem Somos</Li>
+				</Menuitems>
 			</Headermenu>
 
 			<header>
