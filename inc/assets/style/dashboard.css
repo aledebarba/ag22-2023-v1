@@ -1,0 +1,240 @@
+h1 {
+    box-sizing: border-box;
+
+    font-size: clamp( 28px, calc( 3vw + 1rem), 48px);
+    color: #333;
+    line-height: 1.25;
+    display: flex;
+    align-items: flex-start;
+    gap: calc( 1vw + 1rem );
+    margin-bottom: 2rem;           
+    font-family: var(--font, 'Roboto', sans-serif);         
+}
+
+h1 .dashicons {
+    box-sizing: border-box;
+
+    font-size: clamp( 28px, calc( 4vw + 1rem), 56px);
+    color: dodgerblue;
+    line-height: 1.25;
+    width: fit-content;
+    height: fit-content;
+    transform: scale( var( --scale, 1));
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.custom-dashboard-intro {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+
+.alert {
+    box-sizing: border-box;
+    color: #444;
+    padding: 1rem;
+    border: 2px solid var(--color, dodgerblue);
+    width: 40%;
+    min-width: 300px;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    border-radius: 4px;
+    margin-right: 1rem;
+}
+
+.alert strong {
+    color: var(--color, dodgerblue);
+}
+
+.alert .dashicons {
+    font-size: 2rem;
+    color: var(--color, dodgerblue);
+    line-height: 1;
+}
+
+.serif {
+    font-family: "Garamond", "Times New Roman", Times, serif;
+}
+
+.italic {
+    font-style: italic;
+}
+.bold {
+    font-weight: bold;
+}
+
+.items-center {
+    align-items: center;
+}
+.thin {
+    font-weight: lighter;
+}
+.gap-05 {
+    gap: calc( 0.5rem + 1vw );
+}
+.gap-1 {
+    gap: calc( 1rem + 1vw );
+}
+.gap-2 {
+    gap: calc( 2rem + 1vw );
+}
+.gap-3 {
+    gap: calc( 3rem + 1vw );
+}
+.gap-4 {
+    gap: calc( 4rem + 1vw );
+}
+.gap-5 {
+    gap: calc( 5rem + 1vw );
+}
+.gap-6 {
+    gap: calc( 6rem + 1vw );
+}
+.gap-7 {
+    gap: calc( 7rem + 1vw );
+}   
+.gap-8 {
+    gap: calc( 8rem + 1vw );
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.w-100 {
+    width: 100%;
+}
+.w-50 {
+    width: 50%;
+}
+.w-75 {
+    width: 75%;
+}
+.w-25 {
+    width: 25%;
+}
+.w-33 {
+    width: 33%;
+}
+.w-66 {
+    width: 66%;
+}
+.my-1 {
+    margin-top: calc( 1rem + 1vw );
+    margin-bottom: calc( 1rem + 1vw );
+}
+.my-2 {
+    margin-top: calc( 2rem + 1vw );
+    margin-bottom: calc( 2rem + 1vw );
+}
+.my-3 {
+    margin-top: calc( 3rem + 1vw );
+    margin-bottom: calc( 3rem + 1vw );
+}
+.my-4 {
+    margin-top: calc( 4rem + 1vw );
+    margin-bottom: calc( 4rem + 1vw );
+}
+.my-5 {
+    margin-top: calc( 5rem + 1vw );
+    margin-bottom: calc( 5rem + 1vw );
+}
+.my-6 {
+    margin-top: calc( 6rem + 1vw );
+    margin-bottom: calc( 6rem + 1vw );
+}
+.my-7 {
+    margin-top: calc( 7rem + 1vw );
+    margin-bottom: calc( 7rem + 1vw );
+}
+.my-8 {
+    margin-top: calc( 8rem + 1vw );
+    margin-bottom: calc( 8rem + 1vw );
+}
+.mx-1 {
+    margin-left: calc( 1rem + 1vw );
+    margin-right: calc( 1rem + 1vw );
+}
+.mx-2 {
+    margin-left: calc( 2rem + 1vw );
+    margin-right: calc( 2rem + 1vw );
+}
+.mx-3 {
+    margin-left: calc( 3rem + 1vw );
+    margin-right: calc( 3rem + 1vw );
+}
+.mx-4 {
+    margin-left: calc( 4rem + 1vw );
+    margin-right: calc( 4rem + 1vw );
+}
+.mx-5 {
+    margin-left: calc( 5rem + 1vw );
+    margin-right: calc( 5rem + 1vw );
+}
+.mx-6 {
+    margin-left: calc( 6rem + 1vw );
+    margin-right: calc( 6rem + 1vw );
+}
+.mx-7 {
+    margin-left: calc( 7rem + 1vw );
+    margin-right: calc( 7rem + 1vw );
+}
+.mx-8 {
+    margin-left: calc( 8rem + 1vw );
+    margin-right: calc( 8rem + 1vw );
+}
+
+
+#login {
+
+    background: #ffffff22;
+    box-shadow: inset 0 0 50px -2px #ffffff99, 0 0 50px -5px #00000022;
+    padding: 2.5rem 1rem 2rem 1rem;
+    margin: 1rem auto;
+    border-radius: 1rem;
+    transform: scale( 0.99 );
+    
+}
+
+
+#login h1 a, .login h1 a {
+    background-image: url(../images/brand.svg);
+    height:80px;
+    width:320px;
+    background-size: 320px 65px;
+    background-repeat: no-repeat;
+    padding-bottom: 30px;
+}
+
+form#loginform {
+    box-shadow: 0 0 10px -5 rgba(255,0,0,0.8);
+    border-radius: 1rem;
+}
+body.login {
+    background-image: linear-gradient(90deg, #e8e8e8 0%, #a8a8a8 100%);
+}
+body.login a {
+    color: darkred;
+}
+body.login .button {
+    border-color: tomato;
+    outline: none;                
+    color: darkred;
+    border-radius: 0.5rem;
+}
+body.login .button.button-primary {
+    background-color: tomato !important;
+    border-color: tomato;
+    outline: none;                
+    color: white;
+}
+
+body.login p.message {
+    border-left: 4px solid tomato !important;
+}

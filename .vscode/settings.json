@@ -1,3 +1,33 @@
 {
-    "diffEditor.codeLens": true
+    "diffEditor.codeLens": true,
+    "docwriter.style": "DocBlock",
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#6d1b36",
+        "activityBar.background": "#6d1b36",
+        "activityBar.foreground": "#e7e7e7",
+        "activityBar.inactiveForeground": "#e7e7e799",
+        "activityBarBadge.background": "#3f8020",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#e7e7e799",
+        "editorGroup.border": "#6d1b36",
+        "panel.border": "#6d1b36",
+        "sash.hoverBorder": "#6d1b36",
+        "sideBar.border": "#6d1b36",
+        "statusBar.background": "#441122",
+        "statusBar.border": "#441122",
+        "statusBar.debuggingBackground": "#114433",
+        "statusBar.debuggingBorder": "#114433",
+        "statusBar.debuggingForeground": "#e7e7e7",
+        "statusBar.foreground": "#e7e7e7",
+        "statusBarItem.hoverBackground": "#6d1b36",
+        "statusBarItem.remoteBackground": "#441122",
+        "statusBarItem.remoteForeground": "#e7e7e7",
+        "tab.activeBorder": "#6d1b36",
+        "titleBar.activeBackground": "#441122",
+        "titleBar.activeForeground": "#e7e7e7",
+        "titleBar.border": "#441122",
+        "titleBar.inactiveBackground": "#44112299",
+        "titleBar.inactiveForeground": "#e7e7e799"
+    },
+    "peacock.color": "#441122"
 }

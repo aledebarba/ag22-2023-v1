@@ -1,14 +1,17 @@
 "use strict";
-(self["webpackChunktheme_frontend"] = self["webpackChunktheme_frontend"] || []).push([["src_pages_sandbox_jsx"],{
+(globalThis["webpackChunktheme_frontend"] = globalThis["webpackChunktheme_frontend"] || []).push([["src_pages_sandbox_jsx"],{
 
 /***/ "./src/pages/sandbox.jsx":
 /*!*******************************!*\
   !*** ./src/pages/sandbox.jsx ***!
   \*******************************/
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
@@ -67,7 +70,7 @@ var _StyledContent = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"
   displayName: "sandbox___StyledContent",
   componentId: "sc-q9knhi-2"
 })(["opacity:1;font-size:5rem;animation:fadein 3s infinite linear;"]);
-/* harmony default export */ __webpack_exports__["default"] = (Sandbox);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sandbox);
 
 /***/ })
 
