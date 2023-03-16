@@ -4979,17 +4979,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "Button": () => (/* binding */ Button)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
-
 const Button = ({
   children
 }) => {
-  return /*#__PURE__*/React.createElement(_StyledButton, null, children);
+  return /*#__PURE__*/React.createElement("button", {
+    className: `
+                bg-transparent
+                border-2
+              border-primary
+                box-border
+                flex
+                flex-row
+                justify-center
+                items-center
+                py-4
+                px-8
+                gap-2
+                rounded-lg
+                font-sans
+                text-button
+                text-primary
+                `
+  }, children);
 };
-var _StyledButton = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("button").withConfig({
-  displayName: "button___StyledButton",
-  componentId: "sc-1q9kfsc-0"
-})(["box-sizing:border-box;display:flex;flex-direction:row;justify-content:center;align-items:center;padding:16px 32px;gap:8px;border:2px solid #E62337;border-radius:8px;color:#E62337;font-family:'Archivo',sans-serif;font-style:normal;font-weight:800;font-size:16px;line-height:16px;background-color:transparent;"]);
 
 /***/ }),
 
@@ -5002,51 +5014,55 @@ var _StyledButton = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"]
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Headermenu": () => (/* binding */ Headermenu),
-/* harmony export */   "Li": () => (/* binding */ Li),
+/* harmony export */   "HeaderMenu": () => (/* binding */ HeaderMenu),
 /* harmony export */   "Logo": () => (/* binding */ Logo),
-/* harmony export */   "Navul": () => (/* binding */ Navul)
+/* harmony export */   "Nav": () => (/* binding */ Nav)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _pages_assets_brand__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../pages/assets/brand */ "./src/pages/assets/brand.jsx");
 
 
 
-const Headermenu = ({
+const HeaderMenu = ({
   children
 }) => {
-  return /*#__PURE__*/React.createElement(_StyledNav, null, children);
+  return /*#__PURE__*/React.createElement(_StyledNav, {
+    $_css: {
+      "position": "fixed",
+      "marginLeft": "0px",
+      "marginRight": "0px",
+      "boxSizing": "content-box",
+      "display": "flex",
+      "height": "7rem",
+      "width": "100%",
+      "flexDirection": "row",
+      "justifyContent": "center",
+      "borderBottomWidth": "2px",
+      "--tw-border-opacity": "1",
+      "borderBottomColor": "rgb(209 213 219 / var(--tw-border-opacity))",
+      "backgroundColor": "rgb(255 255 255 / 0.9)",
+      "--tw-backdrop-blur": "blur(24px)",
+      "backdropFilter": "var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)"
+    }
+  }, children);
 };
 const Logo = ({
   children
 }) => {
-  return /*#__PURE__*/React.createElement(_pages_assets_brand__WEBPACK_IMPORTED_MODULE_0__.Logosite, null);
+  return /*#__PURE__*/React.createElement(_pages_assets_brand__WEBPACK_IMPORTED_MODULE_0__.LogoSite, null);
 };
-const Navul = ({
-  children
-}) => {
-  return /*#__PURE__*/React.createElement(_StyledUl, null, children);
-};
-const Li = ({
-  children
-}) => {
-  return /*#__PURE__*/React.createElement("li", null, children);
+const Nav = {
+  ul: ({
+    children
+  }) => /*#__PURE__*/React.createElement(_StyledUl, null, children),
+  li: ({
+    children
+  }) => /*#__PURE__*/React.createElement("li", null, children)
 };
 var _StyledNav = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])("nav").withConfig({
   displayName: "nav___StyledNav",
   componentId: "sc-hhus11-0"
-})({
-  "display": "flex",
-  "flexDirection": "row",
-  "alignItems": "center",
-  "justifyContent": "space-between",
-  "@media (min-width: 768px)": {
-    "width": "83.333333%"
-  },
-  "@media (min-width: 1024px)": {
-    "width": "66.666667%"
-  }
-});
+})(["", "\t\t\t\t"], p => p.$_css);
 var _StyledUl = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])("ul").withConfig({
   displayName: "nav___StyledUl",
   componentId: "sc-hhus11-1"
@@ -5057,7 +5073,7 @@ var _StyledUl = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])("u
   "fontWeight": "600",
   "letterSpacing": "0.025em",
   "--tw-text-opacity": "1",
-  "color": "rgb(31 41 55 / var(--tw-text-opacity))",
+  "color": "rgb(65 63 65 / var(--tw-text-opacity))",
   "@media (min-width: 640px)": {
     "fontSize": "0.875rem",
     "lineHeight": "1.25rem"
@@ -5310,19 +5326,18 @@ const Archive = () => /*#__PURE__*/React.createElement(React.Fragment, null, /*#
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Logosite": () => (/* binding */ Logosite)
+/* harmony export */   "LogoSite": () => (/* binding */ LogoSite)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const Logosite = ({
+const LogoSite = ({
   children
 }) => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
     className: "w-24",
     fill: "none",
     viewBox: "0 0 208 122",
-    fill: "none",
     xmlns: "http://www.w3.org/2000/svg"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
     d: "M77.8116 114.812C77.305 116.191 76.2917 117.321 74.7871 117.321C73.6523 117.321 72.8923 116.69 72.639 115.556C72.3612 114.57 72.208 113.554 72.1831 112.53V91.4534L72.1932 90.0062H47.3967V91.8643H54.193V103.999C54.193 108.358 53.9676 112.392 52.506 115.41C51.0444 118.543 48.1237 120.452 42.7308 120.452C32.9454 120.452 27.3245 115.753 23.9555 108.701C20.5865 101.649 19.5606 92.3635 19.5606 83.2999C19.5606 78.2575 19.7911 71.9949 21.0222 65.7298C22.2659 59.5705 24.2924 53.5323 27.9958 49.0521C31.5953 44.5821 36.7653 41.5567 44.3038 41.5567C56.7768 41.5567 63.8669 47.9378 65.3285 63.6019L65.5818 66.2264H72.0438V37.3135H72.0817C72.0817 23.7849 68.8976 14.2321 63.1399 8.46868C57.3822 2.70526 48.8279 0.110962 37.9002 0.110962C25.374 0.110962 17.415 3.89274 12.6503 8.66281C7.67781 13.4379 5.88691 18.9997 5.88691 22.7814C5.88691 29.1474 11.062 34.5251 17.415 34.5251C23.768 34.5251 29.1509 29.1474 29.1509 22.7814C29.1509 16.4154 23.7832 11.2495 17.415 11.2495C16.4398 11.2495 14.5172 11.4487 13.1341 12.0059C13.1341 12.0059 18.1344 5.22896 34.5843 5.22896C51.0343 5.22896 54.2082 18.2534 54.2082 28.4037V41.1129C50.6592 40.3498 47.038 39.9686 43.4071 39.9759C31.1545 39.9759 20.2496 43.8963 12.5034 51.2783C4.75715 58.6604 0 69.4082 0 82.9469C0 94.9175 4.38479 104.541 11.8042 111.371C19.2237 118.201 29.465 121.997 41.6061 121.997C46.6529 121.949 51.6737 121.271 56.5513 119.981C57.3113 119.779 58.0712 119.552 58.8463 119.312C60.8728 120.848 63.7099 121.955 67.5906 121.955C72.0058 121.955 74.7795 120.694 76.6692 119.199C78.5589 117.815 79.3163 116.31 79.4429 115.432L77.8116 114.812Z",
@@ -5376,9 +5391,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const Index = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledHeader, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Headermenu, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Logo, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Navul, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Li, null, "Quem Somos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Li, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Li, null, "Cases"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Li, null, "Clientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Li, null, "Trabalhe Conosco"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Li, null, "Contato")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledHeader2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan, null, "Marcas Reais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan2, null, "Para Clientes Reais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan3, null, "Com Resultados Reais")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Queremos fazer sua marca conquistar o mundo. Mas para isso acontecer voc\xEA precisa saber: se seu cliente vai parar para te ouvir, \xE9 melhor voc\xEA ter algo bom para dizer."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Faz sentido, n\xE3o \xE9?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, null, "Fale agora com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_3__.Icon, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.HeaderMenu, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Logo, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.ul, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Quem Somos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Cases"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Clientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Trabalhe Conosco"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Contato")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledHeader, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan, null, "Marcas Reais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan2, null, "Para Clientes Reais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan3, null, "Com Resultados Reais")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Queremos fazer sua marca conquistar o mundo. Mas para isso acontecer voc\xEA precisa saber: se seu cliente vai parar para te ouvir, \xE9 melhor voc\xEA ter algo bom para dizer."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Faz sentido, n\xE3o \xE9?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, null, "Fale agora com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_3__.Icon, {
     icon: "bi:mouse",
     width: "1.5rem"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Role para baixo"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection, {
@@ -5400,26 +5414,6 @@ var _StyledHeader = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"]
   displayName: "pages___StyledHeader",
   componentId: "sc-1au5rsk-0"
 })({
-  "position": "fixed",
-  "marginLeft": "0px",
-  "marginRight": "0px",
-  "boxSizing": "content-box",
-  "display": "flex",
-  "height": "7rem",
-  "width": "100%",
-  "flexDirection": "row",
-  "justifyContent": "center",
-  "borderBottomWidth": "2px",
-  "--tw-border-opacity": "1",
-  "borderBottomColor": "rgb(209 213 219 / var(--tw-border-opacity))",
-  "backgroundColor": "rgb(255 255 255 / 0.9)",
-  "--tw-backdrop-blur": "blur(24px)",
-  "backdropFilter": "var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)"
-});
-var _StyledHeader2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("header").withConfig({
-  displayName: "pages___StyledHeader2",
-  componentId: "sc-1au5rsk-1"
-})({
   "display": "flex",
   "minHeight": "100vh",
   "flexDirection": "column",
@@ -5428,7 +5422,7 @@ var _StyledHeader2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"
 });
 var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
   displayName: "pages___StyledDiv",
-  componentId: "sc-1au5rsk-2"
+  componentId: "sc-1au5rsk-1"
 })({
   "margin": "auto",
   "display": "block",
@@ -5438,20 +5432,20 @@ var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("
 });
 var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1").withConfig({
   displayName: "pages___StyledH",
-  componentId: "sc-1au5rsk-3"
+  componentId: "sc-1au5rsk-2"
 })({
   "fontSize": "1.875rem",
   "lineHeight": "2.25rem"
 });
 var _StyledSpan = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
   displayName: "pages___StyledSpan",
-  componentId: "sc-1au5rsk-4"
+  componentId: "sc-1au5rsk-3"
 })({
   "display": "block"
 });
 var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
   displayName: "pages___StyledSpan2",
-  componentId: "sc-1au5rsk-5"
+  componentId: "sc-1au5rsk-4"
 })({
   "display": "block",
   "--tw-text-opacity": "1",
@@ -5459,13 +5453,13 @@ var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])
 });
 var _StyledSpan3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
   displayName: "pages___StyledSpan3",
-  componentId: "sc-1au5rsk-6"
+  componentId: "sc-1au5rsk-5"
 })({
   "display": "block"
 });
 var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
   displayName: "pages___StyledDiv2",
-  componentId: "sc-1au5rsk-7"
+  componentId: "sc-1au5rsk-6"
 })({
   "marginLeft": "auto",
   "marginRight": "auto",
@@ -5479,7 +5473,7 @@ var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
 });
 var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("section").withConfig({
   displayName: "pages___StyledSection",
-  componentId: "sc-1au5rsk-8"
+  componentId: "sc-1au5rsk-7"
 })({
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
@@ -5488,7 +5482,7 @@ var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"
 });
 var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
   displayName: "pages___StyledDiv3",
-  componentId: "sc-1au5rsk-9"
+  componentId: "sc-1au5rsk-8"
 })({
   "marginLeft": "auto",
   "marginRight": "auto",
@@ -5501,7 +5495,7 @@ var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
 });
 var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1").withConfig({
   displayName: "pages___StyledH2",
-  componentId: "sc-1au5rsk-10"
+  componentId: "sc-1au5rsk-9"
 })({
   "fontSize": "1.875rem",
   "lineHeight": "2.25rem",
@@ -5509,7 +5503,7 @@ var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h
 });
 var _StyledSpan4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
   displayName: "pages___StyledSpan4",
-  componentId: "sc-1au5rsk-11"
+  componentId: "sc-1au5rsk-10"
 })({
   "fontWeight": "900",
   "--tw-text-opacity": "1",

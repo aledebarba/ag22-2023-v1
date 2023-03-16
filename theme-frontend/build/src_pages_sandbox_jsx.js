@@ -41,7 +41,7 @@ const Title = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].h1.withC
   componentId: "sc-q9knhi-0"
 })({
   "--tw-text-opacity": "1",
-  "color": "rgb(216 216 216 / var(--tw-text-opacity))"
+  "color": "rgb(255 255 255 / var(--tw-text-opacity))"
 });
 const Content = styled_components__WEBPACK_IMPORTED_MODULE_2__["default"].div.withConfig({
   displayName: "sandbox__Content",

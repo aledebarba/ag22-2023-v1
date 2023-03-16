@@ -1,24 +1,23 @@
 export const Button = ({ children }) => {
     return (
         <button 
-            css={`
-                box-sizing: border-box;
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                padding: 16px 32px;
-                gap: 8px;
-                border: 2px solid #E62337;
-                border-radius: 8px;
-                color: #E62337;
-                font-family: 'Archivo', sans-serif;
-                font-style: normal;
-                font-weight: 800;
-                font-size: 16px;
-                line-height: 16px;
-                background-color: transparent;
-            `}
+            className={`
+                bg-transparent
+                border-2
+              border-primary
+                box-border
+                flex
+                flex-row
+                justify-center
+                items-center
+                py-4
+                px-8
+                gap-2
+                rounded-lg
+                font-sans
+                text-button
+                text-primary
+                `}
         >
             {children}
         </button>

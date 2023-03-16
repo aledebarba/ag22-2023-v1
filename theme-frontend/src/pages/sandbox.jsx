@@ -47,10 +47,10 @@ const Sandbox = () => {
 }
 
 const Title = tw.h1`
-    text-customWhite
+    text-white
 `
 const Content = tw.div`
-    bg-customBlack
+    bg-ag22Black
     h-screen
     w-[95vw]
     flex

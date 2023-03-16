@@ -1,10 +1,29 @@
-import { Logosite } from "../../pages/assets/brand";
+import { LogoSite } from "../../pages/assets/brand";
+
 import tw from 'twin.macro';
 
-export const Headermenu = ({ children }) => {
+export const HeaderMenu = ({ children }) => {
     return (
-        <nav  tw={"lg:w-8/12 md:w-10/12 flex flex-row justify-between items-center"}>
+        <nav  
+            css={`
+                ${tw`
+                    mx-0
+                    box-content
+                    flex
+                    flex-row
+                    justify-center
+                    backdrop-blur-xl
+                    bg-white/90
+                    fixed
+                    w-full
+                    h-28
+                    border-b-2
+                    border-b-gray-300`
+                }				
+        `}>
+            
             {children}
+
         </nav>
     )
 }
@@ -12,21 +31,14 @@ export const Headermenu = ({ children }) => {
 
 export const Logo = ({children}) => {
     return (
-        <Logosite/>
+        <LogoSite/>
     )
 }
 
-export const Navul = ({children}) => {
-    return (
-        <ul tw={"flex gap-6 font-semibold font-sans sm:text-sm md:text-base lg:text-lg tracking-wide text-gray-800"}>
+export const Nav = {
+    ul: ({children}) => (
+        <ul tw={"flex gap-6 font-semibold font-sans sm:text-sm md:text-base lg:text-lg tracking-wide text-secondary"}>
             {children}
-        </ul>
-    )
-}
-export const Li = ({children}) => {
-    return (
-        <li>
-            {children}
-        </li>
-    )
+        </ul> ),
+    li: ({children}) => <li>{(children)}</li>
 }
