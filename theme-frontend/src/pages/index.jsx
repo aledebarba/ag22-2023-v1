@@ -4,6 +4,7 @@ import apiFetch from '@wordpress/api-fetch';
 import { Button } from '../components/button';
 import { Icon } from '@iconify/react';
 import { HeaderMenu, Logo, Nav, Li } from '../components/header/nav';
+import { Card, CardTitle, CardText, CardBox } from '../components/cards';
 
 
 const Index = () => {
@@ -116,37 +117,37 @@ const Index = () => {
 				<div tw={"lg:w-10/12 md:w-11/12 mx-auto gap-16 flex flex-col items-center"}>
 					<h1 tw={"text-h1 font-bold text-center"}>Serviços</h1>
 
-					<div tw={"flex lg:flex-row md:flex-col gap-8"}>
-						<div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-xl"}>
-							<h4 tw={"text-h4 text-primary lowercase font-medium"}>Branding</h4>
-							<h6 tw={"text-h6"}>
+					<CardBox>
+						<Card>
+							<CardTitle>Branding</CardTitle>
+							<CardText>
 							Você compra um produto pelo que ele faz, você escolhe uma marca pelo que ela significa. Produtos podem ser copiados, marcas são únicas.
-							</h6>
-						</div>
+							</CardText>
+						</Card>
 
-						<div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-xl"}>
-							<h4 tw={"text-h4 text-primary lowercase font-medium"}>Social Media</h4>
-							<h6 tw={"text-h6"}>
+						<Card>
+							<CardTitle>Social Media</CardTitle>
+							<CardText>
 							Falamos fluentemente a língua do algoritmo. Sabemos chegar e como chegar.
 							Temos resultados quali e quantitativos.
 							Quer bons leads? Fale com a gente
-							</h6>
-						</div>
+							</CardText>
+						</Card>
 
-						<div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-xl"}>
-							<h4 tw={"text-h4 text-primary lowercase font-medium"}>Planning</h4>
-							<h6 tw={"text-h6"}>
+						<Card>
+							<CardTitle>Planning</CardTitle>
+							<CardText>
 							Saber o quê, porque, quando e como são os pilares de um bom planejamento. Entender para atender. Prever e criar para ser desejado.
-							</h6>
-						</div>
+							</CardText>
+						</Card>
 
-						<div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-xl"}>
-							<h4 tw={"text-h4 text-primary lowercase font-medium"}>Packing</h4>
-							<h6 tw={"text-h6"}>
+						<Card>
+							<CardTitle>Packing</CardTitle>
+							<CardText>
 							Um produto excelente precisa de uma "roupa" a sua altura. Desenvolvemos embalagens com um simples objetivo: evidenciar seu produto na gôndola.
-							</h6>
-						</div>
-					</div>
+							</CardText>
+						</Card>
+					</CardBox>
 
 					<Button>Conheça mais sobre nosso serviços</Button>
 				</div>

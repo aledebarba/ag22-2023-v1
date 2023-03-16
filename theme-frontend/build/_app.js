@@ -5005,6 +5005,101 @@ const Button = ({
 
 /***/ }),
 
+/***/ "./src/components/cards.jsx":
+/*!**********************************!*\
+  !*** ./src/components/cards.jsx ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Card": () => (/* binding */ Card),
+/* harmony export */   "CardBox": () => (/* binding */ CardBox),
+/* harmony export */   "CardText": () => (/* binding */ CardText),
+/* harmony export */   "CardTitle": () => (/* binding */ CardTitle)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+
+
+const Card = ({
+  children
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledDiv, null, children);
+};
+const CardTitle = ({
+  children
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledH, null, children);
+};
+const CardText = ({
+  children
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledH2, null, children);
+};
+const CardBox = ({
+  children
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledDiv2, null, children);
+};
+var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("div").withConfig({
+  displayName: "cards___StyledDiv",
+  componentId: "sc-1y2n8oq-0"
+})({
+  "display": "flex",
+  "flexBasis": "25%",
+  "flexDirection": "column",
+  "justifyContent": "center",
+  "borderRadius": "1rem",
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
+  "paddingLeft": "2rem",
+  "paddingRight": "2rem",
+  "paddingTop": "2rem",
+  "paddingBottom": "2.5rem",
+  "textAlign": "center",
+  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
+});
+var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("h4").withConfig({
+  displayName: "cards___StyledH",
+  componentId: "sc-1y2n8oq-1"
+})({
+  "fontSize": "2rem",
+  "lineHeight": "2.25em",
+  "letterSpacing": "0em",
+  "fontWeight": "500",
+  "textTransform": "lowercase",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("h6").withConfig({
+  displayName: "cards___StyledH2",
+  componentId: "sc-1y2n8oq-2"
+})({
+  "fontSize": "1.25rem",
+  "lineHeight": "1.5rem",
+  "letterSpacing": "0em",
+  "fontWeight": "300"
+});
+var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("div").withConfig({
+  displayName: "cards___StyledDiv2",
+  componentId: "sc-1y2n8oq-3"
+})({
+  "display": "flex",
+  "gap": "2rem",
+  "@media (min-width: 768px)": {
+    "flexDirection": "column"
+  },
+  "@media (min-width: 1024px)": {
+    "flexDirection": "row"
+  }
+});
+
+/***/ }),
+
 /***/ "./src/components/header/nav.jsx":
 /*!***************************************!*\
   !*** ./src/components/header/nav.jsx ***!
@@ -5367,7 +5462,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/api-fetch */ "@wordpress/api-fetch");
@@ -5375,18 +5470,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/button */ "./src/components/button.jsx");
 /* harmony import */ var _iconify_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @iconify/react */ "./node_modules/.pnpm/@iconify+react@4.1.0_react@18.2.0/node_modules/@iconify/react/dist/iconify.mjs");
 /* harmony import */ var _components_header_nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/header/nav */ "./src/components/header/nav.jsx");
-
-
-
-
-
-
-
-
-
-
-
-
+/* harmony import */ var _components_cards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/cards */ "./src/components/cards.jsx");
 
 
 
@@ -5436,7 +5520,7 @@ const Index = () => {
     className: "card gap-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH10, null, "+1000 horas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH11, null, "de storytelling criadas"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection2, {
     className: "servicos"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv5, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH12, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv6, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv7, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH13, null, "Branding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH14, null, "Voc\xEA compra um produto pelo que ele faz, voc\xEA escolhe uma marca pelo que ela significa. Produtos podem ser copiados, marcas s\xE3o \xFAnicas.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv8, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH15, null, "Social Media"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH16, null, "Falamos fluentemente a l\xEDngua do algoritmo. Sabemos chegar e como chegar. Temos resultados quali e quantitativos. Quer bons leads? Fale com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv9, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH17, null, "Planning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH18, null, "Saber o qu\xEA, porque, quando e como s\xE3o os pilares de um bom planejamento. Entender para atender. Prever e criar para ser desejado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv10, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH19, null, "Packing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH20, null, "Um produto excelente precisa de uma \"roupa\" a sua altura. Desenvolvemos embalagens com um simples objetivo: evidenciar seu produto na g\xF4ndola."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, null, "Conhe\xE7a mais sobre nosso servi\xE7os"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv5, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH12, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardBox, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Branding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Voc\xEA compra um produto pelo que ele faz, voc\xEA escolhe uma marca pelo que ela significa. Produtos podem ser copiados, marcas s\xE3o \xFAnicas.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Social Media"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Falamos fluentemente a l\xEDngua do algoritmo. Sabemos chegar e como chegar. Temos resultados quali e quantitativos. Quer bons leads? Fale com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Planning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Saber o qu\xEA, porque, quando e como s\xE3o os pilares de um bom planejamento. Entender para atender. Prever e criar para ser desejado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Packing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Um produto excelente precisa de uma \"roupa\" a sua altura. Desenvolvemos embalagens com um simples objetivo: evidenciar seu produto na g\xF4ndola."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, null, "Conhe\xE7a mais sobre nosso servi\xE7os"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     className: "cases"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     className: "clientes"
@@ -5447,14 +5531,14 @@ const Index = () => {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("footer", null));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
-var _StyledHeader = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("header").withConfig({
+var _StyledHeader = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("header").withConfig({
   displayName: "pages___StyledHeader",
   componentId: "sc-1au5rsk-0"
 })({
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledHeader2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("header").withConfig({
+var _StyledHeader2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("header").withConfig({
   displayName: "pages___StyledHeader2",
   componentId: "sc-1au5rsk-1"
 })({
@@ -5466,7 +5550,7 @@ var _StyledHeader2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
   displayName: "pages___StyledDiv",
   componentId: "sc-1au5rsk-2"
 })({
@@ -5480,7 +5564,7 @@ var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("
     "width": "50%"
   }
 });
-var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1").withConfig({
+var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h1").withConfig({
   displayName: "pages___StyledH",
   componentId: "sc-1au5rsk-3"
 })({
@@ -5489,13 +5573,13 @@ var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1
   "letterSpacing": "0em",
   "fontWeight": "100"
 });
-var _StyledSpan = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
+var _StyledSpan = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
   displayName: "pages___StyledSpan",
   componentId: "sc-1au5rsk-4"
 })({
   "display": "block"
 });
-var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
+var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
   displayName: "pages___StyledSpan2",
   componentId: "sc-1au5rsk-5"
 })({
@@ -5504,13 +5588,13 @@ var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledSpan3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
+var _StyledSpan3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
   displayName: "pages___StyledSpan3",
   componentId: "sc-1au5rsk-6"
 })({
   "display": "block"
 });
-var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
   displayName: "pages___StyledDiv2",
   componentId: "sc-1au5rsk-7"
 })({
@@ -5528,7 +5612,7 @@ var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("section").withConfig({
+var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("section").withConfig({
   displayName: "pages___StyledSection",
   componentId: "sc-1au5rsk-8"
 })({
@@ -5544,7 +5628,7 @@ var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledFigure = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("figure").withConfig({
+var _StyledFigure = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("figure").withConfig({
   displayName: "pages___StyledFigure",
   componentId: "sc-1au5rsk-9"
 })({
@@ -5555,7 +5639,7 @@ var _StyledFigure = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"]
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(209 213 219 / var(--tw-bg-opacity))"
 });
-var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
   displayName: "pages___StyledDiv3",
   componentId: "sc-1au5rsk-10"
 })({
@@ -5569,7 +5653,7 @@ var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
   "paddingTop": "2.5rem",
   "paddingBottom": "2.5rem"
 });
-var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1").withConfig({
+var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h1").withConfig({
   displayName: "pages___StyledH2",
   componentId: "sc-1au5rsk-11"
 })({
@@ -5577,7 +5661,7 @@ var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h
   "lineHeight": "2.5rem",
   "fontWeight": "300"
 });
-var _StyledSpan4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
+var _StyledSpan4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
   displayName: "pages___StyledSpan4",
   componentId: "sc-1au5rsk-12"
 })({
@@ -5585,14 +5669,14 @@ var _StyledSpan4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h2").withConfig({
+var _StyledH3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h2").withConfig({
   displayName: "pages___StyledH3",
   componentId: "sc-1au5rsk-13"
 })({
   "fontSize": "1.5rem",
   "lineHeight": "2rem"
 });
-var _StyledSpan5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
+var _StyledSpan5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
   displayName: "pages___StyledSpan5",
   componentId: "sc-1au5rsk-14"
 })({
@@ -5600,7 +5684,7 @@ var _StyledSpan5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
   displayName: "pages___StyledDiv4",
   componentId: "sc-1au5rsk-15"
 })({
@@ -5611,7 +5695,7 @@ var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
   "rowGap": "2rem",
   "paddingTop": "1rem"
 });
-var _StyledH4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
+var _StyledH4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
   displayName: "pages___StyledH4",
   componentId: "sc-1au5rsk-16"
 })({
@@ -5622,7 +5706,7 @@ var _StyledH4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
+var _StyledH5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
   displayName: "pages___StyledH5",
   componentId: "sc-1au5rsk-17"
 })({
@@ -5633,7 +5717,7 @@ var _StyledH5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
+var _StyledH6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
   displayName: "pages___StyledH6",
   componentId: "sc-1au5rsk-18"
 })({
@@ -5644,7 +5728,7 @@ var _StyledH6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
+var _StyledH7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
   displayName: "pages___StyledH7",
   componentId: "sc-1au5rsk-19"
 })({
@@ -5655,7 +5739,7 @@ var _StyledH7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
+var _StyledH8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
   displayName: "pages___StyledH8",
   componentId: "sc-1au5rsk-20"
 })({
@@ -5666,7 +5750,7 @@ var _StyledH8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
+var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
   displayName: "pages___StyledH9",
   componentId: "sc-1au5rsk-21"
 })({
@@ -5677,7 +5761,7 @@ var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
+var _StyledH10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
   displayName: "pages___StyledH10",
   componentId: "sc-1au5rsk-22"
 })({
@@ -5688,7 +5772,7 @@ var _StyledH10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
+var _StyledH11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
   displayName: "pages___StyledH11",
   componentId: "sc-1au5rsk-23"
 })({
@@ -5699,7 +5783,7 @@ var _StyledH11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledSection2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("section").withConfig({
+var _StyledSection2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("section").withConfig({
   displayName: "pages___StyledSection2",
   componentId: "sc-1au5rsk-24"
 })({
@@ -5710,7 +5794,7 @@ var _StyledSection2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledDiv5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+var _StyledDiv5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
   displayName: "pages___StyledDiv5",
   componentId: "sc-1au5rsk-25"
 })({
@@ -5727,7 +5811,7 @@ var _StyledDiv5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
     "width": "83.333333%"
   }
 });
-var _StyledH12 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1").withConfig({
+var _StyledH12 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h1").withConfig({
   displayName: "pages___StyledH12",
   componentId: "sc-1au5rsk-26"
 })({
@@ -5736,179 +5820,6 @@ var _StyledH12 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("
   "lineHeight": "3.75rem",
   "letterSpacing": "0em",
   "fontWeight": "700"
-});
-var _StyledDiv6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv6",
-  componentId: "sc-1au5rsk-27"
-})({
-  "display": "flex",
-  "gap": "2rem",
-  "@media (min-width: 768px)": {
-    "flexDirection": "column"
-  },
-  "@media (min-width: 1024px)": {
-    "flexDirection": "row"
-  }
-});
-var _StyledDiv7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv7",
-  componentId: "sc-1au5rsk-28"
-})({
-  "display": "flex",
-  "flexBasis": "25%",
-  "flexDirection": "column",
-  "justifyContent": "center",
-  "borderRadius": "1rem",
-  "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
-  "paddingLeft": "2rem",
-  "paddingRight": "2rem",
-  "paddingTop": "2rem",
-  "paddingBottom": "2.5rem",
-  "textAlign": "center",
-  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
-  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
-});
-var _StyledH13 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
-  displayName: "pages___StyledH13",
-  componentId: "sc-1au5rsk-29"
-})({
-  "fontSize": "2rem",
-  "lineHeight": "2.25em",
-  "letterSpacing": "0em",
-  "fontWeight": "500",
-  "textTransform": "lowercase",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
-});
-var _StyledH14 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
-  displayName: "pages___StyledH14",
-  componentId: "sc-1au5rsk-30"
-})({
-  "fontSize": "1.25rem",
-  "lineHeight": "1.5rem",
-  "letterSpacing": "0em",
-  "fontWeight": "300"
-});
-var _StyledDiv8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv8",
-  componentId: "sc-1au5rsk-31"
-})({
-  "display": "flex",
-  "flexBasis": "25%",
-  "flexDirection": "column",
-  "justifyContent": "center",
-  "borderRadius": "1rem",
-  "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
-  "paddingLeft": "2rem",
-  "paddingRight": "2rem",
-  "paddingTop": "2rem",
-  "paddingBottom": "2.5rem",
-  "textAlign": "center",
-  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
-  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
-});
-var _StyledH15 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
-  displayName: "pages___StyledH15",
-  componentId: "sc-1au5rsk-32"
-})({
-  "fontSize": "2rem",
-  "lineHeight": "2.25em",
-  "letterSpacing": "0em",
-  "fontWeight": "500",
-  "textTransform": "lowercase",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
-});
-var _StyledH16 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
-  displayName: "pages___StyledH16",
-  componentId: "sc-1au5rsk-33"
-})({
-  "fontSize": "1.25rem",
-  "lineHeight": "1.5rem",
-  "letterSpacing": "0em",
-  "fontWeight": "300"
-});
-var _StyledDiv9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv9",
-  componentId: "sc-1au5rsk-34"
-})({
-  "display": "flex",
-  "flexBasis": "25%",
-  "flexDirection": "column",
-  "justifyContent": "center",
-  "borderRadius": "1rem",
-  "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
-  "paddingLeft": "2rem",
-  "paddingRight": "2rem",
-  "paddingTop": "2rem",
-  "paddingBottom": "2.5rem",
-  "textAlign": "center",
-  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
-  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
-});
-var _StyledH17 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
-  displayName: "pages___StyledH17",
-  componentId: "sc-1au5rsk-35"
-})({
-  "fontSize": "2rem",
-  "lineHeight": "2.25em",
-  "letterSpacing": "0em",
-  "fontWeight": "500",
-  "textTransform": "lowercase",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
-});
-var _StyledH18 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
-  displayName: "pages___StyledH18",
-  componentId: "sc-1au5rsk-36"
-})({
-  "fontSize": "1.25rem",
-  "lineHeight": "1.5rem",
-  "letterSpacing": "0em",
-  "fontWeight": "300"
-});
-var _StyledDiv10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv10",
-  componentId: "sc-1au5rsk-37"
-})({
-  "display": "flex",
-  "flexBasis": "25%",
-  "flexDirection": "column",
-  "justifyContent": "center",
-  "borderRadius": "1rem",
-  "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
-  "paddingLeft": "2rem",
-  "paddingRight": "2rem",
-  "paddingTop": "2rem",
-  "paddingBottom": "2.5rem",
-  "textAlign": "center",
-  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
-  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
-});
-var _StyledH19 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
-  displayName: "pages___StyledH19",
-  componentId: "sc-1au5rsk-38"
-})({
-  "fontSize": "2rem",
-  "lineHeight": "2.25em",
-  "letterSpacing": "0em",
-  "fontWeight": "500",
-  "textTransform": "lowercase",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
-});
-var _StyledH20 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
-  displayName: "pages___StyledH20",
-  componentId: "sc-1au5rsk-39"
-})({
-  "fontSize": "1.25rem",
-  "lineHeight": "1.5rem",
-  "letterSpacing": "0em",
-  "fontWeight": "300"
 });
 
 /***/ }),
