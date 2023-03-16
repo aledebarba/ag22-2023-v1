@@ -10,7 +10,7 @@ const Index = () => {
 	return (
 		<main>
 
-			<header>
+			<header tw={"text-secondary"}>
 				
 				<HeaderMenu>
 					<Logo />
@@ -28,11 +28,11 @@ const Index = () => {
 
 			</header>
 
-			<header tw={"min-h-screen bg-gray-100 flex flex-col"}>
-				<div tw={"block m-auto lg:w-6/12"}>
-					<h1 tw={"text-3xl"}>
+			<header tw={"min-h-screen bg-gray-100 flex flex-col text-secondary"}>
+				<div tw={"block m-auto lg:w-6/12 text-body"}>
+					<h1 tw={"text-h1 font-thin"}>
 						<span tw={"block"}>Marcas Reais</span>
-						<span tw={"text-red-500 block"}>Para Clientes Reais</span>
+						<span tw={"text-primary block font-black"}>Para Clientes Reais</span>
 						<span tw={"block"}>Com Resultados Reais</span>
 					</h1>
 
@@ -51,35 +51,60 @@ const Index = () => {
 					</Button>
 				</div>
 
-				<div tw={"text-[#E62337] flex items-center gap-3 align-baseline mx-auto mb-4"}>
+				<div tw={"text-primary flex items-center gap-3 align-baseline mx-auto mb-4 text-caption"}>
 					<Icon icon="bi:mouse" width="1.5rem" />
 					<p>Role para baixo</p>
 				</div>
 			</header>
 
-			<section className="intro" tw={"py-20 bg-white"}>
-				<div tw={"lg:w-8/12 md:w-10/12 mx-auto"}>
-					<h1 tw={"text-3xl font-light"}>
-						in brand <span tw={"text-red-500 font-black"}>we trust</span>
+			<section className="intro" tw={"py-20 bg-white text-secondary"}>
+				<div tw={"lg:w-6/12 md:w-8/12 mx-auto space-y-4"}>
+					<h1 tw={"text-4xl font-light"}>
+						in brand <span tw={"text-primary font-black"}>we trust</span>
 					</h1>
 
 					<p>
-					Sim, nós acreditamos. Nós acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu preço em si, deve ser algo que possua valor.
-
-Comunicar vai além de dizer palavras, frases, comunicados.
-Como você é recebido? Como sua mensagem chega?
-Como é sua presença no mercado? Na vida do seu target?
-
-Comunicar é saber como chegar.
-
-Um brainstorm bem feito, uma ação bem planejada, uma marca que ganha vida e voz. É no que somos especialistas.
-
-Sim nós acreditamos! E você?
+						Sim, nós acreditamos. Nós acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu preço em si, deve ser algo que possua valor.
 					</p>
+					<p>
+						Comunicar vai além de dizer palavras, frases, comunicados.
+						Como você é recebido? Como sua mensagem chega?
+						Como é sua presença no mercado? Na vida do seu target?
+					</p>
+
+					<h2 tw={"text-2xl"}>
+						Comunicar é saber como chegar.
+					</h2>
+					
+					<p>
+						Um brainstorm bem feito, uma ação bem planejada, uma marca que ganha vida e voz. É no que somos especialistas.
+					</p>
+
+					<p><span tw={"text-primary font-bold"}>Sim nós acreditamos!</span> E você?</p>
+
+					<div tw={"grid grid-cols-2 grid-rows-2 grid-flow-row gap-4 pt-4"}>
+						<div className='card gap-0'>
+							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+10 anos</h4>
+							<h6 tw={"text-h6 text-secondary font-normal"}>no mercado</h6>
+						</div>
+						<div className='card gap-0'>
+							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+50 projetos</h4>
+							<h6 tw={"text-h6 text-secondary font-normal"}>de embalagens, presente na América do Sul</h6>
+						</div>
+						<div className='card gap-0'>
+							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+150 marcas</h4>
+							<h6 tw={"text-h6 text-secondary font-normal"}>criadas e ativas pelo mundo</h6>
+						</div>
+						<div className='card gap-0'>
+							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+1000 horas</h4>
+							<h6 tw={"text-h6 text-secondary font-normal"}>de storytelling criadas</h6>
+						</div>
+					</div>
 				</div>
 			</section>
 
-			<section className="servicos"></section>
+			<section className="servicos">
+			</section>
 
 			<section className="cases"></section>
 
