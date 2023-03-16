@@ -12,7 +12,7 @@ export const Button = ({ children }) => {
                 border: 2px solid #E62337;
                 border-radius: 8px;
                 color: #E62337;
-                font-family: 'MartianGroteskW05-sWdxBd';
+                font-family: 'Archivo', sans-serif;
                 font-style: normal;
                 font-weight: 800;
                 font-size: 16px;

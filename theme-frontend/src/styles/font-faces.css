@@ -1,18 +1,7 @@
-@font-face {    
-    font-family: 'August';
-    src: url('../src/pages/assets/fonts/august-serif-400.woff2') format('woff2');
-  }
-@font-face {
-    font-family: 'Montserrat';
-    src: url('../src/pages/assets/fonts/montserrat.woff2') format('woff2');
-  }
-@font-face {
-    font-family: 'Newsreader';
-    src: url('../src/pages/assets/fonts/newsreader-regular.woff2') format('woff2');
-  }
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@300;400;500;600;700;800;900&display=swap');
 
   body {
-    --display: 'August', serif;
-    --serif: 'Newsreader', serif;
-    --sans: 'Montserrat', sans-serif;
+    --display: 'Archivo', sans-serif;
+    --serif: 'Archivo', sans-serif;
+    --sans: 'Archivo', sans-serif;
   }

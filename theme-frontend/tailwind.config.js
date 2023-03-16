@@ -9,9 +9,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-        display: [ "August", "Georgia", "serif"],
-        serif: [ "Newsreader", "Arial", "sans-serif" ],
-        sans: [ "Montserrat", "Helvetica", "Arial", "sans-serif" ]
+        sans: [ "Archivo", "Helvetica", "Arial", "sans-serif" ]
     },   
     extend: {
         colors: {

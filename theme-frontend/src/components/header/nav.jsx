@@ -1,46 +1,31 @@
+import { Logosite } from "../../pages/assets/brand";
+import tw from 'twin.macro';
+
 export const Headermenu = ({ children }) => {
     return (
-        <nav 
-            css={`
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                border: 2px solid #E62337;
-                border-radius: 8px;
-                color: #E62337;
-                font-family: 'MartianGroteskW05-sWdxBd';
-                font-style: normal;
-                font-weight: 800;
-                font-size: 16px;
-                line-height: 16px;
-                background-color: transparent;
-                margin: 0 auto;
-            `}
-        >
+        <nav  tw={"lg:w-8/12 md:w-10/12 flex flex-row justify-between items-center"}>
             {children}
         </nav>
     )
 }
 
-export const Menuitems = ({ children }) => {
+
+export const Logo = ({children}) => {
     return (
-        <ul css={`
-            display: flex;
-            flex-direction: row;
-            gap: 1em;
-        `}>
-        {children}
-        </ul>
+        <Logosite/>
     )
 }
 
+export const Navul = ({children}) => {
+    return (
+        <ul tw={"flex gap-6 font-semibold font-sans sm:text-sm md:text-base lg:text-lg tracking-wide text-gray-800"}>
+            {children}
+        </ul>
+    )
+}
 export const Li = ({children}) => {
     return (
-        <li css={`
-            text-decoration: none;
-            list-style: none;
-        `}>
+        <li>
             {children}
         </li>
     )
