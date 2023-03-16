@@ -63,9 +63,9 @@ const Index = () => {
 		{/* Intro Section */}
 
 			<section className="intro" tw={"py-20 bg-white text-secondary flex flex-row  gap-16 w-10/12 mr-0"}>
-				<figure tw={"basis-7/12 bg-gray-300 order-first rounded-tr-2xl rounded-br-2xl"}></figure>
+				<figure tw={"basis-6/12 bg-gray-300 order-first rounded-tr-2xl rounded-br-2xl"}></figure>
 
-				<div tw={"space-y-4 basis-5/12 order-2"}>
+				<div tw={"space-y-4 basis-6/12 order-2 py-10"}>
 					<h1 tw={"text-4xl font-light"}>
 						in brand <span tw={"text-primary font-black"}>we trust</span>
 					</h1>
@@ -89,7 +89,7 @@ const Index = () => {
 
 					<p><span tw={"text-primary font-bold"}>Sim nós acreditamos!</span> E você?</p>
 
-					<div tw={"grid grid-cols-2 grid-flow-row gap-6 pt-4"}>
+					<div tw={"grid grid-cols-2 grid-flow-row gap-x-6 gap-y-8 pt-4"}>
 						<div className='card gap-0'>
 							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+10 anos</h4>
 							<h6 tw={"text-h6 text-secondary font-normal"}>no mercado</h6>

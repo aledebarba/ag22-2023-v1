@@ -5533,7 +5533,7 @@ var _StyledFigure = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"]
   componentId: "sc-1au5rsk-9"
 })({
   "order": "-9999",
-  "flexBasis": "58.333333%",
+  "flexBasis": "50%",
   "borderTopRightRadius": "1rem",
   "borderBottomRightRadius": "1rem",
   "--tw-bg-opacity": "1",
@@ -5544,12 +5544,14 @@ var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
   componentId: "sc-1au5rsk-10"
 })({
   "order": "2",
-  "flexBasis": "41.666667%",
+  "flexBasis": "50%",
   "> :not([hidden]) ~ :not([hidden])": {
     "--tw-space-y-reverse": "0",
     "marginTop": "calc(1rem * calc(1 - var(--tw-space-y-reverse)))",
     "marginBottom": "calc(1rem * var(--tw-space-y-reverse))"
-  }
+  },
+  "paddingTop": "2.5rem",
+  "paddingBottom": "2.5rem"
 });
 var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1").withConfig({
   displayName: "pages___StyledH2",
@@ -5589,7 +5591,8 @@ var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
   "display": "grid",
   "gridAutoFlow": "row",
   "gridTemplateColumns": "repeat(2, minmax(0, 1fr))",
-  "gap": "1.5rem",
+  "columnGap": "1.5rem",
+  "rowGap": "2rem",
   "paddingTop": "1rem"
 });
 var _StyledH4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
