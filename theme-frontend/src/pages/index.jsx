@@ -10,9 +10,9 @@ const Index = () => {
 	return (
 		<main>
 
-		{/* Navigation Menu */}
+			{/* Navigation Menu */}
 			<header tw={"text-secondary"}>
-				
+
 				<HeaderMenu>
 					<Logo />
 
@@ -29,7 +29,7 @@ const Index = () => {
 
 			</header>
 
-		{/* Hero Header */}
+			{/* Hero Header */}
 
 			<header tw={"min-h-screen bg-gray-100 flex flex-col text-secondary"}>
 				<div tw={"block m-auto lg:w-6/12 text-body"}>
@@ -60,7 +60,7 @@ const Index = () => {
 				</div>
 			</header>
 
-		{/* Intro Section */}
+			{/* Intro Section */}
 
 			<section className="intro" tw={"py-20 bg-white text-secondary flex flex-row  gap-16 w-10/12 mr-0"}>
 				<figure tw={"basis-6/12 bg-gray-300 order-first rounded-tr-2xl rounded-br-2xl"}></figure>
@@ -82,7 +82,7 @@ const Index = () => {
 					<h2 tw={"text-2xl"}>
 						Comunicar é saber como chegar.
 					</h2>
-					
+
 					<p>
 						Um brainstorm bem feito, uma ação bem planejada, uma marca que ganha vida e voz. É no que somos especialistas.
 					</p>
@@ -110,16 +110,61 @@ const Index = () => {
 				</div>
 			</section>
 
-		{/* Services Section */}
+			{/* Services Section */}
 
-			<section className="servicos">
+			<section className="servicos" tw={"py-20 bg-gray-100 text-secondary"}>
+				<div tw={"lg:w-10/12 md:w-11/12 mx-auto gap-16 flex flex-col items-center"}>
+					<h1 tw={"text-h1 font-bold text-center"}>Serviços</h1>
+
+					<div tw={"flex lg:flex-row md:flex-col gap-8"}>
+						<div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-xl"}>
+							<h4 tw={"text-h4 text-primary lowercase font-medium"}>Branding</h4>
+							<h6 tw={"text-h6"}>
+							Você compra um produto pelo que ele faz, você escolhe uma marca pelo que ela significa. Produtos podem ser copiados, marcas são únicas.
+							</h6>
+						</div>
+
+						<div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-xl"}>
+							<h4 tw={"text-h4 text-primary lowercase font-medium"}>Social Media</h4>
+							<h6 tw={"text-h6"}>
+							Falamos fluentemente a língua do algoritmo. Sabemos chegar e como chegar.
+							Temos resultados quali e quantitativos.
+							Quer bons leads? Fale com a gente
+							</h6>
+						</div>
+
+						<div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-xl"}>
+							<h4 tw={"text-h4 text-primary lowercase font-medium"}>Planning</h4>
+							<h6 tw={"text-h6"}>
+							Saber o quê, porque, quando e como são os pilares de um bom planejamento. Entender para atender. Prever e criar para ser desejado.
+							</h6>
+						</div>
+
+						<div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-xl"}>
+							<h4 tw={"text-h4 text-primary lowercase font-medium"}>Packing</h4>
+							<h6 tw={"text-h6"}>
+							Um produto excelente precisa de uma "roupa" a sua altura. Desenvolvemos embalagens com um simples objetivo: evidenciar seu produto na gôndola.
+							</h6>
+						</div>
+					</div>
+
+					<Button>Conheça mais sobre nosso serviços</Button>
+				</div>
 			</section>
+
+			{/* Cases Section */}
 
 			<section className="cases"></section>
 
+			{/* Clientes Section */}
+
 			<section className="clientes"></section>
 
+			{/* Trabalhe Conosco Section */}
+
 			<section className="trabalheconosco"></section>
+
+			{/* Contato Section */}
 
 			<section className="contato"></section>
 			<footer></footer>

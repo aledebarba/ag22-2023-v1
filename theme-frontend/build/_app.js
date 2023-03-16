@@ -5404,6 +5404,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 const Index = () => {
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledHeader, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.HeaderMenu, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Logo, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.ul, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Quem Somos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Cases"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Clientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Trabalhe Conosco"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Contato")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledHeader2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan, null, "Marcas Reais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan2, null, "Para Clientes Reais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan3, null, "Com Resultados Reais")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Queremos fazer sua marca conquistar o mundo. Mas para isso acontecer voc\xEA precisa saber: se seu cliente vai parar para te ouvir, \xE9 melhor voc\xEA ter algo bom para dizer."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Faz sentido, n\xE3o \xE9?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, null, "Fale agora com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_3__.Icon, {
     icon: "bi:mouse",
@@ -5418,9 +5434,9 @@ const Index = () => {
     className: "card gap-0"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH8, null, "+150 marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH9, null, "criadas e ativas pelo mundo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "card gap-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH10, null, "+1000 horas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH11, null, "de storytelling criadas"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH10, null, "+1000 horas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH11, null, "de storytelling criadas"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection2, {
     className: "servicos"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv5, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH12, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv6, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv7, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH13, null, "Branding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH14, null, "Voc\xEA compra um produto pelo que ele faz, voc\xEA escolhe uma marca pelo que ela significa. Produtos podem ser copiados, marcas s\xE3o \xFAnicas.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv8, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH15, null, "Social Media"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH16, null, "Falamos fluentemente a l\xEDngua do algoritmo. Sabemos chegar e como chegar. Temos resultados quali e quantitativos. Quer bons leads? Fale com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv9, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH17, null, "Planning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH18, null, "Saber o qu\xEA, porque, quando e como s\xE3o os pilares de um bom planejamento. Entender para atender. Prever e criar para ser desejado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv10, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH19, null, "Packing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH20, null, "Um produto excelente precisa de uma \"roupa\" a sua altura. Desenvolvemos embalagens com um simples objetivo: evidenciar seu produto na g\xF4ndola."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, null, "Conhe\xE7a mais sobre nosso servi\xE7os"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     className: "cases"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     className: "clientes"
@@ -5682,6 +5698,217 @@ var _StyledH11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("
   "fontWeight": "400",
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+});
+var _StyledSection2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("section").withConfig({
+  displayName: "pages___StyledSection2",
+  componentId: "sc-1au5rsk-24"
+})({
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(243 244 246 / var(--tw-bg-opacity))",
+  "paddingTop": "5rem",
+  "paddingBottom": "5rem",
+  "--tw-text-opacity": "1",
+  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+});
+var _StyledDiv5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv5",
+  componentId: "sc-1au5rsk-25"
+})({
+  "marginLeft": "auto",
+  "marginRight": "auto",
+  "display": "flex",
+  "flexDirection": "column",
+  "alignItems": "center",
+  "gap": "4rem",
+  "@media (min-width: 768px)": {
+    "width": "91.666667%"
+  },
+  "@media (min-width: 1024px)": {
+    "width": "83.333333%"
+  }
+});
+var _StyledH12 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1").withConfig({
+  displayName: "pages___StyledH12",
+  componentId: "sc-1au5rsk-26"
+})({
+  "textAlign": "center",
+  "fontSize": "3.5rem",
+  "lineHeight": "3.75rem",
+  "letterSpacing": "0em",
+  "fontWeight": "700"
+});
+var _StyledDiv6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv6",
+  componentId: "sc-1au5rsk-27"
+})({
+  "display": "flex",
+  "gap": "2rem",
+  "@media (min-width: 768px)": {
+    "flexDirection": "column"
+  },
+  "@media (min-width: 1024px)": {
+    "flexDirection": "row"
+  }
+});
+var _StyledDiv7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv7",
+  componentId: "sc-1au5rsk-28"
+})({
+  "display": "flex",
+  "flexBasis": "25%",
+  "flexDirection": "column",
+  "justifyContent": "center",
+  "borderRadius": "1rem",
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
+  "paddingLeft": "2rem",
+  "paddingRight": "2rem",
+  "paddingTop": "2rem",
+  "paddingBottom": "2.5rem",
+  "textAlign": "center",
+  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
+});
+var _StyledH13 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
+  displayName: "pages___StyledH13",
+  componentId: "sc-1au5rsk-29"
+})({
+  "fontSize": "2rem",
+  "lineHeight": "2.25em",
+  "letterSpacing": "0em",
+  "fontWeight": "500",
+  "textTransform": "lowercase",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledH14 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
+  displayName: "pages___StyledH14",
+  componentId: "sc-1au5rsk-30"
+})({
+  "fontSize": "1.25rem",
+  "lineHeight": "1.5rem",
+  "letterSpacing": "0em",
+  "fontWeight": "300"
+});
+var _StyledDiv8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv8",
+  componentId: "sc-1au5rsk-31"
+})({
+  "display": "flex",
+  "flexBasis": "25%",
+  "flexDirection": "column",
+  "justifyContent": "center",
+  "borderRadius": "1rem",
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
+  "paddingLeft": "2rem",
+  "paddingRight": "2rem",
+  "paddingTop": "2rem",
+  "paddingBottom": "2.5rem",
+  "textAlign": "center",
+  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
+});
+var _StyledH15 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
+  displayName: "pages___StyledH15",
+  componentId: "sc-1au5rsk-32"
+})({
+  "fontSize": "2rem",
+  "lineHeight": "2.25em",
+  "letterSpacing": "0em",
+  "fontWeight": "500",
+  "textTransform": "lowercase",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledH16 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
+  displayName: "pages___StyledH16",
+  componentId: "sc-1au5rsk-33"
+})({
+  "fontSize": "1.25rem",
+  "lineHeight": "1.5rem",
+  "letterSpacing": "0em",
+  "fontWeight": "300"
+});
+var _StyledDiv9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv9",
+  componentId: "sc-1au5rsk-34"
+})({
+  "display": "flex",
+  "flexBasis": "25%",
+  "flexDirection": "column",
+  "justifyContent": "center",
+  "borderRadius": "1rem",
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
+  "paddingLeft": "2rem",
+  "paddingRight": "2rem",
+  "paddingTop": "2rem",
+  "paddingBottom": "2.5rem",
+  "textAlign": "center",
+  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
+});
+var _StyledH17 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
+  displayName: "pages___StyledH17",
+  componentId: "sc-1au5rsk-35"
+})({
+  "fontSize": "2rem",
+  "lineHeight": "2.25em",
+  "letterSpacing": "0em",
+  "fontWeight": "500",
+  "textTransform": "lowercase",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledH18 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
+  displayName: "pages___StyledH18",
+  componentId: "sc-1au5rsk-36"
+})({
+  "fontSize": "1.25rem",
+  "lineHeight": "1.5rem",
+  "letterSpacing": "0em",
+  "fontWeight": "300"
+});
+var _StyledDiv10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv10",
+  componentId: "sc-1au5rsk-37"
+})({
+  "display": "flex",
+  "flexBasis": "25%",
+  "flexDirection": "column",
+  "justifyContent": "center",
+  "borderRadius": "1rem",
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
+  "paddingLeft": "2rem",
+  "paddingRight": "2rem",
+  "paddingTop": "2rem",
+  "paddingBottom": "2.5rem",
+  "textAlign": "center",
+  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
+});
+var _StyledH19 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h4").withConfig({
+  displayName: "pages___StyledH19",
+  componentId: "sc-1au5rsk-38"
+})({
+  "fontSize": "2rem",
+  "lineHeight": "2.25em",
+  "letterSpacing": "0em",
+  "fontWeight": "500",
+  "textTransform": "lowercase",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledH20 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h6").withConfig({
+  displayName: "pages___StyledH20",
+  componentId: "sc-1au5rsk-39"
+})({
+  "fontSize": "1.25rem",
+  "lineHeight": "1.5rem",
+  "letterSpacing": "0em",
+  "fontWeight": "300"
 });
 
 /***/ }),
