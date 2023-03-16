@@ -10,6 +10,7 @@ const Index = () => {
 	return (
 		<main>
 
+		{/* Navigation Menu */}
 			<header tw={"text-secondary"}>
 				
 				<HeaderMenu>
@@ -27,6 +28,8 @@ const Index = () => {
 				</HeaderMenu>
 
 			</header>
+
+		{/* Hero Header */}
 
 			<header tw={"min-h-screen bg-gray-100 flex flex-col text-secondary"}>
 				<div tw={"block m-auto lg:w-6/12 text-body"}>
@@ -57,8 +60,12 @@ const Index = () => {
 				</div>
 			</header>
 
-			<section className="intro" tw={"py-20 bg-white text-secondary"}>
-				<div tw={"lg:w-6/12 md:w-8/12 mx-auto space-y-4"}>
+		{/* Intro Section */}
+
+			<section className="intro" tw={"py-20 bg-white text-secondary flex flex-row  gap-16 w-10/12 mr-0"}>
+				<figure tw={"basis-7/12 bg-gray-300 order-first rounded-tr-2xl rounded-br-2xl"}></figure>
+
+				<div tw={"space-y-4 basis-5/12 order-2"}>
 					<h1 tw={"text-4xl font-light"}>
 						in brand <span tw={"text-primary font-black"}>we trust</span>
 					</h1>
@@ -82,7 +89,7 @@ const Index = () => {
 
 					<p><span tw={"text-primary font-bold"}>Sim nós acreditamos!</span> E você?</p>
 
-					<div tw={"grid grid-cols-2 grid-rows-2 grid-flow-row gap-4 pt-4"}>
+					<div tw={"grid grid-cols-2 grid-flow-row gap-6 pt-4"}>
 						<div className='card gap-0'>
 							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+10 anos</h4>
 							<h6 tw={"text-h6 text-secondary font-normal"}>no mercado</h6>
@@ -102,6 +109,8 @@ const Index = () => {
 					</div>
 				</div>
 			</section>
+
+		{/* Services Section */}
 
 			<section className="servicos">
 			</section>
