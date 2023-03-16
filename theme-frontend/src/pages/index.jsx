@@ -3,26 +3,29 @@ import tw from 'twin.macro';
 import apiFetch from '@wordpress/api-fetch';
 import { Button } from '../components/button';
 import { Icon } from '@iconify/react';
-import { Headermenu, Logo, Navul, Li } from '../components/header/nav';
+import { HeaderMenu, Logo, Nav, Li } from '../components/header/nav';
 
 
 const Index = () => {
 	return (
 		<main>
 
-			<header tw={"mx-0 box-content flex flex-row justify-center backdrop-blur-xl bg-white/90 fixed w-full h-28 border-b-2 border-b-gray-300"}>
-				<Headermenu>
-					<Logo></Logo>
+			<header>
+				
+				<HeaderMenu>
+					<Logo />
 
-					<Navul>
-						<Li>Quem Somos</Li>
-						<Li>Serviços</Li>
-						<Li>Cases</Li>
-						<Li>Clientes</Li>
-						<Li>Trabalhe Conosco</Li>
-						<Li>Contato</Li>
-					</Navul>
-				</Headermenu>
+					<Nav.ul>
+						<Nav.li>Quem Somos</Nav.li>
+						<Nav.li>Serviços</Nav.li>
+						<Nav.li>Cases</Nav.li>
+						<Nav.li>Clientes</Nav.li>
+						<Nav.li>Trabalhe Conosco</Nav.li>
+						<Nav.li>Contato</Nav.li>
+					</Nav.ul>
+
+				</HeaderMenu>
+
 			</header>
 
 			<header tw={"min-h-screen bg-gray-100 flex flex-col"}>
