@@ -55,7 +55,7 @@ const Main = () => {
 	);
 };
 
-//window.history.scrollRestoration = "manual";
+window.history.scrollRestoration = "manual";
 const root = document.querySelector( getWPChunkElementAttr() );
 
 root && render( <Main />, root );

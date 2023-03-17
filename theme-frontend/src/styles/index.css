@@ -5,8 +5,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  p {
+    @apply text-body;
+  }
+  button {
+    @apply text-button;
+  }
+}
 html {
   scroll-behavior: initial;
+  --primary: #E62337;
 }
 
 html, body {

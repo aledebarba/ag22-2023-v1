@@ -47,14 +47,13 @@ module.exports = {
             50: '#f5f3f5'
           }
         },
-        
         fontSize: {
-          'body': [ '1rem', {
-            lineHeight: '1.25rem',
-            letterSpacing: '0em',
+          'body': [ '1.25rem', {
+            lineHeight: '1.75rem',
+            letterSpacing: '0.02em',
             fontWeight: '300',
           }],
-          'button': [ '0.875rem', {
+          'button': [ '1rem', {
             lineHeight: '1rem',
             letterSpacing: '0em',
             fontWeight: '700',
@@ -72,7 +71,6 @@ module.exports = {
           'h1': [ '3.5rem', {
             lineHeight: '3.75rem',
             letterSpacing: '0em',
-            fontWeight: '300',
           }],
           'h2': [ '3rem', {
             lineHeight: '3.5rem',

@@ -1,25 +1,29 @@
-export const Button = ({ children }) => {
+import tw from 'twin.macro';
+
+export const Button = (props) => {
     return (
-        <button 
-            className={`
+        <button            
+            
+            css={tw`
                 bg-transparent
                 border-2
-              border-primary
+                border-primary
                 box-border
                 flex
-                flex-row
                 justify-center
                 items-center
                 py-4
                 px-8
                 gap-2
                 rounded-lg
-                font-sans
                 text-button
                 text-primary
+                w-fit
+                my-1
                 `}
+                
         >
-            {children}
+            {props.children}
         </button>
     )
 }
