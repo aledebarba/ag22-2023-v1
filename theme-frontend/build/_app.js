@@ -4977,16 +4977,23 @@ function getTargetMatch(matches, location) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "Button": () => (/* binding */ Button)
+/* harmony export */   "Button": () => (/* binding */ Button),
+/* harmony export */   "ButtonPrimary": () => (/* binding */ ButtonPrimary),
+/* harmony export */   "ButtonSecondary": () => (/* binding */ ButtonSecondary)
 /* harmony export */ });
-const Button = ({
-  children
-}) => {
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+const Button = props => {
+  return /*#__PURE__*/React.createElement(_StyledButton, null, props.children);
+};
+const ButtonSecondary = props => {
+  return /*#__PURE__*/React.createElement(_StyledButton2, null, props.children);
+};
+const ButtonPrimary = props => {
   return /*#__PURE__*/React.createElement("button", {
     className: `
-                bg-transparent
-                border-2
-              border-primary
+                bg-primary
                 box-border
                 flex
                 flex-row
@@ -4999,9 +5006,66 @@ const Button = ({
                 font-sans
                 text-button
                 text-primary
+                text-white
                 `
-  }, children);
+  }, props.children);
 };
+var _StyledButton = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("button").withConfig({
+  displayName: "button___StyledButton",
+  componentId: "sc-1q9kfsc-0"
+})({
+  "marginTop": "0.25rem",
+  "marginBottom": "0.25rem",
+  "boxSizing": "border-box",
+  "display": "flex",
+  "width": "fit-content",
+  "alignItems": "center",
+  "justifyContent": "center",
+  "gap": "0.5rem",
+  "borderRadius": "0.5rem",
+  "borderWidth": "2px",
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(230 35 55 / var(--tw-border-opacity))",
+  "backgroundColor": "transparent",
+  "paddingTop": "1rem",
+  "paddingBottom": "1rem",
+  "paddingLeft": "2rem",
+  "paddingRight": "2rem",
+  "fontSize": "1rem",
+  "lineHeight": "1rem",
+  "letterSpacing": "0em",
+  "fontWeight": "700",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledButton2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("button").withConfig({
+  displayName: "button___StyledButton2",
+  componentId: "sc-1q9kfsc-1"
+})({
+  "marginTop": "0.25rem",
+  "marginBottom": "0.25rem",
+  "boxSizing": "border-box",
+  "display": "flex",
+  "width": "fit-content",
+  "alignItems": "center",
+  "justifyContent": "center",
+  "gap": "0.5rem",
+  "borderRadius": "0.5rem",
+  "borderWidth": "2px",
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(230 35 55 / var(--tw-border-opacity))",
+  "backgroundColor": "transparent",
+  "paddingTop": "1rem",
+  "paddingBottom": "1rem",
+  "paddingLeft": "2rem",
+  "paddingRight": "2rem",
+  "fontSize": "1rem",
+  "lineHeight": "1rem",
+  "letterSpacing": "0em",
+  "fontWeight": "700",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
 
 /***/ }),
 
@@ -5014,12 +5078,18 @@ const Button = ({
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ButtonSize": () => (/* binding */ ButtonSize),
+/* harmony export */   "ButtonType": () => (/* binding */ ButtonType),
 /* harmony export */   "Card": () => (/* binding */ Card),
 /* harmony export */   "CardBox": () => (/* binding */ CardBox),
+/* harmony export */   "CardCase": () => (/* binding */ CardCase),
 /* harmony export */   "CardText": () => (/* binding */ CardText),
-/* harmony export */   "CardTitle": () => (/* binding */ CardTitle)
+/* harmony export */   "CardTitle": () => (/* binding */ CardTitle),
+/* harmony export */   "Cases": () => (/* binding */ Cases)
 /* harmony export */ });
 /* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
 
 
 
@@ -5044,6 +5114,28 @@ const CardBox = ({
 }) => {
   return /*#__PURE__*/React.createElement(_StyledDiv2, null, children);
 };
+const Cases = ({
+  children
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledDiv3, null, children);
+};
+const CardCase = ({
+  children
+}) => {
+  return /*#__PURE__*/React.createElement(_StyledFigure, {
+    className: "group"
+  }, children);
+};
+const ButtonType = {
+  primary: "bg-blue-500 hover:bg-blue-700 text-white font-bold rounded",
+  secondary: "bg-blue-500 hover:bg-blue-700 text-white font-bold rounded",
+  basic: "bg-white hover:bg-gray-700 text-gray-700 font-bold rounded",
+  delete: "bg-red-300 hover:bg-red-500 text-white font-bold rounded"
+};
+const ButtonSize = {
+  sm: "py-2 px-4 text-xs",
+  lg: "py-3 px-6 text-lg"
+};
 var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("div").withConfig({
   displayName: "cards___StyledDiv",
   componentId: "sc-1y2n8oq-0"
@@ -5060,7 +5152,7 @@ var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("
   "paddingTop": "2rem",
   "paddingBottom": "2.5rem",
   "textAlign": "center",
-  "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+  "--tw-drop-shadow": "drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))",
   "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
 });
 var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("h4").withConfig({
@@ -5089,14 +5181,83 @@ var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])(
   componentId: "sc-1y2n8oq-3"
 })({
   "display": "flex",
+  "width": "91.666667%",
+  "flexDirection": "column",
   "gap": "2rem",
   "@media (min-width: 768px)": {
-    "flexDirection": "column"
+    "width": "83.333333%"
   },
   "@media (min-width: 1024px)": {
     "flexDirection": "row"
   }
 });
+var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("div").withConfig({
+  displayName: "cards___StyledDiv3",
+  componentId: "sc-1y2n8oq-4"
+})({
+  "display": "grid",
+  "width": "91.666667%",
+  "gridTemplateColumns": "repeat(2, minmax(0, 1fr))",
+  "gridTemplateRows": "repeat(3, minmax(0, 1fr))",
+  "gap": "2rem",
+  "@media (min-width: 768px)": {
+    "width": "83.333333%",
+    "gridTemplateColumns": "repeat(3, minmax(0, 1fr))",
+    "gridTemplateRows": "repeat(2, minmax(0, 1fr))"
+  },
+  "@media (min-width: 1024px)": {
+    "flexDirection": "row"
+  }
+});
+var _StyledFigure = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("figure").withConfig({
+  displayName: "cards___StyledFigure",
+  componentId: "sc-1y2n8oq-5"
+})({
+  "justifyContent": "center",
+  "overflow": "hidden",
+  "borderRadius": "1rem",
+  "textAlign": "center",
+  "--tw-drop-shadow": "drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))",
+  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+  ":first-child": {
+    "gridColumn": "span 2 / span 2"
+  },
+  ":not(:first-child)": {
+    "gridColumn": "span 1 / span 1"
+  }
+});
+
+/***/ }),
+
+/***/ "./src/components/containers.jsx":
+/*!***************************************!*\
+  !*** ./src/components/containers.jsx ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Container": () => (/* binding */ Container),
+/* harmony export */   "ContainerFluidH": () => (/* binding */ ContainerFluidH)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
+
+
+const Container = props => {
+  return /*#__PURE__*/React.createElement(_StyledDiv, props, props.children);
+};
+const ContainerFluidH = props => {
+  return /*#__PURE__*/React.createElement(_StyledDiv2, props, props.children);
+};
+var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("div").withConfig({
+  displayName: "containers___StyledDiv",
+  componentId: "sc-12e2x2-0"
+})(["width:1200px;max-width:1200px;margin:0 auto;padding:0;min-height:100vh;display:grid;place-content:center;"]);
+var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("div").withConfig({
+  displayName: "containers___StyledDiv2",
+  componentId: "sc-12e2x2-1"
+})(["width:1200px;max-width:1200px;margin:0 auto;padding:0;height:fit-content;"]);
 
 /***/ }),
 
@@ -5113,60 +5274,99 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "Logo": () => (/* binding */ Logo),
 /* harmony export */   "Nav": () => (/* binding */ Nav)
 /* harmony export */ });
-/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var _pages_assets_brand__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../pages/assets/brand */ "./src/pages/assets/brand.jsx");
+/* harmony import */ var _containers__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../containers */ "./src/components/containers.jsx");
 
 
 
-const HeaderMenu = ({
-  children
-}) => {
-  return /*#__PURE__*/React.createElement(_StyledNav, {
-    $_css: {
-      "position": "fixed",
-      "marginLeft": "0px",
-      "marginRight": "0px",
-      "boxSizing": "content-box",
-      "display": "flex",
-      "height": "7rem",
-      "width": "100%",
-      "flexDirection": "row",
-      "justifyContent": "center",
+
+
+const HeaderMenu = props => {
+  return /*#__PURE__*/React.createElement(_StyledDiv, {
+    id: "header-menu",
+    $_css: [{
+      "zIndex": "20",
       "borderBottomWidth": "2px",
+      "borderTopWidth": "10px",
       "--tw-border-opacity": "1",
-      "borderBottomColor": "rgb(209 213 219 / var(--tw-border-opacity))",
-      "backgroundColor": "rgb(255 255 255 / 0.9)",
-      "--tw-backdrop-blur": "blur(24px)",
-      "backdropFilter": "var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)"
-    }
-  }, children);
+      "borderBottomColor": "rgb(222 220 222 / var(--tw-border-opacity))",
+      "borderTopColor": "rgb(230 35 55 / var(--tw-border-opacity))",
+      "backgroundColor": "rgb(255 255 255 / 0.8)",
+      "paddingTop": "0.5rem"
+    }, `
+                    height: 10vh;
+                    width: 100vw;
+                    position: fixed;
+                    backdrop-filter: blur(10px);
+                `]
+  }, /*#__PURE__*/React.createElement(_containers__WEBPACK_IMPORTED_MODULE_1__.ContainerFluidH, null, props.children));
 };
-const Logo = ({
-  children
-}) => {
-  return /*#__PURE__*/React.createElement(_pages_assets_brand__WEBPACK_IMPORTED_MODULE_0__.LogoSite, null);
+const Logo = props => {
+  return /*#__PURE__*/React.createElement(_pages_assets_brand__WEBPACK_IMPORTED_MODULE_0__.LogoSite, props);
 };
 const Nav = {
-  ul: ({
-    children
-  }) => /*#__PURE__*/React.createElement(_StyledUl, null, children),
+  ul: props => /*#__PURE__*/React.createElement(_StyledUl, props, props.children),
   li: ({
     children
-  }) => /*#__PURE__*/React.createElement("li", null, children)
+  }) => /*#__PURE__*/React.createElement(_StyledLi, {
+    $_css2: [{
+      "position": "relative",
+      "paddingTop": "1rem",
+      "paddingBottom": "1rem",
+      "fontSize": "0.975rem",
+      "fontWeight": "600",
+      "--tw-text-opacity": "1",
+      "color": "rgb(96 94 96 / var(--tw-text-opacity))",
+      "::after": {
+        "content": "var(--tw-content)",
+        "--tw-bg-opacity": "1",
+        "backgroundColor": "rgb(230 35 55 / var(--tw-bg-opacity))"
+      },
+      ":hover": {
+        "--tw-text-opacity": "1",
+        "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+      }
+    }, `
+                    
+                    transition: all 0.3s ease-in-out;
+                    cursor: pointer;     
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        bottom: 10px;
+                        left: 50%;
+                        transform: translateX(-50%);                        
+                        width: 8px;
+                        height: 4px;          
+                        transition: all 0.3s ease-in-out;              
+                    }
+
+                    &:hover {                        
+                        transition: width 0.3s ease-in-out;
+                        &:after {
+                            width: 100%;
+                        }                        
+                    }
+                `]
+  }, children)
 };
-var _StyledNav = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])("nav").withConfig({
-  displayName: "nav___StyledNav",
+var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("div").withConfig({
+  displayName: "nav___StyledDiv",
   componentId: "sc-hhus11-0"
-})(["", "\t\t\t\t"], p => p.$_css);
-var _StyledUl = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])("ul").withConfig({
+})(["", ""], p => p.$_css);
+var _StyledUl = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("ul").withConfig({
   displayName: "nav___StyledUl",
   componentId: "sc-hhus11-1"
 })({
   "display": "flex",
+  "height": "fit-content",
+  "flexWrap": "nowrap",
+  "alignItems": "center",
   "gap": "1.5rem",
   "fontFamily": "Archivo, Helvetica, Arial, sans-serif",
   "fontWeight": "600",
-  "letterSpacing": "0.025em",
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))",
   "@media (min-width: 640px)": {
@@ -5181,6 +5381,247 @@ var _StyledUl = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])("u
     "fontSize": "1.125rem",
     "lineHeight": "1.75rem"
   }
+});
+var _StyledLi = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("li").withConfig({
+  displayName: "nav___StyledLi",
+  componentId: "sc-hhus11-2"
+})(["", ""], p => p.$_css2);
+
+/***/ }),
+
+/***/ "./src/components/heroheader.jsx":
+/*!***************************************!*\
+  !*** ./src/components/heroheader.jsx ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "HeroHeader": () => (/* binding */ HeroHeader)
+/* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
+/* harmony import */ var _button__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button */ "./src/components/button.jsx");
+/* harmony import */ var _iconify_react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @iconify/react */ "./node_modules/.pnpm/@iconify+react@4.1.0_react@18.2.0/node_modules/@iconify/react/dist/iconify.mjs");
+/* harmony import */ var _containers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./containers */ "./src/components/containers.jsx");
+/* harmony import */ var _header_nav__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header/nav */ "./src/components/header/nav.jsx");
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./utils */ "./src/components/utils.jsx");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const HeroHeader = () => /*#__PURE__*/React.createElement(_StyledHeader, null, /*#__PURE__*/React.createElement(_StyledDiv, null), /*#__PURE__*/React.createElement(_StyledContainer, {
+  id: "header-background"
+}, /*#__PURE__*/React.createElement(_utils__WEBPACK_IMPORTED_MODULE_4__.SaneSvg, null, /*#__PURE__*/React.createElement("circle", {
+  cx: "12.5%",
+  cy: "25%",
+  r: "50%",
+  fill: "white",
+  style: {
+    filter: "drop-shadow(0.5px 0px 1px rgba(0, 0, 0, 0.25))"
+  }
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "-12%",
+  cy: "10%",
+  r: "25%",
+  fill: "transparent",
+  strokeWidth: "10",
+  style: {
+    stroke: "var(--primary)",
+    filter: "drop-shadow(0.5px 0px 1px rgba(0, 0, 0, 0.25))"
+  }
+}), /*#__PURE__*/React.createElement("circle", {
+  cx: "-12%",
+  cy: "10%",
+  r: "25%",
+  fill: "transparent",
+  strokeWidth: "10",
+  style: {
+    stroke: "var(--primary)",
+    filter: "drop-shadow(0.5px 0px 1px rgba(0, 0, 0, 0.25))"
+  }
+}), /*#__PURE__*/React.createElement(_StyledCircle, {
+  cx: "100%",
+  cy: "0%",
+  r: "15%"
+}), /*#__PURE__*/React.createElement(_StyledCircle2, {
+  cx: "100%",
+  cy: "55%",
+  r: "15%"
+}))), /*#__PURE__*/React.createElement(_header_nav__WEBPACK_IMPORTED_MODULE_3__.HeaderMenu, null, /*#__PURE__*/React.createElement(_StyledLogo, null), /*#__PURE__*/React.createElement(_StyledNavUl, null, /*#__PURE__*/React.createElement(_header_nav__WEBPACK_IMPORTED_MODULE_3__.Nav.li, null, "Quem Somos"), /*#__PURE__*/React.createElement(_header_nav__WEBPACK_IMPORTED_MODULE_3__.Nav.li, null, "Servi\xE7os"), /*#__PURE__*/React.createElement(_header_nav__WEBPACK_IMPORTED_MODULE_3__.Nav.li, null, "Cases"), /*#__PURE__*/React.createElement(_header_nav__WEBPACK_IMPORTED_MODULE_3__.Nav.li, null, "Clientes"), /*#__PURE__*/React.createElement(_header_nav__WEBPACK_IMPORTED_MODULE_3__.Nav.li, null, "Trabalhe Conosco"), /*#__PURE__*/React.createElement(_header_nav__WEBPACK_IMPORTED_MODULE_3__.Nav.li, null, "Contato"))), /*#__PURE__*/React.createElement(_StyledContainer2, {
+  id: "header-content"
+}, /*#__PURE__*/React.createElement(_StyledH, null, /*#__PURE__*/React.createElement(_StyledSpan, null, "Marcas Reais"), /*#__PURE__*/React.createElement(_StyledSpan2, null, "Para Clientes Reais"), /*#__PURE__*/React.createElement(_StyledSpan3, null, "Com Resultados Reais")), /*#__PURE__*/React.createElement(_StyledP, null, "Queremos fazer sua marca conquistar o mundo. Mas para isso acontecer voc\xEA precisa saber: se seu cliente vai parar para te ouvir, \xE9 melhor voc\xEA ter algo bom para dizer."), /*#__PURE__*/React.createElement(_StyledP2, null, "Faz sentido, n\xE3o \xE9?"), /*#__PURE__*/React.createElement(_StyledDiv2, null, /*#__PURE__*/React.createElement(_button__WEBPACK_IMPORTED_MODULE_0__.Button, null, "Fale agora com a gente")), /*#__PURE__*/React.createElement(_StyledDiv3, null, /*#__PURE__*/React.createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_1__.Icon, {
+  icon: "bi:mouse",
+  width: "1.5rem"
+}), /*#__PURE__*/React.createElement("p", null, "Role para baixo"))), /*#__PURE__*/React.createElement(_StyledDiv4, null, /*#__PURE__*/React.createElement(_StyledDiv5, null), /*#__PURE__*/React.createElement(_StyledDiv6, null)));
+var _StyledHeader = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("header").withConfig({
+  displayName: "heroheader___StyledHeader",
+  componentId: "sc-dh9i8d-0"
+})({
+  "position": "relative",
+  "height": "100vh",
+  "width": "100vw",
+  "overflow": "hidden",
+  "borderBottomWidth": "2px",
+  "--tw-border-opacity": "1",
+  "borderBottomColor": "rgb(222 220 222 / var(--tw-border-opacity))"
+});
+var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "heroheader___StyledDiv",
+  componentId: "sc-dh9i8d-1"
+})(["z-index:1;position:absolute;width:25vw;height:25vw;top:20%;left:62%;transform:scale(0.1);background-color:transparent;animation:popin 500ms cubic-bezier(.12,.94,.4,1.37) forwards;@keyframes popin{0%{transform:scale(0.1);}100%{transform:scale(1.2);}}background-image:url(\"data:image/svg+xml,%3Csvg width='749' height='747' viewBox='0 0 749 747' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M748.019 373.377C748.019 579.537 580.606 746.784 373.991 746.784C167.376 746.784 0.00927734 579.537 0.00927734 373.377C0.00927734 167.216 167.422 0 373.991 0C580.559 0 748.019 167.139 748.019 373.377Z' fill='%23E62337'/%3E%3Cpath d='M103.617 469.564L223.886 377.967C253.736 354.6 265.193 339.47 265.193 320.229C265.193 300.046 250.98 287.682 229.398 287.682C207.815 287.682 190.846 300.046 165.578 328.915L105.475 278.982C139.908 234.504 173.877 210.256 236.272 210.256C306.532 210.256 354.713 251.983 354.713 312.44V313.337C354.713 364.676 328.099 391.211 280.397 425.581L225.279 464.063H357.965V536.466H103.617V469.564Z' fill='white'/%3E%3Cpath d='M390.169 469.564L510.391 377.967C540.211 354.6 551.668 339.47 551.668 320.229C551.668 300.046 537.47 287.682 515.872 287.682C494.274 287.682 477.352 300.046 452.053 328.915L391.981 278.982C426.352 234.504 460.352 210.256 522.793 210.256C593.006 210.256 641.219 251.983 641.219 312.44V313.337C641.219 364.676 614.605 391.211 566.903 425.581L511.831 464.063H644.424V536.466H390.169V469.564Z' fill='white'/%3E%3C/svg%3E\");background-repeat:no-repeat;background-size:cover;"]);
+var _StyledContainer = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(_containers__WEBPACK_IMPORTED_MODULE_2__.Container).withConfig({
+  displayName: "heroheader___StyledContainer",
+  componentId: "sc-dh9i8d-2"
+})({
+  "position": "absolute",
+  "top": "0px",
+  "left": "0px",
+  "zIndex": "2"
+});
+var _StyledCircle = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("circle").withConfig({
+  displayName: "heroheader___StyledCircle",
+  componentId: "sc-dh9i8d-3"
+})(["fill:var(--primary);filter:blur(8px);animation:float 5s ease-in-out infinite alternate;@keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-10px);}}"]);
+var _StyledCircle2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("circle").withConfig({
+  displayName: "heroheader___StyledCircle2",
+  componentId: "sc-dh9i8d-4"
+})(["fill:var(--primary);filter:blur(8px);animation:float 5s ease-in-out infinite alternate;@keyframes float{0%{transform:translateY(0);}100%{transform:translateY(-10px);}}"]);
+var _StyledLogo = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(_header_nav__WEBPACK_IMPORTED_MODULE_3__.Logo).withConfig({
+  displayName: "heroheader___StyledLogo",
+  componentId: "sc-dh9i8d-5"
+})({
+  "position": "absolute"
+});
+var _StyledNavUl = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(_header_nav__WEBPACK_IMPORTED_MODULE_3__.Nav.ul).withConfig({
+  displayName: "heroheader___StyledNavUl",
+  componentId: "sc-dh9i8d-6"
+})({
+  "width": "100%",
+  "flexWrap": "nowrap",
+  "justifyContent": "center"
+});
+var _StyledContainer2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(_containers__WEBPACK_IMPORTED_MODULE_2__.Container).withConfig({
+  displayName: "heroheader___StyledContainer2",
+  componentId: "sc-dh9i8d-7"
+})({
+  "position": "relative",
+  "zIndex": "3"
+});
+var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h1").withConfig({
+  displayName: "heroheader___StyledH",
+  componentId: "sc-dh9i8d-8"
+})({
+  "fontSize": "3.5rem",
+  "lineHeight": "3.75rem",
+  "letterSpacing": "0em",
+  "--tw-text-opacity": "1",
+  "color": "rgb(96 94 96 / var(--tw-text-opacity))"
+});
+var _StyledSpan = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
+  displayName: "heroheader___StyledSpan",
+  componentId: "sc-dh9i8d-9"
+})({
+  "display": "block",
+  "fontWeight": "100"
+});
+var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
+  displayName: "heroheader___StyledSpan2",
+  componentId: "sc-dh9i8d-10"
+})({
+  "display": "block",
+  "fontWeight": "700",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledSpan3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("span").withConfig({
+  displayName: "heroheader___StyledSpan3",
+  componentId: "sc-dh9i8d-11"
+})({
+  "display": "block",
+  "fontWeight": "100"
+});
+var _StyledP = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("p").withConfig({
+  displayName: "heroheader___StyledP",
+  componentId: "sc-dh9i8d-12"
+})({
+  "width": "50%",
+  "padding": "2rem",
+  "--tw-text-opacity": "1",
+  "color": "rgb(96 94 96 / var(--tw-text-opacity))"
+});
+var _StyledP2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("p").withConfig({
+  displayName: "heroheader___StyledP2",
+  componentId: "sc-dh9i8d-13"
+})({
+  "width": "50%",
+  "padding": "0rem 2rem 0 2rem",
+  "--tw-text-opacity": "1",
+  "color": "rgb(96 94 96 / var(--tw-text-opacity))"
+});
+var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "heroheader___StyledDiv2",
+  componentId: "sc-dh9i8d-14"
+})({
+  "marginLeft": "2rem"
+});
+var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "heroheader___StyledDiv3",
+  componentId: "sc-dh9i8d-15"
+})({
+  "position": "absolute",
+  "bottom": "88px",
+  "left": "50%",
+  "display": "flex",
+  "--tw-translate-x": "-50%",
+  "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+  "alignItems": "center",
+  "gap": "0.75rem",
+  "verticalAlign": "baseline",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "heroheader___StyledDiv4",
+  componentId: "sc-dh9i8d-16"
+})(["box-sizing:border-box;position:absolute;bottom:0px;height:56px;left:0px;width:100%;background-color:white;border-top:16px solid var(--primary);z-index:4;display:flex;justify-content:center;gap:1rem;"]);
+var _StyledDiv5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "heroheader___StyledDiv5",
+  componentId: "sc-dh9i8d-17"
+})({
+  "width": "25%",
+  "borderRightWidth": "16px",
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(230 35 55 / var(--tw-border-opacity))"
+});
+var _StyledDiv6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "heroheader___StyledDiv6",
+  componentId: "sc-dh9i8d-18"
+})({
+  "width": "25%",
+  "borderLeftWidth": "16px",
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(230 35 55 / var(--tw-border-opacity))"
 });
 
 /***/ }),
@@ -5218,6 +5659,142 @@ const Loader = styled_components__WEBPACK_IMPORTED_MODULE_0__["default"].div.wit
   "color": "rgb(255 255 255 / var(--tw-text-opacity))"
 });
 const Loading = () => /*#__PURE__*/React.createElement(Loader, null, "Loading...");
+
+/***/ }),
+
+/***/ "./src/components/utils.jsx":
+/*!**********************************!*\
+  !*** ./src/components/utils.jsx ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "SaneSvg": () => (/* binding */ SaneSvg),
+/* harmony export */   "TextFill": () => (/* binding */ TextFill),
+/* harmony export */   "Words": () => (/* binding */ Words),
+/* harmony export */   "createWheelStopListener": () => (/* binding */ createWheelStopListener),
+/* harmony export */   "pauseScroll": () => (/* binding */ pauseScroll),
+/* harmony export */   "restoreScroll": () => (/* binding */ restoreScroll),
+/* harmony export */   "resumeScroll": () => (/* binding */ resumeScroll),
+/* harmony export */   "toPixels": () => (/* binding */ toPixels),
+/* harmony export */   "useRefArray": () => (/* binding */ useRefArray)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _utils_scroll__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/scroll */ "./src/utils/scroll.js");
+/* harmony import */ var _utils_scroll__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_utils_scroll__WEBPACK_IMPORTED_MODULE_1__);
+
+
+const TextFill = React.forwardRef((props, ref) => {
+  const [fontSize, setFontSize] = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0);
+  const fill = props.fill ? props.fill : props.width ? props.width : window.innerWidth;
+  const adjust = props.adjust ? props.adjust : 2;
+  const vw = props.pixels ? 1 : window.innerWidth / 100;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    const textSize = props.children.length;
+    const windowSize = fill;
+    const textWidth = windowSize / textSize * adjust;
+    const sizeInVw = textWidth / vw;
+    setFontSize(`${sizeInVw}${vw == 1 ? "px" : "vw"}`);
+  }, []);
+  return /*#__PURE__*/React.createElement("div", {
+    className: props.className,
+    ref: ref ? ref : null
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: fontSize
+    }
+  }, props.children));
+});
+
+//--- create a custom refs hook
+function useRefArray() {
+  const refs = [];
+  return [refs, el => el && refs.push(el)];
+}
+
+//--- split words into spans
+const Words = props => {
+  return props.children.split(" ").map((word, index) => /*#__PURE__*/React.createElement("span", {
+    "text-part": "word",
+    className: `words__word ${props.className}`,
+    key: index
+  }, word));
+};
+
+//--- pause scrolling for a given time
+function pauseScroll(time) {
+  const scroller = _utils_scroll__WEBPACK_IMPORTED_MODULE_1__.ScrollSmoother.get();
+  scroller.paused(true);
+  if (time == undefined) return;
+  setTimeout(() => {
+    scroller.paused(false);
+  }, time);
+}
+
+//--- restore scroll 
+const restoreScroll = () => {
+  _utils_scroll__WEBPACK_IMPORTED_MODULE_1__.ScrollSmoother.get().paused(false);
+};
+const resumeScroll = () => {
+  _utils_scroll__WEBPACK_IMPORTED_MODULE_1__.ScrollSmoother.get().paused(false);
+};
+
+//--- listen to wheel events and call the callback function if the wheel stopped
+function createWheelStopListener(element, callback, timeout) {
+  let handle = null;
+  let onScroll = function () {
+    if (handle) {
+      clearTimeout(handle);
+    }
+    handle = setTimeout(callback, timeout || 200);
+  };
+  element.addEventListener('wheel', onScroll);
+  return function () {
+    element.removeEventListener('wheel', onScroll);
+  };
+}
+const toPixels = (w, h) => {
+  const width = w ? w : '100%';
+  const height = h ? h : '100%';
+  const widthPx = width.includes('px') ? parseFloat(width) : width.includes('vw') ? parseFloat(width) * window.innerWidth / 100 : width.includes('vh') ? parseFloat(width) * window.innerHeight / 100 : width.includes('%') ? parseFloat(width) * window.innerWidth / 100 : width.includes('rem') ? parseFloat(width) * parseFloat(window.getComputedStyle(document.documentElement).fontSize) : width.includes('ch') ? parseFloat(width) * parseFloat(window.getComputedStyle(document.documentElement).fontSize) : width.includes('rm') ? parseFloat(width) * parseFloat(window.getComputedStyle(document.documentElement).fontSize) : width.includes('vmin') ? parseFloat(width) * Math.min(window.innerWidth, window.innerHeight) / 100 : width.includes('vmax') ? parseFloat(width) * Math.max(window.innerWidth, window.innerHeight) / 100 : width.includes('vmin') ? parseFloat(width) * Math.min(window.innerWidth, window.innerHeight) / 100 : width.includes('vmax') ? parseFloat(width) * Math.max(window.innerWidth, window.innerHeight) / 100 : width.includes('em') ? parseFloat(width) * parseFloat(window.getComputedStyle(document.documentElement).fontSize) : parseFloat(width);
+
+  // detect the mesure unit of the height (px, vw, %, rem, rm, ch) and properly convert it to a number equivalent to px
+  const heightPx = height.includes('px') ? parseFloat(height) : height.includes('vw') ? parseFloat(height) * window.innerWidth / 100 : height.includes('vh') ? parseFloat(height) * window.innerHeight / 100 : height.includes('%') ? parseFloat(height) * window.innerWidth / 100 : height.includes('rem') ? parseFloat(height) * parseFloat(window.getComputedStyle(document.documentElement).fontSize) : height.includes('ch') ? parseFloat(height) * parseFloat(window.getComputedStyle(document.documentElement).fontSize) : height.includes('rm') ? parseFloat(height) * parseFloat(window.getComputedStyle(document.documentElement).fontSize) : height.includes('vmin') ? parseFloat(height) * Math.min(window.innerWidth, window.innerHeight) / 100 : height.includes('vmax') ? parseFloat(height) * Math.max(window.innerWidth, window.innerHeight) / 100 : height.includes('vmin') ? parseFloat(height) * Math.min(window.innerWidth, window.innerHeight) / 100 : height.includes('vmax') ? parseFloat(height) * Math.max(window.innerWidth, window.innerHeight) / 100 : height.includes('em') ? parseFloat(height) * parseFloat(window.getComputedStyle(document.documentElement).fontSize) : parseFloat(height);
+  return {
+    width: widthPx,
+    height: heightPx
+  };
+};
+const SaneSvg = ({
+  width = "100%",
+  height = "100%",
+  style = {},
+  className = "",
+  children
+}) => {
+  const w = toPixels(width, height).width;
+  const h = toPixels(width, height).height;
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      width: w,
+      height: h,
+      zIndex: 0,
+      pointerEvents: 'none',
+      ...style
+    }
+  }, /*#__PURE__*/React.createElement("svg", {
+    height: "100%",
+    width: "100%",
+    viewBox: "0 0 100 100",
+    className: className
+  }, children));
+};
 
 /***/ }),
 
@@ -5423,17 +6000,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "LogoSite": () => (/* binding */ LogoSite)
 /* harmony export */ });
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! styled-components */ "./node_modules/.pnpm/styled-components@5.3.9_7i5myeigehqah43i5u7wbekgba/node_modules/styled-components/dist/styled-components.browser.esm.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 
-const LogoSite = ({
-  children
-}) => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("figure", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
-    className: "w-24",
+
+const LogoSite = props => {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledFigure, props, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("svg", {
     fill: "none",
-    viewBox: "0 0 208 122",
-    xmlns: "http://www.w3.org/2000/svg"
+    viewBox: "0 0 260 140"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("g", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("path", {
     d: "M77.8116 114.812C77.305 116.191 76.2917 117.321 74.7871 117.321C73.6523 117.321 72.8923 116.69 72.639 115.556C72.3612 114.57 72.208 113.554 72.1831 112.53V91.4534L72.1932 90.0062H47.3967V91.8643H54.193V103.999C54.193 108.358 53.9676 112.392 52.506 115.41C51.0444 118.543 48.1237 120.452 42.7308 120.452C32.9454 120.452 27.3245 115.753 23.9555 108.701C20.5865 101.649 19.5606 92.3635 19.5606 83.2999C19.5606 78.2575 19.7911 71.9949 21.0222 65.7298C22.2659 59.5705 24.2924 53.5323 27.9958 49.0521C31.5953 44.5821 36.7653 41.5567 44.3038 41.5567C56.7768 41.5567 63.8669 47.9378 65.3285 63.6019L65.5818 66.2264H72.0438V37.3135H72.0817C72.0817 23.7849 68.8976 14.2321 63.1399 8.46868C57.3822 2.70526 48.8279 0.110962 37.9002 0.110962C25.374 0.110962 17.415 3.89274 12.6503 8.66281C7.67781 13.4379 5.88691 18.9997 5.88691 22.7814C5.88691 29.1474 11.062 34.5251 17.415 34.5251C23.768 34.5251 29.1509 29.1474 29.1509 22.7814C29.1509 16.4154 23.7832 11.2495 17.415 11.2495C16.4398 11.2495 14.5172 11.4487 13.1341 12.0059C13.1341 12.0059 18.1344 5.22896 34.5843 5.22896C51.0343 5.22896 54.2082 18.2534 54.2082 28.4037V41.1129C50.6592 40.3498 47.038 39.9686 43.4071 39.9759C31.1545 39.9759 20.2496 43.8963 12.5034 51.2783C4.75715 58.6604 0 69.4082 0 82.9469C0 94.9175 4.38479 104.541 11.8042 111.371C19.2237 118.201 29.465 121.997 41.6061 121.997C46.6529 121.949 51.6737 121.271 56.5513 119.981C57.3113 119.779 58.0712 119.552 58.8463 119.312C60.8728 120.848 63.7099 121.955 67.5906 121.955C72.0058 121.955 74.7795 120.694 76.6692 119.199C78.5589 117.815 79.3163 116.31 79.4429 115.432L77.8116 114.812Z",
     fill: "#413F41"
@@ -5448,6 +6023,17 @@ const LogoSite = ({
     fill: "white"
   }))));
 };
+var _StyledFigure = (0,styled_components__WEBPACK_IMPORTED_MODULE_1__["default"])("figure").withConfig({
+  displayName: "brand___StyledFigure",
+  componentId: "sc-1wu94rm-0"
+})({
+  "position": "relative",
+  "top": "50%",
+  "height": "50%",
+  "width": "80px",
+  "--tw-translate-y": "-50%",
+  "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))"
+});
 
 /***/ }),
 
@@ -5469,7 +6055,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _components_button__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/button */ "./src/components/button.jsx");
 /* harmony import */ var _iconify_react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @iconify/react */ "./node_modules/.pnpm/@iconify+react@4.1.0_react@18.2.0/node_modules/@iconify/react/dist/iconify.mjs");
-/* harmony import */ var _components_header_nav__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/header/nav */ "./src/components/header/nav.jsx");
+/* harmony import */ var _components_heroheader__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/heroheader */ "./src/components/heroheader.jsx");
 /* harmony import */ var _components_cards__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../components/cards */ "./src/components/cards.jsx");
 
 
@@ -5504,25 +6090,37 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 const Index = () => {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledHeader, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.HeaderMenu, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Logo, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.ul, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Quem Somos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Cases"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Clientes"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Trabalhe Conosco"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_header_nav__WEBPACK_IMPORTED_MODULE_4__.Nav.li, null, "Contato")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledHeader2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan, null, "Marcas Reais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan2, null, "Para Clientes Reais"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan3, null, "Com Resultados Reais")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Queremos fazer sua marca conquistar o mundo. Mas para isso acontecer voc\xEA precisa saber: se seu cliente vai parar para te ouvir, \xE9 melhor voc\xEA ter algo bom para dizer."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Faz sentido, n\xE3o \xE9?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, null, "Fale agora com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_iconify_react__WEBPACK_IMPORTED_MODULE_3__.Icon, {
-    icon: "bi:mouse",
-    width: "1.5rem"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Role para baixo"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection, {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledMain, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_heroheader__WEBPACK_IMPORTED_MODULE_4__.HeroHeader, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection, {
     className: "intro"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledFigure, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv3, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH2, null, "in brand ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan4, null, "we trust")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Sim, n\xF3s acreditamos. N\xF3s acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu pre\xE7o em si, deve ser algo que possua valor."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Comunicar vai al\xE9m de dizer palavras, frases, comunicados. Como voc\xEA \xE9 recebido? Como sua mensagem chega? Como \xE9 sua presen\xE7a no mercado? Na vida do seu target?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH3, null, "Comunicar \xE9 saber como chegar."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Um brainstorm bem feito, uma a\xE7\xE3o bem planejada, uma marca que ganha vida e voz. \xC9 no que somos especialistas."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan5, null, "Sim n\xF3s acreditamos!"), " E voc\xEA?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv4, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH, null, "in brand ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan, null, "we trust")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Sim, n\xF3s acreditamos. N\xF3s acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu pre\xE7o em si, deve ser algo que possua valor. Comunicar vai al\xE9m de dizer palavras, frases, comunicados. Como voc\xEA \xE9 recebido? Como sua mensagem chega? Como \xE9 sua presen\xE7a no mercado? Na vida do seu target? Comunicar \xE9 saber como chegar. Um brainstorm bem feito, uma a\xE7\xE3o bem planejada, uma marca que ganha vida e voz. \xC9 no que somos especialistas. Sim n\xF3s acreditamos! E voc\xEA?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Comunicar vai al\xE9m de dizer palavras, frases, comunicados. Como voc\xEA \xE9 recebido? Como sua mensagem chega? Como \xE9 sua presen\xE7a no mercado? Na vida do seu target?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH2, null, "Comunicar \xE9 saber como chegar."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Um brainstorm bem feito, uma a\xE7\xE3o bem planejada, uma marca que ganha vida e voz. \xC9 no que somos especialistas."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan2, null, "Sim n\xF3s acreditamos!"), " E voc\xEA?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "card gap-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH4, null, "+10 anos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH5, null, "no mercado")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH3, null, "+10 anos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH4, null, "no mercado")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "card gap-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH6, null, "+50 projetos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH7, null, "de embalagens, presente na Am\xE9rica do Sul")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH5, null, "+50 projetos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH6, null, "de embalagens, presente na Am\xE9rica do Sul")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "card gap-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH8, null, "+150 marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH9, null, "criadas e ativas pelo mundo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH7, null, "+150 marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH8, null, "criadas e ativas pelo mundo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "card gap-0"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH10, null, "+1000 horas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH11, null, "de storytelling criadas"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection2, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH9, null, "+1000 horas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH10, null, "de storytelling criadas"))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection2, {
     className: "servicos"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv5, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH12, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardBox, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Branding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Voc\xEA compra um produto pelo que ele faz, voc\xEA escolhe uma marca pelo que ela significa. Produtos podem ser copiados, marcas s\xE3o \xFAnicas.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Social Media"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Falamos fluentemente a l\xEDngua do algoritmo. Sabemos chegar e como chegar. Temos resultados quali e quantitativos. Quer bons leads? Fale com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Planning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Saber o qu\xEA, porque, quando e como s\xE3o os pilares de um bom planejamento. Entender para atender. Prever e criar para ser desejado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Packing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Um produto excelente precisa de uma \"roupa\" a sua altura. Desenvolvemos embalagens com um simples objetivo: evidenciar seu produto na g\xF4ndola."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, null, "Conhe\xE7a mais sobre nosso servi\xE7os"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv3, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH11, null, "Servi\xE7os"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardBox, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Branding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Voc\xEA compra um produto pelo que ele faz, voc\xEA escolhe uma marca pelo que ela significa. Produtos podem ser copiados, marcas s\xE3o \xFAnicas.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Social Media"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Falamos fluentemente a l\xEDngua do algoritmo. Sabemos chegar e como chegar. Temos resultados quali e quantitativos. Quer bons leads? Fale com a gente")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Planning"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Saber o qu\xEA, porque, quando e como s\xE3o os pilares de um bom planejamento. Entender para atender. Prever e criar para ser desejado.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Card, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardTitle, null, "Packing"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardText, null, "Um produto excelente precisa de uma \"roupa\" a sua altura. Desenvolvemos embalagens com um simples objetivo: evidenciar seu produto na g\xF4ndola."))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.ButtonSecondary, null, "Conhe\xE7a mais sobre nosso servi\xE7os"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection3, {
     className: "cases"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv4, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH12, null, "Cases"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.Cases, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardCase, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledImg, {
+    src: `https://ik.imagekit.io/balaban/ppg-mockup.jpg?updatedAt=1679009456958`
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledFigcaption, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledCaption, null, "Packing & Video"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH13, null, "Embalagens linhas PPG Refinish"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.ButtonPrimary, null, "Saiba Mais"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardCase, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledImg2, {
+    src: `https://images.unsplash.com/photo-1671725778785-03aa4fc16ab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardCase, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledImg3, {
+    src: `https://images.unsplash.com/photo-1671725778785-03aa4fc16ab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardCase, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledImg4, {
+    src: `https://images.unsplash.com/photo-1671725778785-03aa4fc16ab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_cards__WEBPACK_IMPORTED_MODULE_5__.CardCase, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledImg5, {
+    src: `https://images.unsplash.com/photo-1671725778785-03aa4fc16ab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_components_button__WEBPACK_IMPORTED_MODULE_2__.Button, {
+    className: `large`
+  }, "Lalala"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     className: "clientes"
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
     className: "trabalheconosco"
@@ -5531,162 +6129,70 @@ const Index = () => {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("footer", null));
 };
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Index);
-var _StyledHeader = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("header").withConfig({
-  displayName: "pages___StyledHeader",
+var _StyledMain = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("main").withConfig({
+  displayName: "pages___StyledMain",
   componentId: "sc-1au5rsk-0"
 })({
-  "--tw-text-opacity": "1",
-  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+  "position": "relative",
+  "minHeight": "400vh",
+  "width": "100vw"
 });
-var _StyledHeader2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("header").withConfig({
-  displayName: "pages___StyledHeader2",
+var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("section").withConfig({
+  displayName: "pages___StyledSection",
   componentId: "sc-1au5rsk-1"
 })({
-  "display": "flex",
-  "minHeight": "100vh",
-  "flexDirection": "column",
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(243 244 246 / var(--tw-bg-opacity))",
-  "--tw-text-opacity": "1",
-  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
+  "paddingTop": "5rem",
+  "paddingBottom": "5rem"
 });
 var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
   displayName: "pages___StyledDiv",
   componentId: "sc-1au5rsk-2"
 })({
-  "margin": "auto",
-  "display": "block",
-  "fontSize": "1rem",
-  "lineHeight": "1.25rem",
-  "letterSpacing": "0em",
-  "fontWeight": "300",
+  "marginLeft": "auto",
+  "marginRight": "auto",
+  "@media (min-width: 768px)": {
+    "width": "83.333333%"
+  },
   "@media (min-width: 1024px)": {
-    "width": "50%"
+    "width": "66.666667%"
   }
 });
 var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h1").withConfig({
   displayName: "pages___StyledH",
   componentId: "sc-1au5rsk-3"
 })({
-  "fontSize": "3.5rem",
-  "lineHeight": "3.75rem",
-  "letterSpacing": "0em",
-  "fontWeight": "100"
+  "fontSize": "1.875rem",
+  "lineHeight": "2.25rem",
+  "fontWeight": "300"
 });
 var _StyledSpan = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
   displayName: "pages___StyledSpan",
   componentId: "sc-1au5rsk-4"
 })({
-  "display": "block"
-});
-var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
-  displayName: "pages___StyledSpan2",
-  componentId: "sc-1au5rsk-5"
-})({
-  "display": "block",
   "fontWeight": "900",
   "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+  "color": "rgb(239 68 68 / var(--tw-text-opacity))"
 });
-var _StyledSpan3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
-  displayName: "pages___StyledSpan3",
-  componentId: "sc-1au5rsk-6"
-})({
-  "display": "block"
-});
-var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv2",
-  componentId: "sc-1au5rsk-7"
-})({
-  "marginLeft": "auto",
-  "marginRight": "auto",
-  "marginBottom": "1rem",
-  "display": "flex",
-  "alignItems": "center",
-  "gap": "0.75rem",
-  "verticalAlign": "baseline",
-  "fontSize": "0.75rem",
-  "lineHeight": "0.875rem",
-  "letterSpacing": "0em",
-  "fontWeight": "300",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
-});
-var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("section").withConfig({
-  displayName: "pages___StyledSection",
-  componentId: "sc-1au5rsk-8"
-})({
-  "marginRight": "0px",
-  "display": "flex",
-  "width": "83.333333%",
-  "flexDirection": "row",
-  "gap": "4rem",
-  "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
-  "paddingTop": "5rem",
-  "paddingBottom": "5rem",
-  "--tw-text-opacity": "1",
-  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
-});
-var _StyledFigure = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("figure").withConfig({
-  displayName: "pages___StyledFigure",
-  componentId: "sc-1au5rsk-9"
-})({
-  "order": "-9999",
-  "flexBasis": "50%",
-  "borderTopRightRadius": "1rem",
-  "borderBottomRightRadius": "1rem",
-  "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(209 213 219 / var(--tw-bg-opacity))"
-});
-var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv3",
-  componentId: "sc-1au5rsk-10"
-})({
-  "order": "2",
-  "flexBasis": "50%",
-  "> :not([hidden]) ~ :not([hidden])": {
-    "--tw-space-y-reverse": "0",
-    "marginTop": "calc(1rem * calc(1 - var(--tw-space-y-reverse)))",
-    "marginBottom": "calc(1rem * var(--tw-space-y-reverse))"
-  },
-  "paddingTop": "2.5rem",
-  "paddingBottom": "2.5rem"
-});
-var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h1").withConfig({
+var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h2").withConfig({
   displayName: "pages___StyledH2",
-  componentId: "sc-1au5rsk-11"
-})({
-  "fontSize": "2.25rem",
-  "lineHeight": "2.5rem",
-  "fontWeight": "300"
-});
-var _StyledSpan4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
-  displayName: "pages___StyledSpan4",
-  componentId: "sc-1au5rsk-12"
-})({
-  "fontWeight": "900",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
-});
-var _StyledH3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h2").withConfig({
-  displayName: "pages___StyledH3",
-  componentId: "sc-1au5rsk-13"
+  componentId: "sc-1au5rsk-5"
 })({
   "fontSize": "1.5rem",
   "lineHeight": "2rem"
 });
-var _StyledSpan5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
-  displayName: "pages___StyledSpan5",
-  componentId: "sc-1au5rsk-14"
+var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("span").withConfig({
+  displayName: "pages___StyledSpan2",
+  componentId: "sc-1au5rsk-6"
 })({
   "fontWeight": "700",
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv4",
-  componentId: "sc-1au5rsk-15"
+var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv2",
+  componentId: "sc-1au5rsk-7"
 })({
   "display": "grid",
   "gridAutoFlow": "row",
@@ -5695,64 +6201,64 @@ var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])(
   "rowGap": "2rem",
   "paddingTop": "1rem"
 });
-var _StyledH4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
+var _StyledH3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
+  displayName: "pages___StyledH3",
+  componentId: "sc-1au5rsk-8"
+})({
+  "fontSize": "2rem",
+  "lineHeight": "2.5rem",
+  "letterSpacing": "0em",
+  "fontWeight": "700",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledH4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
   displayName: "pages___StyledH4",
-  componentId: "sc-1au5rsk-16"
+  componentId: "sc-1au5rsk-9"
 })({
-  "fontSize": "2rem",
-  "lineHeight": "2.5rem",
+  "fontSize": "1.25rem",
+  "lineHeight": "1.5rem",
   "letterSpacing": "0em",
-  "fontWeight": "700",
+  "fontWeight": "400",
   "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
+var _StyledH5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
   displayName: "pages___StyledH5",
-  componentId: "sc-1au5rsk-17"
+  componentId: "sc-1au5rsk-10"
 })({
-  "fontSize": "1.25rem",
-  "lineHeight": "1.5rem",
+  "fontSize": "2rem",
+  "lineHeight": "2.5rem",
   "letterSpacing": "0em",
-  "fontWeight": "400",
+  "fontWeight": "700",
   "--tw-text-opacity": "1",
-  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
+var _StyledH6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
   displayName: "pages___StyledH6",
-  componentId: "sc-1au5rsk-18"
+  componentId: "sc-1au5rsk-11"
 })({
-  "fontSize": "2rem",
-  "lineHeight": "2.5rem",
+  "fontSize": "1.25rem",
+  "lineHeight": "1.5rem",
   "letterSpacing": "0em",
-  "fontWeight": "700",
+  "fontWeight": "400",
   "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
+var _StyledH7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
   displayName: "pages___StyledH7",
-  componentId: "sc-1au5rsk-19"
+  componentId: "sc-1au5rsk-12"
 })({
-  "fontSize": "1.25rem",
-  "lineHeight": "1.5rem",
+  "fontSize": "2rem",
+  "lineHeight": "2.5rem",
   "letterSpacing": "0em",
-  "fontWeight": "400",
+  "fontWeight": "700",
   "--tw-text-opacity": "1",
-  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
+var _StyledH8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
   displayName: "pages___StyledH8",
-  componentId: "sc-1au5rsk-20"
-})({
-  "fontSize": "2rem",
-  "lineHeight": "2.5rem",
-  "letterSpacing": "0em",
-  "fontWeight": "700",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
-});
-var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
-  displayName: "pages___StyledH9",
-  componentId: "sc-1au5rsk-21"
+  componentId: "sc-1au5rsk-13"
 })({
   "fontSize": "1.25rem",
   "lineHeight": "1.5rem",
@@ -5761,9 +6267,9 @@ var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
-  displayName: "pages___StyledH10",
-  componentId: "sc-1au5rsk-22"
+var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h4").withConfig({
+  displayName: "pages___StyledH9",
+  componentId: "sc-1au5rsk-14"
 })({
   "fontSize": "2rem",
   "lineHeight": "2.5rem",
@@ -5772,9 +6278,9 @@ var _StyledH10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
-  displayName: "pages___StyledH11",
-  componentId: "sc-1au5rsk-23"
+var _StyledH10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
+  displayName: "pages___StyledH10",
+  componentId: "sc-1au5rsk-15"
 })({
   "fontSize": "1.25rem",
   "lineHeight": "1.5rem",
@@ -5785,7 +6291,7 @@ var _StyledH11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("
 });
 var _StyledSection2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("section").withConfig({
   displayName: "pages___StyledSection2",
-  componentId: "sc-1au5rsk-24"
+  componentId: "sc-1au5rsk-16"
 })({
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(243 244 246 / var(--tw-bg-opacity))",
@@ -5794,9 +6300,9 @@ var _StyledSection2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledDiv5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
-  displayName: "pages___StyledDiv5",
-  componentId: "sc-1au5rsk-25"
+var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv3",
+  componentId: "sc-1au5rsk-17"
 })({
   "marginLeft": "auto",
   "marginRight": "auto",
@@ -5811,15 +6317,178 @@ var _StyledDiv5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])(
     "width": "83.333333%"
   }
 });
-var _StyledH12 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h1").withConfig({
-  displayName: "pages___StyledH12",
-  componentId: "sc-1au5rsk-26"
+var _StyledH11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h1").withConfig({
+  displayName: "pages___StyledH11",
+  componentId: "sc-1au5rsk-18"
 })({
   "textAlign": "center",
   "fontSize": "3.5rem",
   "lineHeight": "3.75rem",
   "letterSpacing": "0em",
   "fontWeight": "700"
+});
+var _StyledSection3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("section").withConfig({
+  displayName: "pages___StyledSection3",
+  componentId: "sc-1au5rsk-19"
+})({
+  "--tw-bg-opacity": "1",
+  "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
+  "paddingTop": "6rem",
+  "paddingBottom": "6rem",
+  "--tw-text-opacity": "1",
+  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+});
+var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("div").withConfig({
+  displayName: "pages___StyledDiv4",
+  componentId: "sc-1au5rsk-20"
+})({
+  "marginLeft": "auto",
+  "marginRight": "auto",
+  "display": "flex",
+  "width": "91.666667%",
+  "flexDirection": "column",
+  "alignItems": "center",
+  "gap": "4rem",
+  "@media (min-width: 768px)": {
+    "width": "83.333333%"
+  }
+});
+var _StyledH12 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h1").withConfig({
+  displayName: "pages___StyledH12",
+  componentId: "sc-1au5rsk-21"
+})({
+  "textAlign": "center",
+  "fontSize": "3.5rem",
+  "lineHeight": "3.75rem",
+  "letterSpacing": "0em",
+  "fontWeight": "700"
+});
+var _StyledImg = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("img").withConfig({
+  displayName: "pages___StyledImg",
+  componentId: "sc-1au5rsk-22"
+})({
+  "minHeight": "100%",
+  "objectFit": "cover",
+  "transitionDuration": "1000ms",
+  ".group:hover &": {
+    "--tw-scale-x": "1.5",
+    "--tw-scale-y": "1.5",
+    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+    "--tw-brightness": "brightness(1.5)",
+    "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+    "transitionProperty": "all",
+    "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transitionDuration": "150ms"
+  }
+});
+var _StyledFigcaption = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("figcaption").withConfig({
+  displayName: "pages___StyledFigcaption",
+  componentId: "sc-1au5rsk-23"
+})({
+  "position": "absolute",
+  "left": "0px",
+  "right": "0px",
+  "bottom": "0px",
+  "display": "flex",
+  "flexDirection": "column",
+  "alignItems": "flex-start",
+  "gap": "1rem",
+  "backgroundColor": "rgb(63 63 70 / 0.8)",
+  "padding": "1.5rem"
+});
+var _StyledCaption = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("caption").withConfig({
+  displayName: "pages___StyledCaption",
+  componentId: "sc-1au5rsk-24"
+})({
+  "fontSize": "0.75rem",
+  "lineHeight": "1.25rem",
+  "letterSpacing": "0em",
+  "fontWeight": "500",
+  "--tw-text-opacity": "1",
+  "color": "rgb(255 133 128 / var(--tw-text-opacity))"
+});
+var _StyledH13 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("h6").withConfig({
+  displayName: "pages___StyledH13",
+  componentId: "sc-1au5rsk-25"
+})({
+  "fontSize": "1.25rem",
+  "lineHeight": "1.5rem",
+  "letterSpacing": "0em",
+  "fontWeight": "700",
+  "--tw-text-opacity": "1",
+  "color": "rgb(255 255 255 / var(--tw-text-opacity))"
+});
+var _StyledImg2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("img").withConfig({
+  displayName: "pages___StyledImg2",
+  componentId: "sc-1au5rsk-26"
+})({
+  "minHeight": "100%",
+  "objectFit": "cover",
+  "transitionDuration": "1000ms",
+  ".group:hover &": {
+    "--tw-scale-x": "1.1",
+    "--tw-scale-y": "1.1",
+    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+    "--tw-brightness": "brightness(1.5)",
+    "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+    "transitionProperty": "all",
+    "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transitionDuration": "150ms"
+  }
+});
+var _StyledImg3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("img").withConfig({
+  displayName: "pages___StyledImg3",
+  componentId: "sc-1au5rsk-27"
+})({
+  "minHeight": "100%",
+  "objectFit": "cover",
+  "transitionDuration": "1000ms",
+  ".group:hover &": {
+    "--tw-scale-x": "1.1",
+    "--tw-scale-y": "1.1",
+    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+    "--tw-brightness": "brightness(1.5)",
+    "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+    "transitionProperty": "all",
+    "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transitionDuration": "150ms"
+  }
+});
+var _StyledImg4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("img").withConfig({
+  displayName: "pages___StyledImg4",
+  componentId: "sc-1au5rsk-28"
+})({
+  "minHeight": "100%",
+  "objectFit": "cover",
+  "transitionDuration": "1000ms",
+  ".group:hover &": {
+    "--tw-scale-x": "1.1",
+    "--tw-scale-y": "1.1",
+    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+    "--tw-brightness": "brightness(1.5)",
+    "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+    "transitionProperty": "all",
+    "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transitionDuration": "150ms"
+  }
+});
+var _StyledImg5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])("img").withConfig({
+  displayName: "pages___StyledImg5",
+  componentId: "sc-1au5rsk-29"
+})({
+  "minHeight": "100%",
+  "objectFit": "cover",
+  "transitionDuration": "1000ms",
+  ".group:hover &": {
+    "--tw-scale-x": "1.1",
+    "--tw-scale-y": "1.1",
+    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+    "--tw-brightness": "brightness(1.5)",
+    "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+    "transitionProperty": "all",
+    "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+    "transitionDuration": "150ms"
+  }
 });
 
 /***/ }),
@@ -12217,8 +12886,7 @@ const Main = () => {
     element: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_pages_404__WEBPACK_IMPORTED_MODULE_6__["default"], null)
   }))));
 };
-
-//window.history.scrollRestoration = "manual";
+window.history.scrollRestoration = "manual";
 const root = document.querySelector((0,_utils_functions__WEBPACK_IMPORTED_MODULE_2__.getWPChunkElementAttr)());
 root && (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.render)( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Main, null), root);
 })();
