@@ -1,6 +1,6 @@
 import tw from 'twin.macro';
 
-export const H2Dash = ( {children} ) => <div
+export const H2Dash = ( props ) => <div
     css={[
         tw`after:(bg-primary)`,
         `
@@ -20,5 +20,5 @@ export const H2Dash = ( {children} ) => <div
         }
     `]}
     >
-    <h2 tw="text-secondary-800">{children}</h2>
+    <h2 {...props}>{props.children}</h2>
 </div>

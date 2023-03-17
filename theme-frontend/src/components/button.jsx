@@ -14,7 +14,7 @@ export const Buttonx = ({ secondary, danger, link, large, small, outline, childr
             large && tw`py-6 px-10`,
             small && tw`py-2 px-4`,
             danger && tw`bg-red-500 text-white`,
-            link && tw`bg-transparent text-primary underline`,
+            link && tw`bg-transparent text-primary border-b-primary border-b-2 m-0 p-0 text-lg hover:(scale-110 duration-300)`,
         ]}
     >{children}</button>)
 }
