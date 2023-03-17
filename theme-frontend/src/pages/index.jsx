@@ -3,8 +3,9 @@ import tw from 'twin.macro';
 import apiFetch from '@wordpress/api-fetch';
 import { Button, ButtonPrimary, ButtonSecondary } from '../components/button';
 import { Icon } from '@iconify/react';
-import { HeaderMenu, Logo, Nav, Li } from '../components/header/nav';
-import { Card, CardTitle, CardText, CardBox } from '../components/cards';
+import { HeroHeader } from '../components/heroheader';
+import { Intro } from '../components/intro';
+import { Card, CardTitle, CardText, CardBox, Cases, CardCase } from '../components/cards';
 
 
 const Index = () => {
