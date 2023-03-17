@@ -1,6 +1,5 @@
 import { ContainerFluidH } from './containers';
 import { H2Dash } from './headings';
-import { SaneSvg } from './utils';
 import tw from 'twin.macro';
 import { useEffect, useState } from 'react';
 import apiFetch from '@wordpress/api-fetch';
@@ -17,17 +16,15 @@ export const Cases = () => {
 	}, [])
 	
 	
-	return <ContainerFluidH>
-		<section className="Cases" tw="py-8">
-			<SaneSvg>
-				<circle cx="50%" cy="50%" r="50%" fill="red" />
-			</SaneSvg>
-			<H2Dash>Cases</H2Dash>
-			<div tw="grid grid-cols-3 gap-8 mt-16">
-				{ cases && cases.map( ( item, index) => <CaseCard item={item} index={index} key={index}/> ) }
-			</div>
-		</section>
-	</ContainerFluidH> 
+	return <section className="Cases" tw="py-8 relative overflow-visible">
+				<div tw="absolute border-[6rem] border-primary rounded-[999rem] w-[40vw] h-[40vw] top-[-20vw] left-[-18vw]" />
+				<ContainerFluidH tw="relative">
+					<H2Dash>Cases</H2Dash>
+					<div tw="grid grid-cols-3 gap-8 mt-16">
+						{ cases && cases.map( ( item, index) => <CaseCard item={item} index={index} key={index}/> ) }
+					</div>
+			</ContainerFluidH> 
+	</section>
 }
 
 const CaseCard = ({ item, index }) => {

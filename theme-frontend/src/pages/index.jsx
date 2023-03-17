@@ -9,6 +9,7 @@ import { Cases } from '../components/Cases';
 import { Clientes } from '../components/Clientes';
 import { TrabalheConosco } from '../components/TrabalheConosco';
 import { Contato } from '../components/Contato';
+import { Footer } from '../components/footer';
 
 
 const Index = () => {
@@ -21,8 +22,7 @@ const Index = () => {
 			<Clientes />
 			<TrabalheConosco />
 			<Contato />
-
-			<footer></footer>
+			<Footer />
 		</main>
 	);
 };

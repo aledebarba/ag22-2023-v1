@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ScrollSmoother } from '../utils/scroll';
+import tw from 'twin.macro';
 
 export const TextFill = React.forwardRef( ( props, ref ) => {
 
@@ -105,7 +106,7 @@ export const toPixels = ( w, h ) => {
 }
 
 
-export const SaneSvg = ( { width="100%", height="100%", style={}, className="", children } ) => {
+export const SaneSvg = ( { width="100%", height="100%", style={}, className="", css="", children } ) => {
     
     const w = toPixels(width, height).width;
 	const h = toPixels(width, height).height;
@@ -118,10 +119,13 @@ export const SaneSvg = ( { width="100%", height="100%", style={}, className="", 
             width: w,
             height: h,
             zIndex: 0,
-            pointerEvents: 'none',
-			...style,
+            pointerEvents: 'none',		
             
-        }}>    
+        }}
+		
+		css={css}
+
+		>    
             <svg height="100%" width="100%" viewBox="0 0 100 100" className={className}>
                 { children }               
             </svg>  
