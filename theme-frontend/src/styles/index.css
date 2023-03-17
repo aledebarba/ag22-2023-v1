@@ -21,7 +21,7 @@
   h2 {
     @apply text-h2;
     @apply text-secondary-600;
-    margin: 1rem 0;
+    margin: 1rem 0;    
   }
   h3 {
     @apply text-secondary-600;
@@ -41,6 +41,7 @@
     @apply text-h6;
   }
 }
+
 html {
   scroll-behavior: initial;
   --primary: #E62337;
@@ -58,3 +59,4 @@ html, body {
 .logo #svg{
   height: 2rem;
 }
+

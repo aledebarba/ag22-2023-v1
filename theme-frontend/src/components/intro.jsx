@@ -3,8 +3,10 @@ import { Container } from './containers';
 
 export const Intro = () => <Container>
 			<section className="intro" tw={"py-20 bg-white grid grid-cols-12 gap-4 "}>
-				<div tw="col-start-1 col-span-5 row-span-4 relative">
-                    <div tw="absolute top-0 left-0 h-full w-[50vw] bg-secondary-100 z-0 translate-x-[-55%] rounded-2xl"></div>
+				<div tw="col-start-1 row-span-4 relative">
+                    <div 
+						tw="absolute top-0 left-0 h-full w-[50vw] bg-secondary-100 z-0 translate-x-[-25vw] mr-[2rem] rounded-2xl"
+					></div>
                 </div>
                 <div tw="col-start-6 col-span-7" >
 					<h2 tw="mt-8">

@@ -2,7 +2,7 @@ import tw from 'twin.macro';
 
 export const Card = ({ children }) => {
     return (
-        <div tw={"basis-1/4 bg-white rounded-2xl pt-8 pb-10 px-8 flex flex-col justify-center text-center drop-shadow-lg"}>
+        <div tw={"bg-white p-4 py-6 drop-shadow-lg text-center rounded-lg"}>
             {children}
         </div>
     )
@@ -26,7 +26,7 @@ export const CardText = ({children}) => {
 
 export const CardBox = ({children}) => {
     return (
-        <div tw={"flex flex-col lg:flex-row gap-8 w-11/12 md:w-10/12"}>
+        <div tw={"grid grid-cols-4 gap-8 mt-16"}>
             {children}
         </div>
     )

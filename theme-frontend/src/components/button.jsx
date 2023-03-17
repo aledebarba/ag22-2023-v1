@@ -40,6 +40,8 @@ export const Button = (props) => {
                 w-fit
                 my-1
                 `}
+
+                {...props}
                 
         >
             {props.children}

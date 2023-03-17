@@ -89,9 +89,9 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
         register_rest_route('database/v1', '/'.$plural, [
             'methods' => 'GET',
             'permission_callback' => '__return_true',
-            'callback' => function()use($base){
+            'callback' => function()use($plural){
                 $args = [
-                    'post_type' => $base,
+                    'post_type' => $plural,
                     'posts_per_page' => -1, //return all posts
                 ];
                 $query = new WP_Query($args);
