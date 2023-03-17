@@ -4,6 +4,8 @@ import apiFetch from '@wordpress/api-fetch';
 import { Button } from '../components/button';
 import { Icon } from '@iconify/react';
 import { HeaderMenu, Logo, Nav, Li } from '../components/header/nav';
+import { HeroHeader } from '../components/heroheader';
+import { Intro } from '../components/intro';
 import { Card, CardTitle, CardText, CardBox } from '../components/cards';
 
 
@@ -11,62 +13,7 @@ const Index = () => {
 	return (
 		<main tw="w-screen min-h-[400vh] relative" >
 			<HeroHeader/>
-			<section className="intro" tw={"py-20 bg-white"}>
-				<div tw={"lg:w-8/12 md:w-10/12 mx-auto"}>
-					<h1 tw={"text-3xl font-light"}>
-						in brand <span tw={"text-red-500 font-black"}>we trust</span>
-					</h1>
-
-					<p>
-					Sim, nós acreditamos. Nós acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu preço em si, deve ser algo que possua valor.
-
-					Comunicar vai além de dizer palavras, frases, comunicados.
-					Como você é recebido? Como sua mensagem chega?
-					Como é sua presença no mercado? Na vida do seu target?
-
-					Comunicar é saber como chegar.
-
-					Um brainstorm bem feito, uma ação bem planejada, uma marca que ganha vida e voz. É no que somos especialistas.
-
-					Sim nós acreditamos! E você?
-					</p>
-					<p>
-						Comunicar vai além de dizer palavras, frases, comunicados.
-						Como você é recebido? Como sua mensagem chega?
-						Como é sua presença no mercado? Na vida do seu target?
-					</p>
-
-					<h2 tw={"text-2xl"}>
-						Comunicar é saber como chegar.
-					</h2>
-
-					<p>
-						Um brainstorm bem feito, uma ação bem planejada, uma marca que ganha vida e voz. É no que somos especialistas.
-					</p>
-
-					<p><span tw={"text-primary font-bold"}>Sim nós acreditamos!</span> E você?</p>
-
-					<div tw={"grid grid-cols-2 grid-flow-row gap-x-6 gap-y-8 pt-4"}>
-						<div className='card gap-0'>
-							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+10 anos</h4>
-							<h6 tw={"text-h6 text-secondary font-normal"}>no mercado</h6>
-						</div>
-						<div className='card gap-0'>
-							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+50 projetos</h4>
-							<h6 tw={"text-h6 text-secondary font-normal"}>de embalagens, presente na América do Sul</h6>
-						</div>
-						<div className='card gap-0'>
-							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+150 marcas</h4>
-							<h6 tw={"text-h6 text-secondary font-normal"}>criadas e ativas pelo mundo</h6>
-						</div>
-						<div className='card gap-0'>
-							<h4 tw={"text-h4 font-bold text-primary leading-10"}>+1000 horas</h4>
-							<h6 tw={"text-h6 text-secondary font-normal"}>de storytelling criadas</h6>
-						</div>
-					</div>
-				</div>
-			</section>
-
+			<Intro />
 			{/* Services Section */}
 
 			<section className="servicos" tw={"py-20 bg-gray-100 text-secondary"}>
