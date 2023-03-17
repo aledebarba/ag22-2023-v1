@@ -65,7 +65,7 @@
 		"tailwindbuild": "tailwindcss -i ./src/styles/index.css -o ./build/_app.css --postcss --minify",
 		"tailwindwatch": "tailwindcss -i ./src/styles/index.css -o ./build/_app.css --watch --postcss --minify",
 		"sync": "browser-sync start --https -p 'https://hysteria.local' --files './build/**/*'",
-		"dev": "npm-run-all --parallel start tailwindwatch"
+		"dev": "rm -rf build && tailwindcss -i ./src/styles/index.css -o ./build/_app.css --postcss --minify && npm-run-all --parallel start tailwindwatch"
 	},
 	"keywords": [
 		"wpchunk",

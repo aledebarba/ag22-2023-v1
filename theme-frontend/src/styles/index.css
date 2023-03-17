@@ -7,10 +7,38 @@
 
 @layer base {
   p {
+    @apply text-secondary-600;
     @apply text-body;
   }
   button {
     @apply text-button;
+  }
+  h1 {
+    @apply text-h1;
+    @apply text-secondary-600;
+    margin: 1rem 0;
+  }
+  h2 {
+    @apply text-h2;
+    @apply text-secondary-600;
+    margin: 1rem 0;
+  }
+  h3 {
+    @apply text-secondary-600;
+    @apply text-h3;
+  }
+  h4 {
+    @apply text-secondary-600;
+    @apply text-h4;
+  }
+  h5 {
+    @apply text-secondary-600;
+    margin: 1rem 0;
+    @apply text-h5;
+  }
+  h6 {
+    @apply text-secondary-600;
+    @apply text-h6;
   }
 }
 html {
