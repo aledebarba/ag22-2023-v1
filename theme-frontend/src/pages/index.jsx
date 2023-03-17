@@ -1,11 +1,9 @@
 import React from 'react';
 import tw from 'twin.macro';
 import apiFetch from '@wordpress/api-fetch';
-import { Button } from '../components/button';
+import { Button, ButtonPrimary, ButtonSecondary } from '../components/button';
 import { Icon } from '@iconify/react';
 import { HeaderMenu, Logo, Nav, Li } from '../components/header/nav';
-import { HeroHeader } from '../components/heroheader';
-import { Intro } from '../components/intro';
 import { Card, CardTitle, CardText, CardBox } from '../components/cards';
 
 
@@ -52,13 +50,53 @@ const Index = () => {
 						</Card>
 					</CardBox>
 
-					<Button>Conheça mais sobre nosso serviços</Button>
+					<ButtonSecondary>Conheça mais sobre nosso serviços</ButtonSecondary>
 				</div>
 			</section>
 
 			{/* Cases Section */}
 
-			<section className="cases"></section>
+			<section className="cases" tw={"py-24 bg-white text-secondary"}>
+				<div tw={"w-11/12 md:w-10/12 mx-auto gap-16 flex flex-col items-center"}>
+					<h1 tw={"text-h1 font-bold text-center"}>Cases</h1>
+
+					<Cases>
+						<CardCase>
+							
+							<img src={`https://ik.imagekit.io/balaban/ppg-mockup.jpg?updatedAt=1679009456958`} tw={"object-cover min-h-full group-hover:scale-150 group-hover:transition-all duration-1000 group-hover:brightness-150"}/>
+							<figcaption tw={"bg-zinc-700/80 p-6 absolute inset-x-0 bottom-0 flex flex-col items-start gap-4"}>
+								<caption tw={"text-caption text-primary-200 font-medium leading-5"}>
+									Packing & Video
+								</caption>
+
+								<h6 tw={"text-h6 text-white font-bold"}>
+									Embalagens linhas PPG Refinish
+								</h6>
+
+								<ButtonPrimary>Saiba Mais</ButtonPrimary>
+							</figcaption>
+						</CardCase>
+
+						<CardCase>
+							<img src={`https://images.unsplash.com/photo-1671725778785-03aa4fc16ab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`} tw={"object-cover min-h-full group-hover:scale-110 group-hover:transition-all duration-1000 group-hover:brightness-150"}/>
+						</CardCase>
+
+						<CardCase>
+							<img src={`https://images.unsplash.com/photo-1671725778785-03aa4fc16ab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`} tw={"object-cover min-h-full group-hover:scale-110 group-hover:transition-all duration-1000 group-hover:brightness-150"}/>
+						</CardCase>
+
+						<CardCase>
+							<img src={`https://images.unsplash.com/photo-1671725778785-03aa4fc16ab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`} tw={"object-cover min-h-full group-hover:scale-110 group-hover:transition-all duration-1000 group-hover:brightness-150"}/>
+						</CardCase>
+
+						<CardCase>
+							<img src={`https://images.unsplash.com/photo-1671725778785-03aa4fc16ab7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80`} tw={"object-cover min-h-full group-hover:scale-110 group-hover:transition-all duration-1000 group-hover:brightness-150"}/>
+						</CardCase>
+					</Cases>
+
+					<Button className={`large`}>Lalala</Button>
+				</div>
+			</section>
 
 			{/* Clientes Section */}
 
