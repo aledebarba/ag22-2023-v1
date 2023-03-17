@@ -1,6 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,100;125,200;125,300;125,400;125,500;125,600;125,700;125,800;125,900&display=swap');
 
-  body {
+body {
     --display: 'Archivo', sans-serif;
     --serif: 'Archivo', sans-serif;
     --sans: 'Archivo', sans-serif;

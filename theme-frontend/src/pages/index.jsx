@@ -9,70 +9,26 @@ import { Card, CardTitle, CardText, CardBox } from '../components/cards';
 
 const Index = () => {
 	return (
-		<main>
-
-			{/* Navigation Menu */}
-			<header tw={"text-secondary"}>
-
-				<HeaderMenu>
-					<Logo />
-
-					<Nav.ul>
-						<Nav.li>Quem Somos</Nav.li>
-						<Nav.li>Serviços</Nav.li>
-						<Nav.li>Cases</Nav.li>
-						<Nav.li>Clientes</Nav.li>
-						<Nav.li>Trabalhe Conosco</Nav.li>
-						<Nav.li>Contato</Nav.li>
-					</Nav.ul>
-
-				</HeaderMenu>
-
-			</header>
-
-			{/* Hero Header */}
-
-			<header tw={"min-h-screen bg-gray-100 flex flex-col text-secondary"}>
-				<div tw={"block m-auto lg:w-6/12 text-body"}>
-					<h1 tw={"text-h1 font-thin"}>
-						<span tw={"block"}>Marcas Reais</span>
-						<span tw={"text-primary block font-black"}>Para Clientes Reais</span>
-						<span tw={"block"}>Com Resultados Reais</span>
+		<main tw="w-screen min-h-[400vh] relative" >
+			<HeroHeader/>
+			<section className="intro" tw={"py-20 bg-white"}>
+				<div tw={"lg:w-8/12 md:w-10/12 mx-auto"}>
+					<h1 tw={"text-3xl font-light"}>
+						in brand <span tw={"text-red-500 font-black"}>we trust</span>
 					</h1>
 
 					<p>
-						Queremos fazer sua marca conquistar o mundo. Mas para isso acontecer você
-						precisa saber: se seu cliente vai parar para te ouvir, é melhor você ter
-						algo bom para dizer.
-					</p>
+					Sim, nós acreditamos. Nós acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu preço em si, deve ser algo que possua valor.
 
-					<p>
-						Faz sentido, não é?
-					</p>
+					Comunicar vai além de dizer palavras, frases, comunicados.
+					Como você é recebido? Como sua mensagem chega?
+					Como é sua presença no mercado? Na vida do seu target?
 
-					<Button>
-						Fale agora com a gente
-					</Button>
-				</div>
+					Comunicar é saber como chegar.
 
-				<div tw={"text-primary flex items-center gap-3 align-baseline mx-auto mb-4 text-caption"}>
-					<Icon icon="bi:mouse" width="1.5rem" />
-					<p>Role para baixo</p>
-				</div>
-			</header>
+					Um brainstorm bem feito, uma ação bem planejada, uma marca que ganha vida e voz. É no que somos especialistas.
 
-			{/* Intro Section */}
-
-			<section className="intro" tw={"py-20 bg-white text-secondary flex flex-row  gap-16 w-10/12 mr-0"}>
-				<figure tw={"basis-6/12 bg-gray-300 order-first rounded-tr-2xl rounded-br-2xl"}></figure>
-
-				<div tw={"space-y-4 basis-6/12 order-2 py-10"}>
-					<h1 tw={"text-4xl font-light"}>
-						in brand <span tw={"text-primary font-black"}>we trust</span>
-					</h1>
-
-					<p>
-						Sim, nós acreditamos. Nós acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu preço em si, deve ser algo que possua valor.
+					Sim nós acreditamos! E você?
 					</p>
 					<p>
 						Comunicar vai além de dizer palavras, frases, comunicados.
