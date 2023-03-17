@@ -1,5 +1,24 @@
 import tw from 'twin.macro';
 
+
+export const Buttonx = ({ secondary, danger, link, large, small, outline, children, icon }) => {
+    return ( <button
+        css={[
+            tw`flex justify-center rounded-lg gap-4`,
+            outline && tw`border-2`,
+            outline && !secondary && tw`border-primary-100 text-secondary-100`,
+            outline && secondary && tw`border-primary text-primary`,
+            !outline && !secondary && tw`bg-primary text-white`,
+            !outline && secondary && tw`bg-secondary-700 text-white`,
+            !large && !small && tw`py-4 px-8`,
+            large && tw`py-6 px-10`,
+            small && tw`py-2 px-4`,
+            danger && tw`bg-red-500 text-white`,
+            link && tw`bg-transparent text-primary underline`,
+        ]}
+    >{children}</button>)
+}
+
 export const Button = (props) => {
     return (
         <button            
