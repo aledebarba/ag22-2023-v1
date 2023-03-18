@@ -8,7 +8,7 @@ export const Buttonx = ({ secondary, danger, link, large, small, outline, childr
             outline && tw`border-2`,
             outline && !secondary && tw`border-primary text-primary hover:bg-primary hover:text-white`,
             outline && secondary && tw`border-secondary text-secondary hover:bg-secondary hover:text-white`,
-            outline && tertiary && tw`border-secondary-400 text-primary-600 bg-gray-50 hover:bg-white hover:text-primary-700 drop-shadow-lg`,
+            outline && tertiary && tw`border-secondary-400 text-primary-600 bg-gray-50 hover:bg-white hover:text-primary-700 drop-shadow-lg hover:scale-[1.01]`,
             !outline && !secondary && tw`bg-primary text-white hover:bg-primary-700`,
             !outline && secondary && tw`bg-secondary-700 text-white hover:bg-secondary-700`,
             !large && !small && tw`py-4 px-8`,

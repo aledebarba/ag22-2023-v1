@@ -25,7 +25,7 @@ export const Clientes = () => {
 			
 		}, [])
 
-	return <section className="clientes" tw={"py-20 bg-secondary-900 text-secondary"}>
+	return <section className="clientes" tw={"py-28 bg-secondary-900 text-secondary"}>
 			<ContainerFluidH>
 				<H2Dash tw="text-secondary-100">Clientes</H2Dash>
 				<div id="clientes_scroller" tw="mt-8 w-[50vw] h-[16rem] overflow-visible border border-[2px] border-primary mx-auto relative">

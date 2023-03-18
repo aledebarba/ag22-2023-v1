@@ -16,7 +16,7 @@ export const Cases = () => {
 	}, [])
 	
 	
-	return <section className="Cases" tw="py-8 relative overflow-visible">
+	return <section className="Cases" tw="py-28 relative overflow-visible">
 				<div tw="absolute border-[6rem] border-primary rounded-[999rem] w-[40vw] h-[40vw] top-[-20vw] left-[-18vw]" />
 				<ContainerFluidH tw="relative">
 					<H2Dash>Cases</H2Dash>

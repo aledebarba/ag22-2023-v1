@@ -16,7 +16,7 @@ export const Contato = () => {
 				} )
 		}, [])
 
-	return <section className="contatos" tw={"py-20 bg-gray-100 text-secondary"}>
+	return <section className="contatos" tw={"py-20 bg-secondary-50 text-secondary"}>
 			<ContainerFluidH>
 				<H2Dash>Contatos</H2Dash>
 				<div tw="mt-12 grid grid-cols-6 gap-4 place-items-center">

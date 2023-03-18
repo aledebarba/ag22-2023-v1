@@ -5039,8 +5039,8 @@ var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_4__["default"
 })({
   "position": "relative",
   "overflow": "visible",
-  "paddingTop": "2rem",
-  "paddingBottom": "2rem"
+  "paddingTop": "7rem",
+  "paddingBottom": "7rem"
 });
 var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_4__["default"])("div").withConfig({
   displayName: "Cases___StyledDiv",
@@ -5147,8 +5147,8 @@ var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_4__["default"
 })({
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(58 56 58 / var(--tw-bg-opacity))",
-  "paddingTop": "5rem",
-  "paddingBottom": "5rem",
+  "paddingTop": "7rem",
+  "paddingBottom": "7rem",
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
@@ -5303,7 +5303,7 @@ var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"
   componentId: "sc-z9m0rc-0"
 })({
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(243 244 246 / var(--tw-bg-opacity))",
+  "backgroundColor": "rgb(245 243 245 / var(--tw-bg-opacity))",
   "paddingTop": "5rem",
   "paddingBottom": "5rem",
   "--tw-text-opacity": "1",
@@ -5577,6 +5577,9 @@ const Buttonx = ({
       "--tw-drop-shadow": "drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))",
       "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
       ":hover": {
+        "--tw-scale-x": "1.01",
+        "--tw-scale-y": "1.01",
+        "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
         "--tw-bg-opacity": "1",
         "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
         "--tw-text-opacity": "1",
@@ -5949,21 +5952,47 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 const Footer = () => {
   return /*#__PURE__*/React.createElement(_StyledSection, {
     className: "footer"
-  }, /*#__PURE__*/React.createElement(_containers__WEBPACK_IMPORTED_MODULE_1__.ContainerFluidH, null, /*#__PURE__*/React.createElement("div", null, "logo + redes sociais"), /*#__PURE__*/React.createElement("div", null, "menu")));
+  }, /*#__PURE__*/React.createElement(_containers__WEBPACK_IMPORTED_MODULE_1__.ContainerFluidH, null, /*#__PURE__*/React.createElement(_StyledDiv, null, /*#__PURE__*/React.createElement(_StyledDiv2, null), /*#__PURE__*/React.createElement(_StyledDiv3, null)), /*#__PURE__*/React.createElement("div", null, "logo + redes sociais"), /*#__PURE__*/React.createElement("div", null, "menu")));
 };
 var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])("section").withConfig({
   displayName: "footer___StyledSection",
   componentId: "sc-1rirtww-0"
 })({
+  "position": "relative",
   "--tw-bg-opacity": "1",
-  "backgroundColor": "rgb(243 244 246 / var(--tw-bg-opacity))",
-  "paddingTop": "5rem",
-  "paddingBottom": "5rem",
+  "backgroundColor": "rgb(58 56 58 / var(--tw-bg-opacity))",
+  "paddingTop": "0px",
+  "paddingBottom": "7rem",
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+});
+var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])("div").withConfig({
+  displayName: "footer___StyledDiv",
+  componentId: "sc-1rirtww-1"
+})(["box-sizing:border-box;position:absolute;margin-top:1rem;height:40px;left:0px;width:100%;background-color:var(--primary);z-index:4;display:flex;justify-content:center;gap:1rem;"]);
+var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])("div").withConfig({
+  displayName: "footer___StyledDiv2",
+  componentId: "sc-1rirtww-2"
+})({
+  "width": "25%",
+  "borderRightWidth": "16px",
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(255 255 255 / var(--tw-border-opacity))"
+});
+var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_3__["default"])("div").withConfig({
+  displayName: "footer___StyledDiv3",
+  componentId: "sc-1rirtww-3"
+})({
+  "width": "25%",
+  "borderLeftWidth": "16px",
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(255 255 255 / var(--tw-border-opacity))"
 });
 
 /***/ }),
