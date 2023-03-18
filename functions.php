@@ -8,4 +8,11 @@
     add_action('wp_head', function(){ ?>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
       <?php });
+
+    function cc_mime_types($mimes) {
+        $mimes['svg'] = 'image/svg+xml';
+        return $mimes;
+    }
+    add_filter('upload_mimes', 'cc_mime_types');
+
   ?>
