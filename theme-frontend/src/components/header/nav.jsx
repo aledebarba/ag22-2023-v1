@@ -7,7 +7,7 @@ export const HeaderMenu = (props) => {
     return (
             <div
                 id="header-menu"
-                tw="bg-white/80 border-b-secondary-100 border-b-2 border-t-[10px] border-t-primary pt-2 z-20"
+                tw="bg-white/80 border-b-secondary-100 border-b-2 border-t-[10px] border-t-primary pt-2 md:pt-1 z-20"
 
                 css={`
                     height: 10vh;

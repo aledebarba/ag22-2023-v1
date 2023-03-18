@@ -5673,13 +5673,20 @@ var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("h4
   displayName: "cards___StyledH",
   componentId: "sc-1y2n8oq-1"
 })({
+  "cursor": "pointer",
   "fontSize": "2rem",
   "lineHeight": "2.25em",
   "letterSpacing": "0em",
   "fontWeight": "500",
   "textTransform": "lowercase",
   "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))",
+  "transitionProperty": "all",
+  "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+  "transitionDuration": "150ms",
+  ":hover": {
+    "fontWeight": "900"
+  }
 });
 var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("h6").withConfig({
   displayName: "cards___StyledH2",
@@ -5840,7 +5847,10 @@ const HeaderMenu = props => {
       "borderBottomColor": "rgb(222 220 222 / var(--tw-border-opacity))",
       "borderTopColor": "rgb(230 35 55 / var(--tw-border-opacity))",
       "backgroundColor": "rgb(255 255 255 / 0.8)",
-      "paddingTop": "0.5rem"
+      "paddingTop": "0.5rem",
+      "@media (min-width: 768px)": {
+        "paddingTop": "0.25rem"
+      }
     }, `
                     height: 10vh;
                     width: 100vw;

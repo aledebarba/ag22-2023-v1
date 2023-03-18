@@ -10,7 +10,7 @@ export const Card = ({ children }) => {
 
 export const CardTitle = ({ children }) => {
     return (
-        <h4 tw={"text-h4 text-primary lowercase font-medium"}>
+        <h4 tw={"text-h4 text-primary lowercase font-medium hover:font-black transition-all cursor-pointer"}>
             {children}
         </h4>
     )

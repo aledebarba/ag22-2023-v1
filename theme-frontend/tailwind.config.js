@@ -51,7 +51,7 @@ module.exports = {
           'body': [ '1.25rem', {
             lineHeight: '1.75rem',
             letterSpacing: '0.02em',
-            fontWeight: '300',
+            fontWeight: '360',
           }],
           'button': [ '1rem', {
             lineHeight: '1rem',
@@ -61,12 +61,12 @@ module.exports = {
           'caption': [ '0.75rem', {
             lineHeight: '0.875rem',
             letterSpacing: '0em',
-            fontWeight: '300',
+            fontWeight: '360',
           }],
           'overline': [ '0.625rem', {
             lineHeight: '0.75rem',
             letterSpacing: '0em',
-            fontWeight: '300',
+            fontWeight: '330',
           }],
           'h1': [ '3.5rem', {
             lineHeight: '3.75rem',
@@ -92,10 +92,10 @@ module.exports = {
             letterSpacing: '0em',
             fontWeight: '300',
           }],
-          'h6': [ '1.25rem', {
-            lineHeight: '1.5rem',
+          'h6': [ '1.225rem', {
+            lineHeight: '1.55rem',
             letterSpacing: '0em',
-            fontWeight: '300',
+            fontWeight: '360',
           }],
       }
     }
