@@ -93,7 +93,7 @@ module.exports = {
             fontWeight: '300',
           }],
           'h6': [ '1.225rem', {
-            lineHeight: '1.55rem',
+            lineHeight: '1.6rem',
             letterSpacing: '0em',
             fontWeight: '360',
           }],

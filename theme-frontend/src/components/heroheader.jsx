@@ -1,4 +1,4 @@
-import { Button } from './button';
+import { Buttonx } from './button';
 import { Icon } from '@iconify/react';
 import { Container } from './containers';
 import { HeaderMenu, Logo, Nav } from './header/nav';
@@ -127,9 +127,9 @@ export const HeroHeader = () => (
             </p>
 
             <div tw="ml-8">
-                <Button>
+                <Buttonx outline primary>
                     Fale agora com a gente
-                </Button>
+                </Buttonx>
             </div>
 
             <div tw={"text-primary flex items-center gap-3 align-baseline absolute bottom-[88px] left-1/2 translate-x-[-50%]"}>

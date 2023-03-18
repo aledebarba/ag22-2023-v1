@@ -34,13 +34,13 @@
   h4 {
     @apply text-secondary;
     @apply text-h4;
-    font-stretch: 110%;
+    font-stretch: 115%;
   }
   h5 {
     @apply text-secondary;
     margin: 1rem 0;
     @apply text-h5;
-    font-stretch: 105%;
+    font-stretch: 115%;
   }
   h6 {
     @apply text-secondary;

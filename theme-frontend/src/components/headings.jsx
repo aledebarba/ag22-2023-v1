@@ -12,8 +12,8 @@ export const H2Dash = ( props ) => <div
         &:after {
             content: '';
             position: absolute;
-            width: 1.5rem;
-            height: 1rem;			
+            width: 2.5rem;
+            height: 0.5rem;			
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -22,3 +22,25 @@ export const H2Dash = ( props ) => <div
     >
     <h2 {...props}>{props.children}</h2>
 </div>
+
+export const H2superiordash = ( props ) => <div
+    css={[
+        tw`after:(bg-primary)`,
+        `
+        position: relative;
+        width: fit-content;
+        padding: 1.5rem 0 0;
+        
+        &:after {
+            content: '';
+            position: absolute;
+            width: 40%;
+            height: 0.7rem;            
+            top: 0;
+            left: 20%;
+            transform: translateX(-50%);
+        }
+        `]}
+    >
+        <h2 {...props}>{props.children}</h2>
+    </div>

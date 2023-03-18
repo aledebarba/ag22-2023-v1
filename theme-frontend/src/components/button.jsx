@@ -1,20 +1,25 @@
 import tw from 'twin.macro';
 
 
-export const Buttonx = ({ secondary, danger, link, large, small, outline, children, icon }) => {
+export const Buttonx = ({ secondary, danger, link, large, small, outline, children, icon, left, right, center, tertiary }) => {
     return ( <button
         css={[
-            tw`flex justify-center rounded-lg gap-4`,
+            tw`flex justify-center rounded-lg gap-4 box-border justify-center items-center mt-12 hover:duration-200`,
             outline && tw`border-2`,
-            outline && !secondary && tw`border-primary-100 text-secondary-100`,
-            outline && secondary && tw`border-primary text-primary`,
-            !outline && !secondary && tw`bg-primary text-white`,
-            !outline && secondary && tw`bg-secondary-700 text-white`,
+            outline && !secondary && tw`border-primary text-primary hover:bg-primary hover:text-white`,
+            outline && secondary && tw`border-secondary text-secondary hover:bg-secondary hover:text-white`,
+            outline && tertiary && tw`border-secondary-400 text-primary-600 bg-gray-50 hover:bg-white hover:text-primary-700 drop-shadow-lg`,
+            !outline && !secondary && tw`bg-primary text-white hover:bg-primary-700`,
+            !outline && secondary && tw`bg-secondary-700 text-white hover:bg-secondary-700`,
             !large && !small && tw`py-4 px-8`,
             large && tw`py-6 px-10`,
             small && tw`py-2 px-4`,
             danger && tw`bg-red-500 text-white`,
             link && tw`bg-transparent text-primary border-b-primary border-b-2 m-0 p-0 text-lg hover:(scale-110 duration-300)`,
+            left && tw`ml-0 mr-auto`,
+            right && tw`mr-0 ml-auto`,
+            center && tw`mx-auto`,
+            icon && tw`py-0`,
         ]}
     >{children}</button>)
 }

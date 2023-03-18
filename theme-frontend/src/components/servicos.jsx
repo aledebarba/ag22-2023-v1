@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Button } from './button';
+import { Buttonx } from './button';
 import { Card, CardTitle, CardText, CardBox } from './cards';
 import { ContainerFluidH } from './containers';
 import { H2Dash } from './headings';
@@ -28,7 +28,7 @@ export const Servicos = () => {
 						</Card>
 						})}						
 				</CardBox>
-				<Button tw="mx-auto my-[2rem]">Conheça mais sobre nosso serviços</Button>
+				<Buttonx outline center>Conheça mais sobre nosso serviços</Buttonx>
 		</ContainerFluidH> 
 	</section>
 }
