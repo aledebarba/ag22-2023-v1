@@ -5,6 +5,7 @@ specifiers:
   '@babel/preset-react': ^7.18.6
   '@babel/preset-typescript': ^7.21.0
   '@iconify/react': ^4.0.1
+  '@studio-freight/lenis': ^1.0.1
   '@svgr/webpack': ^6.5.1
   '@tailwindcss/aspect-ratio': ^0.4.2
   '@types/react': ^18.0.28
@@ -37,6 +38,7 @@ specifiers:
   webpack: ^5.75.0
 
 dependencies:
+  '@studio-freight/lenis': 1.0.1
   '@wordpress/scripts': 25.5.1_ygqkwb4gg3aean7xjfdauovyqq
   gsap: 3.11.4
   react: 18.2.0
@@ -1772,6 +1774,10 @@ packages:
   /@socket.io/component-emitter/3.1.0:
     resolution: {integrity: sha512-+9jVqKhRSpsc591z5vX+X5Yyw+he/HCB4iQ/RYxw35CEPaY1gnsNE43nf9n9AaYjAQrTiI/mOwKUKdUs9vf7Xg==}
     dev: true
+
+  /@studio-freight/lenis/1.0.1:
+    resolution: {integrity: sha512-KQVl5ZWm3zR1E1RxRFJGftOsevgYruMmyRg1Bd1SEuyS2kXGTifM0fpODsha2Xl8jLV31/0XTLFsiWj/jW0eUw==}
+    dev: false
 
   /@svgr/babel-plugin-add-jsx-attribute/6.5.1_@babel+core@7.21.3:
     resolution: {integrity: sha512-9PYGcXrAxitycIjRmZB+Q0JaN07GZIWaTBIGQzfaZv+qr1n8X1XUEJ5rZ/vx6OVD9RRYlrNnXWExQXcmZeD/BQ==}

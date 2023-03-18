@@ -1,13 +1,13 @@
-import { useState, useEffect } from 'react';
-import { ContainerFluidH } from './containers';
+import { ContainerFluidH, Container } from './containers';
 import { H2Dash } from './headings';
 import { Buttonx } from './button';
 import tw from 'twin.macro';
 
 export const TrabalheConosco = () => { 
 		
-	return <section className="trabalhe__conosco" tw={"py-28 bg-white text-secondary"}>
+	return <section tw={"py-28 bg-white text-secondary "}>
 			<ContainerFluidH>
+				<div tw="h-fit">
 				<H2Dash>Trabalhe Conosco</H2Dash>
 				<div tw="mt-8 grid grid-cols-8 gap-4 justify-between outline-red-500">
 					<div tw="col-span-3">
@@ -31,6 +31,7 @@ export const TrabalheConosco = () => {
 							</div>
 						</Buttonx>
 					</div>
+				</div>
 				</div>
 			</ContainerFluidH> 
 	</section>

@@ -15,7 +15,6 @@ export const Clientes = () => {
 				.then( (data) => {
 					const logos = data.map( (cliente, index) => cliente.data.logo );
 					setClientes( [...logos, ...logos, ...logos ] )
-					setW( clientes.length * (logoWidth * 1.1) );
 				})
 		}, [])
 
