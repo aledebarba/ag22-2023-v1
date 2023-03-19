@@ -13,6 +13,7 @@ export const Contato = () => {
 			apiFetch({ path: 'database/v1/contatos' })
 				.then( (data) => {
 					setContatos( data )
+					console.log( data )
 				} )
 		}, [])
 
@@ -30,12 +31,19 @@ export const Contato = () => {
 							<br></br>Vila Santana</h6>
 					</div>
 					<div tw="col-span-3">
-						<Buttonx outline tertiary right><Icon icon="bi:whatsapp" width="1.5rem" />Conheça mais sobre nosso serviços</Buttonx>
+					{ contatos && contatos.map( (contato) => {
+						return <div>
+								<a href={contato.data.link} target="_blank" rel="noreferrer">
+									<Buttonx outline tertiary style={{ width: "100%", marginBottom: "2rem", justifyContent: "flex-start" }} >
+											<Icon icon={contato.data.icone} tw="mr-2 text-4xl" />
+											{contato.data.rotulo}
+									</Buttonx>
+								</a>
+						</div>
+					})}		
 					</div>
 				</div>
-					{ contatos && contatos.map( (servico) => {
-						return <></>
-					})}						
+								
 			</ContainerFluidH> 
 	</section>
 }

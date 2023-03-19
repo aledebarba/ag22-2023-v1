@@ -100,6 +100,7 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
                 foreach ($posts as $post) {
                     $response[] = [
                         'id' => $post->ID,
+                        'slug' => $post->post_name,
                         'title' => $post->post_title,
                         'data' => parse_blocks($post->post_content)[0]['attrs'],
                     ];
