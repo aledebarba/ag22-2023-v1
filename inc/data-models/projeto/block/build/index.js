@@ -3816,15 +3816,19 @@ __webpack_require__.r(__webpack_exports__);
 const blockOptions = {
   name: "projeto",
   attributes: {
+    category: {
+      type: "string",
+      default: ""
+    },
     content: {
       type: "string",
       default: ""
     },
-    image: {
+    resumo: {
       type: "string",
       default: ""
     },
-    resumo: {
+    image: {
       type: "string",
       default: ""
     },
@@ -3834,19 +3838,24 @@ const blockOptions = {
     }
   },
   layout: [{
+    ref: "category",
+    label: "Categoria do projeto",
+    type: "textControl",
+    width: "100%"
+  }, {
     ref: "content",
     label: "Conteúdo / Decrição do projeto",
+    type: "textareaControl",
+    width: "40%"
+  }, {
+    ref: "resumo",
+    label: "Descrição sucinta do projeto, para mostrar quando ele aparecem em listas.",
     type: "textareaControl",
     width: "40%"
   }, {
     ref: "image",
     label: "Imagem principal em destaque do projeto.",
     type: "imageSelect",
-    width: "40%"
-  }, {
-    ref: "resumo",
-    label: "Descrição sucinta do projeto, para mostrar quando ele aparecem em listas.",
-    type: "textareaControl",
     width: "40%"
   }, {
     ref: "poster",
