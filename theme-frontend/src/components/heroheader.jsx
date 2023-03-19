@@ -94,18 +94,6 @@ export const HeroHeader = () => (
             </SaneSvg>
         </Container>
         
-        <HeaderMenu>
-            <Logo  tw="absolute"/>
-            <Nav.ul tw="w-full justify-center flex-nowrap">
-                <Nav.li>Quem Somos</Nav.li>
-                <Nav.li>Serviços</Nav.li>
-                <Nav.li>Cases</Nav.li>
-                <Nav.li>Clientes</Nav.li>
-                <Nav.li>Trabalhe Conosco</Nav.li>
-                <Nav.li>Contato</Nav.li>
-            </Nav.ul>
-        </HeaderMenu>
-
         <Container
            id="header-content"
            tw="relative z-[3]"

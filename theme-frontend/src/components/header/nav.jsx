@@ -3,6 +3,20 @@ import { ContainerFluidH } from "../containers";
 
 import tw from 'twin.macro';
 
+export const MainMenu = () => <HeaderMenu>
+<Logo  tw="absolute"/>
+    <Nav.ul tw="w-full justify-center flex-nowrap">
+        <Nav.li>Quem Somos</Nav.li>
+        <Nav.li>Serviços</Nav.li>
+        <Nav.li>Cases</Nav.li>
+        <Nav.li>Clientes</Nav.li>
+        <Nav.li>Trabalhe Conosco</Nav.li>
+        <Nav.li>Contato</Nav.li>
+    </Nav.ul>
+</HeaderMenu>
+
+
+
 export const HeaderMenu = (props) => {
     return (
             <div

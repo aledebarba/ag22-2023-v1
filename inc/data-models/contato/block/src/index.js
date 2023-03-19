@@ -8,22 +8,14 @@ import { Icon } from '@iconify/react';
 const blockOptions = {    
         name: "contato",
         attributes: {
-            cia:    { type: "string", default: "" },
+            rotulo:    { type: "string", default: "" },
             icone:  { type: "string", default: "" },
-            //gallery: { type: "array", default: [] },
-            poster: { type: "string", default: "" },
-            logo:   { type: "string", default: "" },
-            desc:   { type: "string", default: "" },
             link:   { type: "string", default: "" },  
         },
         layout:[
-            { ref: "cia", type: "textControl", label: "O nome completo da empresa detentora da marca.", width:"50%" },
-            { ref: "icone", type: "icon", label: "Selecione um icone", width:"30%" },
-            { ref: "poster", type: "imageSelect", label: "A imagem principal desse post.", width:"40%" },
-            { ref: "logo", type: "imageSelect", label: "A imagem principal desse post.", width:"40%" },
-            //{ ref: "gallery", type: "imageGallery", label: "Imagens que fazem parte do post", width:"100%" },
-            { ref: "desc", type: "textareaControl", label: "A descrição do post.", width:"100%" },
-            { ref: "link", type: "textControl", label: "O link para o post.", width:"100%" },
+            { ref: "rotulo", type: "textControl", label: "O texto que aparece dentro do botão que aciona essa forma de contato", width:"50%" },
+            { ref: "icone", type: "icon", label: "Selecione o código do icone que deve aparecer dentro do btoão", width:"30%" },
+            { ref: "link", type: "textControl", label: "O link que deve ser aberto quando o usuário clicar nesse botão. Ex: mailto:'contato@empresa.com'", width:"100%" },
         ],        
     }
 
