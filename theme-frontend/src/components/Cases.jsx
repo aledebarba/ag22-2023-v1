@@ -1,6 +1,7 @@
 import { ContainerFluidH } from './containers';
 import { H2Dash } from './headings';
 import { Buttonx } from './button';
+import { Link } from 'react-router-dom';
 import tw from 'twin.macro';
 import { useEffect, useState } from 'react';
 import apiFetch from '@wordpress/api-fetch';
@@ -11,8 +12,7 @@ export const Cases = () => {
 	const [cases, setCases] = useState([])
 	useEffect(()=>{
 		apiFetch({ path: 'database/v1/projetos/' })
-			.then( (data) => {
-				console.log( data )
+			.then( (data) => {				
 				setCases( data )
 			})
 	}, [])
@@ -60,12 +60,9 @@ const CaseCard = ({ item, index }) => {
 			<h5 tw="text-white font-semibold tracking-wider"> 
 				{ item.title}
 			</h5>
-			{/* <p>
-				{item.data.content}
-			</p> */}
 			<div tw="mt-1">
 				<Buttonx small>
-					<a href="#">Saiba mais</a>
+					<Link to={`projetos/${item.slug}`}>Saiba mais</Link>
 				</Buttonx>
 			</div>
 		</div>

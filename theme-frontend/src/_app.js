@@ -4,6 +4,10 @@ import { _app, getWPChunkElementAttr } from './utils/functions';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { default as FrontPage } 	from './pages/index';
 import { default as ArchivePage } 	from './pages/archive';
+import { default as ProjetoPage } 	from './pages/projeto';
+import { default as ProjetosPage } 	from './pages/projetos';
+import { default as ServicosPage } 	from './pages/servicos';
+import { default as Content } 	from './pages/content';
 import { default as Page } 			from './pages/page';
 import { default as NotFoundPage } 	from './pages/404';
 import { Loading } from './components/loading';
@@ -34,6 +38,8 @@ const Main = () => {
 				<Routes>
 					<Route path="/archive" element={ <ArchivePage /> } />
 					<Route path="/archive/:slug" element={ <ArchivePage /> } />
+					<Route path="/projetos/:slug" element={ <ProjetoPage /> } />
+					<Route path="/servicos" element={ <ServicosPage /> } />
 					<Route path="/" element={ <FrontPage /> } />
 					{ pagesModules.map( ( Module ) => (
 						<>
