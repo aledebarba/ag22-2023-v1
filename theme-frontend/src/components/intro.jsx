@@ -16,7 +16,7 @@ export const Intro = () => {
 	return <div tw="flex m-0 p-0 w-screen gap-16 items-center">
 	
 	<div 
-		tw="flex grow bg-secondary-100 w-[40vw] h-[100%] block rounded-2xl"
+		tw="flex grow bg-secondary-100 w-[40vw] h-[100%] block rounded-r-2xl"
 		css={`
 			height: ${rectHeight}px;
 		`}
