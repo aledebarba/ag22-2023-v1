@@ -4999,7 +4999,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
+
+
 const Cases = () => {
+  const colWidth = "40vw";
   const [cases, setCases] = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)([]);
   (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(() => {
     _wordpress_api_fetch__WEBPACK_IMPORTED_MODULE_4___default()({
@@ -5011,7 +5015,17 @@ const Cases = () => {
   }, []);
   return /*#__PURE__*/React.createElement(_StyledSection, {
     className: "Cases"
-  }, /*#__PURE__*/React.createElement(_StyledDiv, null), /*#__PURE__*/React.createElement(_StyledContainerFluidH, null, /*#__PURE__*/React.createElement(_headings__WEBPACK_IMPORTED_MODULE_1__.H2Dash, null, "Cases"), /*#__PURE__*/React.createElement(_StyledDiv2, null, cases && cases.map((item, index) => /*#__PURE__*/React.createElement(CaseCard, {
+  }, /*#__PURE__*/React.createElement(_StyledDiv, {
+    $_css: [{
+      "position": "absolute",
+      "top": "-20vw",
+      "left": "-18vw",
+      "borderRadius": "999rem",
+      "borderWidth": "6rem",
+      "--tw-border-opacity": "1",
+      "borderColor": "rgb(230 35 55 / var(--tw-border-opacity))"
+    }, ` width: ${colWidth}, height: ${colWidth} `]
+  }), /*#__PURE__*/React.createElement(_StyledContainerFluidH, null, /*#__PURE__*/React.createElement(_headings__WEBPACK_IMPORTED_MODULE_1__.H2Dash, null, "Cases"), /*#__PURE__*/React.createElement(_StyledDiv2, null, cases && cases.map((item, index) => /*#__PURE__*/React.createElement(CaseCard, {
     item: item,
     index: index,
     key: index
@@ -5022,30 +5036,28 @@ const CaseCard = ({
   index
 }) => {
   return /*#__PURE__*/React.createElement(_StyledDiv3, {
-    $_css: [`position: relative`, index === 0 && {
+    $_css2: [index === 0 && {
       "gridColumn": "span 2 / span 2"
     }, index !== 0 && {
       "gridColumn": "auto"
+    }, {
+      "position": "relative",
+      "height": "40vh",
+      "overflow": "hidden",
+      "borderRadius": "1rem"
     }]
   }, /*#__PURE__*/React.createElement(_StyledImg, {
-    src: item.image
-  }), /*#__PURE__*/React.createElement(_StyledDiv4, null, /*#__PURE__*/React.createElement("h6", null, item.title), /*#__PURE__*/React.createElement("p", null, item.description), /*#__PURE__*/React.createElement(_button__WEBPACK_IMPORTED_MODULE_2__.Buttonx, null, /*#__PURE__*/React.createElement("a", {
+    src: item.data.image,
+    $_css3: [{
+      "height": "100%",
+      "width": "100%",
+      "objectFit": "cover"
+    }]
+  }), /*#__PURE__*/React.createElement(_StyledDiv4, null, /*#__PURE__*/React.createElement(_StyledP, null, item.data.category), /*#__PURE__*/React.createElement(_StyledH, null, item.title), /*#__PURE__*/React.createElement(_StyledDiv5, null, /*#__PURE__*/React.createElement(_button__WEBPACK_IMPORTED_MODULE_2__.Buttonx, {
+    small: true
+  }, /*#__PURE__*/React.createElement("a", {
     href: "#"
-  }, "Ir para o projeto"))));
-
-  // <div css={[
-  // 	index === 0 && tw`col-span-2`,
-  // 	index !== 0 && tw`col-auto`,
-  // 	`
-  // 		width: auto;
-  // 		height: 40vh;
-  // 		background-image: url(${item.data.image});
-  // 		background-size: cover;
-  // 		background-position: center;
-  // 		background-repeat: no-repeat;
-  // 		border-radius: 1rem;
-
-  // `]} />
+  }, "Saiba mais")))));
 };
 var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("section").withConfig({
   displayName: "Cases___StyledSection",
@@ -5059,17 +5071,7 @@ var _StyledSection = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"
 var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
   displayName: "Cases___StyledDiv",
   componentId: "sc-66eaor-1"
-})({
-  "position": "absolute",
-  "top": "-20vw",
-  "left": "-18vw",
-  "height": "40vw",
-  "width": "40vw",
-  "borderRadius": "999rem",
-  "borderWidth": "6rem",
-  "--tw-border-opacity": "1",
-  "borderColor": "rgb(230 35 55 / var(--tw-border-opacity))"
-});
+})(["", ""], p => p.$_css);
 var _StyledContainerFluidH = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(_containers__WEBPACK_IMPORTED_MODULE_0__.ContainerFluidH).withConfig({
   displayName: "Cases___StyledContainerFluidH",
   componentId: "sc-66eaor-2"
@@ -5088,16 +5090,11 @@ var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
 var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
   displayName: "Cases___StyledDiv3",
   componentId: "sc-66eaor-4"
-})(["", ""], p => p.$_css);
+})(["", ""], p => p.$_css2);
 var _StyledImg = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("img").withConfig({
   displayName: "Cases___StyledImg",
   componentId: "sc-66eaor-5"
-})({
-  "height": "100%",
-  "width": "100%",
-  "borderRadius": "1rem",
-  "objectFit": "cover"
-});
+})(["", ""], p => p.$_css3);
 var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
   displayName: "Cases___StyledDiv4",
   componentId: "sc-66eaor-6"
@@ -5105,8 +5102,44 @@ var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])(
   "position": "absolute",
   "bottom": "0px",
   "left": "0px",
-  "height": "1rem",
-  "width": "100%"
+  "display": "flex",
+  "height": "50%",
+  "width": "100%",
+  "flexDirection": "column",
+  "justifyContent": "center",
+  "borderTopWidth": "2px",
+  "--tw-border-opacity": "1",
+  "borderColor": "rgb(255 85 88 / var(--tw-border-opacity))",
+  "backgroundColor": "rgb(65 63 65 / 0.8)",
+  "padding": "2rem",
+  "--tw-backdrop-blur": "blur(16px)",
+  "backdropFilter": "var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)"
+});
+var _StyledP = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("p").withConfig({
+  displayName: "Cases___StyledP",
+  componentId: "sc-66eaor-7"
+})({
+  "fontSize": "0.90rem",
+  "lineHeight": "1.08rem",
+  "fontWeight": "380",
+  "letterSpacing": "0.1em",
+  "--tw-text-opacity": "1",
+  "color": "rgb(255 133 128 / var(--tw-text-opacity))"
+});
+var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("h5").withConfig({
+  displayName: "Cases___StyledH",
+  componentId: "sc-66eaor-8"
+})({
+  "fontWeight": "600",
+  "letterSpacing": "0.05em",
+  "--tw-text-opacity": "1",
+  "color": "rgb(255 255 255 / var(--tw-text-opacity))"
+});
+var _StyledDiv5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_5__["default"])("div").withConfig({
+  displayName: "Cases___StyledDiv5",
+  componentId: "sc-66eaor-9"
+})({
+  "marginTop": "0.25rem"
 });
 
 /***/ }),
@@ -5664,9 +5697,9 @@ const Buttonx = ({
 }) => {
   return /*#__PURE__*/React.createElement(_StyledButton, {
     $_css: [{
-      "marginTop": "3rem",
       "boxSizing": "border-box",
       "display": "flex",
+      "width": "fit-content",
       "alignItems": "center",
       "justifyContent": "center",
       "gap": "1rem",
@@ -5748,7 +5781,11 @@ const Buttonx = ({
       "paddingTop": "0.5rem",
       "paddingBottom": "0.5rem",
       "paddingLeft": "1rem",
-      "paddingRight": "1rem"
+      "paddingRight": "1rem",
+      "fontSize": "0.875rem",
+      "lineHeight": "1.25rem",
+      "fontWeight": "600",
+      "letterSpacing": "0.025em"
     }, danger && {
       "--tw-bg-opacity": "1",
       "backgroundColor": "rgb(239 68 68 / var(--tw-bg-opacity))",

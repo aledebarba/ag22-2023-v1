@@ -63,6 +63,10 @@ module.exports = {
             letterSpacing: '0em',
             fontWeight: '360',
           }],
+          'detail': [ '0.90rem', {
+            lineHeight: '1.08rem',
+            fontWeight: '380',
+          }],
           'overline': [ '0.625rem', {
             lineHeight: '0.75rem',
             letterSpacing: '0em',

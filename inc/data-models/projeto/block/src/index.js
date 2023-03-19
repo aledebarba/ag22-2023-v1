@@ -7,16 +7,18 @@ import { Icon } from '@iconify/react';
 
 const blockOptions = {    
     name: "projeto",
-    attributes: {
+    attributes: {        
+        category: { type: "string", default: ""},
         content: { type: "string", default: "" },
-        image: { type: "string", default: "" },
         resumo: { type: "string", default: "" },
+        image: { type: "string", default: "" },
         poster: { type: "string", default: "" },
     },
     layout:[
+        { ref: "category", label: "Categoria do projeto", type: "textControl", width: "100%" },
         { ref: "content", label: "Conteúdo / Decrição do projeto", type: "textareaControl", width: "40%" },
-        { ref: "image", label: "Imagem principal em destaque do projeto.", type: "imageSelect", width: "40%" }, 
         { ref: "resumo", label: "Descrição sucinta do projeto, para mostrar quando ele aparecem em listas.", type: "textareaControl", width: "40%" },
+        { ref: "image", label: "Imagem principal em destaque do projeto.", type: "imageSelect", width: "40%" }, 
         { ref: "poster", label: "Imagem do projeto para quando ele aparece em listas.", type: "imageSelect", width: "40%" },
     ],        
 }
