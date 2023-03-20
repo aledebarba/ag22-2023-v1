@@ -66,6 +66,7 @@ export function CustomImageSelect( { children, setMedia, media, label="", classN
 
 	const ALLOWED_MEDIA_TYPES=["image"];
 	const [ image, setImage ] = useState( media );
+	const [ imageLoaded, setImageLoaded ] = useState( false );
 
 	if ( ! setMedia ) {
 		setMedia = CALLBACK;
@@ -79,7 +80,7 @@ export function CustomImageSelect( { children, setMedia, media, label="", classN
 	};
 	
 	return <div className={"custom-image-select "+className}>
-			<ImagePlaceholder>
+			<ImagePlaceholder showBackground={ !imageLoaded }>
 			{ image && <>
 				<img 
 					src={ image.url || image } 
@@ -91,7 +92,9 @@ export function CustomImageSelect( { children, setMedia, media, label="", classN
 						left: 0,
 						width:"100%",
 						height: "100%",
-						borderRadius: 8,					}}
+						borderRadius: 8,
+					}}
+					onLoad={ () => setImageLoaded( true ) }
 				/>
 				<ActionButtonTrash handleRemoveImage={ handleRemoveImage } />
 			</> }

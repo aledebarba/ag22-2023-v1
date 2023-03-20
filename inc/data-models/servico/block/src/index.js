@@ -73,6 +73,7 @@ const RenderInterface = ( props ) => {
                             onChange={(value) => onChange(attribute, value)}
                         />
                     )} */}
+
                     {layout.type === "textControl" && (
                         <TextControl
                             className="w-full"
@@ -185,33 +186,49 @@ const IconSelectControl = ({
     selectLabel = "Pesquisar ícones", 
     selectClearLabel = "Limpar ícone" }) => {
 
-    return <>
-        <div tw="flex flex-col gap-2 w-[180px]">
+    return <div 
+        tw="w-fit duration-300 p-[4px]"
+        css={`
+            outline: 2px solid rgba(255,255,255,0.8) ;
+            outline-offset: 2px;
+
+            &:hover{
+                outline: 2px solid rgba(0,0,0,0.2) ;
+            }
+        `}
+    
+        >
+        <div tw="grid grid-cols-3 w-[12vw] gap-2 max-w-[280px]">
+           <div tw="col-start-1 row-span-2 bg-slate-500/20 box-border rounded-sm border-2 border-transparent duration-300 hover:(bg-white border-2 border-sky-600 duration-300)">
             <Icon
-                icon={icon}
-                width={size}
-            />
-            <TextControl
-                value={icon}
-                onChange={(value)=>onSelect(value) }
-            />
-            <button>
-                <a
-                    className="button button-primary primary"
+                    icon={icon}
+                    width={"100%"}
+                />
+           </div>
+            <button tw="col-start-2 col-span-2 bg-sky-600 text-white text-sm p-1 rounded-md  w-full h-fit">
+                <a           
+                    tw="flex flex-nowrap items-center gap-1 justify-center hover:(text-white)"         
                     href={src}
                     target="_blank"
                     rel="noreferrer"
                 >
-                    {selectLabel}
+                    <Icon icon="octicon:search-16"/><span>{selectLabel}</span>
                 </a>
             </button>
             <button
-                tw="bg-red-500 text-white p-2 rounded-md"
-                onClick={() => onSelect("") }>
-                Limpar ícone
+                tw="col-start-2 col-span-2 bg-red-500 text-white text-sm p-1 rounded-md flex flex-nowrap items-center gap-1 justify-center w-full h-fit"
+                onClick={() => onSelect("") }
+                >
+                <Icon icon="mdi:trash"/><span>Limpar ícone</span>
             </button>
+            <TextControl
+                tw="col-start-1 col-span-3 rounded-sm w-full h-fit"
+                value={icon}
+                onChange={(value)=>onSelect(value) }
+            />
+            
         </div>
-    </>
+    </div>
 
 }
 const GalleryOfImages = ( props ) => {
