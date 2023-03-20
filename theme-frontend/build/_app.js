@@ -5127,9 +5127,12 @@ var _StyledDiv4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_6__["default"])(
   "padding": "2rem",
   "--tw-backdrop-blur": "blur(16px)",
   "backdropFilter": "var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)",
-  "transitionProperty": "all",
+  "transitionProperty": "transform",
   "transitionTimingFunction": "cubic-bezier(0, 0, 0.2, 1)",
   "transitionDuration": "700ms",
+  ":hover": {
+    "willChange": "translate-y-0"
+  },
   ".group:hover &": {
     "--tw-translate-y": "0px",
     "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))"
@@ -5997,12 +6000,52 @@ __webpack_require__.r(__webpack_exports__);
 const Card = ({
   children
 }) => {
-  return /*#__PURE__*/React.createElement(_StyledDiv, null, children);
+  return /*#__PURE__*/React.createElement(_StyledDiv, {
+    className: "group"
+  }, children);
 };
 const CardTitle = ({
   children
 }) => {
-  return /*#__PURE__*/React.createElement(_StyledH, null, children);
+  return /*#__PURE__*/React.createElement(_StyledH, {
+    $_css: [{
+      "fontSize": "2rem",
+      "lineHeight": "3rem",
+      "letterSpacing": "0em",
+      "fontWeight": "500",
+      "textTransform": "lowercase",
+      "--tw-text-opacity": "1",
+      "color": "rgb(230 35 55 / var(--tw-text-opacity))",
+      "::after": {
+        "content": "var(--tw-content)",
+        "--tw-bg-opacity": "1",
+        "backgroundColor": "rgb(0 0 0 / var(--tw-bg-opacity))"
+      },
+      ".group:hover &::after": {
+        "content": "var(--tw-content)",
+        "width": "2.5rem",
+        "transitionProperty": "all",
+        "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "transitionDuration": "300ms"
+      }
+    }, `
+            position: relative;
+            width: fit-content;
+            padding: 0.2rem 0;
+            margin: 0 auto;
+            margin-bottom: 1.25rem;
+    
+            &:after {
+                content: '';
+                position: absolute;
+                width: 0.6rem;
+                height: 0.25rem;			
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        `]
+  }, children);
 };
 const CardText = ({
   children
@@ -6040,6 +6083,7 @@ var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("
   displayName: "cards___StyledDiv",
   componentId: "sc-1y2n8oq-0"
 })({
+  "cursor": "pointer",
   "borderRadius": "0.5rem",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
@@ -6048,41 +6092,37 @@ var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("
   "paddingBottom": "1.5rem",
   "textAlign": "center",
   "--tw-drop-shadow": "drop-shadow(0 10px 8px rgb(0 0 0 / 0.04)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1))",
-  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
+  "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)",
+  "transitionProperty": "all",
+  "transitionTimingFunction": "cubic-bezier(0.4, 0, 1, 1)",
+  "transitionDuration": "300ms",
+  ":hover": {
+    "--tw-scale-x": "1.05",
+    "--tw-scale-y": "1.05",
+    "transform": "translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))",
+    "--tw-drop-shadow": "drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08))",
+    "filter": "var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow)"
+  }
 });
 var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("h4").withConfig({
   displayName: "cards___StyledH",
   componentId: "sc-1y2n8oq-1"
-})({
-  "cursor": "pointer",
-  "fontSize": "2rem",
-  "lineHeight": "2.25em",
-  "letterSpacing": "0em",
-  "fontWeight": "500",
-  "textTransform": "lowercase",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))",
-  "transitionProperty": "all",
-  "transitionTimingFunction": "cubic-bezier(0.4, 0, 0.2, 1)",
-  "transitionDuration": "150ms",
-  ":hover": {
-    "fontWeight": "900"
-  }
-});
+})(["", ""], p => p.$_css);
 var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("h6").withConfig({
   displayName: "cards___StyledH2",
   componentId: "sc-1y2n8oq-2"
 })({
-  "fontSize": "1.25rem",
-  "lineHeight": "1.5rem",
+  "fontSize": "1.225rem",
+  "lineHeight": "1.6rem",
   "letterSpacing": "0em",
-  "fontWeight": "300"
+  "fontWeight": "360"
 });
 var _StyledDiv2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("div").withConfig({
   displayName: "cards___StyledDiv2",
   componentId: "sc-1y2n8oq-3"
 })({
   "marginTop": "4rem",
+  "marginBottom": "3rem",
   "display": "grid",
   "gridTemplateColumns": "repeat(4, minmax(0, 1fr))",
   "gap": "2rem"
@@ -6396,7 +6436,7 @@ const H2Dash = props => /*#__PURE__*/React.createElement(_StyledDiv, {
   }, `
         position: relative;
         width: fit-content;
-        padding: 0.2rem 0;
+        padding: 0 0 0.2rem 0;
         margin: 0 auto;
 
         &:after {
@@ -6702,7 +6742,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-
 const Intro = () => {
   const sectionRef = react__WEBPACK_IMPORTED_MODULE_0___default().useRef(null);
   const [rectHeight, setRectHeight] = react__WEBPACK_IMPORTED_MODULE_0___default().useState(0);
@@ -6727,15 +6766,15 @@ const Intro = () => {
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSection, {
     className: "intro",
     ref: sectionRef
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv3, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan, null, "in brand"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan2, null, " we trust")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Sim, n\xF3s acreditamos. N\xF3s acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu pre\xE7o em si, deve ser algo que possua valor. Comunicar vai al\xE9m de dizer palavras, frases, comunicados. Como voc\xEA \xE9 recebido? Como sua mensagem chega? Como \xE9 sua presen\xE7a no mercado? Na vida do seu target?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledP, null, "Comunicar \xE9 saber como chegar. Um brainstorm bem feito, uma a\xE7\xE3o bem planejada, uma marca que ganha vida e voz. \xC9 no que somos especialistas. Sim n\xF3s acreditamos! E voc\xEA?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Comunicar vai al\xE9m de dizer palavras, frases, comunicados. Como voc\xEA \xE9 recebido? Como sua mensagem chega? Como \xE9 sua presen\xE7a no mercado? Na vida do seu target?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Comunicar \xE9 saber como chegar."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Um brainstorm bem feito, uma a\xE7\xE3o bem planejada, uma marca que ganha vida e voz. \xC9 no que somos especialistas."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH2, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan3, null, "Sim n\xF3s acreditamos!\xA0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "E voc\xEA?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledDiv3, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h2", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan, null, "in brand"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan2, null, " we trust")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Sim, n\xF3s acreditamos. N\xF3s acreditamos porque somos um time que ama o que faz e acima de tudo acredita que uma marca, um produto, uma empresa pode e deve ser algo mais do que seu pre\xE7o em si, deve ser algo que possua valor. Comunicar vai al\xE9m de dizer palavras, frases, comunicados. Como voc\xEA \xE9 recebido? Como sua mensagem chega? Como \xE9 sua presen\xE7a no mercado? Na vida do seu target?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledP, null, "Comunicar \xE9 saber como chegar. Um brainstorm bem feito, uma a\xE7\xE3o bem planejada, uma marca que ganha vida e voz. \xC9 no que somos especialistas. Sim n\xF3s acreditamos! E voc\xEA?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Comunicar vai al\xE9m de dizer palavras, frases, comunicados. Como voc\xEA \xE9 recebido? Como sua mensagem chega? Como \xE9 sua presen\xE7a no mercado? Na vida do seu target?"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h4", null, "Comunicar \xE9 saber como chegar."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Um brainstorm bem feito, uma a\xE7\xE3o bem planejada, uma marca que ganha vida e voz. \xC9 no que somos especialistas."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledSpan3, null, "Sim n\xF3s acreditamos!\xA0"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, "E voc\xEA?"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-start-1 col-span-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH3, null, "+10 anos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH4, null, "no mercado")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH2, null, "+10 anos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH3, null, "no mercado")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-start-4 col-span-4"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH5, null, "+50 projetos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH6, null, "de embalagens, presente na Am\xE9rica do Sul")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH4, null, "+50 projetos"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH5, null, "de embalagens, presente na Am\xE9rica do Sul")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-start-1 col-span-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH7, null, "+150 marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH8, null, "criadas e ativas pelo mundo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH6, null, "+150 marcas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH7, null, "criadas e ativas pelo mundo")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "col-start-4 col-span-3"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH9, null, "+1000 horas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH10, null, "de storytelling criadas"))));
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH8, null, "+1000 horas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_StyledH9, null, "de storytelling criadas"))));
 };
 var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("div").withConfig({
   displayName: "intro___StyledDiv",
@@ -6770,23 +6809,18 @@ var _StyledDiv3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])(
   componentId: "sc-17vegqt-3"
 })({
   "gridColumn": "span 7 / span 7",
-  "gridColumnStart": "1"
-});
-var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h2").withConfig({
-  displayName: "intro___StyledH",
-  componentId: "sc-17vegqt-4"
-})({
-  "marginTop": "2rem"
+  "gridColumnStart": "1",
+  "justifyContent": "center"
 });
 var _StyledSpan = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("span").withConfig({
   displayName: "intro___StyledSpan",
-  componentId: "sc-17vegqt-5"
+  componentId: "sc-17vegqt-4"
 })({
   "fontWeight": "100"
 });
 var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("span").withConfig({
   displayName: "intro___StyledSpan2",
-  componentId: "sc-17vegqt-6"
+  componentId: "sc-17vegqt-5"
 })({
   "fontWeight": "900",
   "--tw-text-opacity": "1",
@@ -6794,84 +6828,84 @@ var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])
 });
 var _StyledP = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("p").withConfig({
   displayName: "intro___StyledP",
-  componentId: "sc-17vegqt-7"
+  componentId: "sc-17vegqt-6"
 })({
   "marginTop": "1rem"
 });
-var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h5").withConfig({
-  displayName: "intro___StyledH2",
-  componentId: "sc-17vegqt-8"
+var _StyledH = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h5").withConfig({
+  displayName: "intro___StyledH",
+  componentId: "sc-17vegqt-7"
 })({
   "marginTop": "2rem",
   "marginBottom": "2rem"
 });
 var _StyledSpan3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("span").withConfig({
   displayName: "intro___StyledSpan3",
-  componentId: "sc-17vegqt-9"
+  componentId: "sc-17vegqt-8"
 })({
   "fontWeight": "700",
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h4").withConfig({
+var _StyledH2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h4").withConfig({
+  displayName: "intro___StyledH2",
+  componentId: "sc-17vegqt-9"
+})({
+  "fontSize": "2rem",
+  "lineHeight": "2.5rem",
+  "letterSpacing": "0em",
+  "fontWeight": "700",
+  "--tw-text-opacity": "1",
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+});
+var _StyledH3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h6").withConfig({
   displayName: "intro___StyledH3",
   componentId: "sc-17vegqt-10"
 })({
-  "fontSize": "2rem",
-  "lineHeight": "2.5rem",
+  "fontSize": "1.225rem",
+  "lineHeight": "1.6rem",
   "letterSpacing": "0em",
-  "fontWeight": "700",
+  "fontWeight": "400",
   "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h6").withConfig({
+var _StyledH4 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h4").withConfig({
   displayName: "intro___StyledH4",
   componentId: "sc-17vegqt-11"
 })({
-  "fontSize": "1.225rem",
-  "lineHeight": "1.6rem",
+  "fontSize": "2rem",
+  "lineHeight": "2.5rem",
   "letterSpacing": "0em",
-  "fontWeight": "400",
+  "fontWeight": "700",
   "--tw-text-opacity": "1",
-  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h4").withConfig({
+var _StyledH5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h6").withConfig({
   displayName: "intro___StyledH5",
   componentId: "sc-17vegqt-12"
 })({
-  "fontSize": "2rem",
-  "lineHeight": "2.5rem",
+  "fontSize": "1.225rem",
+  "lineHeight": "1.6rem",
   "letterSpacing": "0em",
-  "fontWeight": "700",
+  "fontWeight": "400",
   "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
+  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h6").withConfig({
+var _StyledH6 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h4").withConfig({
   displayName: "intro___StyledH6",
   componentId: "sc-17vegqt-13"
 })({
-  "fontSize": "1.225rem",
-  "lineHeight": "1.6rem",
+  "fontSize": "2rem",
+  "lineHeight": "2.5rem",
   "letterSpacing": "0em",
-  "fontWeight": "400",
+  "fontWeight": "700",
   "--tw-text-opacity": "1",
-  "color": "rgb(65 63 65 / var(--tw-text-opacity))"
+  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h4").withConfig({
+var _StyledH7 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h6").withConfig({
   displayName: "intro___StyledH7",
   componentId: "sc-17vegqt-14"
 })({
-  "fontSize": "2rem",
-  "lineHeight": "2.5rem",
-  "letterSpacing": "0em",
-  "fontWeight": "700",
-  "--tw-text-opacity": "1",
-  "color": "rgb(230 35 55 / var(--tw-text-opacity))"
-});
-var _StyledH8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h6").withConfig({
-  displayName: "intro___StyledH8",
-  componentId: "sc-17vegqt-15"
-})({
   "fontSize": "1.225rem",
   "lineHeight": "1.6rem",
   "letterSpacing": "0em",
@@ -6879,9 +6913,9 @@ var _StyledH8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(65 63 65 / var(--tw-text-opacity))"
 });
-var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h4").withConfig({
-  displayName: "intro___StyledH9",
-  componentId: "sc-17vegqt-16"
+var _StyledH8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h4").withConfig({
+  displayName: "intro___StyledH8",
+  componentId: "sc-17vegqt-15"
 })({
   "fontSize": "2rem",
   "lineHeight": "2.5rem",
@@ -6890,9 +6924,9 @@ var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h
   "--tw-text-opacity": "1",
   "color": "rgb(230 35 55 / var(--tw-text-opacity))"
 });
-var _StyledH10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h6").withConfig({
-  displayName: "intro___StyledH10",
-  componentId: "sc-17vegqt-17"
+var _StyledH9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_2__["default"])("h6").withConfig({
+  displayName: "intro___StyledH9",
+  componentId: "sc-17vegqt-16"
 })({
   "fontSize": "1.225rem",
   "lineHeight": "1.6rem",

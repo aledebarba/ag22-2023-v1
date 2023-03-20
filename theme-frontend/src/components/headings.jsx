@@ -6,7 +6,7 @@ export const H2Dash = ( props ) => <div
         `
         position: relative;
         width: fit-content;
-        padding: 0.2rem 0;
+        padding: 0 0 0.2rem 0;
         margin: 0 auto;
 
         &:after {

@@ -52,8 +52,8 @@ const CaseCard = ({ item, index }) => {
 		/>
 		<div 
 			tw="absolute bottom-0 left-0 w-full h-fit p-8 bg-secondary/80 backdrop-blur-lg border-t-2 
-			border-primary-400 flex flex-col justify-center translate-y-full group-hover:translate-y-0 
-			duration-700 transition-all ease-out"
+			border-primary-400 flex flex-col justify-center hover:will-change-[translate-y-0] translate-y-full  group-hover:translate-y-0 
+			duration-700 transition-transform ease-out"
 		>
 			<p tw="text-detail text-primary-200 tracking-widest pb-[0.2em] mb-0">
 				{item.data.category}

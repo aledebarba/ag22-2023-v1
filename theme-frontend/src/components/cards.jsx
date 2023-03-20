@@ -2,7 +2,7 @@ import tw from 'twin.macro';
 
 export const Card = ({ children }) => {
     return (
-        <div tw={"bg-white p-4 py-6 drop-shadow-lg text-center rounded-lg"}>
+        <div tw={"bg-white p-4 py-6 drop-shadow-lg text-center rounded-lg transition-all duration-300 ease-in hover:scale-[1.05] cursor-pointer hover:drop-shadow-xl"} className="group">
             {children}
         </div>
     )
@@ -10,7 +10,26 @@ export const Card = ({ children }) => {
 
 export const CardTitle = ({ children }) => {
     return (
-        <h4 tw={"text-h4 text-primary lowercase font-medium hover:font-black transition-all cursor-pointer"}>
+        <h4 css={[
+            tw`after:(bg-black group-hover:w-10 group-hover:transition-all group-hover:duration-300) text-h4 text-primary lowercase font-medium leading-[3rem]`,
+            `
+            position: relative;
+            width: fit-content;
+            padding: 0.2rem 0;
+            margin: 0 auto;
+            margin-bottom: 1.25rem;
+    
+            &:after {
+                content: '';
+                position: absolute;
+                width: 0.6rem;
+                height: 0.25rem;			
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        `]}
+        >
             {children}
         </h4>
     )
@@ -26,7 +45,7 @@ export const CardText = ({children}) => {
 
 export const CardBox = ({children}) => {
     return (
-        <div tw={"grid grid-cols-4 gap-8 mt-16"}>
+        <div tw={"grid grid-cols-4 gap-8 mt-16 mb-12"}>
             {children}
         </div>
     )

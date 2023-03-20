@@ -25,12 +25,12 @@ export const Intro = () => {
 	</div>
 
 		<section 
-			className="intro" tw={"w-[60vw] py-20 bg-white grid grid-cols-8 gap-4 "}
+			className="intro" tw={"w-[60vw] py-20 bg-white grid grid-cols-8 gap-4"}
 			ref={sectionRef}
 			>
 			
-			<div tw="col-start-1 col-span-7" >
-				<h2 tw="mt-8">
+			<div tw="col-start-1 col-span-7 justify-center">
+				<h2>
 					<span tw="font-thin">in brand</span><span tw={"text-primary font-black"}> we trust</span>
 				</h2>
 
