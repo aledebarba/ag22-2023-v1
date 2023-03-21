@@ -5,6 +5,8 @@ function admin_style() {
 }
 add_action('admin_enqueue_scripts', 'admin_style', 99);     
 
+
+
 // --- register 2 menus, this ensure that menu editing capabilities are active on theme
 register_nav_menus(
     array(
@@ -20,16 +22,19 @@ function my_remove_admin_menus() {
     remove_menu_page( 'edit-comments.php' );
 }
 
+
 // --- Removes from post and pages
 // --- remove comments suport
 add_action('init', 'remove_comment_support', 100);
-
 function remove_comment_support() {
     remove_post_type_support( 'post', 'comments' );
     remove_post_type_support( 'page', 'comments' );
 }
+
+
 // --- Removes from admin bar
 // --- remove comments from menus bar
+add_action('admin_enqueue_scripts', 'welcome_admin_menu_item');
 function mytheme_admin_bar_render() {        
     global $wp_admin_bar;
     echo "<style>
@@ -56,6 +61,7 @@ function welcome_admin_menu_item(){
                 border-bottom: 1px solid #e5e5e5 !important;
                 border-top: 1px solid #e5e5e5 !important;
                 transform: translateY(-12px);
+                cursor: pointer;
             }
             #toplevel_page_welcome > a, #toplevel_page_welcome > a > div.wp-menu-image {
                 display: none;
@@ -64,9 +70,16 @@ function welcome_admin_menu_item(){
                 background-color: transparent!important;
             }
         </style>
+        <script>
+            window.addEventListener('load', function(){
+                var welcome = document.getElementById('toplevel_page_welcome');
+                welcome.addEventListener('click', function(){
+                    window.location.href = '/wp-admin/admin.php?page=welcome';
+                });
+            });
+        </script>
     HTML;
 }
-add_action('admin_enqueue_scripts', 'welcome_admin_menu_item');
 
 
 // --- Revamp dashboard interface
@@ -75,7 +88,9 @@ function customize_dashboard() {
     global $menu, $submenu;
     
     // --- Add new welcome screen
-    add_menu_page("welcome", "", 'manage_options', 'welcome', function(){ include("custom-welcome-page.php"); }, '', 0);
+    add_menu_page("welcome", "", 'manage_options', 'welcome', function(){
+         include("welcome-page.php"); 
+    }, '', 0);
     
     // --- Add new dashboard item with suboptions
     add_menu_page('Painel de Controle', 'Painel de Controle', 'manage_options', 'control-panel', function(){       
@@ -191,11 +206,6 @@ function customize_dashboard() {
 
 }
 
-// --- add custom css to custom login screen
-function custom_login_screen() {
-    common_css();
- }
-add_action( 'login_enqueue_scripts', 'custom_login_screen' );
 
 // --- redirects to welcome page
 add_action( 'wp_before_admin_bar_render', 'mytheme_admin_bar_render' );
@@ -212,6 +222,12 @@ function login_redirect( $redirect_to, $request, $user ){
 add_filter('login_redirect','login_redirect',10,3);
 
 
+
+add_action( 'login_enqueue_scripts', 'custom_login_screen' );
+// --- add custom css to custom login screen
+function custom_login_screen() {
+    common_css();
+ }
 function common_css(){ 
     wp_enqueue_style('dashboard_styles', get_template_directory_uri() . '/inc/assets/style/dashboard.css', array(), false, false);
     add_action( 'wp_enqueue_scripts', 'dashboard_styles' );

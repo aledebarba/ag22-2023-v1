@@ -1,0 +1,69 @@
+@import "./font-faces.css";
+@import "./custom-scroll-bars.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  p {
+    @apply text-secondary-700;
+    @apply text-body;
+  }
+  button {
+    @apply text-button;
+    font-stretch: 110%;
+  }
+  h1 {
+    @apply text-h1;
+    @apply text-secondary;
+    margin: 1rem 0;
+    font-stretch: 115%;
+  }
+  h2 {
+    @apply text-h2;
+    @apply text-secondary;
+    margin: 1rem 0;    
+    font-stretch: 115%;
+  }
+  h3 {
+    @apply text-secondary;
+    @apply text-h3;
+    font-stretch: 115%;
+  }
+  h4 {
+    @apply text-secondary;
+    @apply text-h4;
+    font-stretch: 115%;
+  }
+  h5 {
+    @apply text-secondary;
+    margin: 1rem 0;
+    @apply text-h5;
+    font-stretch: 115%;
+  }
+  h6 {
+    @apply text-secondary;
+    @apply text-h6;
+    font-stretch: 100%;
+  }
+}
+
+html {
+  scroll-behavior: initial;
+  --primary: #E62337;
+}
+
+html, body {
+  min-height: 100%;
+  height: auto;
+  max-width: 100vw;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+.logo #svg{
+  height: 2rem;
+}
+

@@ -21,13 +21,13 @@ export const Clientes = () => {
 		return <section className="clientes" tw={"py-28 bg-secondary-900 text-secondary"}>
 			<ContainerFluidH css="min-height: 50vh;">
 				<H2Dash tw="text-secondary-100">Clientes</H2Dash>
-				<Scroller clientes={clientes} logoWidth={logoWidth} speed={120}/>
+				<Scroller clientes={clientes} logoWidth={logoWidth} speed={360}/>
 			</ContainerFluidH> 
 	</section>
 }
 
 
-const Scroller = ({clientes, logoWidth, speed=50 }) => {
+const Scroller = ({clientes, logoWidth, speed=360 }) => {
 	return (
 		<div css={[
 			tw`my-8 w-full h-full relative`,
@@ -74,5 +74,6 @@ const Logo = ({logo, width}) => <div
 		margin: 0 ${width*0.1}px;
 		background-color: white;	
 		overflow: hidden;
+		border-radius: 8px;
 	`}
 ></div>

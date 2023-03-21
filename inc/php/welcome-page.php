@@ -1,6 +1,8 @@
 <?php 
 wp_enqueue_style('dashboard_styles', get_template_directory_uri() . '/inc/assets/style/dashboard.css', array(), false, false);
 add_action( 'wp_enqueue_scripts', 'dashboard_styles' );
+Import::component("homePageOptions")->from("homepage-options");
+
 echo <<<HTML
         <style>
             .flex {
@@ -28,8 +30,9 @@ echo <<<HTML
             
 
         </style>
+
         <div class="title">
-            <div class="icn">
+            <div class="icon">
                 <svg xmlns="http://www.w3.org/2000/svg" width="124" height="128" viewBox="0 0 20 20">
                     <path fill="dodgerblue"
                         d="M15 5H5L2 8l8 8l8-8l-3-3zm-3.3 6.9L10 11l-1.7.9l.3-1.9l-1.4-1.4l1.9-.3l.9-1.7l.9 1.8l1.9.3l-1.4 1.3l.3 1.9z" />
@@ -40,8 +43,7 @@ echo <<<HTML
             </h1>
         </div>
         <div class="flex">
-            <div class="intro">
-
+            <div id="options--website--general-options">
             </div>
             <div class="about-wordpress">
                 <h1>Sobre o Wordpress</h1>
@@ -108,5 +110,7 @@ echo <<<HTML
                     indivíduos. </p>
             </div>
         </div>
-        HTML;
+HTML;
+
+homePageOptions();
 ?>
