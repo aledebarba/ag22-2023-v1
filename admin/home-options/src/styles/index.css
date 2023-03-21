@@ -1,4 +1,5 @@
 @import "./font-faces.css";
+@import "./react-toggle.css";
 @import "./custom-scroll-bars.css";
 
 @tailwind base;

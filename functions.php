@@ -14,4 +14,11 @@
     }
     add_filter('upload_mimes', 'cc_mime_types');
 
+    
+    
+    // scripts for admin area
+    function load_custom_admin_scripts() {
+      wp_enqueue_script( 'custom-admin-script', get_template_directory_uri() . '/admin/home-options/build/_app.js', array('react','react-dom'), time(), true );
+    }
+    add_action( 'admin_enqueue_scripts', 'load_custom_admin_scripts' );
   ?>

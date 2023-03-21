@@ -89,7 +89,7 @@ function customize_dashboard() {
     
     // --- Add new welcome screen
     add_menu_page("welcome", "", 'manage_options', 'welcome', function(){
-         include("welcome-page.php"); 
+         include(get_stylesheet_directory()."/admin/welcome.php"); 
     }, '', 0);
     
     // --- Add new dashboard item with suboptions
