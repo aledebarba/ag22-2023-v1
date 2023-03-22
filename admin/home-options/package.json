@@ -10,18 +10,23 @@
 		}
 	},
 	"dependencies": {
+		"@dnd-kit/core": "^6.0.8",
 		"@studio-freight/lenis": "^1.0.1",
 		"@types/react-dom": "^18.0.11",
+		"@wordpress/api-fetch": "^6.26.0",
 		"@wordpress/scripts": "^25.5.1",
 		"gsap": "^3.11.4",
 		"react": "^18.2.0",
+		"react-beautiful-dnd": "^13.1.1",
 		"react-dom": "^18.2.0",
 		"react-helmet": "^6.1.0",
 		"react-is": "^18.2.0",
 		"react-player": "^2.11.1",
 		"react-router-dom": "^6.4.5",
+		"react-switch": "^7.0.0",
 		"react-use": "^17.4.0",
 		"styled-components": "^5.3.8",
+		"swr": "^2.1.0",
 		"tailwind-clip-path": "^1.0.0",
 		"webpack": "^5.75.0"
 	},

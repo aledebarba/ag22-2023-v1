@@ -1,13 +1,17 @@
 import tw from 'twin.macro'
 import { Icon } from '@iconify/react'
 import { useState } from 'react'
+import Switch from 'react-switch'
+import { CasesList, SocialList } from './components/dndlist'
 
 const App = () => {
+
   const [options, setOptions] = useState({
     online: true,
     title: '',
     social: [],
     cases: [],
+    maxCases: 5,
     heroImage: '',
     introImage: '',
     aboutImage: '',
@@ -31,7 +35,10 @@ const App = () => {
       </h1>
       <Section title='Opções de disponibilidade'>
         <Option label="Online / Offline">
-            switcher
+            <div tw='flex items-center gap-2'>
+            <Switch onChange={e => setOptions({ ...options, online: e })} checked={options.online} />
+            { options.online ? <span tw='text-green-700 font-bold'>O site está online</span> : <span tw='text-red-600 font-bold'>O site está offline</span> }
+            </div>
         </Option>
         <Option label="Favicon">
             favicon
@@ -49,14 +56,27 @@ const App = () => {
       </Section>
       <Section title='Opções da landing page'>
             <Option label="Ordem das redes sociais na seção contatos" width="100%">
-                DragList com switcher de ligar / desligar
+                <SocialList />    
             </Option>
             <Option label="Ordem das redes sociais no rodapé" width="100%">
-                DragList com switcher de ligar / desligar
+                <SocialList />
             </Option>
-            <Option label="Ordem dos cases na seção cases" width="100%">
-                DragList com switcher de ligar / desligar
+            
+            <Option label="Ordem dos projetos na seção cases" width="55%">
+                <CasesList />                
             </Option>
+
+            <Option label="Quantidade de cases que serão exibidos na seção cases" width="10%">
+                <input
+                    type="number"
+                    min="5"
+                    max="20"
+                    value={options.maxCases}
+                    onChange={e => setOptions({ ...options, maxCases: e.target.value })}
+                    tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg text-xl"
+                />
+            </Option>
+           
             <Option label="Imagem de fundo da seção de introdução" width="100%">
                 Select Image 
             </Option>            
@@ -164,7 +184,7 @@ const Section = ({ title, icon = 'ant-design:control-twotone', children }) => {
     <section tw='p-4 rounded-lg bg-gray-50/50  my-4 shadow-lg w-full 
     lg:(w-2/3) 2xl:(w-1/2) duration-300 hover:(bg-gray-50 duration-300)'
         css="border: 1px solid white;">
-      <h2 tw='text-slate-900 font-normal tracking-wider my-2 flex items-center gap-4'>
+      <h2 tw='text-slate-900 font-normal tracking-wider my-4 flex items-center gap-4'>
         <Icon icon={icon} tw="text-red-500"/> {title}
       </h2>
       <div tw="flex gap-2 flex-wrap">
@@ -179,11 +199,10 @@ const Option = ({ label, width, children }) => {
     return (
         
         <div css={[
-            tw`flex flex-col gap-2 p-2 bg-white rounded-md shadow-md mb-2`,
-            `min-width: 240px;`,
+            tw`flex flex-col gap-2 px-2 py-4 bg-white rounded-md shadow-md mb-2 h-fit`,
+            'min-width: 240px;',
             'max-width: 40vw;',
-            'height: 80%;',            
-            width ? `width: ${width};` : 'width: 20%;'
+            width ? `width: ${width};` : 'width: 20%;',
             ]}>
             <div tw="flex flex w-full items-center gap-1 mb-2">
             <Icon icon="ph:gear-fill" tw="text-red-400"/><small tw="text-red-400 font-bold uppercase">{label}</small>
@@ -195,6 +214,7 @@ const Option = ({ label, width, children }) => {
 
 const Line = () => {
     return (
-        <div tw="w-full h-[1px] bg-red-300 my-2"></div>
+        <div tw="w-full h-[1px] bg-red-300 my-2">            
+        </div>
     )
 }
