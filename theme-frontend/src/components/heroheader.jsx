@@ -148,3 +148,67 @@ export const HeroHeader = () => (
 
     </header>
 );
+
+export const HeroPageHeader = () => (
+    <header tw="h-[55vh] w-screen overflow-hidden relative border-b-2 border-b-secondary-100 drop-shadow-md">
+        <div 
+            css={`
+                z-index: 1;
+                position:absolute;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background-color: transparent;
+                
+                background-image: url("https://ik.imagekit.io/balaban/services-page-bg.jpg?updatedAt=1679540743668");
+
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: cover;
+            `}
+        />
+
+        <Container 
+            id="header-background" 
+            tw="absolute top-0 left-0 z-[2]"
+            >
+            
+            <SaneSvg className='circlepage'>
+                <circle cx="-12%" cy="10%" r="25%" fill="transparent" strokeWidth="10"
+                    style={{
+                        stroke: "var(--primary)",
+                        filter: "drop-shadow(0.5px 0px 1px rgba(0, 0, 0, 0.25))",
+                    }}
+                />
+            </SaneSvg>
+        </Container>
+        <div tw="relative h-full w-full ml-[20vw] z-[1] flex flex-col justify-center">
+            <h1 tw={"text-h1 text-white box-content"}>
+                <span tw={"block font-thin"}>Nossos</span>
+                <span tw={"text-primary block font-bold"}>Serviços</span>
+            </h1>
+        </div>
+
+        <div css={
+            `
+                box-sizing: border-box;
+                position: absolute;
+                bottom: 0px;
+                height: 56px;
+                left: 0px;
+                width: 100%;
+                background-color: white;
+                border-top: 16px solid var(--primary);
+                z-index: 4;
+                display: flex;
+                justify-content: center;
+                gap: 1rem;            
+            `}
+        >
+            <div tw='w-1/4 border-r-[16px] border-primary'/>
+            <div tw='w-1/4 border-l-[16px] border-primary'/>
+        </div>
+
+    </header>
+);

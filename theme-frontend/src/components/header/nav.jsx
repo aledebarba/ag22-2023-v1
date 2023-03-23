@@ -15,6 +15,18 @@ export const MainMenu = () => <HeaderMenu>
     </Nav.ul>
 </HeaderMenu>
 
+export const PageMenu = () => <HeaderMenux>
+<Logo  tw="absolute"/>
+    <Nav.ul tw="w-full justify-center flex-nowrap">
+        <Nav.li>Quem Somos</Nav.li>
+        <Nav.li>Serviços</Nav.li>
+        <Nav.li>Cases</Nav.li>
+        <Nav.li>Clientes</Nav.li>
+        <Nav.li>Trabalhe Conosco</Nav.li>
+        <Nav.li>Contato</Nav.li>
+    </Nav.ul>
+</HeaderMenux>
+
 
 
 export const HeaderMenu = (props) => {
@@ -28,6 +40,25 @@ export const HeaderMenu = (props) => {
                     width: 100vw;
                     position: fixed;
                     backdrop-filter: blur(10px);
+                `}
+                >
+                <ContainerFluidH>
+                    {props.children}  
+                </ContainerFluidH>
+            </div>
+    )
+}
+
+export const HeaderMenux = (props) => {
+    return (
+            <div
+                id="header-menu"
+                tw="bg-white border-b-secondary-100 border-b-2 border-t-[10px] border-t-primary pt-2 md:pt-1 z-20"
+
+                css={`
+                    height: 10vh;
+                    width: 100vw;
+                    position: fixed;
                 `}
                 >
                 <ContainerFluidH>

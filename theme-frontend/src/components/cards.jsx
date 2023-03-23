@@ -11,7 +11,7 @@ export const Card = ({ children }) => {
 export const CardTitle = ({ children }) => {
     return (
         <h4 css={[
-            tw`after:(bg-black group-hover:w-10 group-hover:transition-all group-hover:duration-300) text-h4 text-primary lowercase font-medium leading-[3rem]`,
+            tw`after:(bg-secondary group-hover:w-10 group-hover:transition-all group-hover:duration-300) text-h4 text-primary lowercase font-medium leading-[3rem]`,
             `
             position: relative;
             width: fit-content;
@@ -64,6 +64,74 @@ export const CardCase = ({children}) => {
         <figure className='group' tw={"justify-center text-center drop-shadow-lg rounded-2xl overflow-hidden first:col-span-2 not-first:col-span-1"}>
             {children}
 		</figure>
+    )
+}
+
+export const ServiceListItem = ({children}) => {
+    return (
+        <div 
+            className='group' 
+            tw={"justify-center gap-x-12 flex flex-row text-left overflow-hidden odd:mr-auto odd:ml-0 even:mr-0 even:ml-auto h-fit w-11/12"}>
+            {children}
+		</div>
+    )
+}
+
+export const ServiceTitle = ({ children }) => {
+    return (
+        <h3 css={[
+            tw`after:(bg-secondary) text-h3 text-primary lowercase font-[750] leading-[3rem]`,
+            `
+            position: relative;
+            width: fit-content;
+            padding: 0.5rem 0;
+            margin-bottom: 1.25rem;
+    
+            &:after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 0.4rem;			
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        `]}
+        >
+            {children}
+        </h3>
+    )
+}
+
+export const ServiceText = ({children}) => {
+    return (
+        <h6 css={[ tw`text-h6 mt-10`,
+                    `
+                    font-stretch: 115%;
+                    ` ]}>
+            {children}
+        </h6>
+    )
+}
+
+export const ServiceImg = ({children}) => {
+    return (
+        <figure tw={"basis-8/12 h-56 my-auto overflow-hidden group-odd:order-first group-odd:rounded-r-xl group-even:rounded-l-xl bg-primary"}>
+            <img 
+                css={[
+                    tw`object-scale-down w-full`,				
+                ]}
+                src={children}
+            />
+        </figure>
+    )
+}
+
+export const BoxServiceList = ({children}) => {
+    return (
+        <div tw={"flex flex-col gap-40 my-8"}>
+            {children}
+        </div>
     )
 }
 
