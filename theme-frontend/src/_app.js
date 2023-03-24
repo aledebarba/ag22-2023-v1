@@ -15,7 +15,7 @@ import { Loading } from './components/loading';
 const Main = () => {
 	const pages = _app.pages();
 	let pagesModules = [];
-
+	
 	pages.forEach( ( page ) => {
 		pagesModules.push( {
 			Page: React.lazy( async () => {
@@ -34,7 +34,7 @@ const Main = () => {
 
 	return (
 		<React.StrictMode>
-			<BrowserRouter>
+			<BrowserRouter>			
 				<Routes>
 					<Route path="/archive" element={ <ArchivePage /> } />
 					<Route path="/archive/:slug" element={ <ArchivePage /> } />
@@ -61,8 +61,7 @@ const Main = () => {
 	);
 };
 
-//window.history.scrollRestoration = "manual";
-
+window.history.scrollRestoration = "manual";
 const root = document.querySelector( getWPChunkElementAttr() );
 
 root && render( <Main />, root );

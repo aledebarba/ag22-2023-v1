@@ -1,5 +1,6 @@
 import { LogoSite } from "../../pages/assets/brand";
 import { ContainerFluidH } from "../containers";
+import { Link } from "react-router-dom";
 
 import tw from 'twin.macro';
 
@@ -71,7 +72,7 @@ export const HeaderMenux = (props) => {
 
 export const Logo = (props) => {
     return (
-        <LogoSite {...props}/>
+       <Link to="/"><LogoSite {...props}/></Link>
     )
 }
 

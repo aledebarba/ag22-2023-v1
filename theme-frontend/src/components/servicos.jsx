@@ -5,18 +5,23 @@ import { Card, CardTitle, CardText, CardBox, ServiceListItem, BoxServiceList, Se
 import { ContainerFluidH } from './containers';
 import { H2Dash } from './headings';
 import apiFetch from '@wordpress/api-fetch';
+import { Link } from 'React-router-dom';
 import tw from 'twin.macro';
+
+window.history.scrollRestoration = "manual";
 
 export const Servicos = () => { 
 		
 		const [ servicos, setServicos ] = useState( [] );
+		
 		useState(()=>{
 			apiFetch({ path: 'database/v1/servicos' })
-				.then( (data) => {
-					setServicos( data )
-				} )
+			.then( (data) => {
+				setServicos( data )
+			} )
 		}, [])
-
+			
+			
 		return <section className="servicos" tw={"py-20 bg-gray-100 text-secondary"}>
 			<ContainerFluidH>
 				<H2Dash>Serviços</H2Dash>
@@ -28,7 +33,7 @@ export const Servicos = () => {
 						</Card>
 						})}						
 				</CardBox>
-				<Buttonx outline center>Conheça mais sobre nosso serviços</Buttonx>
+				<Link to="/servicos"><Buttonx outline center>Conheça mais sobre nosso serviços</Buttonx></Link>
 		</ContainerFluidH> 
 	</section>
 }
@@ -52,7 +57,6 @@ export const ServiceLi = () => {
 							</div>
                             
 							<ServiceImg>
-								{servico.data.image}
 							</ServiceImg>
                         </ServiceListItem>
 						

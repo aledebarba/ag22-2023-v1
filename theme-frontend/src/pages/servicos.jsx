@@ -13,8 +13,7 @@ const Servicos = ( props ) => {
 	
 	const [searchParams] = useSearchParams();
 	const id = searchParams.get('id');
-	console.log( id )
-
+	
 	const wrapper = React.useRef(null);
 	const content = React.useRef(null);
 
@@ -29,9 +28,14 @@ const Servicos = ( props ) => {
 
 	// 	  });
 	// }, [])
+	
+	const ref = React.useRef(null);
+	React.useEffect(() => {
+		ref.current.scrollIntoView()
+	}, []);
 
 return (
-	<main tw="w-screen min-h-[200vh] relative" ref={wrapper}>
+	<main tw="w-screen min-h-[200vh] relative" ref={ref}>
 		<PageMenu />
 		<div ref={content} id="smooth-content">
 			<HeroPageHeader />

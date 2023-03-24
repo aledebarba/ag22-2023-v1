@@ -13,6 +13,9 @@ import { ScrollSmoother } from "../utils/scroll"
 import { ScrollTrigger } from 'gsap/all';
 import { MainMenu } from '../components/header/nav';
 
+window.history.scrollRestoration = "manual";
+
+
 const Index = () => {
 
 	const wrapper = React.useRef(null);

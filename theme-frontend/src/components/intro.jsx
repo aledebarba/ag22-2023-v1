@@ -16,12 +16,15 @@ export const Intro = () => {
 	return <div tw="flex m-0 p-0 w-screen gap-16 items-center">
 	
 	<div 
-		tw="flex grow bg-secondary-100 w-[40vw] h-[100%] block rounded-r-2xl"
-		css={`
+		tw="flex grow bg-secondary-100 w-[40vw] h-[100%] block rounded-r-2xl overflow-hidden relative"
+		css={[`
 			height: ${rectHeight}px;
-		`}
+			background-image: url(https://uxdir.com/files/videos/ag22/png/acc056667f05e7574f09aed664b6170a.png);
+			background-position: right center;
+			background-size: cover;
+			background-repeat: no-repeat;
+		`]}
 		>
-		{/* quadrado cinza */}
 	</div>
 
 		<section 
