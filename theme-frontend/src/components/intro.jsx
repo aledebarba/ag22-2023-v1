@@ -1,6 +1,6 @@
 import React from 'react';
 import tw from 'twin.macro';
-import { Container } from './containers';
+import CountUp from 'react-countup';
 
 export const Intro = () => { 
 	
@@ -74,22 +74,22 @@ export const Intro = () => {
 			</div>
 
 			<div className='col-start-1 col-span-3'>
-					<h4 tw={"text-h4 font-bold text-primary leading-10"}>+10 anos</h4>
+					<h4 tw={"text-h4 font-bold text-primary leading-10"}>+<CountUp end="10" enableScrollSpy={true}  duration={3} />&nbsp;anos</h4>
 					<h6 tw={"text-h6 text-secondary font-normal"}>no mercado</h6>
 				</div>
 
 				<div className='col-start-4 col-span-4'>
-					<h4 tw={"text-h4 font-bold text-primary leading-10"}>+50 projetos</h4>
+					<h4 tw={"text-h4 font-bold text-primary leading-10"}>+<CountUp end="50" enableScrollSpy={true}  duration={3} />&nbsp;projetos</h4>
 					<h6 tw={"text-h6 text-secondary font-normal"}>de embalagens, presente na América do Sul</h6>
 				</div>
 
 				<div className='col-start-1 col-span-3'>
-					<h4 tw={"text-h4 font-bold text-primary leading-10"}>+150 marcas</h4>
+					<h4 tw={"text-h4 font-bold text-primary leading-10"}>+<CountUp end="150" enableScrollSpy={true}  duration={3} />&nbsp;marcas</h4>
 					<h6 tw={"text-h6 text-secondary font-normal"}>criadas e ativas pelo mundo</h6>
 				</div>
 				
 				<div className='col-start-4 col-span-3'>
-					<h4 tw={"text-h4 font-bold text-primary leading-10"}>+1000 horas</h4>
+					<h4 tw={"text-h4 font-bold text-primary leading-10"}>+<CountUp end="1000" enableScrollSpy={true}  duration={3} />&nbsp;horas</h4>
 					<h6 tw={"text-h6 text-secondary font-normal"}>de storytelling criadas</h6>
 				</div>
 				
