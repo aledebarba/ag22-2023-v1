@@ -1,4 +1,4 @@
-export const ImagePlaceholder = ( { children } ) => <div style={{ 
+export const ImagePlaceholder = ( { children }  ) => <div style={{ 
     position: "relative",
     width: "100%",
     paddingTop: "100%",
