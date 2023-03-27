@@ -2,14 +2,13 @@ import React from 'react';
 import tw from 'twin.macro';
 import CountUp from 'react-countup';
 
-export const Intro = () => { 
+export const Intro = ({ image }) => { 
 	
 	const sectionRef = React.useRef(null);
 	const [rectHeight, setRectHeight] = React.useState(0);
 	
 	React.useEffect(()=>{
 		const rect = sectionRef.current.getBoundingClientRect().height;
-		console.log( rect )
 		setRectHeight( rect-160 );
 	}, [])
 
@@ -19,7 +18,7 @@ export const Intro = () => {
 		tw="flex grow bg-secondary-100 w-[40vw] h-[100%] block rounded-r-2xl overflow-hidden relative"
 		css={[`
 			height: ${rectHeight}px;
-			background-image: url(https://uxdir.com/files/videos/ag22/png/acc056667f05e7574f09aed664b6170a.png);
+			background-image: url(${image});
 			background-position: right center;
 			background-size: cover;
 			background-repeat: no-repeat;

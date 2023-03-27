@@ -10,7 +10,6 @@ import { _app } from '../utils/functions';
 export const Cases = () => { 
 
 	const options = _app.options();
-	console.log( options )
 	const colWidth = "40vw"
 	const [cases, setCases] = useState([])
 	useEffect(()=>{

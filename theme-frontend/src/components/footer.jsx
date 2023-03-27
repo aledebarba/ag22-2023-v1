@@ -6,7 +6,7 @@ import { ReactComponent as Logo } from "../../assets/images/brand-color-negative
 import apiFetch from '@wordpress/api-fetch';
 import {_app} from '../utils/functions';
 
-export const Footer = () => { 
+export const Footer = ({copyright="", devby=""}) => { 
 
 		const [ contatos, setContatos ] = useState();
 		const options = _app.options();
@@ -23,7 +23,6 @@ export const Footer = () => {
 				} )
 		}, [])
 
-		console.log( contatos )
 	return (
 		<section className="footer" tw={"py-28 bg-secondary-900 text-secondary relative min-h-[33vh] w-screen p-16 text-secondary-50 "}>
 			<div 
@@ -67,7 +66,7 @@ export const Footer = () => {
 						<Li><a href="#">Trabalhe conosco</a></Li>
 						<Li><a href="#">Contatos</a></Li>
 					</ul>								
-					<div className="pt-8"><small css="white-space: nowrap; visibility: hidden;">Copyright 2023 AG22. DevBy AG22</small></div>
+					<div className="pt-8"><small css="white-space: nowrap; visibility: hidden;">{copyright}&nbsp;{devby}</small></div>
 				</div>
 			</div>		
 		</section>

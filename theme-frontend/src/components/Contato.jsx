@@ -8,10 +8,11 @@ import { _app } from '../utils/functions';
 
 import tw from 'twin.macro';
 
-export const Contato = () => { 
+export const Contato = ( {email="", endereco="", cidade="", estado="", bairro="", telefone=""} ) => { 
 		
 		const [ contatos, setContatos ] = useState( [] );
 		const options = _app.options();
+		const [ codigoInternacional, codigoArea, numeroTel ] = telefone.split(' ');
 
 		useEffect(()=>{
 			apiFetch({ path: 'database/v1/contatos' })
@@ -30,13 +31,15 @@ export const Contato = () => {
 				<H2Dash>Contatos</H2Dash>
 				<div tw="mt-12 grid grid-cols-6 gap-4 place-items-center">
 					<div tw="col-span-3">
-						<H2superiordash><span tw="block text-primary font-bold">Sumaré - SP</span></H2superiordash>
+						<H2superiordash><span tw="block text-primary font-bold">{cidade}- {estado.toUpperCase()}</span></H2superiordash>
 						<div tw="flex flex-row items-end gap-2">
-							<h5 tw={"text-h5 text-primary-500 font-medium leading-10"}>+55</h5>
-							<h2 tw={"text-h2 text-secondary font-extralight"}>19 90309-3333</h2>
+							<h5 tw={"text-h5 text-primary-500 font-medium leading-10"}>{codigoInternacional}</h5>
+							<h2 tw={"text-h2 text-secondary font-extralight"}>{codigoArea}&nbsp;{numeroTel}</h2>
 						</div>
-							<h6 tw={"text-h6 w-2/3 font-medium text-secondary-600"} css={`font-stretch: 120%;`}>R. Santos Dumont, 94 - 1
-							<br></br>Vila Santana</h6>
+							<h6 tw={"text-h6 w-2/3 font-medium text-secondary-600"} css={`font-stretch: 120%;`}>
+								{endereco}<br/>
+								{bairro}
+							</h6>
 					</div>
 					<div tw="col-span-3">
 					{ contatos && contatos.map( (contato) => {

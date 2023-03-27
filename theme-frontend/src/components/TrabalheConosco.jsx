@@ -5,7 +5,7 @@ import { Buttonx } from './button';
 import { Icon } from '@iconify/react';
 import tw from 'twin.macro';
 
-export const TrabalheConosco = () => { 
+export const TrabalheConosco = ({email}) => { 
 
 	const [feedbackText, setFeedbackText] = React.useState("");
 	const feedback = React.useRef();
@@ -32,13 +32,13 @@ export const TrabalheConosco = () => {
 						</p>
 
 						<div 
-							onClick={()=>{ navigator.clipboard.writeText("vagas@ag22.com.br"); setFeedbackText("copiado")}} 
+							onClick={()=>{ navigator.clipboard.writeText(email); setFeedbackText("copiado")}} 
 							onMouseEnter={ () => { setFeedbackText("Clique para copiar o endereço") }}
 							onMouseLeave={ () => { setFeedbackText("") }}
 							tw="text-4xl text-primary font-bold gap-4 pb-2 border-b-2 border-transparent flex flex-nowrap w-fit items-center duration-300 cursor-pointer hover:(scale-110 duration-300 border-primary)"
 
 							>
-							<span >vagas@ag22.com.br</span>	
+							<span >{email}</span>	
 							<Icon icon="lucide:clipboard-copy" tw="text-primary" width="48" />
 						</div>
 

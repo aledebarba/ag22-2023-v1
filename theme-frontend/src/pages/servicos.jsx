@@ -1,9 +1,6 @@
 import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 import tw from 'twin.macro';
-import gsap from 'gsap';
-import { ScrollSmoother } from "../utils/scroll"
-import { ScrollTrigger } from 'gsap/all';
 import { PageMenu } from '../components/header/nav';
 import { Footer } from '../components/footer';
 import { HeroPageHeader } from '../components/heroheader';
@@ -16,18 +13,6 @@ const Servicos = ( props ) => {
 	
 	const wrapper = React.useRef(null);
 	const content = React.useRef(null);
-
-	// React.useLayoutEffect(() => {
-	// 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
-	// 	const scrollerSmoother = ScrollSmoother.create({
-	// 		content: content.current,
-	// 		wrapper: wrapper.current,
-	// 		smooth: 1,
-	// 		effects: true,
-	// 		smoothTouch: 0.1 
-
-	// 	  });
-	// }, [])
 	
 	const ref = React.useRef(null);
 	React.useEffect(() => {

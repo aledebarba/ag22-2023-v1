@@ -10,13 +10,10 @@
 		}
 	},
 	"dependencies": {
-		"@studio-freight/lenis": "^1.0.1",
-		"@wordpress/scripts": "^25.3.0",
-		"gsap": "^3.11.4",
+		"@wordpress/scripts": "^25.5.1",
 		"react": "^18.2.0",
 		"react-countup": "^6.4.2",
 		"react-dom": "^18.2.0",
-		"react-helmet": "^6.1.0",
 		"react-is": "^18.2.0",
 		"react-player": "^2.11.1",
 		"react-router-dom": "^6.4.5",
@@ -66,7 +63,6 @@
 		"test:unit": "wp-scripts test-unit-js",
 		"tailwindbuild": "tailwindcss -i ./src/styles/index.css -o ./build/_app.css --postcss --minify",
 		"tailwindwatch": "tailwindcss -i ./src/styles/index.css -o ./build/_app.css --watch --postcss --minify",
-		"sync": "browser-sync start --https -p 'https://hysteria.local' --files './build/**/*'",
 		"dev": "rm -rf build && tailwindcss -i ./src/styles/index.css -o ./build/_app.css --postcss --minify && npm-run-all --parallel start tailwindwatch"
 	},
 	"keywords": [

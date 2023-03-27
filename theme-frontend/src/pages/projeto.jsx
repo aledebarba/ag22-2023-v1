@@ -21,8 +21,6 @@ const ProjetoPage = ( props ) => {
 		})
 	}, [] );
 
-	console.log( title, data );
-
 	return <main>
 		<MainMenu/>
 		<HeaderMedia video={ data.videoUrl } poster={ data.poster } titulo={title}/>
