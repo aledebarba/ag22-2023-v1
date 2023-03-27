@@ -5,15 +5,26 @@ import { Link } from 'react-router-dom';
 import tw from 'twin.macro';
 import { useEffect, useState } from 'react';
 import apiFetch from '@wordpress/api-fetch';
+import { _app } from '../utils/functions';
 
 export const Cases = () => { 
 
+	const options = _app.options();
+	console.log( options )
 	const colWidth = "40vw"
 	const [cases, setCases] = useState([])
 	useEffect(()=>{
 		apiFetch({ path: 'database/v1/projetos/' })
-			.then( (data) => {				
-				setCases( data )
+			.then( (data) => {	
+				let orderedCases = options.cases.map( item => {
+					let caseId = item.id;
+					let found = data.find( caseItem => caseItem.id === caseId );
+					return( found )
+				} )
+				if( orderedCases.length > options.maxCases ){
+					orderedCases = orderedCases.slice(0, options.maxCases)
+				}
+				setCases( orderedCases )
 			})
 	}, [])
 	
@@ -28,7 +39,7 @@ export const Cases = () => {
 				<ContainerFluidH tw="relative">
 						<H2Dash>Cases</H2Dash>
 						<div tw="grid grid-cols-3 gap-8 mt-16">
-							{ cases && cases.map( ( item, index) => <CaseCard item={item} index={index} key={index}/> ) }
+							{ cases && cases.map( ( item, index ) => <CaseCard item={item} index={index} key={index}/> ) }
 						</div>
 				</ContainerFluidH> 
 	</section>
