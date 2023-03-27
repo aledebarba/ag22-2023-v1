@@ -4,7 +4,6 @@
     require_once( get_template_directory() . '/inc/php/dashboard.php' );
     require_once( get_template_directory() . '/inc/php/sendmail.php' );    
 
-
     /**
      * This action will retrieve the global data options and then render the meta tags
      */
@@ -13,7 +12,6 @@
       $global_options = json_decode($global_options);
 
       echo <<<HTML
-
         <title>{$global_options->title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
         <meta name="description" content="{$global_options->description}">
@@ -33,6 +31,7 @@
         <meta name="twitter:creator" content="{$global_options->twitterCardAuthor}" />
         <meta name="twitter:title" content="{$global_options->twitterCardTitle}" />
         <meta name="twitter:description" content="{$global_options->description}" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       HTML; 
       
     });

@@ -1,8 +1,6 @@
 <?php 
-wp_head(); 
-
+get_header();
 Import::component('RenderThemeFrontEnd')->from('theme-frontend');
-
 ?>
 
 <body> 

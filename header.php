@@ -1,3 +1,4 @@
-<?php 
-//wp_head(); 
-?>
+<!DOCTYPE html>
+<head>
+    <?php wp_head(); ?>
+</head>
