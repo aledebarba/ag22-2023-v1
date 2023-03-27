@@ -26,7 +26,7 @@ const Index = () => {
 				<HeroHeader/>
 				<Intro image={options.introImage}/>
 				<Servicos/>
-				<Cases />
+				<Cases/>
 				<Clientes />
 				<TrabalheConosco email={options.emailVagas}/>
 				<Contato 

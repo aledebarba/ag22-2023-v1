@@ -1,34 +1,31 @@
 import { LogoSite } from "../../pages/assets/brand";
 import { ContainerFluidH } from "../containers";
 import { Link } from "react-router-dom";
-
 import tw from 'twin.macro';
 
 export const MainMenu = () => <HeaderMenu>
 <Logo  tw="absolute"/>
     <Nav.ul tw="w-full justify-center flex-nowrap">
-        <Nav.li>Quem Somos</Nav.li>
-        <Nav.li>Serviços</Nav.li>
-        <Nav.li>Cases</Nav.li>
-        <Nav.li>Clientes</Nav.li>
-        <Nav.li>Trabalhe Conosco</Nav.li>
-        <Nav.li>Contato</Nav.li>
+        <Nav.li><Link to="/sobre">Quem Somos</Link></Nav.li>
+        <Nav.li><Link to="/servicos">Serviços</Link></Nav.li>
+        <Nav.li><Link to="#cases">Cases</Link></Nav.li>
+        <Nav.li><Link to="#clientes">Clientes</Link></Nav.li>
+        <Nav.li><Link to="#vagas">Trabalhe Conosco</Link></Nav.li>
+        <Nav.li><Link to="#contato">Contato</Link></Nav.li>
     </Nav.ul>
 </HeaderMenu>
 
 export const PageMenu = () => <HeaderMenux>
 <Logo  tw="absolute"/>
     <Nav.ul tw="w-full justify-center flex-nowrap">
-        <Nav.li>Quem Somos</Nav.li>
-        <Nav.li>Serviços</Nav.li>
-        <Nav.li>Cases</Nav.li>
-        <Nav.li>Clientes</Nav.li>
-        <Nav.li>Trabalhe Conosco</Nav.li>
-        <Nav.li>Contato</Nav.li>
+        <Nav.li><Link to="/sobre">Quem Somos</Link></Nav.li>
+        <Nav.li><Link to="/servicos">Serviços</Link></Nav.li>
+        <Nav.li><Link to="#cases">Cases</Link></Nav.li>
+        <Nav.li><Link to="#clientes">Clientes</Link></Nav.li>
+        <Nav.li><Link to="#vagas">Trabalhe Conosco</Link></Nav.li>
+        <Nav.li><Link to="#contato">Contato</Link></Nav.li>
     </Nav.ul>
 </HeaderMenux>
-
-
 
 export const HeaderMenu = (props) => {
     return (

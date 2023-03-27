@@ -28,7 +28,7 @@ export const Cases = () => {
 	}, [])
 	
 	
-	return <section className="Cases" tw="py-28 relative overflow-visible">
+	return <section className="Cases" tw="py-28 relative overflow-visible" id="cases">
 				
 				<div css={[
 					tw`absolute border-[6rem] border-primary rounded-[999rem] top-[-20vw] left-[-18vw]`,
