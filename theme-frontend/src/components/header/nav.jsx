@@ -1,29 +1,29 @@
 import { LogoSite } from "../../pages/assets/brand";
 import { ContainerFluidH } from "../containers";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import tw from 'twin.macro';
 
 export const MainMenu = () => <HeaderMenu>
-<Logo  tw="absolute"/>
+    <Logo  tw="absolute"/>
     <Nav.ul tw="w-full justify-center flex-nowrap">
-        <Nav.li><Link to="/sobre">Quem Somos</Link></Nav.li>
-        <Nav.li><Link to="/servicos">Serviços</Link></Nav.li>
-        <Nav.li><Link to="#cases">Cases</Link></Nav.li>
-        <Nav.li><Link to="#clientes">Clientes</Link></Nav.li>
-        <Nav.li><Link to="#vagas">Trabalhe Conosco</Link></Nav.li>
-        <Nav.li><Link to="#contato">Contato</Link></Nav.li>
+        <Nav.li><Link smooth to="/sobre#top">Quem Somos</Link></Nav.li>
+        <Nav.li><Link smooth to="/servicos#top">Serviços</Link></Nav.li>
+        <Nav.li><Link smooth to="/#cases">Cases</Link></Nav.li>
+        <Nav.li><Link smooth to="/#clientes">Clientes</Link></Nav.li>
+        <Nav.li><Link smooth to="/#vagas">Trabalhe Conosco</Link></Nav.li>
+        <Nav.li><Link smooth to="/#contato">Contato</Link></Nav.li>
     </Nav.ul>
 </HeaderMenu>
 
 export const PageMenu = () => <HeaderMenux>
-<Logo  tw="absolute"/>
+    <Logo  tw="absolute"/>
     <Nav.ul tw="w-full justify-center flex-nowrap">
-        <Nav.li><Link to="/sobre">Quem Somos</Link></Nav.li>
-        <Nav.li><Link to="/servicos">Serviços</Link></Nav.li>
-        <Nav.li><Link to="#cases">Cases</Link></Nav.li>
-        <Nav.li><Link to="#clientes">Clientes</Link></Nav.li>
-        <Nav.li><Link to="#vagas">Trabalhe Conosco</Link></Nav.li>
-        <Nav.li><Link to="#contato">Contato</Link></Nav.li>
+        <Nav.li><Link smooth to="/sobre#top">Quem Somos</Link></Nav.li>
+        <Nav.li><Link smooth to="/servicos#top">Serviços</Link></Nav.li>
+        <Nav.li><Link smooth to="/#cases">Cases</Link></Nav.li>
+        <Nav.li><Link smooth to="/#clientes">Clientes</Link></Nav.li>
+        <Nav.li><Link smooth to="/#vagas">Trabalhe Conosco</Link></Nav.li>
+        <Nav.li><Link smooth to="/#contato">Contato</Link></Nav.li>
     </Nav.ul>
 </HeaderMenux>
 
@@ -69,7 +69,7 @@ export const HeaderMenux = (props) => {
 
 export const Logo = (props) => {
     return (
-       <Link to="/"><LogoSite {...props}/></Link>
+       <Link smooth to="/#top"><LogoSite {...props}/></Link>
     )
 }
 

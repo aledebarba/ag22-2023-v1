@@ -17,6 +17,7 @@
 		"react-is": "^18.2.0",
 		"react-player": "^2.11.1",
 		"react-router-dom": "^6.4.5",
+		"react-router-hash-link": "^2.4.3",
 		"react-use": "^17.4.0",
 		"styled-components": "^5.3.8",
 		"tailwind-clip-path": "^1.0.0",

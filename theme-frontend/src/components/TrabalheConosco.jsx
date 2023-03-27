@@ -1,7 +1,6 @@
 import { ContainerFluidH, Container } from './containers';
 import { H2Dash } from './headings';
 import React from 'react';
-import { Buttonx } from './button';
 import { Icon } from '@iconify/react';
 import tw from 'twin.macro';
 
@@ -10,7 +9,7 @@ export const TrabalheConosco = ({email}) => {
 	const [feedbackText, setFeedbackText] = React.useState("");
 	const feedback = React.useRef();
 		
-	return <section tw={"py-28 bg-white text-secondary "}>
+	return <section tw={"py-28 bg-white text-secondary "} id="vagas">
 			<ContainerFluidH>
 				<div tw="h-fit">
 				<H2Dash>Trabalhe Conosco</H2Dash>
