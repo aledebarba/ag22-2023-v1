@@ -1,4 +1,4 @@
 {
     "diffEditor.codeLens": true,
-    "docwriter.style": "DocBlock"
+    "docwriter.style": "Javadoc"
 }

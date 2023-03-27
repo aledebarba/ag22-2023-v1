@@ -3,7 +3,7 @@ import tw from "twin.macro";
 import { useState, useEffect } from "react";
 import{ RichTextField } from "./rte";
 import { TextControl, TextareaControl, ColorControl, SelectControl, Button } from "@wordpress/components";
-import { CustomImageSelect, CustomVideoSelect, MediaGalleryButton } from "./media-gallery-button";
+import { CustomImageSelect, CustomVideoSelect, MediaGalleryButton } from "./wpmediagal/media-gallery-button";
 import { Icon } from '@iconify/react';
 import Switch from 'react-switch';
 import ReactPlayer from "react-player/lazy";
@@ -216,7 +216,7 @@ const RenderInterface = ( props, blockOptions ) => {
                                 ))}                                
                                     <MediaGalleryButton 
                                         media={ props.attributes[attribute].map( media => media.id ) }
-                                        setMedia={ ( images )=> { console.log( attribute );  handleSelectImages( attribute, images ) }}
+                                        setMedia={ ( images )=> { handleSelectImages( attribute, images ) }}
                                         multiple={true}
                                         mode="browse"
                                         button="link"

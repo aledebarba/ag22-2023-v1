@@ -4,4 +4,5 @@ import { render } from 'react-dom';
 
 //window.history.scrollRestoration = "manual";
 const root= document.getElementById("welcome-screen");
-render(<App />, root);
+root ? render(<App />, root) : null;
+

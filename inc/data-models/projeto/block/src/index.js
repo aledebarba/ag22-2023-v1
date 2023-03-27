@@ -1,4 +1,3 @@
-import "./style.css";
 import RenderInterface from "./components/render";
 
 const blockOptions = {    
