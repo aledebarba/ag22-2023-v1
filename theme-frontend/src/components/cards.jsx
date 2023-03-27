@@ -2,7 +2,7 @@ import tw from 'twin.macro';
 
 export const Card = ({ children }) => {
     return (
-        <div tw={"bg-white p-4 py-6 drop-shadow-lg text-center rounded-lg transition-all duration-300 ease-in hover:scale-[1.05] cursor-pointer hover:drop-shadow-xl"} className="group">
+        <div tw={"bg-white p-4 py-6 drop-shadow-lg text-center rounded-lg transition-all duration-300 ease-in hover:scale-[1.05] cursor-default! hover:drop-shadow-xl"} className="group">
             {children}
         </div>
     )

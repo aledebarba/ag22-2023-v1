@@ -7,7 +7,7 @@ Import::component('RenderThemeFrontEnd')->from('theme-frontend');
 
 <body> 
     <?php 
-    RenderThemeFrontEnd();
-    wp_footer(); 
+        RenderThemeFrontEnd();
+        wp_footer(); 
     ?>
 </body> 

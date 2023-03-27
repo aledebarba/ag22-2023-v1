@@ -372,8 +372,12 @@ function html_code_for_react_app( $name, $params=[] ) {
     $nonce      = wp_create_nonce( 'wp_rest' );
     $paramsVar  = "params_".$name."_".$components_core_options->componentStore[$name]['instance'];
     $instance   = $name."_".$components_core_options->componentStore[$name]['instance'];
-    $wp_pages   = get_pages();
     
+    $global_options = get_option('superpost_global_options');
+    $global_options = $global_options ? json_decode($global_options) : [];
+    $site_status = $global_options->online ? 'online' : 'offline';
+
+    $wp_pages   = get_pages();    
     $pages      = [];
     foreach ($wp_pages as $page) {
         $pages[] = [
@@ -391,6 +395,7 @@ function html_code_for_react_app( $name, $params=[] ) {
     $data['themeUrl'] = $themeUrl;
     $data['nonce'] = $nonce;
     $data['pages'] = $pages;
+    $data['options'] = $global_options;
     $data = json_encode($data, JSON_UNESCAPED_SLASHES);
     $data = htmlentities($data);
     $preId = $name;

@@ -6212,7 +6212,7 @@ var _StyledDiv = (0,styled_components__WEBPACK_IMPORTED_MODULE_0__["default"])("
   displayName: "cards___StyledDiv",
   componentId: "sc-1y2n8oq-0"
 })({
-  "cursor": "pointer",
+  "cursor": "default !important",
   "borderRadius": "0.5rem",
   "--tw-bg-opacity": "1",
   "backgroundColor": "rgb(255 255 255 / var(--tw-bg-opacity))",
@@ -8564,6 +8564,13 @@ const _app = {
     let dataElement = JSON.parse(document.querySelector(`pre[class="${name}"][instance="${instance}"]`).textContent);
     return dataElement.pages;
   },
+  options: () => {
+    let instance = document.querySelector(getWPChunkElementAttr()).dataset.instance;
+    let name = document.querySelector(getWPChunkElementAttr()).dataset.wpchunk;
+    let dataElement = JSON.parse(document.querySelector(`pre[class="${name}"][instance="${instance}"]`).textContent);
+    return dataElement.options;
+  },
+  siteStatus: () => _app.options().online ? 'online' : 'offline',
   params: () => {
     let instance = document.querySelector(getWPChunkElementAttr()).dataset.instance;
     let name = document.querySelector(getWPChunkElementAttr()).dataset.wpchunk;
@@ -21595,6 +21602,24 @@ __webpack_require__.r(__webpack_exports__);
 const Main = () => {
   const pages = _utils_functions__WEBPACK_IMPORTED_MODULE_2__._app.pages();
   let pagesModules = [];
+  if (_utils_functions__WEBPACK_IMPORTED_MODULE_2__._app.siteStatus() === 'offline') {
+    let offlineStyle = {
+      width: "100vw",
+      height: "100vh",
+      overflow: "hidden",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: "#000",
+      color: "#f98e8e",
+      fontSize: "2rem",
+      textAlign: "center",
+      fontFamily: "Courier New, Courier, monospace"
+    };
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("main", {
+      style: offlineStyle
+    }, "Nosso site est\xE1 em manuten\xE7\xE3o");
+  }
   pages.forEach(page => {
     pagesModules.push({
       Page: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().lazy(async () => {

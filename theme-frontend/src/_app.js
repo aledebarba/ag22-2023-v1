@@ -16,6 +16,27 @@ const Main = () => {
 	const pages = _app.pages();
 	let pagesModules = [];
 	
+	if( _app.siteStatus() === 'offline') {
+		let offlineStyle = {
+			width: "100vw",
+			height: "100vh",
+			overflow: "hidden",
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+			backgroundColor: "#000",
+			color: "#f98e8e",
+			fontSize: "2rem",
+			textAlign: "center"	,
+			fontFamily: "Courier New, Courier, monospace"		
+		}
+		return (
+			<main style={offlineStyle}>
+				Nosso site está em manutenção
+			</main>
+		)
+	}
+
 	pages.forEach( ( page ) => {
 		pagesModules.push( {
 			Page: React.lazy( async () => {

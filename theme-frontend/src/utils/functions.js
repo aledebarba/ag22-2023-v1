@@ -12,6 +12,19 @@ export const _app = {
 		);
 		return dataElement.pages;
 	},
+	options: () => {
+		let instance = document.querySelector( getWPChunkElementAttr() ).dataset.instance;
+		let name = document.querySelector( getWPChunkElementAttr() ).dataset.wpchunk;
+		let dataElement = JSON.parse(
+			document.querySelector(
+				`pre[class="${ name }"][instance="${ instance }"]`
+			).textContent
+		);
+		return dataElement.options;
+	},
+
+ 	siteStatus: () => _app.options().online ? 'online' : 'offline',	
+	
 	params: () => {
 		let instance = document.querySelector( getWPChunkElementAttr() ).dataset.instance;
 		let name = document.querySelector( getWPChunkElementAttr() ).dataset.wpchunk;
