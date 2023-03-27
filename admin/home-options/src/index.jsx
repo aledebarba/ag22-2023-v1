@@ -73,8 +73,18 @@ const App = () => {
             }
 
                  
-        fetchOptions().then( data => { 
-            if ( !data.error ) {
+        fetchOptions().then( res => { 
+            if ( !res.error || ( res.error && res.code == 404 ) ) {
+
+                let data;
+                console.log( res )
+
+                if( res?.code == 404 ) {
+                    data = options;
+                } else {
+                    data = res;
+                }
+
                 let cases = getCases();
                 let socials = getSocials();
 

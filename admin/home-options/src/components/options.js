@@ -9,7 +9,7 @@ export const fetchOptions = async () => {
         return (JSON.parse(response)); 
     } catch (error) {
         console.error("ocorreu um erro ao tentar ler as opções do site, por favor informe ao time de desenvolvimento ::: ", error); 
-        return ({error: true, message: error, data: null});
+        return ({error: true, message: error.message,  code: error.data.status, data: null});
     }
 }
 
