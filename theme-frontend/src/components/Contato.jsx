@@ -4,16 +4,24 @@ import { H2Dash, H2superiordash } from './headings';
 import { Buttonx } from './button';
 import apiFetch from '@wordpress/api-fetch';
 import { Icon } from '@iconify/react';
+import { _app } from '../utils/functions';
+
 import tw from 'twin.macro';
 
 export const Contato = () => { 
 		
 		const [ contatos, setContatos ] = useState( [] );
+		const options = _app.options();
+
 		useEffect(()=>{
 			apiFetch({ path: 'database/v1/contatos' })
 				.then( (data) => {
-					setContatos( data )
-					console.log( data )
+					const inOrder =  ( data, order ) => order.map( item => {
+						let id = item.id;
+						let found = data.find( item => item.id === id );
+						return( found )
+					} )
+					setContatos( inOrder( data, options.socialOnContact ) );
 				} )
 		}, [])
 

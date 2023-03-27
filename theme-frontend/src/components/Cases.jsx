@@ -16,15 +16,15 @@ export const Cases = () => {
 	useEffect(()=>{
 		apiFetch({ path: 'database/v1/projetos/' })
 			.then( (data) => {	
-				let orderedCases = options.cases.map( item => {
+				let oredered = options.cases.map( item => {
 					let caseId = item.id;
 					let found = data.find( caseItem => caseItem.id === caseId );
 					return( found )
 				} )
-				if( orderedCases.length > options.maxCases ){
-					orderedCases = orderedCases.slice(0, options.maxCases)
+				if( oredered.length > options.maxCases ){
+					oredered = oredered.slice(0, options.maxCases)
 				}
-				setCases( orderedCases )
+				setCases( oredered )
 			})
 	}, [])
 	
