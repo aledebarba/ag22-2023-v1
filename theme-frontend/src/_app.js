@@ -7,6 +7,7 @@ import { default as ArchivePage } 	from './pages/archive';
 import { default as ProjetoPage } 	from './pages/projeto';
 import { default as ProjetosPage } 	from './pages/projetos';
 import { default as ServicosPage } 	from './pages/servicos';
+import { default as SobreNos } 	from './pages/sobrenos';
 import { default as Content } 	from './pages/content';
 import { default as Page } 			from './pages/page';
 import { default as NotFoundPage } 	from './pages/404';
@@ -61,6 +62,7 @@ const Main = () => {
 					<Route path="/archive/:slug" element={ <ArchivePage /> } />
 					<Route path="/projetos/:slug" element={ <ProjetoPage /> } />
 					<Route path="/servicos" element={ <ServicosPage /> } />
+					<Route path="/sobre" element={ <SobreNos /> } />
 					<Route path="/" element={ <FrontPage /> } />
 					{ pagesModules.map( ( Module ) => (
 						<>
