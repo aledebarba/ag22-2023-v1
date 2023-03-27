@@ -6,7 +6,7 @@ import { Icon } from '@iconify/react'
 import { useState, useEffect } from 'react'
 import { DndList } from './components/dndlist'
 import { fetchOptions, saveOptions } from './components/options';
-import { MediaBtn, MediaSelectBox, CustomImageSelect, MediaGalleryButton }    from './components/wpmediagal/media-gallery-button'
+import { MediaBtn, MediaSelectBox }    from './components/wpmediagal/media-gallery-button'
 
 const App = () => {
  
@@ -36,8 +36,14 @@ const App = () => {
         twitterCardTitle: '',
         twitterCardAuthor: '',
         telefone: '',
-        email: '',
-        endereco: ''
+        endereco: '',
+        bairro: '',
+        cidade: '',
+        estado: '',        
+        emailPrincipal: '',
+        emailVagas: '',
+        copyright: '',
+        devby: ''
     })
 
     useEffect(()=>{
@@ -77,7 +83,6 @@ const App = () => {
             if ( !res.error || ( res.error && res.code == 404 ) ) {
 
                 let data;
-                console.log( res )
 
                 if( res?.code == 404 ) {
                     data = options;
@@ -195,7 +200,7 @@ const App = () => {
                 { options.socialOnContact && <DndList 
                     items={options.socialOnContact} 
                     id="social_list_on_contact_section"
-                    onChange={(list) => { setOptions( {...options, socialOnContact: list } ); console.log( list )}} />}
+                    onChange={(list) => { setOptions( {...options, socialOnContact: list } ) }} />}
             </Option>
 
             <Option label="Ordem das redes sociais no rodapé" width="100%">
@@ -418,9 +423,91 @@ const App = () => {
                     tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
                 />
             </Option>
+       </Section>
 
-        </Section>
-
+       <Section title='Informações de Contato'>
+            <Option label="Telefone" width="40%">
+                <input 
+                type="text" 
+                placeholder="Telefone"
+                value={options.telefone}
+                onChange={e => setOptions({ ...options, telefone: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+            <Option label="Endereço" width="40%">
+                <input 
+                type="text" 
+                placeholder="Endereço"
+                value={options.endereco}
+                onChange={e => setOptions({ ...options, endereco: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+            <Option label="Bairro" width="40%">
+                <input 
+                type="text" 
+                placeholder="Bairro"
+                value={options.bairro}
+                onChange={e => setOptions({ ...options, bairro: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+            <Option label="Cidade" width="40%">
+                <input 
+                type="text" 
+                placeholder="Cidade"
+                value={options.cidade}
+                onChange={e => setOptions({ ...options, cidade: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+            <Option label="Estado" width="40%">
+                <input 
+                type="text" 
+                placeholder="Estado"
+                value={options.estado}
+                onChange={e => setOptions({ ...options, estado: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+            <Option label="Email Principal" width="40%">
+                <input 
+                type="email" 
+                placeholder="Email Principal"
+                value={options.emailPrincipal}
+                onChange={e => setOptions({ ...options, emailPrincipal: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+            <Option label="Email para Vagas" width="40%">
+                <input 
+                type="email" 
+                placeholder="Email para Vagas"
+                value={options.emailVagas}
+                onChange={e => setOptions({ ...options, emailVagas: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+            <Option label="Copyright" width="40%">
+                <input 
+                type="text" 
+                placeholder="Copyright"
+                value={options.copyright}
+                onChange={e => setOptions({ ...options, copyright: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+            <Option label="Desenvolvido por" width="40%">
+                <input 
+                type="text" 
+                placeholder="Desenvolvido por"
+                value={options.devby}
+                onChange={e => setOptions({ ...options, devby: e.target.value })}
+                tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+                </Option>
+            </Section>
         </main>
     )
 }
