@@ -5,7 +5,7 @@ import { Card, CardTitle, CardText, CardBox, ServiceListItem, BoxServiceList, Se
 import { ContainerFluidH } from './containers';
 import { H2Dash } from './headings';
 import apiFetch from '@wordpress/api-fetch';
-import { Link } from 'React-router-dom';
+import { HashLink as Link } from 'react-router-hash-link';
 import tw from 'twin.macro';
 
 window.history.scrollRestoration = "manual";
@@ -33,7 +33,7 @@ export const Servicos = () => {
 						</Card>
 						})}						
 				</CardBox>
-				<Link to="/servicos"><Buttonx outline center>Conheça mais sobre nosso serviços</Buttonx></Link>
+				<Link smooth to="/servicos#top"><Buttonx outline center>Conheça mais sobre nosso serviços</Buttonx></Link>
 		</ContainerFluidH> 
 	</section>
 }
