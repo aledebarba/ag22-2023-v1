@@ -3,9 +3,11 @@ import tw from 'twin.macro'
 import { MainMenu } from '../components/header/nav'
 import { Footer } from '../components/footer'
 import { _app } from '../utils/functions'
+import logoDez, { ReactComponent as LogoDez } from './assets/dezanos.svg'
 
 const SobreNos = props => {
-  const options = _app.options()
+  const options = _app.options()  
+  console.log( _app )
   const ref = React.useRef()
 
   return (
@@ -128,37 +130,41 @@ const InBrandWeTrust = () => {
 
 const DezAnos = () => {
   return(
-    <div tw="w-full p-8 flex-col">
-        <div tw="w-full">
-          <div tw="bg-primary w-[60vh] h-[30vh] relative overflow-hidden">
-            <div tw="
-              text-white
-              text-[48vh]
-              font-bold tracking-tighter
-              absolute top-0 left-0                       
-              leading-none
-              p-0 m-0
-              -translate-x-[4.8vh]
-              -translate-y-[8vh]
-              "            
-              >
-                10
-              </div>
-            <div tw="
-              text-ag22Black text-8xl
-              tracking-widest font-black
-              absolute bottom-2 left-8
-              ">anos</div>
-          </div>
-        </div>
-        <div texto>
-          <div fundo vermelho/>
-          <div paragrafo branco />
-        </div>
+    <div tw="
+      grid grid-rows-2 mb-40 mx-auto gap-8 max-w-4xl px-10
+      sm:(grid-cols-2 grid-rows-1 items-center bg-primary h-fit overflow-hidden rounded-2xl box-border 
+      shadow-[0_0_1px_25px_white] )
+      ">
+      <div 
+        tw="
+          w-full h-full relative 
+          md:(overflow-visible)
+          " 
+      >
+        <LogoDez
+          tw="
+            w-full h-full            
+            md:(border-none)"
+          css={`
+            position: relative;
+            transform: scale(1.08);
+          `}
+        />
+      </div>
+      <p tw="
+          text-secondary-900 font-light px-8 py-2
+          text-[1rem]
+          sm:(text-white mx-auto px-[5vw])
+        "
+
+        >
+        Hoje podemos dizer que a experiência nos ensinou o que fazer, porque fazer e como fazer. Alcançamos essa marca de tempo que é só o começo da nossa jornada na publicidade e propaganda brasileira. E que venham mais décadas!
+      </p>
     </div>
   )
   
 }
+
 const DezAnos2 = () => {
   return (
     <>
