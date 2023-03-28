@@ -125,7 +125,41 @@ const InBrandWeTrust = () => {
     </>
   )
 }
+
 const DezAnos = () => {
+  return(
+    <div tw="w-full p-8 flex-col">
+        <div tw="w-full">
+          <div tw="bg-primary w-[60vh] h-[30vh] relative overflow-hidden">
+            <div tw="
+              text-white
+              text-[48vh]
+              font-bold tracking-tighter
+              absolute top-0 left-0                       
+              leading-none
+              p-0 m-0
+              -translate-x-[4.8vh]
+              -translate-y-[8vh]
+              "            
+              >
+                10
+              </div>
+            <div tw="
+              text-ag22Black text-8xl
+              tracking-widest font-black
+              absolute bottom-2 left-8
+              ">anos</div>
+          </div>
+        </div>
+        <div texto>
+          <div fundo vermelho/>
+          <div paragrafo branco />
+        </div>
+    </div>
+  )
+  
+}
+const DezAnos2 = () => {
   return (
     <>
       <section

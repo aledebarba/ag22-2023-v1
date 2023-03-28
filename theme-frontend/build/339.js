@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunktheme_frontend=globalThis.webpackChunktheme_frontend||[]).push([[339],{7339:(e,t,n)=>{function l(){return React.createElement("div",null,React.createElement("h1",null,"Sobre"))}n.r(t),n.d(t,{default:()=>l})}}]);

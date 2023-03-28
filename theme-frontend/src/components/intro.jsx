@@ -15,7 +15,7 @@ export const Intro = ({ image }) => {
 	return <div tw="flex m-0 p-0 w-screen gap-16 items-center">
 	
 	<div 
-		tw="flex grow bg-secondary-100 w-[40vw] h-[100%] block rounded-r-2xl overflow-hidden relative"
+		tw="grow bg-secondary-100 w-[40vw] h-[100%] block rounded-r-2xl overflow-hidden relative"
 		css={[`
 			height: ${rectHeight}px;
 			background-image: url(${image});
