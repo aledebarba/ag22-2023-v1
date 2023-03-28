@@ -1,10 +1,11 @@
 		
-import { useState, useEffect } from 'react';
-import tw from 'twin.macro';
-import { Icon } from "@iconify/react"
 import { ReactComponent as Logo } from "../../assets/images/brand-color-negative.svg";
-import apiFetch from '@wordpress/api-fetch';
+import { HashLink as Link } from "react-router-hash-link";
+import { useState, useEffect } from 'react';
+import { Icon } from "@iconify/react"
 import {_app} from '../utils/functions';
+import apiFetch from '@wordpress/api-fetch';
+import tw from 'twin.macro';
 
 export const Footer = ({copyright="", devby=""}) => { 
 
@@ -54,17 +55,17 @@ export const Footer = ({copyright="", devby=""}) => {
 				</div>
 				<div tw="col-start-5 col-span-2 w-2/3">
 					<ul>
-						<Li><a href="#">Quem Somos</a></Li>
-						<Li><a href="#">Serviços</a></Li>
-						<Li><a href="#">Cases</a></Li>
+						<Li><Link smooth to="/sobre#top">Quem Somos</Link></Li>
+						<Li><Link smooth to="/servicos#top">Serviços</Link></Li>
+						<Li><Link smooth to="/#cases">Cases</Link></Li>
 					</ul>
 					<div className="pt-8"><small css="white-space: nowrap;">Copyright 2023 AG22. DevBy AG22</small></div>
 				</div>
 				<div tw="col-start-7 col-span-2 w-2/3">
 					<ul>
-						<Li><a href="#">Clientes</a></Li>
-						<Li><a href="#">Trabalhe conosco</a></Li>
-						<Li><a href="#">Contatos</a></Li>
+						<Li><Link smooth to="/#clientes">Clientes</Link></Li>
+						<Li><Link smooth to="/#vagas">Trabalhe conosco</Link></Li>
+						<Li><Link smooth to="/#contato">Contatos</Link></Li>
 					</ul>								
 					<div className="pt-8"><small css="white-space: nowrap; visibility: hidden;">{copyright}&nbsp;{devby}</small></div>
 				</div>

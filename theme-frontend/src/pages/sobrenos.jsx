@@ -88,30 +88,32 @@ const InBrandWeTrust = () => {
           <source src="https://uxdir.com/files/videos/ag22/V%c3%addeo%20Linhas%20PPG%20Refinish.mp4" type="video/mp4" />
         </video>
       </div>
+
        <section
         css={[
-          tw`w-screen p-8 bg-transparent flex items-center rounded-lg overflow-hidden flex-nowrap h-fit mx-auto`,
+          tw`w-fit p-8 bg-transparent mx-auto`,
+          tw`sm:(flex items-center rounded-lg overflow-hidden flex-nowrap h-fit mx-auto)`,
           tw`md:(w-[75%])`,
           tw`lg:(w-[66%])`,
           ``
         ]}
       >        
-        <div css='
-            width: 50%;
+        <div css={[`
+            width: 100%;
             height: 30vh;
             background-image: url(https://uxdir.com/files/videos/ag22/png/logo_page_aboutup.svg);
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;            
-        '>
+        `]}>
            
         </div>
-        <div tw='bg-transparent flex-shrink-0 w-[50%] gap-8 flex flex-col p-8'>
+        <div tw='bg-transparent w-[100%] gap-8 flex flex-col p-8 items-center'>
           <h2>
-            <span tw='block text-secondary-800 font-thin'>in brand</span>
-            <span tw='block text-primary font-semibold'>we trust</span>
+            <span tw='text-secondary-800 font-thin '>in brand </span>
+            <span tw='text-primary font-semibold '>we trust</span>
           </h2>
-          <p tw='text-sm tracking-wide'>
+          <p tw='text-lg tracking-wide'>
             Nós acreditamos no poder e valor de uma marca, desde a sua concepção
             até a sua presença diária no mercado. Somos apaixonados pelo que
             fazemos e sempre queremos fazer mais. No dia a dia, criamos
