@@ -7,7 +7,9 @@ $plural   = $singular.'s';
 $Csingular = ucfirst($singular);
 $Cplural   = ucfirst($plural);
 
-
+if( WP_Block_Type_Registry::get_instance()->is_registered( 'superblock/'.$singular)) {
+    return;
+}
 add_filter('block_categories_all', function ($categories, $post) use($singular)
 {
     array_unshift($categories, [

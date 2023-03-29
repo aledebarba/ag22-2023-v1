@@ -16,17 +16,20 @@ const blockOptions = {
         ],        
     }
 
-wp.blocks.registerBlockType("superblock/"+blockOptions.name, {
-    title: "Data Model",
-    icon: "superhero-alt",
-    category: "superblock",
-    supports: {
-        lock: false,
-        html: false,
-    },
-    attributes: blockOptions.attributes,    
-    edit: (props) => RenderInterface( props, blockOptions ),
-    save: function (props) {
-        return null;
-    },
-});
+    wp.blocks.registerBlockType("superblock/"+blockOptions.name, {
+        title: capitalize(blockOptions.name),
+        icon: "superhero-alt",
+        category: "superblock",
+        supports: {
+            lock: false,
+            html: false,
+        },
+        attributes: blockOptions.attributes,    
+        edit: (props) => RenderInterface( props, blockOptions ),
+        save: function (props) {
+            return null;
+        },
+    });
+function capitalize(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}

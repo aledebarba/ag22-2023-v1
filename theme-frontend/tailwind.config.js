@@ -76,8 +76,8 @@ module.exports = {
             lineHeight: '3.75rem',
             letterSpacing: '0em',
           }],
-          'h2': [ '3rem', {
-            lineHeight: '3.5rem',
+          'h2': [ 'clamp(2rem, calc(1rem+2vw), 3rem)', {
+            lineHeight: '1.2',
             letterSpacing: '0em',
             fontWeight: '600',
           }],
@@ -86,12 +86,12 @@ module.exports = {
             letterSpacing: '0em',
             fontWeight: '500',
           }],
-          'h4': [ '2rem', {
+          'h4': [ 'clamp(1rem, 1.175rem + -0.875vw, 0.125rem);', {
             lineHeight: '2.25em',
             letterSpacing: '0em',
             fontWeight: '400',
           }],
-          'h5': [ '1.5rem', {
+          'h5': [ 'clamp(0.875rem, 1.0313rem + -0.7813vw, 0.09375rem);', {
             lineHeight: '1.75rem',
             letterSpacing: '0em',
             fontWeight: '300',

@@ -24,9 +24,20 @@ export const Servicos = () => {
 				<H2Dash>Serviços</H2Dash>
 				<CardBox>
 					{ servicos && servicos.map( (servico) => {
+						let textArray = servico.data.desc.split(' ');
+						let tagsArray = [];
+						let textMain = '';
+						textArray.forEach( (word) => {
+							if( word[0] == '#' ) {
+								tagsArray.push( word )
+							} else if( word[0] !== '#' && word[0] !== ' ' ) {
+								textMain += word + ' '
+							}
+						} )
+
 						return <Card>
 							<CardTitle>{servico.title}</CardTitle>
-							<CardText>{servico.data.desc}</CardText>
+							<CardText><div dangerouslySetInnerHTML={ {__html: textMain} }/></CardText>
 						</Card>
 						})}						
 				</CardBox>
@@ -116,7 +127,9 @@ export const Servico = ( { title, text, position } ) => {
 							position === 'left' ? tw`pr-8 order-3` : tw`pr-8 order-1 relative translate-x-[4vw] sm:(translate-x-[15vw]) md:(translate-x-[20vw]) lg:(translate-x-[25vw])`,
 						]}>
 						<h2 css="font-size: clamp(2rem, 2.5vw, 2.8rem);" tw="text-primary border-b-8 border-b-secondary-900 w-fit -translate-y-3 pb-2">{title}</h2>
-						<p tw="w-[50%] min-w-[240px] leading-tight" css="font-size: clamp(1rem, 1.5vw, 1.1rem);">{mainText}</p>
+						<p tw="w-[50%] min-w-[240px] leading-tight" css="font-size: clamp(1rem, 1.5vw, 1.1rem);">
+							<div dangerouslySetInnerHTML={{__html:mainText}}/>
+						</p>
 						<div tw="flex gap-1 max-w-[60vw] flex-wrap mt-2">
 						{ tags && tags.map( (tag) => {
 							return <span tw="text-primary text-sm font-bold">{tag}</span>

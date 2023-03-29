@@ -19,7 +19,7 @@ export const Container = ( props ) => {
 export const ContainerFluidH = ( props ) => {
     return <div 
         css={`
-            width: 1200px;
+            //width: 1200px;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0;

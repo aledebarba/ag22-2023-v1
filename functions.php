@@ -1,8 +1,15 @@
 <?php 
+
+    require( get_template_directory() . '/inc/php/loader.php' );
     require_once( get_template_directory() . '/inc/php/@components-engine/embed_module.php');
-    require_once( get_template_directory() . '/inc/php/loader.php' );
     require_once( get_template_directory() . '/inc/php/dashboard.php' );
     require_once( get_template_directory() . '/inc/php/sendmail.php' );    
+    
+    if(isset($run_counter)) {
+      $run_counter++;
+    } else {
+      $run_counter = 1;
+    }
 
     /**
      * This action will retrieve the global data options and then render the meta tags

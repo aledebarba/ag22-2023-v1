@@ -13,20 +13,32 @@ export const TrabalheConosco = ({email}) => {
 			<ContainerFluidH>
 				<div tw="h-fit">
 				<H2Dash>Trabalhe Conosco</H2Dash>
-				<div tw="mt-8 grid grid-cols-8 gap-4 justify-between outline-red-500">
-					<div tw="col-span-3">
-						<h2>
+				<div tw="
+						mt-16 outline-red-500
+						grid auto-rows-min [align-items:end]
+						md:(grid grid-rows-1 grid-cols-8 mt-16 gap-4 justify-items-center [align-items:start])
+					">
+					<div tw="md:(hidden)">
+						<h1 tw="h-fit ml-8">
+							<span tw="block text-secondary font-thin">Bora</span>
+							<span tw="block text-primary font-bold">trabalhar</span>
+							<span tw="text-secondary font-thin">na&nbsp;</span>
+							<span tw="text-primary font-bold">AG?</span>
+						</h1>
+					</div>
+					<div tw="hidden md:(block col-span-3)">
+						<h2 tw="my-0">
 							<span tw="block text-secondary font-thin">Bora</span>
 							<span tw="block text-primary font-bold">trabalhar</span>
 							<span tw="text-secondary font-thin">na&nbsp;</span>
 							<span tw="text-primary font-bold">AG?</span>
 						</h2>
 					</div>
-					<div tw="col-span-5">
-						<p>
+					<div tw="md:(col-span-5)">
+						<p tw="p-8 mx-auto md:(mx-0 pr-8 pt-0 pb-0)">
 						Acreditamos que cada um deve ser reconhecido por aquilo que é, mesmo porque no final das contas todos somos seres humanos.
 						</p>
-						<p tw="my-8">
+						<p tw="p-8 mx-auto md:(mx-0 pr-8)">
 						Envie seu currículo para nosso banco de talentos:	
 						</p>
 
@@ -34,9 +46,18 @@ export const TrabalheConosco = ({email}) => {
 							onClick={()=>{ navigator.clipboard.writeText(email); setFeedbackText("copiado")}} 
 							onMouseEnter={ () => { setFeedbackText("Clique para copiar o endereço") }}
 							onMouseLeave={ () => { setFeedbackText("") }}
-							tw="text-4xl text-primary font-bold gap-4 pb-2 border-b-2 border-transparent flex flex-nowrap w-fit items-center duration-300 cursor-pointer hover:(scale-110 duration-300 border-primary)"
+							tw="
+								flex flex-nowrap items-center w-fit 
+								gap-2 pb-2 
+								text-2xl text-primary font-bold	
+								ml-8						
+								border-b-2 
+								border-primary 
+								duration-300 cursor-pointer 
 
-							>
+								md:(gap-4 text-4xl text-primary font-bold border-transparent)
+								hover:(scale-110 duration-300 border-primary)
+							">
 							<span >{email}</span>	
 							<Icon icon="lucide:clipboard-copy" tw="text-primary" width="48" />
 						</div>

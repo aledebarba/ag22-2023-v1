@@ -31,16 +31,18 @@ export const Cases = () => {
 			tw='py-28 relative overflow-visible'
 			id='cases'
 		>
-			<div
+			<div data-desc="big red circle"
 				css={[
 					tw`absolute border-[6rem] border-primary rounded-[999rem] top-[-20vw] left-[-18vw]`,
-					` width: ${colWidth}, height: ${colWidth} `
+					`  width: ${colWidth}, height: ${colWidth} `
 				]}
 			/>
 
 			<ContainerFluidH tw='relative'>
 				<H2Dash>Cases</H2Dash>
-				<div tw='grid grid-cols-3 gap-8 mt-16'>
+				<div tw="grid grid-cols-1 gap-2 auto-rows-min px-4 mt-8 mb-8
+						 md:(grid grid-cols-3 gap-8 mt-16)
+					">
 					{cases &&
 						cases.map((item, index) => (
 							<CaseCard item={item} index={index} key={index} />
@@ -55,13 +57,17 @@ const CaseCard = ({ item, index }) => {
 	return (
 		<div
 			css={[
-				index === 0 && tw`col-span-2`,
+				index === 0 && tw`md:(col-span-2)`,
 				index !== 0 && tw`col-auto`,
-				tw`relative overflow-hidden rounded-2xl h-[40vh]`,
-				`
+				tw`relative overflow-hidden rounded-2xl h-[30vh] md:h-[40vh]`,
+				(`
 				.overlay-info {
-					bottom: -50%;
+					bottom: -75%;
 					transition: all 0.5s ease-in-out;
+
+					@media (min-width: 768px) {
+						bottom: -50%;
+					}
 				}
 
 				img {
@@ -83,7 +89,7 @@ const CaseCard = ({ item, index }) => {
 						transition: all 0.5s ease-in-out;
 					}
 				}
-				`
+				`)
 			]}
 		>
 			<img
@@ -97,9 +103,12 @@ const CaseCard = ({ item, index }) => {
 					`			
 					position: absolute;			
 					width: 100%;
-					height: 50%;
+					height: 75%;
 					padding: 2rem;
 					backdrop-filter: blur(5px);
+					@media (min-width: 768px) {
+						height: 50%;
+					}
 					`
 				]}
 			>
@@ -118,3 +127,4 @@ const CaseCard = ({ item, index }) => {
 		</div>
 	)
 }
+4

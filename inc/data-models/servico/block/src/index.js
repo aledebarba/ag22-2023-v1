@@ -18,7 +18,7 @@ const blockOptions = {
 }
 
 wp.blocks.registerBlockType("superblock/"+blockOptions.name, {
-    title: "Data Model",
+    title: capitalize(blockOptions.name),
     icon: "superhero-alt",
     category: "superblock",
     supports: {
@@ -32,3 +32,6 @@ wp.blocks.registerBlockType("superblock/"+blockOptions.name, {
     },
 });
 
+function capitalize(str){
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}

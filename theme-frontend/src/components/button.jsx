@@ -1,7 +1,7 @@
 import tw from 'twin.macro';
 
 
-export const Buttonx = ({ secondary, danger, link, large, small, outline, children, icon, left, right, center, tertiary, style={} } ) => {
+export const Buttonx = ({ secondary, danger, link, large, small, outline, icon, left, right, center, tertiary, props, children } ) => {
     return ( <button
         css={[
             tw`flex justify-center rounded-lg gap-4 box-border items-center hover:duration-200 w-fit`,
@@ -21,7 +21,7 @@ export const Buttonx = ({ secondary, danger, link, large, small, outline, childr
             center && tw`mx-auto`,
             icon && tw`py-0`,
         ]}
-        style={style}
+        {...props}
     >{children}</button>)
 }
 

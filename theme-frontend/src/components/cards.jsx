@@ -45,7 +45,11 @@ export const CardText = ({children}) => {
 
 export const CardBox = ({children}) => {
     return (
-        <div tw={"grid grid-cols-4 gap-8 mt-16 mb-12"}>
+        <div tw="
+            grid auto-rows-min gap-8 m-8
+            sm:(grid grid-cols-2 gap-4 mt-16 mb-12 mx-16)
+            lg:(grid grid-rows-1 grid-cols-4 gap-4 mt-16 mb-12 mx-4)
+            ">
             {children}
         </div>
     )
