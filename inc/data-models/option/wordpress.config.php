@@ -1,4 +1,18 @@
-<?php
+<?php 
+/**
+ * setup the custom block editor options
+ * if user options points to a post type, this file also create the post type and the admin area for it
+ * if user options points to a options page, this file also create the options page and the admin area for it
+ */
+
+
+// 1. Register block from block.json
+// 2. Register block category
+// 3. Create REST API endpoint
+// 4. Open superblock.config.json and get user options
+// 5. Create post type if user options points to a post type
+// 6. Create options page if user options points to a options page
+
 
 $base = basename(__DIR__);
 
@@ -7,34 +21,7 @@ $plural   = $singular.'s';
 $Csingular = ucfirst($singular);
 $Cplural   = ucfirst($plural);
 
-add_action('init', function() use($singular, $base) {
 
-    wp_register_style(
-        'superblock-style-'.$singular,
-        get_stylesheet_directory_uri().'/inc/data-models/'.$base.'/block/build/index.css'
-    );
-
-    wp_register_script(
-        'superblock-'.$singular,
-        get_stylesheet_directory_uri().'/inc/data-models/'.$base.'/block/build/index.js',
-        ['wp-blocks', 'wp-element', 'wp-editor']
-    );
-
-    register_block_type('superblock/'.$singular, [
-        'editor_script' => 'superblock-'.$singular,
-        'editor_style' => 'superblock-style-'.$singular,
-        'render_callback' => function($attributes, $content) use($singular) {
-            $block_data = $attributes;
-            $data = json_encode($attributes);
-            $res = <<<HTML
-                <pre data-type='data-{$singular}' class='data-{$singular}' style='display: none;' start>$data</pre>
-                HTML;
-                return $res;
-            }
-        ]);
-    });
-    
-// --- Altere os labels abaixo caso seja necessário resolver casos específicos de linguagem
 $custom_labels = [
     'name' => $Cplural,
     'singular_name' => $Csingular,
@@ -99,9 +86,19 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
             },
         ]);
     });
-    
-    
+}, 99);
 
-}, 0);
+register_block_type(__DIR__, [
+    'render_callback' => 'theHTML'
+]);
+
+function theHTML($attributes)
+{
+    $data = json_encode($attributes);
+    $res = <<<HTML
+        <pre data-type='options-data' class="display: none">$data</pre>
+    HTML;
+    return $res;
+}
 
 ?>

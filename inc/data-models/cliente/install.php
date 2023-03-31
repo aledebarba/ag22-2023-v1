@@ -7,16 +7,6 @@ $plural   = $singular.'s';
 $Csingular = ucfirst($singular);
 $Cplural   = ucfirst($plural);
 
-
-add_filter('block_categories_all', function ($categories, $post) use($singular)
-{
-    array_unshift($categories, [
-        'slug' => 'superblock',
-        'title' => 'Superblock',
-    ]);
-    return $categories;
-}, 10, 2);
-
 add_action('init', function() use($singular, $base) {
 
     wp_register_style(
@@ -44,7 +34,6 @@ add_action('init', function() use($singular, $base) {
         ]);
     });
     
-// --- Altere os labels abaixo caso seja necessário resolver casos específicos de linguagem
 $custom_labels = [
     'name' => $Cplural,
     'singular_name' => $Csingular,
@@ -83,6 +72,7 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
                 ],
         'template_lock' => 'all',
       ]);
+    });
 
     // --- create a rest api endpoint for the custom post type
     add_action('rest_api_init', function () use($base, $plural, $singular){
@@ -111,7 +101,5 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
     });
     
     
-
-}, 0);
 
 ?>

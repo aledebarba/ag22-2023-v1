@@ -1,0 +1,8 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 2,
+    "name": "superblock/options",
+    "title": "Options",
+    "editorScript": "file:./build/index.js",
+    "editorStyle": "file:./build/index.css"
+}

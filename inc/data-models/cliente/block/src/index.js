@@ -1,7 +1,6 @@
 import "./index.css";
 import RenderInterface from "./components/render";
 
-
 const blockOptions = {
         name: "cliente",
         attributes: {

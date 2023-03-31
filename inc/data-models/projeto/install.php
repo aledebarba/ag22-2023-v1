@@ -7,18 +7,6 @@ $plural   = $singular.'s';
 $Csingular = ucfirst($singular);
 $Cplural   = ucfirst($plural);
 
-if( WP_Block_Type_Registry::get_instance()->is_registered( 'superblock/'.$singular)) {
-    return;
-}
-
-add_filter('block_categories_all', function ($categories, $post) use($singular)
-{
-    array_unshift($categories, [
-        'slug' => 'superblock',
-        'title' => 'Superblock',
-    ]);
-    return $categories;
-}, 10, 2);
 
 add_action('init', function() use($singular, $base) {
 
@@ -47,7 +35,6 @@ add_action('init', function() use($singular, $base) {
         ]);
     });
     
-// --- Altere os labels abaixo caso seja necessário resolver casos específicos de linguagem
 $custom_labels = [
     'name' => $Cplural,
     'singular_name' => $Csingular,
@@ -86,6 +73,7 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
                 ],
         'template_lock' => 'all',
       ]);
+    });
 
     // --- create a rest api endpoint for the custom post type
     add_action('rest_api_init', function () use($base, $plural, $singular){
@@ -111,10 +99,6 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
                 return $response;
             },
         ]);
-    });
-    
-    
-
-}, 0);
+    });      
 
 ?>
