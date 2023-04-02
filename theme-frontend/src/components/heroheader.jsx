@@ -64,29 +64,31 @@ export const HeroHeader = ( props )=> {
   )
 }
 
-const SectionEnding = ( { bgColor="#fff" } ) => {
-
-return (
-    <div tw="
+export const SectionEnding = ( props ) => {
+  const { bgColor, ...otherProps } = props
+  return (
+      <div tw="
             box-border
             absolute 
             flex justify-center gap-4
-            bottom-[0px] left-0 
+            -bottom-[8px] left-0 
             w-screen h-[64px]
-            bg-transparent
-        "
-        css={`
-        border-top: 16px solid red;
-        box-shadow: inset 0px 0px 2px 1px #0004;
-        `}
+            bg-secondary-50
+          "
+          css={`
+            border-top: 16px solid red;
+            box-shadow: 0px 0px 4px 1px #0004;
+          `}
 
-        style={{ backgroundColor: bgColor }}
+          style={{ backgroundColor: bgColor ? bgColor : '' }}
 
-    >
-        <div tw='border-r-[16px] border-primary' />
-        <div tw='border-l-[16px] border-primary' />
-    </div>
-    )
+          {...otherProps}
+
+      >
+          <div tw='border-r-[16px] border-primary' />
+          <div tw='border-l-[16px] border-primary' />
+      </div>
+      )
 }
 
 export const HeroPageHeader = () => (

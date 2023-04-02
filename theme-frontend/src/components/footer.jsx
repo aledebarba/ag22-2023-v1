@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react'
-import Brand from './svg/brand'
 import { HashLink as Link } from 'react-router-hash-link'
 import { Container } from './containers'
 import { Icon } from '@iconify/react'
 import { _app } from '../utils/functions'
 import apiFetch from '@wordpress/api-fetch'
+import Brand from './svg/brand'
 import tw from 'twin.macro'
 
 export const Footer = ({ copyright = '', devby = '' }) => {
@@ -14,7 +14,7 @@ export const Footer = ({ copyright = '', devby = '' }) => {
 
   return (
     <Container fluid tw="bg-secondary-900 py-24 z-30">
-      <Container tw="flex flex-col md:(flex flex-row items-center justify-between)">
+      <Container tw="flex flex-col px-8 md:(flex flex-row items-center justify-between) lg:(px-0)">
         <div >
           <Brand footer width="40%" height="40%" tw="mx-auto mb-2 md:(mx-0)"/>
           <h4 
