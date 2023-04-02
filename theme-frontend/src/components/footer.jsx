@@ -1,24 +1,89 @@
-import { ReactComponent as Logo } from '../../assets/images/brand-color-negative.svg'
-import { HashLink as Link } from 'react-router-hash-link'
 import { useState, useEffect } from 'react'
+import Brand from './svg/brand'
+import { HashLink as Link } from 'react-router-hash-link'
+import { Container } from './containers'
 import { Icon } from '@iconify/react'
 import { _app } from '../utils/functions'
 import apiFetch from '@wordpress/api-fetch'
 import tw from 'twin.macro'
 
 export const Footer = ({ copyright = '', devby = '' }) => {
-  const [contatos, setContatos] = useState()
+  
   const options = _app.options()
+  const contatos = useContatos()  
 
-  const [windowSize, setWindowSize] = useState({
-    width: undefined,
-    height: undefined,
-  })
+  return (
+    <Container fluid tw="bg-secondary-900 py-24 z-30">
+      <Container tw="flex flex-col md:(flex flex-row items-center justify-between)">
+        <div >
+          <Brand footer width="40%" height="40%" tw="mx-auto mb-2 md:(mx-0)"/>
+          <h4 
+            tw="text-white text-center relative w-1/2 leading-tight mx-auto 
+                after:(absolute -bottom-4 left-1/2 -translate-x-1/2 w-[120%] h-1 bg-primary)
+                md:(text-left mx-0 after:(w-[130%] left-0 translate-x-0))
+            ">
+            Nos siga nas redes sociais
+          </h4>          
+          <SocialNetworks social={contatos}/>          
+        </div>
+        <FooterNav  copyright={copyright} devby={devby}/>
+        <p tw="text-white text-center text-sm mt-auto md:(hidden)">
+            {copyright}
+        </p>
+      </Container>
+      <Container fluid absolute tw="h-8 bg-primary flex justify-center gap-[16px] top-[16px]">
+        <div tw="h-8 border-r-[16px] border-r-white"/>
+        <div tw="h-8 border-l-[16px] border-l-white"/>
+      </Container>
+    </Container>
+  )
+}
 
+const SocialNetworks = ({ social }) => {
+  return <>
+    <div tw="flex flex-nowrap h-[4rem] mx-auto my-4 justify-center items-center md:(mx-0 justify-start)">
+      {social?.map((item, index) => <>
+        <div key={`contact-on-footer-${index}`}>
+          <a href={item.data.link} target="_blank" rel="noreferrer">
+            <Icon icon={item.data.icone} tw="text-primary text-4xl mx-2"/>
+          </a>
+        </div>
+      </>)}
+    </div>
+  </>
+}
 
+const FooterNav = ( { copyright, devby }) => {
+  const items = [
+    { label: "Quem Somos", link: "/sobre#top" },
+    { label: "Serviços", link: "/servicos#top" },
+    { label: "Cases", link: "/#cases" },
+    { label: "Clientes", link: "/#clientes" },
+    { label: "Trabalhe Conosco", link: "/#vagas" },
+    { label: "Contato", link: "/#contato" },        
+  ]
+  return <>
+    <div tw="grid grid-cols-1 grid-flow-row px-16 md:(grid grid-cols-2 grid-rows-[repeat(4,minmax(0,3rem))] gap-x-[8vw] px-2 auto-rows-min)">  
+      {items.map((item, index) => (
+        <Link to={item.link} tw="text-white mb-6 md:(my-0 py-0)" key={`footer-menu-item-key-${index}`}>
+          <h6 tw="text-white leading-tight">{item.label}</h6>
+          <div tw="w-full h-1 bg-primary mt-1"/>
+        </Link> 
+      ))}
+      <small tw="hidden text-white mt-8 md:(block mt-4)">
+            {copyright}&nbsp;{devby}
+      </small>
+  </div>
+  </>
+}
+
+const useContatos = () => {
+  
+  const [contatos, setContatos] = useState()
   useEffect(() => {
+    const options = _app.options()
     apiFetch({ path: 'database/v1/contatos' }).then(data => {
-      const inOrder = (data, order) =>
+      const inOrder = ( data, order ) =>
         order.map(item => {
           let id = item.id
           let found = data.find(item => item.id === id)
@@ -26,119 +91,6 @@ export const Footer = ({ copyright = '', devby = '' }) => {
         })
       setContatos(inOrder(data, options.socialOnFooter))
     })
-
-    // update the state with the window size on resize
-    function handleResize() {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      })
-    }
-    window.addEventListener('resize', handleResize)
-    // call the handler right away so state gets updated with initial window size
-    handleResize()
-    // remove the event handler when the component is unmounted
-    return () => window.removeEventListener('resize', handleResize)    
   }, [])
-
-  return (
-    <section
-      tw={
-        'py-28 bg-secondary-900 relative min-h-[33vh] w-screen p-8 text-secondary-50 md:(p-16)'
-      }
-    >
-      <div tw='sm:(grid grid-cols-1 w-[90vw]) md:(grid grid-cols-8 gap-6 w-[75vw] mx-auto) '>
-        <div tw='col-start-1 sm:(col-start-1 col-span-2)'>
-          <div tw='flex flex-col gap-3 w-full'>
-            <Logo />
-            <h5 tw='text-secondary-50 border-b-4 border-b-primary leading-tight tracking-wider font-semibold'>
-              <span css={`font-size: clamp(16px, 1.5vw, 2rem)`}>Nos siga nas</span>
-              <span css={`font-size: clamp(16px, 1.5vw, 2rem)`}>redes sociais</span>
-            </h5>
-            <div tw='flex flex-nowrap gap-4 text-3xl text-primary'>
-              {contatos ? (
-                contatos.map(contato => {
-                  return (
-                    <a
-						href={contato.data.link}
-						target='_blank'
-						alt={contato.title}
-						title={contato.title}
-						tw="text-6xl mb-8"
-						noreferrer
-                    >
-                      <Icon icon={contato.data.icone} />
-                    </a>
-                  )
-                })
-              ) : (
-                <span>Carregando redes...</span>
-              )}
-            </div>
-          </div>
-        </div>
-
-        <div tw='col-start-5 col-span-2 w-2/3'>
-          <ul>
-            <Li>
-              <Link smooth to='/sobre#top'>
-                Quem Somos
-              </Link>
-            </Li>
-            <Li>
-              <Link smooth to='/servicos#top'>
-                Serviços
-              </Link>
-            </Li>
-            <Li>
-              <Link smooth to="/#cases">
-                Cases
-              </Link>
-            </Li>
-          </ul>
-          { windowSize.width > 768             
-            ? <div tw='pt-8'>
-                <small css='white-space: nowrap;'>
-                {copyright || options.copyright }&nbsp;{devby || options.devby}
-                </small>
-              </div>
-            :<></>
-        }
-        </div>
-
-        <div tw='col-start-7 col-span-2 w-2/3'>
-          <ul>
-            <Li>
-              <Link smooth to='/#clientes'>
-                Clientes
-              </Link>
-            </Li>
-            <Li>
-              <Link smooth to='/#vagas'>
-                Trabalhe conosco
-              </Link>
-            </Li>
-            <Li>
-              <Link smooth to='/#contato'>
-                Contatos
-              </Link>
-            </Li>
-          </ul>
-          { windowSize.width <= 768 
-            
-              ? <div tw='pt-8'>
-                  <small css='white-space: nowrap;'>
-                      {copyright || options.copyright }&nbsp;{devby || options.devby}
-                  </small>
-                </div>
-              :<></>
-          }
-        </div>
-      </div>
-    </section>
-  )
-}
-
-const Li = ({ children }) => {
-  return <li tw='pt-4 pb-1 border-b-2 border-primary whitespace-nowrap'>{children}</li>
+  return contatos 
 }

@@ -48,8 +48,8 @@ module.exports = {
           }
         },
         fontSize: {
-          'body': [ '1.25rem', {
-            lineHeight: '1.75rem',
+          'body': [ '1rem', {
+            lineHeight: '1.2',
             letterSpacing: '0.02em',
             fontWeight: '360',
           }],
@@ -81,12 +81,12 @@ module.exports = {
             letterSpacing: '0em',
             fontWeight: '600',
           }],
-          'h3': [ '2.5rem', {
+          'h3': [ 'clamp(2.2rem, 2.2vw, 2.5rem)', {
             lineHeight: '2.75rem',
             letterSpacing: '0em',
             fontWeight: '500',
           }],
-          'h4': [ 'clamp(1rem, 1.175rem + -0.875vw, 0.125rem);', {
+          'h4': [ 'clamp(1.5rem, 1.5vw, 2rem)', {
             lineHeight: '2.25em',
             letterSpacing: '0em',
             fontWeight: '400',

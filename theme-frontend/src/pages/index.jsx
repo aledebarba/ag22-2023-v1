@@ -22,7 +22,7 @@ const Index = () => {
 	return (
 		<main tw="w-screen min-h-[400vh] relative" ref={wrapper}>
 			<MainMenu />
-			<div ref={content} id="smooth-content">
+			<div ref={content} id="smooth-content" tw="flex flex-col">
 				<HeroHeader/>
 				<Intro image={options.introImage}/>
 				<Servicos/>

@@ -1,4 +1,5 @@
 {
     "diffEditor.codeLens": true,
-    "docwriter.style": "Javadoc"
+    "docwriter.style": "Javadoc",
+    "svg.preview.background": "transparent"
 }

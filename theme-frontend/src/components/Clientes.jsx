@@ -6,7 +6,7 @@ import tw from 'twin.macro'
 
 export const Clientes = () => {
   const [clientes, setClientes] = useState([])
-  const logoWidth = window.innerWidth > 768 ? 180 : 100
+  const logoWidth = window.innerWidth > 768 ? 333 : 240
 
   useEffect(() => {
     apiFetch({ path: 'database/v1/clientes' }).then(data => {
@@ -19,7 +19,7 @@ export const Clientes = () => {
     <section
       id='clientes'
       className='clientes'
-      tw={'py-28 bg-secondary-900 text-secondary'}
+      tw={'py-20 bg-secondary-900 text-secondary'}
     >
       <ContainerFluidH css='min-height: 50vh;'>
         <H2Dash tw='text-secondary-100'>Clientes</H2Dash>

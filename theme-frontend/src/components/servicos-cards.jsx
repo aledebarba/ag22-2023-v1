@@ -11,7 +11,7 @@ export const Card = ({ children }) => {
 export const CardTitle = ({ children }) => {
     return (
         <h4 css={[
-            tw`after:(bg-secondary group-hover:w-10 group-hover:transition-all group-hover:duration-300) text-h4 text-primary lowercase font-medium leading-[3rem]`,
+            tw`text-h4 text-primary lowercase leading-[3rem] after:(bg-secondary w-10 transition-all duration-300)`,
             `
             position: relative;
             width: fit-content;
@@ -26,7 +26,7 @@ export const CardTitle = ({ children }) => {
                 height: 0.25rem;			
                 bottom: 0;
                 left: 50%;
-                transform: translateX(-50%);
+                transform: translateX(-50%);                
             }
         `]}
         >
@@ -37,9 +37,7 @@ export const CardTitle = ({ children }) => {
 
 export const CardText = ({children}) => {
     return (
-        <h6 tw={"text-h6"}>
-            {children}
-        </h6>
+        <p>{children}</p>
     )
 }
 

@@ -9,6 +9,7 @@
   p {
     @apply text-secondary-700;
     @apply text-body;
+    font-stretch: 115%;
   }
   button {
     @apply text-button;

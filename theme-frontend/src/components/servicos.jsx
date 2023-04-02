@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Buttonx } from './button';
-import { Card, CardTitle, CardText, CardBox, ServiceListItem, BoxServiceList, ServiceTitle, ServiceText, ServiceImg } from './cards';
-import { ContainerFluidH } from './containers';
+import { Card, CardTitle, CardText, CardBox, ServiceListItem, BoxServiceList, ServiceTitle, ServiceText, ServiceImg } from './servicos-cards';
+import { Container } from './containers';
 import { H2Dash } from './headings';
 import apiFetch from '@wordpress/api-fetch';
 import { HashLink as Link } from 'react-router-hash-link';
@@ -19,8 +19,8 @@ export const Servicos = () => {
 		}, [])
 			
 			
-		return <section className="servicos" tw={"py-20 bg-gray-100 text-secondary"}>
-			<ContainerFluidH>
+		return <Container fluid id="servicos" tw="bg-secondary-50 py-14">
+		 	<Container id="servicos">
 				<H2Dash>Serviços</H2Dash>
 				<CardBox>
 					{ servicos && servicos.map( (servico) => {
@@ -41,9 +41,9 @@ export const Servicos = () => {
 						</Card>
 						})}						
 				</CardBox>
-				<Link smooth to="/servicos#top"><Buttonx outline center>Conheça mais sobre nosso serviços</Buttonx></Link>
-		</ContainerFluidH> 
-	</section>
+			<Link smooth to="/servicos#top"><Buttonx outline center>Conheça mais sobre nosso serviços</Buttonx></Link>
+		</Container> 
+	</Container>
 }
 
 export const ServiceLi = () => {

@@ -1,4 +1,4 @@
-import { ContainerFluidH, Container } from './containers';
+import { Container } from './containers';
 import { H2Dash } from './headings';
 import React from 'react';
 import { Icon } from '@iconify/react';
@@ -9,15 +9,14 @@ export const TrabalheConosco = ({email}) => {
 	const [feedbackText, setFeedbackText] = React.useState("");
 	const feedback = React.useRef();
 		
-	return <section tw={"py-28 bg-white text-secondary "} id="vagas">
-			<ContainerFluidH>
-				<div tw="h-fit">
+	return <Container fluid id="vagas" tw="bg-secondary-50 py-20">
 				<H2Dash>Trabalhe Conosco</H2Dash>
-				<div tw="
-						mt-16 outline-red-500
+				<Container tw="
+						z-20						
+						outline-red-500
 						grid auto-rows-min [align-items:end]
-						md:(grid grid-rows-1 grid-cols-8 mt-16 gap-4 justify-items-center [align-items:start])
-					">
+						md:(grid grid-rows-1 grid-cols-8 mt-16 gap-4 px-8 [align-items:start])"
+						>
 					<div tw="md:(hidden)">
 						<h1 tw="h-fit ml-8">
 							<span tw="block text-secondary font-thin">Bora</span>
@@ -91,8 +90,6 @@ export const TrabalheConosco = ({email}) => {
 						} 
 						</div>
 					</div>
-				</div>
-				</div>
-			</ContainerFluidH> 
-	</section>
+				</Container>
+			</Container> 
 }

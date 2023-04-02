@@ -132,3 +132,38 @@ export const SaneSvg = ( { width="100%", height="100%", style={}, className="", 
         </div>
     )
 }
+
+export const stopScrolling = () => {
+  // Create a style sheet we will only use to disable scrolling :
+  let scroll_style_element = document.createElement('style')
+  scroll_style_element.id = 'handle-scroll-style'
+  document.head.appendChild(scroll_style_element)
+  const scroll_style_sheet = scroll_style_element.sheet
+  scroll_style_sheet.insertRule(
+    `html{height:100%;overflow-y:hidden;}`,
+    scroll_style_sheet.cssRules.length
+  )
+}
+
+export const enableScrolling = () => {
+  const scroll_style_element = document.getElementById('handle-scroll-style')
+  if (scroll_style_element) document.head.removeChild(scroll_style_element)
+}
+
+export const useRect = ref => {
+	if( !ref ) { console.error( "Ref must pe passed to the leftPostionOf component" ); return null; }
+
+	const [rect, setRect] = useState();
+
+	useEffect(() => {
+		const updateRect = () => {
+			setRect(ref.current.getBoundingClientRect());
+		}
+		updateRect();
+		window.addEventListener("resize", updateRect);
+		return () => window.removeEventListener("resize", updateRect);
+	}
+	, []);
+
+	return rect;
+}
