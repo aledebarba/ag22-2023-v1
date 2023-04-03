@@ -1,8 +1,22 @@
 import tw from 'twin.macro';
 
+export const CardFlex = ({ odd, children }) => {
+    console.log( odd )
+    return (
+        <div css={[
+                tw`bg-white p-2 py-6 drop-shadow-lg  text-center rounded-lg transition-all duration-300 ease-in hover:scale-[1.05] cursor-default! hover:drop-shadow-xl`,
+                odd && tw`w-[30%] min-w-[280px] h-[max(30vh,16rem)]`,
+                !odd && tw`w-[15%] min-w-[210px] h-[max(35vh,20rem)]`
+                ]} 
+                className="group"
+                >
+            {children}
+        </div>
+    )
+}
 export const Card = ({ children }) => {
     return (
-        <div tw={"bg-white p-4 py-6 drop-shadow-lg text-center rounded-lg transition-all duration-300 ease-in hover:scale-[1.05] cursor-default! hover:drop-shadow-xl"} className="group">
+        <div tw={"bg-white p-4 py-6 drop-shadow-lg h-[max(25vh,16rem)] text-center rounded-lg transition-all duration-300 ease-in hover:scale-[1.05] cursor-default! hover:drop-shadow-xl"} className="group">
             {children}
         </div>
     )
@@ -41,7 +55,30 @@ export const CardText = ({children}) => {
     )
 }
 
-export const CardBox = ({children}) => {
+export const CardBox = ({odd, children}) => {
+    return (
+        <div>
+            <div css={[
+                tw`grid auto-rows-fr gap-8 m-8 items-center justify-center`, 
+                tw`sm:(grid grid-cols-2 gap-4 mt-16 mb-12 mx-16)`,
+                odd && tw`lg:(grid auto-rows-fr grid-cols-3 gap-4 mt-16 mb-12 mx-4)`,
+                !odd && tw`lg:(grid auto-rows-fr grid-cols-4 gap-4 mt-16 mb-12 mx-4)`
+            ]}>
+                {children}
+            </div>
+        </div>
+    )
+}
+export const CardBoxFlex = ({children}) => {
+    return (
+            <div css={[
+                tw`flex flex-wrap gap-4 items-center justify-center my-16 px-0`, 
+            ]}>
+            {children}
+            </div>
+    )
+}
+export const CardBox2 = ({children}) => {
     return (
         <div tw="
             grid auto-rows-min gap-8 m-8
