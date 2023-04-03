@@ -109,7 +109,7 @@ const DezAnos = () => {
         
         <Container 
             id="dez-anos-content"  
-            tw="overflow-hidden mx-auto my-20 md:(flex items-center bg-primary rounded-lg overflow-hidden max-w-4xl px-8)"
+            tw="overflow-hidden mx-auto my-20 md:(flex items-center bg-primary rounded-lg overflow-hidden max-w-4xl pl-0 pr-8 justify-between)"
             css={`outline: 10px solid white; outline-offset: -3px;`}
             >
           <LogoDez/>
