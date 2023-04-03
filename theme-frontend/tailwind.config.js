@@ -53,6 +53,11 @@ module.exports = {
             letterSpacing: '0.02em',
             fontWeight: '360',
           }],
+          'menu': [ '1rem', {
+            lineHeight: '1.2',
+            letterSpacing: '0.02em',
+            fontWeight: '360',            
+          }],
           'button': [ '1rem', {
             lineHeight: '1rem',
             letterSpacing: '0em',

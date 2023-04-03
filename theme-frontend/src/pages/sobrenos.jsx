@@ -76,31 +76,22 @@ const InBrandWeTrust = () => {
         />
       </div>
 
-       <Container
-        css={[
-          tw`w-fit p-8 bg-transparent mx-auto relative -top-[12vh]`,
-          tw`sm:(flex items-center rounded-lg overflow-hidden flex-nowrap h-fit mx-auto)`,
-          tw`md:(w-[75%])`,
-          tw`lg:(w-[66%])`,
-          ``
-        ]}
-      >        
-        <div css={[`
-            width: 100%;
-            height: 30vh;
-            background-image: url(https://uxdir.com/files/videos/ag22/png/logo_page_aboutup.svg);
-            background-size: contain;
-            background-position: center;
-            background-repeat: no-repeat;            
-        `]}>
+       <Container tw="relative -top-[12vh] flex flex-col px-8 md:(flex flex-row items-center)"
+        >        
+        <div id="logo-about-us"                    
+              tw="w-full h-[15vh] bg-no-repeat bg-center bg-contain [background-image: url(https://uxdir.com/files/videos/ag22/png/logo_page_aboutup.svg)] md:(h-[35vh])" 
+          />
            
-        </div>
-        <div tw='bg-transparent w-[100%] gap-8 flex flex-col p-8 items-center'>
-          <h2>
+        <div tw='bg-transparent w-[100%] gap-8 flex flex-col py-8 items-start md:p-8'>
+          <h2 tw="hidden md:(flex flex-col)">
             <span tw='text-secondary-800 font-thin '>in brand </span>
             <span tw='text-primary font-semibold '>we trust</span>
           </h2>
-          <p tw='text-lg tracking-wide'>
+          <h1 tw="flex flex-col md:(hidden)">
+            <span tw='text-secondary-800 font-thin '>in brand </span>
+            <span tw='text-primary font-semibold '>we trust</span>
+          </h1>
+          <p tw='text-lg md:text-sm text-secondary-900 tracking-wide'>
             Nós acreditamos no poder e valor de uma marca, desde a sua concepção
             até a sua presença diária no mercado. Somos apaixonados pelo que
             fazemos e sempre queremos fazer mais. No dia a dia, criamos
@@ -140,13 +131,7 @@ const DezAnos = () => {
           `}
         />
       </div>
-      <p tw="
-          text-secondary-900 font-light px-8 py-2
-          text-[1rem]
-          sm:(text-white mx-auto px-[5vw])
-        "
-
-        >
+      <p tw='text-lg md:text-sm text-secondary-50 tracking-wide'>
         Hoje podemos dizer que a experiência nos ensinou o que fazer, porque fazer e como fazer. Alcançamos essa marca de tempo que é só o começo da nossa jornada na publicidade e propaganda brasileira. E que venham mais décadas!
       </p>
       </Container>
@@ -154,49 +139,3 @@ const DezAnos = () => {
   )
   
 }
-
-const DezAnos2 = () => {
-  return (
-    <>
-      <section
-        css={[
-          tw`w-screen bg-transparent overflow-hidden mx-auto h-[50vh] my-[10vh] relative`,
-          tw`md:(w-[75%])`,
-          tw`lg:(w-[66%])`,
-          `
-          box-sizing: border-box;
-          `
-        ]}
-      >
-        <div 
-            css={`
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                width: 100%;
-                height: 100%;
-                background-image: url('https://uxdir.com/files/videos/ag22/png/10anos.svg');
-                background-size: 100% 100%;
-                background-repeat: no-repeat;
-                transform: translateX(-50%) translateY(-50%) scale(1.05);
-            `}
-        >
-        <div tw='bg-transparent w-[36%] min-w-[300px] absolute left-[60%] top-[50%] -translate-y-1/2'>
-          <p tw='tracking-wide text-white '>
-            Uma década de comunicação. Uma década criando histórias, ações,
-            embalagens, marcas e estratégias.
-          </p>
-          <p tw='tracking-wide text-white '>
-            Hoje podemos dizer que a experiência nos ensinou o que fazer, porque
-            fazer e como fazer. Alcançamos essa marca de tempo que é só o começo
-            da nossa jornada na publicidade e propaganda brasileira. E que
-            venham mais décadas!
-          </p>
-        </div>
-        </div>
-      </section>
-    </>
-  )
-}
-
-// create components to InBrandWeTrust and DezAnos

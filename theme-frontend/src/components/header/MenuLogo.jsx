@@ -7,7 +7,7 @@ export const Logo = ({ menu }) => {
 
     return (<>
         { menu && 
-            <div tw="relative w-[50px]">
+            <div tw="relative w-[65px]">
                 <Link smooth to="/#top">
                     <Brand/>
                 </Link>

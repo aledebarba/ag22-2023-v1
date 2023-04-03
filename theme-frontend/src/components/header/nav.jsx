@@ -12,7 +12,7 @@ export const MainMenu = () => {
 
     return ( 
             <Container fixed fluid
-                tw="bg-white/80 pt-2 md:pt-1 z-50 border-t-8 border-t-primary border-b-2 [backdrop-filter:blur(5px)]"
+                tw="bg-white/90 pt-2 md:pt-1 z-50 border-t-[12px] border-t-primary border-b-2 [backdrop-filter:blur(4px)]"
                 > 
                 <Container tw="flex justify-between px-8 items-center h-16">
                     <Logo menu/>      
@@ -43,7 +43,7 @@ const MenuItems = ( { mobile, onClose, menuItems } ) => {
     return (
         <>
             <div css={[
-                tw`flex flex-col md:(flex-row) gap-4 md:(gap-8)`,
+                tw`flex flex-col md:(flex-row) gap-4 md:(gap-[2.5vw])`,
                 mobile && tw`fixed top-0 left-0 w-screen h-screen bg-white/70 z-20 flex-col justify-center items-center text-3xl gap-10`,
                 mobile && `
                     animation: zoomFadeIn 0.3s ease-in-out;
@@ -76,9 +76,9 @@ const MenuItems = ( { mobile, onClose, menuItems } ) => {
                 { items.map( (item, index) => (
                     <div key={`menu-item-${index}`} tw="w-fit h-fit">
                         <Link smooth to={item.link}>
-                            <div tw="text-center pb-2 relative
-                                    after:( absolute duration-300 bottom-0 left-1/2 w-[1rem] h-[6px] -translate-x-1/2 bg-primary)
-                                    hover:(after:(w-[100%]))"
+                            <div tw="text-center pb-2 relative [font-stretch:120%] [font-size:0.87rem]
+                                    after:( absolute duration-300 bottom-0 left-1/2 w-[0.5rem] h-[4px] -translate-x-1/2 bg-primary)
+                                    hover:( text-primary after:(w-[100%]))"
                                     onClick={ onClose }
                                 >
                                 {item.label}
