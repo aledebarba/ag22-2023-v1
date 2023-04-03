@@ -4,7 +4,7 @@ import { MainMenu } from '../components/header/nav'
 import { Container } from '../components/containers'
 import { Footer } from '../components/footer'
 import { _app } from '../utils/functions'
-import logoDez, { ReactComponent as LogoDez } from './assets/dezanos.svg'
+import logoDez, { ReactComponent as LogoDez } from './assets/dez-anos.svg'
 import { BigRedCircle } from "../components/circles";
 import { SectionEnding } from "../components/SectionEnding";
 import { useRect } from '../components/utils'
@@ -15,13 +15,13 @@ const SobreNos = props => {
   const ref = React.useRef()
 
   return (
-    <main tw='w-screen min-h-[200vh] relative' ref={ref}>
+    <Container fluid tw="overflow-hidden">
       <MainMenu />
       <AbouUsHeroHeader />
       <InBrandWeTrust />
       <DezAnos />
       <Footer />
-    </main>
+    </Container>
   )
 }
 
@@ -41,11 +41,11 @@ const AbouUsHeroHeader = () => {
         />
         <BigRedCircle style={{ position: "absolute", top: "-25vh", left: titleRect?.left - window.innerHeight }} />
         <Container absolute center tw="h-[70vh] px-8 flex items-center">
-                   <h1 tw="text-white" ref={titleRef}>
-                        <span tw="block text-secondary-50 font-light tracking-wide">Nos somos</span>
-                        <span tw="text-secondary-50 font-light tracking-wide">a </span>
-                        <span tw="text-primary font-semibold tracking-wide">AG22</span> 
-                   </h1>
+            <h1 tw="text-white" ref={titleRef}>
+                <span tw="block text-secondary-50 font-light tracking-wide">Nos somos</span>
+                <span tw="text-secondary-50 font-light tracking-wide">a </span>
+                <span tw="text-primary font-semibold tracking-wide">AG22</span> 
+            </h1>
         </Container>      
     </Container>
     <SectionEnding/>
@@ -80,8 +80,7 @@ const InBrandWeTrust = () => {
         >        
         <div id="logo-about-us"                    
               tw="w-full h-[15vh] bg-no-repeat bg-center bg-contain [background-image: url(https://uxdir.com/files/videos/ag22/png/logo_page_aboutup.svg)] md:(h-[35vh])" 
-          />
-           
+          />           
         <div tw='bg-transparent w-[100%] gap-8 flex flex-col py-8 items-start md:p-8'>
           <h2 tw="hidden md:(flex flex-col)">
             <span tw='text-secondary-800 font-thin '>in brand </span>
@@ -105,37 +104,19 @@ const InBrandWeTrust = () => {
 }
 
 const DezAnos = () => {
-  return(
-    <Container fluid center tw="box-border relative left-1/2 -translate-x-1/2">
-      <Container tw="
-        grid grid-rows-2 mb-40 gap-8 
-        sm:( grid-cols-2 grid-rows-1 items-center 
-             bg-primary h-fit 
-             overflow-hidden 
-             rounded-2xl box-border 
-        shadow-[0_0_1px_25px_white] )
-      ">
-      <div 
-        tw="
-          w-full h-full relative 
-          md:(overflow-visible)
-          " 
-      >
-        <LogoDez
-          tw="
-            w-full h-full            
-            md:(border-none)"
-          css={`
-            position: relative;
-            transform: scale(1.08);
-          `}
-        />
-      </div>
-      <p tw='text-lg md:text-sm text-secondary-50 tracking-wide'>
-        Hoje podemos dizer que a experiência nos ensinou o que fazer, porque fazer e como fazer. Alcançamos essa marca de tempo que é só o começo da nossa jornada na publicidade e propaganda brasileira. E que venham mais décadas!
-      </p>
+  return <>
+      <Container fluid id="dez-anos-wrapper" tw="flex justify-center px-4">
+        
+        <Container 
+            id="dez-anos-content"  
+            tw="overflow-hidden mx-auto my-20 md:(flex items-center bg-primary rounded-lg overflow-hidden max-w-4xl px-8)"
+            css={`outline: 10px solid white; outline-offset: -3px;`}
+            >
+          <LogoDez/>
+          <p tw="text-black ml-2 text-lg my-8 px-8 md:(flex-[1 0 50%] my-0 text-sm px-8 text-white)">
+            Hoje podemos dizer que a experiência nos ensinou o que fazer, porque fazer e como fazer. Alcançamos essa marca de tempo que é só o começo da nossa jornada na publicidade e propaganda brasileira. E que venham mais décadas!
+          </p>
       </Container>
     </Container>
-  )
-  
+</>  
 }

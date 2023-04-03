@@ -12,7 +12,7 @@ import tw from 'twin.macro';
  */
 
 export const Container = React.forwardRef(( props, ref ) => {
-    const { children, center, fluid, "full-screen":screen, "max-screen": maxScreen, "content-center":contentCenter, absolute, fixed, ...otherProps } = props;
+    const { children, center, fluid, "full-screen":screen, "max-screen": maxScreen, "content-center":contentCenter, absolute, fixed, hcenter, wcenter, ...otherProps } = props;
     return <div role="container" ref={ref}
             css={[
                 tw`p-0 mx-auto my-0 box-border w-fit`,
@@ -24,7 +24,9 @@ export const Container = React.forwardRef(( props, ref ) => {
                 screen && tw`w-screen min-h-screen`, 
                 maxScreen && tw`w-screen h-screen max-h-screen overflow-hidden`, 
                 center && tw`left-1/2 transform -translate-x-1/2`,
-                contentCenter && tw`flex justify-center items-center`              
+                contentCenter && tw`flex justify-center items-center`,
+                hcenter && tw`flex items-center`,           
+                wcenter && tw`flex justify-center`            
             ]}
             {...otherProps}
         >
