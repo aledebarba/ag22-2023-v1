@@ -73,8 +73,9 @@ export const Styles = ( { css } ) => <style>{ css }</style>;
 
 export function getWPChunkElementName() {
 	const getCurrentScript = () => {
-		if ( document.currentScript && document.currentScript.src !== '' )
+		if ( document.currentScript && document.currentScript.src !== '' ) {
 			return document.currentScript.src;
+		}
 		var scripts = document.getElementsByTagName( 'script' ),
 			str = scripts[ scripts.length - 1 ].src;
 		if ( str !== '' ) return str;
@@ -87,8 +88,7 @@ const getCurrentScriptPath = () => {
 	return path;
 };
 
-const pathElements = getCurrentScriptPath().split( '/' );
-
+	let pathElements = getCurrentScriptPath().split( '/' );	
 	return 'wpchunk-' + pathElements[ pathElements.length - 2 ];
 }
 

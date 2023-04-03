@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
-import { SectionEnding } from '../components/heroheader';
+import { SectionEnding } from '../components/SectionEnding';
 import { BigRedCircle } from '../components/circles';
 import { Container } from '../components/containers';
 import { MainMenu } from '../components/header/nav';
@@ -8,7 +8,7 @@ import { useRect } from '../components/utils';
 import { Footer } from '../components/footer';
 import { Slider } from '../components/slider';
 import { _app } from '../utils/functions';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/lazy';
 import apiFetch from '@wordpress/api-fetch';
 import tw from 'twin.macro';
 

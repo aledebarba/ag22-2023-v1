@@ -1,9 +1,13 @@
 import React from 'react'
-import tw from 'twin.macro'
+import tw, { theme } from 'twin.macro'
 import { MainMenu } from '../components/header/nav'
+import { Container } from '../components/containers'
 import { Footer } from '../components/footer'
 import { _app } from '../utils/functions'
 import logoDez, { ReactComponent as LogoDez } from './assets/dezanos.svg'
+import { BigRedCircle } from "../components/circles";
+import { SectionEnding } from "../components/SectionEnding";
+import { useRect } from '../components/utils'
 
 const SobreNos = props => {
   const options = _app.options()  
@@ -24,76 +28,57 @@ const SobreNos = props => {
 export default SobreNos
 
 const AbouUsHeroHeader = () => {
-  return (
-    <>
-      <header tw="h-[70vh] w-screen relative overflow-hidden">
-        <img src="https://uxdir.com/files/videos/ag22/png/walpaper-about.png" 
-          alt="" 
+
+  const titleRef = React.useRef()
+  const titleRect = useRect(titleRef);
+
+  return <>
+      <Container fluid tw="h-[70vh] w-screen relative overflow-hidden">
+        <img 
+          src="https://uxdir.com/files/videos/ag22/png/walpaper-about.png" 
           tw="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full object-cover" 
+          alt="" 
         />
-      <div 
-        data-desc="texto e circulo"
-        css={[
-            `
-                position: absolute;
-                display: flex;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                align-items: center;                
-            `
-        ]}
-        >
-            <div 
-                data-desc="25% da tela"
-                css={[
-                    `
-                      flex-grow: 0;
-                      flex-shrink: 1;
-                      flex-basis: 25vw;
-                    `
-                ]}
-                >
-                    <div tw="w-[40rem] h-[40rem] border-[6rem] border-primary rounded-[90rem]"
-                         css={`
-                            bottom: 0;
-                            margin-left: calc( 20vw - 40rem );
-                            flex: 1 1 25vw;
-                         `}
-                    />
-            </div>
-            <div 
-                data-desc="50% da tela"
-                tw="w-[50vw]"
-                >
-                   <h1 tw="text-white">
+        <BigRedCircle style={{ position: "absolute", top: "-25vh", left: titleRect?.left - window.innerHeight }} />
+        <Container absolute center tw="h-[70vh] px-8 flex items-center">
+                   <h1 tw="text-white" ref={titleRef}>
                         <span tw="block text-secondary-50 font-light tracking-wide">Nos somos</span>
                         <span tw="text-secondary-50 font-light tracking-wide">a </span>
                         <span tw="text-primary font-semibold tracking-wide">AG22</span> 
                    </h1>
-            </div>           
-      </div>
-      
-      
-
-      </header>
+        </Container>      
+    </Container>
+    <SectionEnding/>
     </>
-  )
 }
 
 const InBrandWeTrust = () => {
+  console.log( _app.options() )
   return (
     <>
-      <div>
-        <video autoPlay muted loop tw="z-30 w-[calc( 24rem + 24vw )] min-w-[300px] h-[auto] object-cover mx-auto -translate-y-[12vh] rounded-2xl shadow-md">
-          <source src="https://uxdir.com/files/videos/ag22/webm/V%c3%addeo%20Linhas%20PPG%20Refinish.webm" type="video/webm" />
+      <div tw="relative">
+        <video autoPlay muted loop controls 
+          tw="scale-90 w-[calc( 24rem + 24vw )] min-w-[280px] h-[auto] object-cover mx-auto -translate-y-[12vh] rounded-2xl md:(scale-100)"           
+        >
+          <source src={_app.options().aboutMovie} type="video/webm" />
           <source src="https://uxdir.com/files/videos/ag22/V%c3%addeo%20Linhas%20PPG%20Refinish.mp4" type="video/mp4" />
         </video>
+        <div id="video-about-us--shadow"
+          tw="w-[75vw] -top-[26vh] sm:w-[65vw] md:(w-[calc(20rem+20vw)] -top-[24vh])"
+          css={`
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 10vh;
+            box-shadow: 0 35px 30px -1px red;
+            z-index: -1;
+          `}
+        />
       </div>
 
-       <section
+       <Container
         css={[
-          tw`w-fit p-8 bg-transparent mx-auto`,
+          tw`w-fit p-8 bg-transparent mx-auto relative -top-[12vh]`,
           tw`sm:(flex items-center rounded-lg overflow-hidden flex-nowrap h-fit mx-auto)`,
           tw`md:(w-[75%])`,
           tw`lg:(w-[66%])`,
@@ -123,17 +108,21 @@ const InBrandWeTrust = () => {
             ações é a nossa especialidade.
           </p>
         </div>
-      </section>
+      </Container>
     </>
   )
 }
 
 const DezAnos = () => {
   return(
-    <div tw="
-      grid grid-rows-2 mb-40 mx-auto gap-8 max-w-4xl px-10
-      sm:(grid-cols-2 grid-rows-1 items-center bg-primary h-fit overflow-hidden rounded-2xl box-border 
-      shadow-[0_0_1px_25px_white] )
+    <Container fluid center tw="box-border relative left-1/2 -translate-x-1/2">
+      <Container tw="
+        grid grid-rows-2 mb-40 gap-8 
+        sm:( grid-cols-2 grid-rows-1 items-center 
+             bg-primary h-fit 
+             overflow-hidden 
+             rounded-2xl box-border 
+        shadow-[0_0_1px_25px_white] )
       ">
       <div 
         tw="
@@ -160,7 +149,8 @@ const DezAnos = () => {
         >
         Hoje podemos dizer que a experiência nos ensinou o que fazer, porque fazer e como fazer. Alcançamos essa marca de tempo que é só o começo da nossa jornada na publicidade e propaganda brasileira. E que venham mais décadas!
       </p>
-    </div>
+      </Container>
+    </Container>
   )
   
 }
