@@ -18,7 +18,7 @@ export const Footer = ({ copyright = '', devby = '' }) => {
         <div >
           <Brand footer width="40%" height="40%" tw="mx-auto mb-2 md:(mx-0)"/>
           <h4 
-            tw="text-white text-center relative w-1/2 leading-tight mx-auto 
+            tw="text-white text-center relative w-1/2 leading-tight mx-auto mt-8
                 after:(absolute -bottom-4 left-1/2 -translate-x-1/2 w-[120%] h-1 bg-primary)
                 md:(text-left mx-0 after:(w-[130%] left-0 translate-x-0))
             ">
@@ -27,9 +27,11 @@ export const Footer = ({ copyright = '', devby = '' }) => {
           <SocialNetworks social={contatos}/>          
         </div>
         <FooterNav  copyright={copyright} devby={devby}/>
+        
         <p tw="text-white text-center text-sm mt-auto md:(hidden)">
             {copyright}
         </p>
+        
       </Container>
       <Container fluid absolute tw="h-8 bg-primary flex justify-center gap-[16px] top-[16px]">
         <div tw="h-8 border-r-[16px] border-r-white"/>
@@ -63,7 +65,7 @@ const FooterNav = ( { copyright, devby }) => {
     { label: "Contato", link: "/#contato" },        
   ]
   return <>
-    <div tw="grid grid-cols-1 grid-flow-row px-16 md:(grid grid-cols-2 grid-rows-[repeat(4,minmax(0,3rem))] gap-x-[8vw] px-2 auto-rows-min)">  
+    <div tw="grid grid-cols-1 grid-flow-row px-8 md:(grid grid-cols-2 grid-rows-[repeat(4,minmax(0,3rem))] gap-x-[8vw] px-2 auto-rows-min)">  
       {items.map((item, index) => (
         <Link to={item.link} tw="text-white mb-6 md:(my-0 py-0)" key={`footer-menu-item-key-${index}`}>
           <h6 tw="text-white leading-tight">{item.label}</h6>

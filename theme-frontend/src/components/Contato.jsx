@@ -40,18 +40,18 @@ export const Contato = ({
     <Container fluid id="contato"
         tw={"py-20 bg-secondary-50 text-secondary"}
       >
-      <BigRedCircle width="844px" height="844px" style={{ position: "absolute", top: "-25vh", left: infoRect?.right - 224, zIndex: 1 }} />
+      <BigRedCircle width="844px" height="844px" style={{ position: "absolute", top: "-25vh", left: infoRect?.right - 224, zIndex: 1 }} tw="hidden md:(block)"/>
       <Container ref={infoRef} tw="z-10">
         <H2Dash>Contatos</H2Dash>
         <Container 
           tw="mt-12 
 				      grid grid-rows-2 px-8 place-items-center justify-items-center
-				      md:(mt-16 grid grid-cols-6 grid-rows-1 px-0 place-items-start justify-items-start gap-x-8)"
+				      md:(mt-16 grid grid-cols-6 grid-rows-1 place-items-start justify-items-start gap-x-8)"
          >
          <div tw="h-fit md:(col-span-3 )">
             <H2superiordash>
               <span tw="block text-primary font-bold">
-                {cidade}- {estado.toUpperCase()}
+                {cidade} - {estado.toUpperCase()}
               </span>
             </H2superiordash>
             

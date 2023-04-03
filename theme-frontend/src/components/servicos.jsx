@@ -6,6 +6,7 @@ import { H2Dash } from './headings';
 import apiFetch from '@wordpress/api-fetch';
 import { HashLink as Link } from 'react-router-hash-link';
 import tw from 'twin.macro';
+import { getTagsFromText } from "./get-tags-from-text"
 
 export const Servicos = () => { 
 		
@@ -14,6 +15,7 @@ export const Servicos = () => {
 		useState(()=>{
 			apiFetch({ path: 'database/v1/servicos' })
 			.then( (data) => {
+
 				setServicos( data )
 			} )
 		}, [])
@@ -24,24 +26,14 @@ export const Servicos = () => {
 				<H2Dash>Serviços</H2Dash>
 				<CardBox>
 					{ servicos && servicos.map( (servico) => {
-						let textArray = servico.data.desc.split(' ');
-						let tagsArray = [];
-						let textMain = '';
-						textArray.forEach( (word) => {
-							if( word[0] == '#' ) {
-								tagsArray.push( word )
-							} else if( word[0] !== '#' && word[0] !== ' ' ) {
-								textMain += word + ' '
-							}
-						} )
-
+						const [ tags, textMain ] = getTagsFromText( servico.data.desc )
 						return <Card>
 							<CardTitle>{servico.title}</CardTitle>
 							<CardText><div dangerouslySetInnerHTML={ {__html: textMain} }/></CardText>
 						</Card>
 						})}						
 				</CardBox>
-			<Link smooth to="/servicos#top"><Buttonx outline center>Conheça mais sobre nosso serviços</Buttonx></Link>
+			<Link smooth to="/servicos#top"><Buttonx outline center tw="mx-8 md:(mx-auto)">Conheça mais sobre nosso serviços</Buttonx></Link>
 		</Container> 
 	</Container>
 }

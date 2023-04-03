@@ -1,7 +1,7 @@
 import tw from "twin.macro";
 
 export const BigRedCircle = ( props ) => { 
-    const { width="100vh", height="100vh" } = props;
+    const { width="100vh", height="100vh", ...otherProps } = props;
     return <div 
         css={`
             width: ${width};
@@ -11,6 +11,6 @@ export const BigRedCircle = ( props ) => {
             background-position: center;
             background-repeat: no-repeat;
         `}
-        style={props.style}
+        {...otherProps}
     />
 }

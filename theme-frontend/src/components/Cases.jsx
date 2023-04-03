@@ -40,7 +40,7 @@ export const Cases = () => {
 					<H2Dash>Cases</H2Dash>
 					<div ref={casesRef}
 						 tw="grid grid-cols-1 gap-2 auto-rows-min px-4 mt-8 mb-8 z-10
-								md:(grid grid-cols-3 gap-8 mt-16)">
+							md:(grid grid-cols-3 gap-8 mt-16)">
 						{cases &&
 							cases.map((item, index) => (
 								<CaseCard item={item} index={index} key={index} />

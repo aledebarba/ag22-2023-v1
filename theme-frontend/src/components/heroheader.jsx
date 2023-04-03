@@ -2,7 +2,7 @@ import { HashLink as Link } from 'react-router-hash-link'
 import { Buttonx } from './button'
 import { Icon } from '@iconify/react'
 import { Container } from './containers'
-import { SaneSvg, useRect } from './utils'
+import { useRect } from './utils'
 import { BigRedCircle } from './circles'
 import tw, { styled } from 'twin.macro'
 
@@ -74,6 +74,7 @@ export const SectionEnding = ( props ) => {
             -bottom-[8px] left-0 
             w-screen h-[64px]
             bg-secondary-50
+            [z-index: 2]
           "
           css={`
             border-top: 16px solid red;
@@ -91,7 +92,13 @@ export const SectionEnding = ( props ) => {
       )
 }
 
-export const HeroPageHeader = () => (
+export const HeroPageHeader = () => {
+  
+  const titleRef = React.useRef()
+  const titleRect = useRect(titleRef)
+
+  
+  return (
   <header tw='h-[55vh] w-screen overflow-hidden relative border-b-2 border-b-secondary-100 drop-shadow-md'>
     <div
       css={`
@@ -112,45 +119,15 @@ export const HeroPageHeader = () => (
     />
 
     <Container id='header-background' tw='absolute top-0 left-0 z-[2]'>
-      <SaneSvg className='circlepage'>
-        <circle
-          cx='-12%'
-          cy='10%'
-          r='25%'
-          fill='transparent'
-          strokeWidth='10'
-          style={{
-            stroke: 'var(--primary)',
-            filter: 'drop-shadow(0.5px 0px 1px rgba(0, 0, 0, 0.25))'
-          }}
-        />
-      </SaneSvg>
+      <BigRedCircle style={{ position: "absolute", top: "-25vh", left: titleRect?.left - window.innerHeight }}/>
     </Container>
-    <div tw='relative h-full w-full ml-[20vw] z-[1] flex flex-col justify-center'>
-      <h1 tw={'text-h1 text-white box-content'}>
+    
+    <Container absolute center tw="top-0 h-[50vh] z-20">
+      <h1 tw="text-white box-content relative top-1/2 -translate-y-1/2 pl-8" ref={titleRef}>
         <span tw={'block font-thin'}>Nossos</span>
         <span tw={'text-primary block font-bold'}>Serviços</span>
       </h1>
-    </div>
-
-    <div
-      css={`
-        box-sizing: border-box;
-        position: absolute;
-        bottom: 0px;
-        height: 56px;
-        left: 0px;
-        width: 100%;
-        background-color: white;
-        border-top: 16px solid var(--primary);
-        z-index: 4;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-      `}
-    >
-      <div tw='w-1/4 border-r-[16px] border-primary' />
-      <div tw='w-1/4 border-l-[16px] border-primary' />
-    </div>
+    </Container>
+    <SectionEnding />
   </header>
-)
+)}

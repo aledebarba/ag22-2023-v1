@@ -53,7 +53,7 @@ export const TrabalheConosco = ({email}) => {
 								border-b-2 
 								border-primary 
 								duration-300 cursor-pointer 
-
+								[transform-origin: left center]
 								md:(gap-4 text-4xl text-primary font-bold border-transparent)
 								hover:(scale-110 duration-300 border-primary)
 							">
@@ -61,7 +61,7 @@ export const TrabalheConosco = ({email}) => {
 							<Icon icon="lucide:clipboard-copy" tw="text-primary" width="48" />
 						</div>
 
-						<div ref={feedback} tw="h-8 p-0 mt-2 ml-[-1rem] text-secondary">
+						<div ref={feedback} tw="h-8 p-0 mt-2 ml-[2rem] text-secondary">
 							{ feedbackText && feedbackText == "copiado" 
 								? <p
 									tw="text-white bg-secondary-300 mt-2 p-2 rounded-lg w-fit relative" 

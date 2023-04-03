@@ -4,14 +4,15 @@ import tw from 'twin.macro';
  * the container will be 100vw until the lg breakpoint, then it will remain 960px
  * 
  * @fluid - the container will take full screen width size regardless of breakpoints
- * @screen - the container will take full screen size, width and height
+ * @full-screen - the container will take full screen size, width and height
  * @fixed - the container will be fixed
  * @contentCenter - the container will center its content
+ * @center - the container will center itself
  * any extra props will be passed to the div
  */
 
 export const Container = React.forwardRef(( props, ref ) => {
-    const { children, fluid, "full-screen":screen, "max-screen": maxScreen, "content-center":contentCenter, absolute, fixed, ...otherProps } = props;
+    const { children, center, fluid, "full-screen":screen, "max-screen": maxScreen, "content-center":contentCenter, absolute, fixed, ...otherProps } = props;
     return <div role="container" ref={ref}
             css={[
                 tw`p-0 mx-auto my-0 box-border w-fit`,
@@ -21,7 +22,9 @@ export const Container = React.forwardRef(( props, ref ) => {
                 fluid  && tw`w-screen left-0`,
                 absolute && tw`absolute`,
                 screen && tw`w-screen min-h-screen`, 
-                maxScreen && tw`w-screen h-screen max-h-screen overflow-hidden`,               
+                maxScreen && tw`w-screen h-screen max-h-screen overflow-hidden`, 
+                center && tw`left-1/2 transform -translate-x-1/2`,
+                contentCenter && tw`flex justify-center items-center`              
             ]}
             {...otherProps}
         >
