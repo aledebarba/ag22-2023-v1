@@ -39,7 +39,6 @@ const Main = () => {
 	} );
 
 	return (
-		<React.StrictMode>
 			<BrowserRouter>			
 				<Routes>
 					<Route path="/archive" element={ <ArchivePage /> } />
@@ -64,7 +63,6 @@ const Main = () => {
 					<Route path="*" element={ <NotFoundPage /> } />
 				</Routes>
 			</BrowserRouter>
-		</React.StrictMode>
 	);
 };
 
