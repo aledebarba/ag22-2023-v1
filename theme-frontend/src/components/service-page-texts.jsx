@@ -10,7 +10,7 @@ export const TextAtLeft = ({title, textMain, tags, image}) => {
 		gsap.from( redBarRef?.current, {
 			duration: 0.8,
 			ease: "power4.out",
-			x: "100vw",
+			x: "110vw",
 			scrollTrigger: {
 				trigger: redBarRef?.current,
 				start: "top 80%",
@@ -64,7 +64,7 @@ export const TextAtRight = ({title, textMain, tags, image}) => {
 		gsap.from( redBarRef?.current, {
 			duration: 0.8,
 			ease: "power4.out",
-			x: "-100vw",
+			x: "-110vw",
 			scrollTrigger: {
 				trigger: redBarRef?.current,
 				start: "top 80%",
