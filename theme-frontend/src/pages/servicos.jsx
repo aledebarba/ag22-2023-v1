@@ -20,6 +20,7 @@ return (
 	<main tw="w-screen min-h-[200vh] relative">
 		<MainMenu />
 		<HeroPageHeader />
+		<div id="lista--de--serviços" tw="my-8">
 			{ ourServices.map( ( item, index ) => 
 				<Servico 
 					position={ index%2===0 ? 'left' : null }
@@ -28,6 +29,7 @@ return (
 					image={ item.data.image }			
 				/>
 			)}		
+		</div>
 		<Footer />
 	</main>
 )};
