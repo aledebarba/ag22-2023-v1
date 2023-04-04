@@ -13,19 +13,19 @@ export const Servicos = () => {
 		const [ servicos, setServicos ] = useState( [] );
 		//TODO: essa opção deveria estar em um banco de dados
 		const homeServicesOrder = [
-			{ id: 164 },
-			{ id: 165 },
-			{ id: 166 },
-			{ id: 167 },
+			{ slug: 'branding' },
+			{ slug: 'social-media' },
+			{ slug: 'planning' },
+			{ slug: 'packing' },
 		]
 		useState(()=>{
 			apiFetch({ path: 'database/v1/servicos' })
 			.then( (data) => {
 				const inOrder = (data, order) => { 
-					console.log( data )
-					return order.map((item) => {
-						let id = item.id;
-						let found = data.find((item) => item.id === id);
+					console.log( data, order )
+					return order.map(( orderItem ) => {
+						let orderSlug = orderItem.slug;
+						let found = data.find( ( databaseItem ) => databaseItem?.slug === orderSlug);
 						return found;
 					})};				
 					setServicos( inOrder(data, homeServicesOrder ))
