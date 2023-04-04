@@ -9,7 +9,7 @@ export const TrabalheConosco = ({email}) => {
 	const [feedbackText, setFeedbackText] = React.useState("");
 	const feedback = React.useRef();
 		
-	return <Container fluid id="vagas" tw="bg-secondary-50 py-20">
+	return <Container fluid id="vagas" tw="bg-white py-20">
 				<H2Dash>Trabalhe Conosco</H2Dash>
 				<Container tw="
 						z-20						

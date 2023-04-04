@@ -1,15 +1,15 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { _app, getWPChunkElementAttr } from './utils/functions';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { Loading } from './components/loading';
+import { Offline } from './components/offline';
 import { default as FrontPage } 	from './pages/index';
 import { default as ArchivePage } 	from './pages/archive';
 import { default as ProjetoPage } 	from './pages/projeto';
 import { default as ServicosPage } 	from './pages/servicos';
 import { default as SobreNos } 	from './pages/sobrenos';
 import { default as NotFoundPage } 	from './pages/404';
-import { Loading } from './components/loading';
-import { Offline } from './components/offline';
+import { _app, getWPChunkElementAttr } from './utils/functions';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 const Main = () => {
 	const pages = _app.pages();

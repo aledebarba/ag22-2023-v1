@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Buttonx } from './button';
-import { CardFlex, CardTitle, CardText, CardBoxFlex, ServiceListItem, BoxServiceList, ServiceTitle, ServiceText, ServiceImg } from './servicos-cards';
+import { Card, CardTitle, CardText, CardBox, ServiceListItem, BoxServiceList, ServiceTitle, ServiceText, ServiceImg } from './servicos-cards';
 import { Container } from './containers';
 import { H2Dash } from './headings';
 import apiFetch from '@wordpress/api-fetch';
@@ -11,12 +11,24 @@ import { getTagsFromText } from "./get-tags-from-text"
 export const Servicos = () => { 
 		
 		const [ servicos, setServicos ] = useState( [] );
-		
+		//TODO: essa opção deveria estar em um banco de dados
+		const homeServicesOrder = [
+			{ id: 164 },
+			{ id: 165 },
+			{ id: 166 },
+			{ id: 167 },
+		]
 		useState(()=>{
 			apiFetch({ path: 'database/v1/servicos' })
 			.then( (data) => {
-
-				setServicos( data )
+				const inOrder = (data, order) => { 
+					console.log( data )
+					return order.map((item) => {
+						let id = item.id;
+						let found = data.find((item) => item.id === id);
+						return found;
+					})};				
+					setServicos( inOrder(data, homeServicesOrder ))
 			} )
 		}, [])
 			
@@ -24,15 +36,15 @@ export const Servicos = () => {
 		return <Container fluid id="servicos" tw="bg-secondary-50 py-14">
 		 	<Container id="servicos">
 				<H2Dash>Serviços</H2Dash>
-				<CardBoxFlex>
+				<CardBox>
 					{ servicos && servicos.map( (servico) => {
 						const [ tags, textMain ] = getTagsFromText( servico.data.desc )
-						return <CardFlex odd={ !(servicos.length%2===0) }>
+						return <Card>
 							<CardTitle>{servico.title}</CardTitle>
 							<CardText><div dangerouslySetInnerHTML={ {__html: textMain} }/></CardText>
-						</CardFlex>
+						</Card>
 						})}						
-				</CardBoxFlex>
+				</CardBox>
 			<Link smooth to="/servicos#top"><Buttonx outline center tw="mx-8 md:(mx-auto)">Conheça mais sobre nosso serviços</Buttonx></Link>
 		</Container> 
 	</Container>
