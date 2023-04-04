@@ -1,12 +1,12 @@
 import "../index.css";
 import tw from "twin.macro";
-import { useState, useEffect } from "react";
-import{ RichTextField } from "./rte";
-import { TextControl, TextareaControl, ColorControl, SelectControl, Button } from "@wordpress/components";
-import { CustomImageSelect, CustomVideoSelect, MediaGalleryButton } from "./wpmediagal/media-gallery-button";
-import { Icon } from '@iconify/react';
 import Switch from 'react-switch';
 import ReactPlayer from "react-player/lazy";
+import { Icon } from '@iconify/react';
+import { RichTextField } from "./rte";
+import { useState, useEffect } from "react";
+import { CustomImageSelect, CustomVideoSelect, MediaGalleryButton } from "./wpmediagal/media-gallery-button";
+import { TextControl, TextareaControl, ColorControl, SelectControl, Button } from "@wordpress/components";
 
 const RenderInterface = ( props, blockOptions ) => {
 
@@ -28,18 +28,20 @@ const RenderInterface = ( props, blockOptions ) => {
         props.setAttributes({ [attribute]: value });
     };
     
-    const handleSelectImages = (  attributeName, images  ) => {
-        console.log( attributeName, images )
-        props.setAttributes( { [attributeName]: images.map( image => {
-            return ({ url: image.url, id: image.id, alt: image.alt })
+    const handleSelectImages = (  attributeName, media  ) => {
+        console.log( attributeName, media )
+        props.setAttributes( { [attributeName]: media.map( mediaItem => {
+            return ({ url: mediaItem.url, id: mediaItem.id, alt: mediaItem.alt, type: mediaItem.type })
         } ) });
     }
+
+    console.log( attributes )
 
     return <>    
         <div tw={"w-[full] h-fit overflow-visible relative"} >            
             <div css={[
                 tw`left-1/2 -translate-x-1/2 absolute top-0 p-4 bg-blue-100/30 h-fit flex gap-8 flex-wrap border-b-[10vh] border-b-white box-border`,
-                tw`w-screen sm:(w-[95vw]) md:(w-[80vw] lg:(w-[65vw]))`
+                tw`w-screen sm:(w-[95vw]) md:(w-[80vw] lg:(w-[65vw]))`,
                 ]}
             >
             { Object.keys(props.attributes).map( (attribute, index) => {
@@ -177,7 +179,11 @@ const RenderInterface = ( props, blockOptions ) => {
 
                         { layout.type === "imageGallery" && (<>
                             <div tw="sm:(grid-cols-3) md:(grid-cols-4) w-full min-h-[20vh] p-0 grid grid-cols-2 gap-4 box-border ">
-                                { attributes[attribute].map( (item, index) => (
+                                { attributes[attribute].map( (item, index) => { 
+
+                                    console.log( item.type )
+
+                                return(
                                 <div key={`item-image-key-${index}`}>
                                     <div css={[`
                                         width: 100%;
@@ -185,9 +191,10 @@ const RenderInterface = ( props, blockOptions ) => {
                                         position: relative;   
                                         border: 1px solid #888;
                                         box-sizing: border-box;
-                                        border-radius: 4px;                                 
+                                        border-radius: 4px;                                                                         
                                     `]}>
-                                        <img src={item.url} alt={item.alt} 
+                                       { item.type == "image" || (item.type == undefined && item.url !== undefined)
+                                         ? <img src={item.url} alt={item.alt} 
                                             css={`
                                                 width: 90%;
                                                 height: 90%;
@@ -197,8 +204,15 @@ const RenderInterface = ( props, blockOptions ) => {
                                                 transform: translate(-50%, -50%);
                                                 box-sizing: border-box;
                                             `}    
-                                        />
-                                        <div tw="absolute top-[0.5rem] right-[0.5rem] text-white bg-sky-500 rounded-md shadow-md hover:(bg-sky-600 text-white)">
+                                            /> 
+                                         : item.type == "video"
+                                            ? <div tw="absolute top-[25%]">
+                                                <video src={item.url} alt={item.alt} muted controls />
+                                              </div>
+                                            : <div>Media Type Error</div>
+                                        }
+
+                                            <div tw="absolute top-[0.5rem] right-[0.5rem] text-white bg-sky-500 rounded-md shadow-md hover:(bg-sky-600 text-white)">
                                             <Button // delete image button
                                                 tw="text-white hover:(text-white)" 
                                                 icon="trash" 
@@ -213,7 +227,7 @@ const RenderInterface = ( props, blockOptions ) => {
                                             </div>
                                         </div>
                                     </div>
-                                ))}                                
+                                )})}
                                     <MediaGalleryButton 
                                         media={ props.attributes[attribute].map( media => media.id ) }
                                         setMedia={ ( images )=> { handleSelectImages( attribute, images ) }}

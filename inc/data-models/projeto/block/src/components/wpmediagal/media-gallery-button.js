@@ -22,7 +22,7 @@ const CALLBACK = ( media ) => console.log( media );
  * <MediaGalleyButton setMedia={ ( media ) => setMediaValue( media )} />
  */
 
-export function MediaGalleryButton( { ALLOWED_MEDIA_TYPES=["image"], setMedia, media, multiple, mode, text, button } ) {
+export function MediaGalleryButton( { ALLOWED_MEDIA_TYPES=["image","video"], setMedia, media, multiple, mode, text, button } ) {
 	if ( ! setMedia ) {
 		setMedia = CALLBACK;
 		console.error ("setMedia callback function is required, in absence of callback function, console.log will be used")
