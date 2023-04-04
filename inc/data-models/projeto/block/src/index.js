@@ -6,6 +6,7 @@ const blockOptions = {
     attributes: {        
         content:        { type: "string", default: "" },
         poster:         { type: "string", default: "" },
+        logo:           { type: "string", default: "" }, 
         category:       { type: "string", default: "" },
         headerType:     { type: "string", default: "" },
         image:          { type: "string", default: "" },
@@ -17,22 +18,29 @@ const blockOptions = {
         showEndGallery: { type: "boolean", default: false },
         gallery:        { type: "array",  default: []  },
     },
+
     layout:[
 
         { 
             ref: "content",    
             label: "Conteúdo / Decrição do projeto", 
             type: "richText", 
-            width: "60%" 
+            width: "25%" 
         },
 
         { 
             ref: "poster",     
-            label: "Imagem do projeto para quando ele aparece em listas.", 
+            label: "Onde aparece: Links para esse projeto, cabeçalho do projeto, poster de vídeos (quando o vídeo falha)." ,
             type: "imageSelect", 
-            width: "20%" 
+            width: "25%" 
          },
 
+        { 
+            ref: "logo",     
+            label: "Logo da empresa contratante desse projeto ou equivalente.", 
+            type: "imageSelect", 
+            width: "25%" 
+         },
        
         { 
             ref: "category",   
