@@ -210,8 +210,8 @@ const Thumb = ({ title, data }) => {
 
 const Gallery = ({ title, data }) => {
 	return <>
-	<Container tw="flex justify-center items-center pb-60">
-		<div tw="grid grid-cols-1 gap-2 px-8 sm:(grid-cols-2) md:(grid-cols-4 gap-4) lg:(grid-cols-4 gap-8)">
+	<Container tw="flex justify-center items-center pb-20">
+		<div tw="grid grid-cols-1 gap-16 px-8 sm:(grid-cols-2) md:(grid-cols-4 gap-4) lg:(grid-cols-4 gap-8)">
 			{data.gallery.map( (image, index) => <>
 				<div key={`end-gallery-image-${index}`} tw="relative w-full h-fit">
 				    <img src={image.url} alt="" tw="w-full h-full object-cover" />
