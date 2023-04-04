@@ -8,7 +8,7 @@ import { useRect } from '../components/utils';
 import { Footer } from '../components/footer';
 import { Slider } from '../components/slider';
 import { _app } from '../utils/functions';
-import ReactPlayer from 'react-player/lazy';
+import ReactPlayer from 'react-player';
 import apiFetch from '@wordpress/api-fetch';
 import tw from 'twin.macro';
 
@@ -22,16 +22,13 @@ const ProjetoPage = ( props ) => {
 		window.scrollTo(0,0)
 	},[])
 
-	console.log( data )
-
-	return <>
+return <>
 		<Container fluid id="project-page--wrapper">
 			<MainMenu/>			
+
 			<HeaderMedia video={ data.videoUrl } poster={ data.poster } titulo={title} height={"60vh"} header-type={ data.headerType } slides={ data.slides }/>
 
-			<Container  id="project-page--client-logo" 
-						tw="h-[50vh] flex justify-center items-center box-border"
-				>
+			<Container center id="project-page--client-logo">
 				<div tw="relative w-1/2 -top-[15%] z-10">
 					<img src={data.poster} tw="w-full h-auto object-cover" />
 				</div>
@@ -80,77 +77,72 @@ const HeaderMedia = ( { titulo, video, poster, height="60vh", "header-type":head
 	
 	const headerRef = React.useRef();
 	const headerRect = useRect(headerRef);
-	const videoRef = React.useRef();
 
 	return <>
-			<Container id="project-header" fluid tw="border-b-8 border-b-primary" style={{height: height}}>
-					{
-						poster 
-						? <img src={poster} tw="absolute w-screen overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover" style={{height: height}}/> 
-						: null
-					}
-					
-					<Container id="project-header--background-video" fluid absolute tw="overflow-hidden" style={{height: height}}>
-						<ReactPlayer
-							url={video}
-							playing={true}
-							muted={true}
-							loop={true}
-							fluid={true}
-							width="100%"
-							height="auto"
-							object-fit="cover"
-							className="absolute scale-[2] top-1/2 -translate-y-1/2 sm:(scale-150) md:(scale-100)"
-						/>
-						<div id="project-header--video-overlay" tw="relative w-screen h-full top-0 left-0 bg-black/70"/>						
-					</Container>
-
-				<Container  id="project-header--content" 					
-					absolute
-					tw="z-10 top-0 left-1/2 -translate-x-1/2"
+		<Container fluid id="project-header--main-image" tw="border-b-8 border-b-primary" style={{height: height}}>
+			{poster ? 
+				<img src={poster} tw="absolute w-screen overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover" style={{height: height}}/> 
+			: null}
+			
+			{ headerType == "Video" ? 
+				<Container fluid absolute 
+					id="project-header--background-video-over-poster" 
+					tw="overflow-hidden" 
 					style={{height: height}}
-					>
-					<h1 ref={headerRef}
-						tw="hidden font-thin ml-8 absolute text-white top-1/2 -translate-y-1/2 w-[66%] md:(block)">
-						{titulo}
-					</h1>
-					<h2 ref={headerRef}
-						tw="font-thin ml-8 absolute text-white top-1/2 -translate-y-1/2 w-[66%] md:(hidden)">
-						{titulo}
-					</h2>
-				</Container>	
-
-				<BigRedCircle style={{ position: "absolute", bottom: 0, left: headerRect?.left - ( window.innerHeight ) }}/>
-				<SectionEnding />		
-		</Container>
-		{ 
-			headerType == "Video" 
-			? <Container>
-				<div 
-					tw="relative w-[80%] h-[50%] left-1/2 -translate-x-1/2 -translate-y-[max(128px,25%)] overflow-hidden grid place-content-center rounded-2xl z-10"			
 					>
 					<ReactPlayer
 						url={video}
 						playing={true}
 						muted={true}
 						loop={true}
+						fluid={true}
 						width="100%"
-						height="100%"
-						object-fit="cover"	
+						height="auto"
+						object-fit="cover"
+						className="absolute scale-[2] top-1/2 -translate-y-1/2 sm:(scale-150) md:(scale-100)"
 					/>
-				</div>		
-				<div tw="border-4 border-transparent w-[70%] left-1/2 -translate-x-1/2  h-[1px] absolute top-[calc(95% - max(150px,25%))] -z-[1] md:(top-[calc(95% - max(128px,25%))] -z-[1])"
-						css="box-shadow: 0 20px 30px 10px red" />			
+					<div id="project-header--video-overlay" 
+						tw="relative w-screen h-full top-0 left-0 bg-black/70"
+					/>				
+				</Container> 
+			: null }
+
+			<Container hcenter id="project-header--title" style={{height:height}} ref={headerRef}>
+				<h1 tw="text-white w-2/3">{titulo}</h1>
+			</Container>			
+			<BigRedCircle style={{ position: "absolute", bottom: 0, left: headerRect?.left - ( window.innerHeight ) }}/>
+			<SectionEnding />
+		</Container>
+		
+		{ // When the midia ia a video 
+			headerType == "Video" ? 
+			<Container fluid wcenter tw="top-0">
+				<Container id="project-jeader--video-wrapper--shadow-handler" 
+					tw="box-border grid place-content-center z-10 -translate-y-40 scale-[0.85]
+						after:(mx-auto w-5/6 h-[40px] bg-primary)"
+					>
+					<Container id="project-header--video--wrapper"
+						tw="relative overflow-hidden grid place-content-center rounded-3xl" 
+						>
+						<ReactPlayer
+							url={video}
+							playing={true}
+							muted={true}
+							loop={true}
+							width="100%"
+							height="100%"
+							object-fit="cover"	
+						/>
+					</Container>
+				</Container>							
 			</Container> 
-			: null 
-		}
-		{ 
-			headerType == "Slides"
-			? <Container>
+		: null }
+
+		{ headerType == "Slides" ? 
+			<Container>
 				<Slider slides={ slides } />
 			</Container> 
-			: null 
-		}
+		: null }
 
 	</>
 }
