@@ -30,14 +30,14 @@ const blockOptions = {
 
         { 
             ref: "poster",     
-            label: "Onde aparece: Links para esse projeto, cabeçalho do projeto, poster de vídeos (quando o vídeo falha)." ,
+            label: "Imagem que aparece em links para esse projeto, cabeçalho desse projeto, poster de vídeos (quando o vídeo falha)." ,
             type: "imageSelect", 
             width: "25%" 
          },
 
         { 
             ref: "logo",     
-            label: "Logo da empresa contratante desse projeto ou equivalente.", 
+            label: "Logo da empresa contratante desse projeto ou equivalente. Essa imagem só aparece na página de projetos.", 
             type: "imageSelect", 
             width: "25%" 
          },
@@ -48,7 +48,6 @@ const blockOptions = {
             type: "textControl", 
             width: "40%" 
         },
-        
         
         { 
             ref: "headerType",  
