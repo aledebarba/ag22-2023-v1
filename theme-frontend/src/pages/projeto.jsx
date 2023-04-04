@@ -8,7 +8,7 @@ import { useRect } from '../components/utils';
 import { Footer } from '../components/footer';
 import { Slider } from '../components/slider';
 import { _app } from '../utils/functions';
-import ReactPlayer from 'react-player';
+import ReactPlayer from 'react-player/lazy';
 import apiFetch from '@wordpress/api-fetch';
 import React from 'react';
 import tw from 'twin.macro';

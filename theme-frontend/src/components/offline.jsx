@@ -1,6 +1,10 @@
 import tw from "twin.macro";
+import { _app } from "../utils/functions";
 
 export const Offline = () => {
+
+    let offlineMessage = _app.options().offlineMessage ? _app.options().offlineMessage : "<div style='color: white'>Nosso site está <div style='color: red'>offline.</div>";
+
     return(
         <main 
             tw="relative bg-secondary-900"
@@ -12,7 +16,7 @@ export const Offline = () => {
                     font-size: clamp( 32px, 10vw, 102px);
                 `}
                 >
-                Nosso site está <span tw="text-primary">offline</span>.
+                <div dangerouslySetInnerHTML={{ __html: offlineMessage }} />
             </h1>
             <div
                 tw="w-screen h-screen overflow-hidden bg-ag22Black flex justify-center items-center"

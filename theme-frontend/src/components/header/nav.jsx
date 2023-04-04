@@ -76,7 +76,9 @@ const MenuItems = ( { mobile, onClose, menuItems } ) => {
                 { items.map( (item, index) => (
                     <div key={`menu-item-${index}`} tw="w-fit h-fit">
                         <Link smooth to={item.link}>
-                            <div tw="text-center pb-2 relative [font-stretch:120%] [font-size:0.87rem]
+                            <div tw="
+                                    text-center pb-2 relative [font-stretch:120%] 
+                                    md:[font-size:0.87rem]
                                     after:( absolute duration-300 bottom-0 left-1/2 w-[0.5rem] h-[4px] -translate-x-1/2 bg-primary)
                                     hover:( text-primary after:(w-[100%]))"
                                     onClick={ onClose }

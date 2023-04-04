@@ -1,13 +1,13 @@
-import React from 'react'
 import tw, { theme } from 'twin.macro'
+import React from 'react'
+import { _app } from '../utils/functions'
+import { Footer } from '../components/footer'
+import { useRect } from '../components/utils'
 import { MainMenu } from '../components/header/nav'
 import { Container } from '../components/containers'
-import { Footer } from '../components/footer'
-import { _app } from '../utils/functions'
-import logoDez, { ReactComponent as LogoDez } from './assets/dez-anos.svg'
 import { BigRedCircle } from "../components/circles";
 import { SectionEnding } from "../components/SectionEnding";
-import { useRect } from '../components/utils'
+import { ReactComponent as LogoDez } from './assets/dez-anos.svg'
 
 const SobreNos = props => {
   const options = _app.options()  
@@ -78,7 +78,8 @@ const InBrandWeTrust = () => {
 
        <Container tw="relative -top-[12vh] flex flex-col px-8 md:(flex flex-row items-center)"
         >        
-        <div id="logo-about-us"                    
+        <div id="logo-about-us"     
+          //TODO: fix-image-loading from external server               
               tw="w-full h-[15vh] bg-no-repeat bg-center bg-contain [background-image: url(https://uxdir.com/files/videos/ag22/png/logo_page_aboutup.svg)] md:(h-[35vh])" 
           />           
         <div tw='bg-transparent w-[100%] gap-8 flex flex-col py-8 items-start md:p-8'>
@@ -114,7 +115,10 @@ const DezAnos = () => {
             >
           <LogoDez/>
           <p tw="text-black ml-2 text-lg my-8 px-8 md:(flex-[1 0 50%] my-0 text-sm px-8 text-white)">
-            Hoje podemos dizer que a experiência nos ensinou o que fazer, porque fazer e como fazer. Alcançamos essa marca de tempo que é só o começo da nossa jornada na publicidade e propaganda brasileira. E que venham mais décadas!
+            Hoje podemos dizer que a experiência nos ensinou o que fazer, porque fazer e como fazer. 
+            Alcançamos essa marca de tempo que é só o começo da nossa jornada 
+            na publicidade e propaganda brasileira. 
+            E que venham mais décadas!
           </p>
       </Container>
     </Container>

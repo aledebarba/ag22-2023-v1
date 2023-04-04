@@ -9,10 +9,7 @@ import { default as ServicosPage } 	from './pages/servicos';
 import { default as SobreNos } 	from './pages/sobrenos';
 import { default as NotFoundPage } 	from './pages/404';
 import { Loading } from './components/loading';
-import { Offline } from './components/offline'
-// import { default as ProjetosPage } 	from './pages/projetos';
-// import { default as Content } 	from './pages/content';
-// import { default as Page } 			from './pages/page';
+import { Offline } from './components/offline';
 
 const Main = () => {
 	const pages = _app.pages();
