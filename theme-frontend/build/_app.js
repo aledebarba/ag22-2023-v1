@@ -39060,7 +39060,7 @@ const ProjetoPage = props => {
   }), data.headerType == "Video" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ContentVideo, {
     title: title,
     data: data
-  }) : null, data.headerType == "Slider" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ContentSlider, {
+  }) : null, data.headerType == "Slides" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ContentSlider, {
     title: title,
     data: data
   }) : null, data.headerType == "Image" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(ContentImage, {
@@ -39429,6 +39429,8 @@ var _StyledContainer5 = (0,styled_components__WEBPACK_IMPORTED_MODULE_14__["defa
   displayName: "projeto___StyledContainer5",
   componentId: "sc-1plu7s9-11"
 })({
+  "marginTop": "4rem",
+  "marginBottom": "4rem",
   "minHeight": "25vw"
 });
 var _StyledImg3 = (0,styled_components__WEBPACK_IMPORTED_MODULE_14__["default"])("img").withConfig({

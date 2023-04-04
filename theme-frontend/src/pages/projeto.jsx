@@ -34,7 +34,7 @@ const ProjetoPage = ( props ) => {
 				? <ContentVideo title={ title } data={ data } /> 
 				: null 
 			}
-			{ data.headerType == "Slider"
+			{ data.headerType == "Slides"
 				? <ContentSlider title={ title } data={ data } />
 				: null
 			}
@@ -195,7 +195,7 @@ const ContentImage  = ({ title, data }) => {
 
 const Thumb = ({ title, data }) => {
 	return <>
-	<Container content-center id="project-page--client-logo" tw="min-h-[25vw]">
+	<Container content-center id="project-page--client-logo" tw="min-h-[25vw] my-16">
 			<img src={data.poster} tw="w-full h-auto object-cover" />
 	</Container>	
 	</>
