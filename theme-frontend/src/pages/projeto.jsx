@@ -7,6 +7,7 @@ import { Loading } from '../components/loading';
 import { useRect } from '../components/utils';
 import { Footer } from '../components/footer';
 import { Slider } from '../components/slider';
+import { Icon } from '@iconify/react';
 import { _app } from '../utils/functions';
 import ReactPlayer from 'react-player/lazy';
 import apiFetch from '@wordpress/api-fetch';
@@ -138,13 +139,21 @@ const ContentVideo  = ({ title, data }) => {
 			<Container id="project-video--wrapper" tw="relative origin-top scale-90 md:scale-75">
 				<div id="project-video--video-wrapper--shadow-handler"
 					tw="
-						absolute block 
-						bg-primary 
+						absolute						
+						bg-gradient-to-b from-primary-800 to-red-800
+						rounded-2xl
 						w-[85%] left-1/2 -translate-x-1/2
 						pt-[56.25%]
 						[box-shadow: 0px 30px 40px -5px red]
 					" 
-				/>
+					>
+					<h4 
+						tw="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white flex flex-col items-center justify-center space-y-8 text-center leading-8" 
+						>
+						<Icon icon="svg-spinners:ring-resize" width={64}/>
+						<span>Carregando video</span>
+					</h4>
+					</div>
 				<Container id="project-video--video-responsive-container">
 					<div css={`
 							position: relative;
