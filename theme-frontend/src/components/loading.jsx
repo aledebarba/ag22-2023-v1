@@ -15,4 +15,4 @@ const Loader = tw.div`
 
 `
 
-export const Loading = () => <Loader>Loading...</Loader>
+export const Loading = ( {message} ) => <Loader>{ message || `Loading...`}</Loader>

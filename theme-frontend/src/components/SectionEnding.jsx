@@ -1,4 +1,6 @@
 
+import tw from 'twin.macro';
+
 export const SectionEnding = (props) => {
   const { bgColor, ...otherProps } = props;
   return (
