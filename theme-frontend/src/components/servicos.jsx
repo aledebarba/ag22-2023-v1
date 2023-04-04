@@ -16,13 +16,12 @@ export const Servicos = () => {
 			{ slug: 'branding' },
 			{ slug: 'social-media' },
 			{ slug: 'planning' },
-			{ slug: 'packing' },
+			{ slug: 'packaging' },
 		]
 		useState(()=>{
 			apiFetch({ path: 'database/v1/servicos' })
 			.then( (data) => {
 				const inOrder = (data, order) => { 
-					console.log( data, order )
 					return order.map(( orderItem ) => {
 						let orderSlug = orderItem.slug;
 						let found = data.find( ( databaseItem ) => databaseItem?.slug === orderSlug);
