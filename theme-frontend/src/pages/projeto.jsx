@@ -1,4 +1,3 @@
-import React from 'react';
 import { useSearchParams, useLocation } from 'react-router-dom';
 import { SectionEnding } from '../components/SectionEnding';
 import { BigRedCircle } from '../components/circles';
@@ -11,6 +10,7 @@ import { Slider } from '../components/slider';
 import { _app } from '../utils/functions';
 import ReactPlayer from 'react-player';
 import apiFetch from '@wordpress/api-fetch';
+import React from 'react';
 import tw from 'twin.macro';
 
 const ProjetoPage = ( props ) => {
@@ -24,8 +24,6 @@ const ProjetoPage = ( props ) => {
 
 	if( !data ) return <Loading message="Carregando projeto..." />
 	
-	console.log( data )
-
 	return <>
 		<Container fluid id="project-page--wrapper">
 			<MainMenu/>	
@@ -212,71 +210,6 @@ const Gallery = ({ title, data }) => {
 			 </>)}
 		</div>
 	</Container>
-	</>
-}
-
-const HeaderMedia = ( { titulo, video, poster, height="60vh", "header-type":headerType, slides } ) => {
-
-
-	return <>
-		<Container fluid id="project-header--main-image" tw="border-b-8 border-b-primary" style={{height: height}}>
-			{poster ? 
-				<img src={poster} tw="absolute w-screen overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover" style={{height: height}}/> 
-			: null}
-			
-			{ headerType == "Video" ? 
-				<Container fluid absolute 
-					id="project-header--background-video-over-poster" 
-					tw="overflow-hidden" 
-					style={{height: height}}
-					>
-					<ReactPlayer
-						url={video}
-						playing={true}
-						muted={true}
-						loop={true}
-						fluid={true}
-						width="100%"
-						height="auto"
-						object-fit="cover"
-						className="absolute scale-[2] top-1/2 -translate-y-1/2 sm:(scale-150) md:(scale-100)"
-					/>
-					<div id="project-header--video-overlay" 
-						tw="relative w-screen h-full top-0 left-0 bg-black/70"
-					/>				
-				</Container> 
-			: null }
-
-			<Container hcenter id="project-header--title" style={{height:height}} ref={headerRef}>
-				<h1 tw="text-white w-2/3">{titulo}</h1>
-			</Container>			
-			<BigRedCircle style={{ position: "absolute", bottom: 0, left: headerRect?.left - ( window.innerHeight ) }}/>
-			<SectionEnding />
-		</Container>
-		
-		{ // When the midia ia a video 
-			headerType == "Video" ? 
-			<Container fluid wcenter tw="top-0">
-				<Container id="project-jeader--video-wrapper--shadow-handler" 
-					tw="box-border grid place-content-center z-10 -translate-y-40 scale-[0.85]
-						after:(mx-auto w-5/6 h-[40px] bg-primary)"
-					>
-					<Container id="project-header--video--wrapper"
-						tw="relative overflow-hidden grid place-content-center rounded-3xl" 
-						>
-						<ReactPlayer
-							url={video}
-							playing={true}
-							muted={true}
-							loop={true}
-							width="100%"
-							height="100%"
-							object-fit="cover"	
-						/>
-					</Container>
-				</Container>							
-			</Container> 
-		: null }
 	</>
 }
 
