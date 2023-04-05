@@ -99,7 +99,7 @@ const getData = (path) => {
 			
 			setData( { title: item.title, data: item.data } );
 		}).catch( (error) => {
-			console.log( error )
+			console.log( "there was an error >", error )
 		});
 	}, [] );
 
