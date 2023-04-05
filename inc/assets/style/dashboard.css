@@ -249,6 +249,9 @@ h1 .dashicons {
     transition: all 250ms ease-in-out;
 }
 
+
+
+
 body.login {
     background-image: linear-gradient(90deg, #e8e8e8 0%, #a8a8a8 100%);
 }
@@ -271,3 +274,5 @@ body.login .button.button-primary {
 body.login p.message {
     border-left: 4px solid tomato !important;
 }
+
+#wpadminbar { display:none !important; }
