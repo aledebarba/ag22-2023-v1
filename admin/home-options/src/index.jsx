@@ -16,6 +16,7 @@ const App = () => {
 
     const [options, setOptions] = useState({
         online: true,
+        offlineMessage: '',
         title: '',
         socialOnContact: [],
         socialOnFooter: [],
@@ -122,16 +123,16 @@ const App = () => {
     } 
 
     return (
-        <main id="wellcome-pate--main-options" tw="relative">
+        <main id="wellcome-page--main-options" tw="relative">
             { optionsChanged // mostra o aviso de opções alteradas e o botão de salvar
             ? <div css={[
                     tw`fixed top-[3rem] right-4 z-50 w-[320px] h-fit bg-red-200/70 box-border grid place-content-center p-4 shadow-lg rounded-lg`,
                     `                
-                    backdrop-filter: blur(4px);                `
+                        backdrop-filter: blur(4px);                `
                     
                     ]}>
                     <button 
-                        tw="relative bg-red-500 text-white font-bold p-2 w-fit rounded-sm shadow-lg my-4 mx-auto duration-200 cursor-pointer border-transparent outline-transparent text-lg rounded-md hover:(bg-red-800 duration-200 text-xl) active:(bg-red-500 duration-200 text-xl)"
+                        tw="relative bg-red-500 text-white font-bold p-2 w-fit shadow-lg my-4 mx-auto duration-200 cursor-pointer border-transparent outline-transparent text-lg rounded-md hover:(bg-red-800 duration-200 text-xl) active:(bg-red-500 duration-200 text-xl)"
                         onClick={ handleSaveOptions }
                         >
                         Salvar opções
@@ -141,21 +142,17 @@ const App = () => {
             : null }
 
 
-        <h1 tw='text-4xl flex items-center mt-[3.5rem]'>
-            <Icon icon='dashicons:superhero-alt' tw='text-sky-600 text-6xl' />{' '}
-            Administração do site e opções globais
+        <h1 tw='flex flex-col font-thin lowercase text-[42px] text-center md:(flex flex-row) items-center mt-[3.5rem] mx-auto w-fit tracking-normal leading-normal' >
+            <Icon icon='dashicons:superhero-alt' tw='text-sky-600 text-[72px]' />{' '}
+            <div><span tw="text-[50px] -mt-1">A</span>dministração do site e opções globais</div>
         </h1>
+        <div tw="font-normal text-center w-fit mx-auto grid place-content-center place-items-center">
+            <a href="https://ag22.uxdir.com/" target="_blank" tw="text-sky-600 font-bold text-lg">http://ag22.uxdir.com</a>
+        </div>
 
         <Section title='Opções de disponibilidade'>
 
-            <Option label="Online / Offline">
-                <div tw='flex items-center gap-2'>
-                <Switch onChange={e => setOptions({ ...options, online: e })} checked={options.online} />
-                { options.online ? <span tw='text-green-700 font-bold'>O site está online</span> : <span tw='text-red-600 font-bold'>O site está offline</span> }
-                </div>
-            </Option>
-
-            <Option label="Favicon">
+            <Option label="Favicon" width="27%">
                 <MediaSelectBox 
                     onSelect={ image => setOptions({...options, favicon: image[0].url })}
                     onClear={ () => setOptions({...options, favicon: '' }) }
@@ -183,7 +180,23 @@ const App = () => {
                     </MediaSelectBox>
             </Option>
 
-            <Option label="Título do site" width="100%">
+            <Option label="Online / Offline" width="27%">
+                <div tw='flex items-center gap-2'>
+                <Switch onChange={e => setOptions({ ...options, online: e })} checked={options.online} />
+                { options.online ? <span tw='text-green-700 font-bold'>O site está online</span> : <span tw='text-red-600 font-bold'>O site está offline</span> }
+                </div>
+                <h2 tw="font-light mt-8 mb-1 flex gap-4"><Icon icon="nimbus:edit" width="40px"/>Digite uma mensagem explicando porque o seu site está offline.</h2>
+                <input 
+                    type="text" 
+                    placeholder="Mensagem de status do site"
+                    value={options.offlineMessage}
+                    onChange={e => setOptions({ ...options, offlineMessage: e.target.value })}
+                    tw="border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full"
+                />
+            </Option>
+
+
+            <Option label="Título do site" width="27%">
                 <input 
                     type="text" 
                     placeholder="Título do site"
@@ -261,7 +274,7 @@ const App = () => {
         </Section>
 
         <Section title='Opções da página Sobre Nós'>
-            <Option label="Video da seção sobre nós" width="100%">
+            <Option label="Video da seção sobre nós" width="50vw">
                 { options.aboutMovie !=="" 
                     ? <div tw="relative w-[100%] min-w-[300px] h-fit min-h-[300px] overflow-hidden rounded-md before:(pt-[70%])">
                        <div css={`
@@ -516,31 +529,29 @@ export default App
 
 const Section = ({ title, icon = 'ant-design:control-twotone', children }) => {
   return (
-    <section tw='p-4 rounded-lg bg-gray-50/50  my-4 shadow-lg w-full 
-    lg:(w-2/3) 2xl:(w-1/2) duration-300 hover:(bg-gray-50 duration-300)'
-        css="border: 1px solid white;">
-      <h2 tw='text-slate-900 font-normal tracking-wider my-4 flex items-center gap-4'>
-        <Icon icon={icon} tw="text-red-500"/> {title}
-      </h2>
-      <div tw="flex gap-2 flex-wrap">
-        {children}
-      </div>
+    <section tw="p-4 rounded-lg bg-gray-50/50 mx-auto my-4 shadow-lg w-[clamp(300px, 80%, 1024px)]
+                 duration-300 hover:(bg-gray-50 duration-300) grid place-content-center place-items-center"
+             css="border: 1px solid white;"
+            >
+        <h2 tw='text-slate-900 font-thin mt-4 mb-12 flex items-center gap-4 text-3xl lowercase [text-shadow: 2px 2px 5px white;]'>
+            <Icon icon={icon} tw="text-red-500" width="40px"/> {title}
+        </h2>
+        <div tw="flex flex-row flex-wrap gap-2">
+            {children}
+        </div>
     </section>
   )
 }
 
 const Option = ({ label, width, children }) => {
-
     return (
-        
         <div css={[
-            tw`flex flex-col gap-2 px-2 py-4 bg-white rounded-md shadow-md mb-2 h-fit`,
-            'min-width: 240px;',
-            'max-width: 40vw;',
-            width ? `width: ${width};` : 'width: 20%;',
-            ]}>
-            <div tw="flex flex w-full items-center gap-1 mb-2">
-            <Icon icon="ph:gear-fill" tw="text-red-400"/><small tw="text-red-400 font-bold uppercase">{label}</small>
+                tw`flex flex-col gap-2 px-6 py-4 bg-white rounded-md shadow-md mb-2 h-fit min-w-[250px]`,
+            ]}
+            style={{width: width ? width : '27%'}}
+            >
+            <div tw="flex w-full items-center gap-1 mb-2">
+                <Icon icon="fa:cog" tw="text-red-400" width="24px"/><p tw="text-red-400 font-bold uppercase">{label}</p>
             </div>
             {children}
         </div>

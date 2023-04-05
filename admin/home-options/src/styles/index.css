@@ -60,11 +60,10 @@ html, body {
   height: auto;
   max-width: 100vw;
   overflow-x: hidden;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
 }
 
 .logo #svg{
   height: 2rem;
 }
-
