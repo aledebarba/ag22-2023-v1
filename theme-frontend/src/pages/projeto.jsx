@@ -81,15 +81,21 @@ const getData = (path) => {
 	React.useEffect( ()=>{		
 		apiFetch( { path: basePath } ).then( ( data ) => {
 			let item = data[0]
-			
+			const updateUrl = (url) => {
+				if( url.indexOf("https") > -1 ) return url;
+				if( url.indexOf("http") > -1 ) {
+					return url.replace( "http", "https");
+				}
+				return url
+			}
 			//update all urls to https
-			if(item.data.gallery?.length > 0) item.data.gallery = item.data.gallery.map( (item) => ({...item, url:item.url.replace( "http", "https") }) )
-			if(item.data.slides?.length > 0) item.data.slides = item.data.slides.map( (item) => ({...item, url:item.url.replace( "http", "https") }) )
-			if(item.data.image) item.data.image = item.data.image.replace( "http", "https");
-			if(item.data.poster) item.data.poster = item.data.poster.replace( "http", "https");
-			if(item.data.logo) item.data.logo = item.data.logo.replace( "http", "https");
-			if(item.data.videoUrl) item.data.videoUrl = item.data.videoUrl.replace( "http", "https");
-			if(item.data.video) item.data.video = item.data.video.replace( "http", "https");
+			if(item.data.gallery?.length > 0) item.data.gallery = item.data.gallery.map( (item) => ({...item, url:updateUrl(item.url)}))
+			if(item.data.slides?.length > 0) item.data.slides = item.data.slides.map( (item) => ({...item, url:updateUrl(item.url)}))
+			if(item.data.image) item.data.image = updateUrl(item.data.image)
+			if(item.data.poster) item.data.poster = updateUrl(item.data.poster)
+			if(item.data.logo) item.data.logo = updateUrl(item.data.logo)
+			if(item.data.videoUrl) item.data.videoUrl = updateUrl(item.data.videoUrl)
+			if(item.data.video) item.data.video = updateUrl(item.data.video)
 			
 			setData( { title: item.title, data: item.data } );
 		}).catch( (error) => {
