@@ -15,7 +15,7 @@ const SobreNos = props => {
   const ref = React.useRef()
 
   return (
-    <Container fluid tw="overflow-hidden">
+    <Container fluid tw="overflow-hidden" id="clintes">
       <MainMenu />
       <AbouUsHeroHeader />
       <InBrandWeTrust />

@@ -1,6 +1,7 @@
 import { MenuCloseIcon } from './MenuCloseIcon'
 import { MenuOpenIcon } from './MenuOpenIcon'
-import { HashLink as Link } from "react-router-hash-link";
+// import { HashLink as Link } from "react-router-hash-link";
+import { HashLink } from 'react-router-hash-link';
 import { Container } from "../containers";
 import { Logo } from "./MenuLogo";
 import { useMenuIs } from './useMenuIs';
@@ -9,6 +10,8 @@ import tw from 'twin.macro';
 export const MainMenu = () => {
 
     const [ menuIsMobile, menuIsDesktop, menuIsOpen, handleOpenMenu, handleCloseMenu ] = useMenuIs();
+
+ 
 
     return ( 
             <Container fixed fluid
@@ -32,14 +35,14 @@ export const MainMenu = () => {
 const MenuItems = ( { mobile, onClose, menuItems } ) => {
     
     const items = menuItems ? menuItems : [
-        { label: "Quem Somos", link: "/sobre#top" },
-        { label: "Serviços", link: "/servicos#top" },
-        { label: "Cases", link: "/#cases" },
-        { label: "Clientes", link: "/#clientes" },
-        { label: "Trabalhe Conosco", link: "/#vagas" },
-        { label: "Contato", link: "/#contato" },        
+        { label: "Quem Somos", link: "/sobre#top", path:"/", id: "#top" },
+        { label: "Serviços", link: "/servicos#top", path:"/servicos", id: "#top" },
+        { label: "Cases", link: "/#cases", path:"/", id: "#cases" },
+        { label: "Clientes", link: "/#clientes", path:"/", id: "#clientes" },
+        { label: "Trabalhe Conosco", link: "/#vagas", path:"/", id: "#vagas" },
+        { label: "Contato", link: "/#contato", path:"/", id: "#contato" },        
     ]
-
+    
     return (
         <>
             <div css={[
@@ -75,7 +78,11 @@ const MenuItems = ( { mobile, onClose, menuItems } ) => {
                 }
                 { items.map( (item, index) => (
                     <div key={`menu-item-${index}`} tw="w-fit h-fit">
-                        <Link smooth to={item.link}>
+                        {/* <Link smooth reloadDoc to={item.link}> */}
+                        <HashLink
+                            to={item.link}
+                            smooth    
+                            >
                             <div tw="
                                     text-center pb-2 relative [font-stretch:120%] 
                                     md:[font-size:0.87rem]
@@ -85,7 +92,9 @@ const MenuItems = ( { mobile, onClose, menuItems } ) => {
                                 >
                                 {item.label}
                             </div>
-                        </Link>
+                        </HashLink>
+
+                        {/* </Link> */}
                     </div>
                 ))}
             </div>

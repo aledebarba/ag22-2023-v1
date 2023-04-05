@@ -16,27 +16,44 @@ import tw from 'twin.macro';
 
 const ProjetoPage = ( props ) => {
 	
-	const [searchParams] = useSearchParams();
-	const { title, data } = getData();
+	const {title, data } = getData();
+	const [changeMedia, setChangeMedia] = React.useState( {} );
 	
 	React.useEffect(()=>{
-		window.scrollTo(0,0)
+		window.scrollTo(0,0)						
 	},[])
-
+	
+	
+	const onSlideChange = ( e ) => {
+		const slide = data.slides[e.index];
+		let video = "";
+		let poster = "";
+		if( slide.type == "video" ){
+			video = slide.url;
+		} else if( slide.type = "image" ){
+			poster = slide.url;
+		}
+		setChangeMedia({ video:video, poster:poster, type: slide.type })
+	}
+	
 	if( !data ) return <Loading message="Carregando projeto..." />
 	
+
 	return <>
 		<Container fluid id="project-page--wrapper">
 			<MainMenu/>	
-			<Header title={ title } data={ data }/>
+			<Header title={ title } data={ data } changeMedia={changeMedia} />
+			
 			{ data.headerType == "Video" 
 				? <ContentVideo title={ title } data={ data } /> 
 				: null 
 			}
+
 			{ data.headerType == "Slides"
-				? <ContentSlider title={ title } data={ data } />
+				? <ContentSlider title={ title } data={ data } onChange={ onSlideChange } />
 				: null
 			}
+
 			{ data.headerType == "Image"
 				? <ContentImage title={ title } data={ data } />
 				: null
@@ -54,18 +71,27 @@ const ProjetoPage = ( props ) => {
 }
 
 
+
 const getData = (path) => {
-	
 	const [ { title, data }, setData ] = React.useState({title: "", data: {} });
-	let basePath = path ? path : '/database/v1/projetos';
 	let location = useLocation();
 	let pageSlug = location.pathname.split('/').filter( ( item ) => item !== '' ).pop()
+	let basePath = path ? path : '/database/v1/projetos?slug='+pageSlug;
 	
 	React.useEffect( ()=>{		
-	
 		apiFetch( { path: basePath } ).then( ( data ) => {
-			let item = data.filter( ( record ) => record.slug === pageSlug );
-			setData( { title: item[0].title, data: item[0].data } );
+			let item = data[0]
+			
+			//update all urls to https
+			if(item.data.gallery?.length > 0) item.data.gallery = item.data.gallery.map( (item) => ({...item, url:item.url.replace( "http", "https") }) )
+			if(item.data.slides?.length > 0) item.data.slides = item.data.slides.map( (item) => ({...item, url:item.url.replace( "http", "https") }) )
+			if(item.data.image) item.data.image = item.data.image.replace( "http", "https");
+			if(item.data.poster) item.data.poster = item.data.poster.replace( "http", "https");
+			if(item.data.logo) item.data.logo = item.data.logo.replace( "http", "https");
+			if(item.data.videoUrl) item.data.videoUrl = item.data.videoUrl.replace( "http", "https");
+			if(item.data.video) item.data.video = item.data.video.replace( "http", "https");
+			
+			setData( { title: item.title, data: item.data } );
 		}).catch( (error) => {
 			console.log( error )
 		});
@@ -74,27 +100,84 @@ const getData = (path) => {
 	return { title, data };
 }
 
-const Header = ( { title, data } ) => {
+const Header = ( { title, data, changeMedia } ) => {
 
 	const headerRef = React.useRef();
 	const headerRect = useRect(headerRef);
+	const posterRef = React.useRef();
+	const videoRef = React.useRef();
+
 	const height = "60vh";
-	const { video, videoUrl, poster, videoOrigin, headerType } = {...data};
+	let { video, videoUrl, poster, videoOrigin, headerType } = {...data};
+
+	const [ videoState, setVideoState ] = React.useState(null)
+	const [ posterState, setPosterState ] = React.useState(null)
+	
+	React.useEffect(()=>{
+		
+		if ( 
+			Object.keys(data).length === 0  && 
+			Object.keys(changeMedia).length === 0
+		) return;
+		
+		console.log( data, changeMedia )
+
+		if( data.headerType == "Slides" && Object.keys(changeMedia).length > 0 ) {
+			
+			video =    changeMedia.video;
+			videoUrl = changeMedia.video;
+			poster =   changeMedia.poster;
+			
+		} 
+		if( data.headerType === "Slides" && Object.keys(changeMedia).length === 0 ) {
+			video =    data.slides[0].url;
+			videoUrl = data.slides[0].url;
+			poster =   data.slides[0].url;
+		}
+
+		setVideoState( video )
+		setPosterState( poster )
+
+
+		posterRef.current?.getAnimations().forEach((animation) =>  {
+			animation.cancel(); animation.play();
+		});
+		videoRef.current?.getAnimations().forEach((animation) =>  {
+			animation.cancel(); animation.play();
+		});
+
+		
+	},[changeMedia, data])
+	
 	
 	return <>
 	<Container fluid id="project-header--main-image" tw="border-b-8 border-b-primary pb-8" style={{height: height}}>
-		{ poster ? 
-			<img src={poster} tw="absolute w-screen overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover" style={{height: height}}/> 
+		{ poster || posterState ? 
+			<img 
+				src={ posterState ? posterState : poster } 
+				tw="absolute w-screen overflow-hidden top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 object-cover" 
+				style={{height: height}}	
+				ref={posterRef}		
+				css={`
+					opacity: 0;
+					animation: fadeIn 0.5s ease-in-out forwards;
+					@keyframes fadeIn {
+						0% { opacity: 0; }
+						100% { opacity: 1; }
+					}
+				`}
+			/> 
 		: null}
 			
-		{ headerType == "Video" ? 
-		<Container fluid absolute 
+		{ headerType == "Video" || changeMedia.type == "video" ||  videoState ? 
+		 <Container fluid absolute 
 			id="project-header--background-video-over-poster" 
 			tw="overflow-hidden" 
 			style={{height: height}}
+			ref={videoRef}
 			>
 			<ReactPlayer
-				url={ videoOrigin == "file" ? video : videoUrl }
+				url={ videoState || video }
 				playing={true}
 				muted={true}
 				loop={true}
@@ -185,10 +268,10 @@ const ContentVideo  = ({ title, data }) => {
 	</>
 }
 
-const ContentSlider = ({ title, data }) => {
+const ContentSlider = ({ title, data, onChange }) => {
 	return <>
 	<Container>
-		<Slider slides={ data.slides } />
+		<Slider slides={ data.slides } onChange={ onChange } />
 	</Container> 
 	</>
 }
@@ -203,7 +286,7 @@ const ContentImage  = ({ title, data }) => {
 const Thumb = ({ title, data }) => {
 	return <>
 	<Container content-center id="project-page--client-logo" tw="min-h-[25vw] my-16">
-			<img src={data.poster} tw="w-full h-auto object-cover" />
+			<img src={data.logo} tw="w-full h-auto object-cover" />
 	</Container>	
 	</>
 }

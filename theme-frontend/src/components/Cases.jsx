@@ -31,23 +31,24 @@ export const Cases = () => {
 		})
 	}, [])
 
-	return <Container fluid id="cases" tw="bg-secondary-50 m-0 py-14">
-				<Container absolute tw="hidden md:(block)" >
-					<BigRedCircle style={{ zIndex: 0, position: "absolute", top: "-45vh", left: 120 + casesRect?.left - window.innerHeight }} />
-				</Container>
-
-				<Container >
-					<H2Dash>Cases</H2Dash>
-					<div ref={casesRef}
-						 tw="grid grid-cols-1 gap-2 auto-rows-min px-4 mt-8 mb-8 z-10
-							md:(grid grid-cols-3 gap-8 mt-16)">
-						{cases &&
-							cases.map((item, index) => (
-								<CaseCard item={item} index={index} key={index} />
-							))}
-					</div>
-				</Container>
-	</Container>
+	return <div id="cases" >
+		<Container  fluid tw="bg-secondary-50 m-0 py-14">
+					<Container absolute tw="hidden md:(block)" >
+						<BigRedCircle style={{ zIndex: 0, position: "absolute", top: "-45vh", left: 120 + casesRect?.left - window.innerHeight }} />
+					</Container>
+					<Container >
+						<H2Dash>Cases</H2Dash>
+						<div ref={casesRef}
+							 tw="grid grid-cols-1 gap-2 auto-rows-min px-4 mt-8 mb-8 z-10
+								md:(grid grid-cols-3 gap-8 mt-16)">
+							{cases &&
+								cases.map((item, index) => (
+									<CaseCard item={item} index={index} key={index} />
+								))}
+						</div>
+					</Container>
+		</Container>
+	</div>
 }
 
 const CaseCard = ({ item, index }) => {

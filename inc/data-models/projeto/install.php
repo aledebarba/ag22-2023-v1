@@ -63,6 +63,7 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
         'menu_position' => null,
         'labels' => $custom_labels,
         'menu_icon' => 'dashicons-welcome-widgets-menus',
+        "publicly_queryable" => true,
         'template' => [
             ['superblock/'.$singular, [
                 'lock' => [
@@ -70,21 +71,28 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
                     'remove' => true,
                 ],
             ]],
-                ],
+        ],
         'template_lock' => 'all',
       ]);
     });
 
     // --- create a rest api endpoint for the custom post type
-    add_action('rest_api_init', function () use($base, $plural, $singular){
+    add_action('rest_api_init', function () use($plural){
         register_rest_route('database/v1', '/'.$plural, [
             'methods' => 'GET',
             'permission_callback' => '__return_true',
             'callback' => function()use($plural){
-                $args = [
-                    'post_type' => $plural,
-                    'posts_per_page' => -1, //return all posts
-                ];
+                $args = array(
+                    "post_type"      => [$plural],
+                    "orderby" => ["title" => "ASC"],
+                    "posts_per_page" => -1,
+                );
+                if (isset($_GET['id'])) {
+                    $args['post__in'] = [$_GET['id']];
+                }
+                if (isset($_GET['slug'])) {
+                    $args['post_name__in'] = [$_GET['slug']];
+                }
                 $query = new WP_Query($args);
                 $posts = $query->posts;
                 $response = [];

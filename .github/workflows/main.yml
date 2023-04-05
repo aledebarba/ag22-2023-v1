@@ -19,3 +19,11 @@ jobs:
         password: ${{ secrets.ftp_password }}
         protocol: ftp
         server-dir: ag22.uxdir.com/wp-content/themes/ag22-theme/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/src/** 
+          tailwind.config.js
+          *.lock
+          package.json         

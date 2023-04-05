@@ -4,13 +4,17 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import tw from 'twin.macro'
 
 export const TextAtLeft = ({title, textMain, tags, image}) => {
-	const redBarRef = React.useRef()
+	const redBarRef 	= React.useRef()
+	const redBarMobRef  = React.useRef()
 	React.useEffect(()=>{
 		gsap.registerPlugin(ScrollTrigger)
-		gsap.from( redBarRef?.current, {
+
+		gsap.from( [ redBarRef?.current, redBarMobRef?.current ], {
 			duration: 0.8,
 			ease: "power4.out",
 			x: "110vw",
+			scale: 1.2,
+			opacity: 0.9,
 			scrollTrigger: {
 				trigger: redBarRef?.current,
 				start: "top 80%",
@@ -48,7 +52,7 @@ export const TextAtLeft = ({title, textMain, tags, image}) => {
 			</div>
 			<div id="sevice-group-text-left" tw="flex flex-nowrap">
 				<div tw="w-[100vw] h-[33vh] ml-10 bg-primary rounded-tl-2xl rounded-bl-2xl">
-					<img src={image} tw="h-[90%] w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarRef}/>
+					<img src={image} tw="h-[90%] w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarMobRef}/>
 				</div>
 			</div>
 		</div>
@@ -58,13 +62,16 @@ export const TextAtLeft = ({title, textMain, tags, image}) => {
 
 export const TextAtRight = ({title, textMain, tags, image}) => { 
 	const redBarRef = React.useRef()
+	const redBarMobRef = React.useRef()
 	React.useEffect(()=>{
 		gsap.registerPlugin(ScrollTrigger)
 		gsap.ticker.fps(30)
-		gsap.from( redBarRef?.current, {
+		gsap.from( [redBarRef?.current, redBarMobRef?.current], {
 			duration: 0.8,
 			ease: "power4.out",
 			x: "-110vw",
+			scale: 1.3,
+			opacity: 0.9,
 			scrollTrigger: {
 				trigger: redBarRef?.current,
 				start: "top 80%",
@@ -104,7 +111,7 @@ export const TextAtRight = ({title, textMain, tags, image}) => {
 			</div>
 			<div id="sevice-group-text-left" tw="flex flex-nowrap">
 				<div tw="w-[90vw] h-[33vh] mr-8 bg-primary rounded-tr-2xl rounded-br-2xl">
-					<img src={image} tw="h-[90%] ml-12 w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarRef}/>
+					<img src={image} tw="h-[90%] ml-12 w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarMobRef}/>
 				</div>
 			</div>
 		</div>
