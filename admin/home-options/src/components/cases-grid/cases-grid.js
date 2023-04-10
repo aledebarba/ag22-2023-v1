@@ -157,7 +157,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
 
         
 const CellImage = ({caseData}) => { 
-    
+    console.log("cell image received case-data ", caseData )
     if( caseData === null || caseData.length === 0 ) {
         return <div tw="w-full h-full flex justify-center items-center">
             <Icon icon="carbon:no-image" width="42px" tw="text-slate-500"/>
