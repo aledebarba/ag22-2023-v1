@@ -90,7 +90,8 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
             tw="grid grid-cols-3 gap-4 auto-rows-auto "
             >
         
-        { grid.map( ( item, index ) => {              
+        { grid.map( ( item, index ) => {  
+            console.log( "here ")            
             const caseData = options.casesList 
                 ? options.casesList[index] 
                     ? options.casesList[index] 
