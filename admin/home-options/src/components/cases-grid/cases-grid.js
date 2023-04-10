@@ -81,7 +81,8 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         setOptions( {...options, casesList: newCasesList} )
     }
 
-    console.log( options.casesList )
+    if ( !options.casesList || options.casesList.length === 0 ) return null;
+    
     return ( <>
         
         <SortableGrid 
