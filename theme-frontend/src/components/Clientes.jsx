@@ -1,18 +1,25 @@
-import { useState, useEffect, useRef } from 'react'
-import { ContainerFluidH } from './containers'
-import { H2Dash } from './headings'
-import apiFetch from '@wordpress/api-fetch'
 import tw from 'twin.macro'
+import apiFetch from '@wordpress/api-fetch'
+import { _app } from '../utils/functions'
+import { H2Dash } from './headings'
+import { ContainerFluidH } from './containers'
+import { useState, useEffect } from 'react'
 
 export const Clientes = () => {
   const [clientes, setClientes] = useState([])
   const logoWidth = window.innerWidth > 768 ? 333 : 240
+  const options = _app.options();
 
   useEffect(() => {
-    apiFetch({ path: 'database/v1/clientes' }).then(data => {
-      const logos = data.map((cliente, index) => cliente.data.logo)
+    if(!options.BrandsList || options.BrandsList.length === 0) {
+      apiFetch({ path: 'database/v1/clientes' }).then(data => {
+        const logos = data.map((cliente, index) => cliente.data.logo.replace('http://', 'https://'))
+        setClientes([...logos, ...logos, ...logos])
+      })
+    } else {
+      const logos = options.BrandsList.map((cliente, index) => cliente.data.logo.replace('http://', 'https://'))
       setClientes([...logos, ...logos, ...logos])
-    })
+    }
   }, [])
 
   return (

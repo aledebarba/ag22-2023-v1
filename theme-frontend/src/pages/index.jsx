@@ -1,15 +1,15 @@
 import React from 'react';
 import tw from 'twin.macro';
-import { HeroHeader } from '../components/heroheader';
+import { _app } from '../utils/functions'
 import { Intro } from '../components/intro';
-import { Servicos } from '../components/servicos';
 import { Cases } from '../components/Cases';
-import { Clientes } from '../components/Clientes';
-import { TrabalheConosco } from '../components/TrabalheConosco';
-import { Contato } from '../components/Contato';
 import { Footer } from '../components/footer';
+import { Contato } from '../components/Contato';
 import { MainMenu } from '../components/header/nav';
-import { _app } from '../utils/functions';
+import { Clientes } from '../components/Clientes';
+import { Servicos } from '../components/servicos';
+import { HeroHeader } from '../components/heroheader';
+import { TrabalheConosco } from '../components/TrabalheConosco';
 
 window.history.scrollRestoration = "manual";
 

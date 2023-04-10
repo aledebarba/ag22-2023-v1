@@ -82,13 +82,12 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
     }
 
     if ( !options.casesList || options.casesList.length === 0 ) return null;
-    
-    return ( <>
-        
+
+    return ( <>        
         <SortableGrid 
             items = { options.casesList }
             onReorder = { handleReorderCasesList } 
-            tw="grid grid-cols-3 gap-4 auto-rows-auto "
+            tw="grid grid-cols-3 gap-8 auto-rows-auto "
             >
         
         { grid.map( ( item, index ) => {  
