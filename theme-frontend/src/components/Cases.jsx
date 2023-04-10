@@ -1,3 +1,5 @@
+import tw from 'twin.macro'
+import apiFetch from '@wordpress/api-fetch'
 import { _app } from '../utils/functions'
 import { Link } from 'react-router-dom'
 import { H2Dash } from './headings'
@@ -6,8 +8,6 @@ import { Container } from './containers'
 import { BigRedCircle } from './circles'
 import { useEffect, useState, useRef } from 'react'
 import { useRect } from './utils'
-import tw from 'twin.macro'
-import apiFetch from '@wordpress/api-fetch'
 
 export const Cases = ( { casesList } ) => {
 

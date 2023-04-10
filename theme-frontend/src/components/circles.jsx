@@ -4,13 +4,16 @@ export const BigRedCircle = ( props ) => {
     const { width="100vh", height="100vh", ...otherProps } = props;
     return <div 
         css={`
-            width: ${width};
-            height: ${height};
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 1094 1093'%3E%3Cg filter='url(%23a)'%3E%3Ccircle cx='546.58' cy='561.5' r='421.5' stroke='%23E62337' stroke-width='200' shape-rendering='crispEdges'/%3E%3C/g%3E%3Cdefs%3E%3Cfilter id='a' width='1093' height='1093' x='.08' y='0' color-interpolation-filters='sRGB' filterUnits='userSpaceOnUse'%3E%3CfeFlood flood-opacity='0' result='BackgroundImageFix'/%3E%3CfeColorMatrix in='SourceAlpha' result='hardAlpha' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0'/%3E%3CfeOffset dy='-15'/%3E%3CfeGaussianBlur stdDeviation='12.5'/%3E%3CfeComposite in2='hardAlpha' operator='out'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0'/%3E%3CfeBlend in2='BackgroundImageFix' result='effect1_dropShadow_735_5669'/%3E%3CfeBlend in='SourceGraphic' in2='effect1_dropShadow_735_5669' result='shape'/%3E%3C/filter%3E%3C/defs%3E%3C/svg%3E");
+            width: ${window.innerHeight}px;
+            height: ${window.innerHeight}px;
+            background-image: url("data:image/svg+xml,%3Csvg width='1043' height='1043' viewBox='0 0 1043 1043' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M521.5 1043C809.516 1043 1043 809.516 1043 521.5C1043 233.484 809.516 0 521.5 0C233.484 0 0 233.484 0 521.5C0 809.516 233.484 1043 521.5 1043ZM521.5 833C693.537 833 833 693.537 833 521.5C833 349.463 693.537 210 521.5 210C349.463 210 210 349.463 210 521.5C210 693.537 349.463 833 521.5 833Z' fill='%23E62337'/%3E%3C/svg%3E");
+            }
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
+            position: relative;
+            transform-origin: center;
+            transform: scale(0.85);
         `}
         {...otherProps}
-    />
-}
+    />}
