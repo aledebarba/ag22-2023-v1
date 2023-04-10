@@ -91,7 +91,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
             >
         
         { grid.map( ( item, index ) => {  
-            console.log( "here ")            
+            console.log( "here ", item )            
             const caseData = options.casesList 
                 ? options.casesList[index] 
                     ? options.casesList[index] 
