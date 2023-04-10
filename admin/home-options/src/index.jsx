@@ -104,8 +104,6 @@ const App = () => {
     })
   }
 
-
-  
   if (firstTime) {
     return <h1>Loading...</h1>
   }
@@ -121,24 +119,7 @@ const App = () => {
               box-shadow: 3px 3px 10px -2px #000;
             `
           ]}
-        >
-          {/* <Icon icon="fluent-emoji:hand-with-fingers-splayed" width={40} 
-            css="
-              position: absolute;
-              top: 8px;
-              left: 8px;
-              filter: drop-shadow(3px 3px 5px black);
-              transform-origin: bottom center;
-              animation: shake 10s ease-in-out infinite;
-              @keyframes shake {
-                0% { transform: rotate(0deg); }
-                3%, 8% { transform: rotate(-15deg); }
-                4%, 9% { transform: rotate(15deg); }
-                5%, 10% { transform: rotate(0deg); }                
-                100% { transform: rotate(0deg); }
-              }
-            "
-          /> */}
+        >         
           <button
             tw='relative bg-red-500 text-white font-bold p-2 w-fit shadow-lg my-4 mx-auto duration-200 cursor-pointer border-transparent outline-transparent text-lg rounded-md hover:(bg-red-800 duration-200 text-xl) active:(bg-red-500 duration-200 text-xl)'
             onClick={handleSaveOptions}
@@ -291,18 +272,8 @@ const App = () => {
             </Option>
           </Row>
         </Section>
-          {/* <Col>
-            <Option label='Ordem dos projetos na seção cases' width='55%'>
-              {options.cases && (
-                <DndList
-                  items={options.cases}
-                  id='cases_list_on_contact_section'
-                  onChange={list => setOptions({ ...options, cases: list })}
-                />
-              )}
-            </Option>
-          </Col> */}
-         <Section title="Seção de cases/projetos" tw="w-full">
+          
+       <Section title="Seção de cases/projetos" tw="w-full">
             <Option label="Organize os cases">
                 { rawCases 
                     ? <CasesGrid  
@@ -344,6 +315,7 @@ const App = () => {
           </MediaSelectBox>
         </Option>
       </Section>
+      
       <Section title="Seção de marcas na home page" tw="w-full">
         <Option label="Organize as marcas de acordo com a ordem em que devem aparecer">
           <BrandsList setOptions = { setOptions } options = { options } />

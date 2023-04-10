@@ -9,26 +9,26 @@ import { useRect } from './utils'
 import tw from 'twin.macro'
 import apiFetch from '@wordpress/api-fetch'
 
-export const Cases = () => {
+export const Cases = ( { casesList } ) => {
 
 	const casesRef = useRef()
 	const casesRect = useRect(casesRef)
 
-	const options = _app.options()
-	const [cases, setCases] = useState([])
+	//const options = _app.options()
+	const [cases, setCases] = useState( casesList )
 	
 	useEffect(() => {
-		apiFetch({ path: 'database/v1/projetos/' }).then(data => {
-			let oredered = options.cases.map(item => {
-				let caseId = item.id
-				let found = data.find(caseItem => caseItem.id === caseId)
-				return found
-			})
-			if (oredered.length > options.maxCases) {
-				oredered = oredered.slice(0, options.maxCases)
-			}
-			setCases(oredered)
-		})
+		// apiFetch({ path: 'database/v1/projetos/' }).then(data => {
+		// 	let ordered = options.cases.map(item => {
+		// 		let caseId = item.id
+		// 		let found = data.find(caseItem => caseItem.id === caseId)
+		// 		return found
+		// 	})
+		// 	if (ordered.length > options.maxCases) {
+		// 		ordered = ordered.slice(0, options.maxCases)
+		// 	}
+		// 	setCases(ordered)			
+		// })
 	}, [])
 
 	return <div id="cases" >
@@ -96,7 +96,7 @@ const CaseCard = ({ item, index }) => {
 		>
 			<img
 				css={[tw`w-full h-full object-cover relative`]}
-				src={item.data.image}
+				src={item.data.poster}
 			/>
 			<div
 				className='overlay-info'

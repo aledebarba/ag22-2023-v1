@@ -18,7 +18,6 @@ const Index = () => {
 	const wrapper = React.useRef(null);
 	const content = React.useRef(null);
 	const options = _app.options();
-
 	return (
 		<main tw="w-screen min-h-[400vh] relative" ref={wrapper}>
 			<MainMenu />
@@ -26,7 +25,7 @@ const Index = () => {
 				<HeroHeader/>
 				<Intro image={options.introImage}/>
 				<Servicos/>
-				<Cases/>
+				<Cases casesList={options.casesList}/>
 				<Clientes />
 				<TrabalheConosco email={options.emailVagas}/>
 				<Contato 

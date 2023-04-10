@@ -81,7 +81,7 @@ const MenuItems = ( { mobile, onClose, menuItems } ) => {
                         {/* <Link smooth reloadDoc to={item.link}> */}
                         <HashLink
                             to={item.link}
-                            smooth    
+                            scroll={(el) => setTimeout( () => { el.scrollIntoView({ behavior: 'smooth' }) }, 150) }
                             >
                             <div tw="
                                     text-center pb-2 relative [font-stretch:120%] 

@@ -88,7 +88,7 @@ const RenderInterface = ( props, blockOptions ) => {
                             />
                         )}
 
-                        {layout.type === "videoUrl" && (<>
+                        {layout.type === "videoUrl" && (<div>
                             <TextControl
                                 className="w-full"
                                 value={attributes[attribute]}
@@ -102,7 +102,7 @@ const RenderInterface = ( props, blockOptions ) => {
                                     loop={false}
                                     muted={false}
                                 />
-                        </>)}
+                        </div>)}
                                     
                         {layout.type === "icon" && (
                             <>
@@ -177,12 +177,9 @@ const RenderInterface = ( props, blockOptions ) => {
                         )}
 
 
-                        { layout.type === "imageGallery" && (<>
+                        { layout.type === "imageGallery" && ( <div>
                             <div tw="sm:(grid-cols-3) md:(grid-cols-4) w-full min-h-[20vh] p-0 grid grid-cols-2 gap-4 box-border ">
                                 { attributes[attribute].map( (item, index) => { 
-
-                                    console.log( item.type )
-
                                 return(
                                 <div key={`item-image-key-${index}`}>
                                     <div css={[`
@@ -194,15 +191,19 @@ const RenderInterface = ( props, blockOptions ) => {
                                         border-radius: 4px;                                                                         
                                     `]}>
                                        { item.type == "image" || (item.type == undefined && item.url !== undefined)
-                                         ? <img src={item.url} alt={item.alt} 
+                                         ? <div 
+                                            style={{ backgroundImage: `url(${item.url})` }} 
+                                            alt={item.alt} 
                                             css={`
-                                                width: 90%;
-                                                height: 90%;
-                                                object-fit: cover;
+                                                background-size: contain;
+                                                background-position: center;
+                                                background-repeat: no-repeat;
                                                 position: absolute;
-                                                top: 50%; left: 50%;
-                                                transform: translate(-50%, -50%);
-                                                box-sizing: border-box;
+                                                top: 0;
+                                                left: 0;
+                                                width: 100%;
+                                                height: 100%;
+                                                transform: scale(0.95);
                                             `}    
                                             /> 
                                          : item.type == "video"
@@ -238,7 +239,7 @@ const RenderInterface = ( props, blockOptions ) => {
                                     />
                                 
                             </div>                                        
-                        </>)}
+                        </div>)}
 
                         { 
                             layout.type === "switcher" && <div tw="flex items-center ml-2">

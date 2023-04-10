@@ -897,7 +897,7 @@ const RenderInterface = (props, blockOptions) => {
       className: "w-full",
       value: attributes[attribute],
       onChange: value => onChange(attribute, value)
-    }), layout.type === "videoUrl" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.TextControl, {
+    }), layout.type === "videoUrl" && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.TextControl, {
       className: "w-full",
       value: attributes[attribute],
       onChange: value => onChange(attribute, value)
@@ -940,8 +940,7 @@ const RenderInterface = (props, blockOptions) => {
     }), layout.type === "textareaControl" && /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.TextareaControl, {
       value: attributes[attribute],
       onChange: value => onChange(attribute, value)
-    }), layout.type === "imageGallery" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_StyledDiv7, null, attributes[attribute].map((item, index) => {
-      console.log(item.type);
+    }), layout.type === "imageGallery" && /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement(_StyledDiv7, null, attributes[attribute].map((item, index) => {
       return /*#__PURE__*/React.createElement("div", {
         key: `item-image-key-${index}`
       }, /*#__PURE__*/React.createElement(_StyledDiv8, {
@@ -953,15 +952,17 @@ const RenderInterface = (props, blockOptions) => {
                                         box-sizing: border-box;
                                         border-radius: 4px;                                                                         
                                     `]
-      }, item.type == "image" || item.type == undefined && item.url !== undefined ? /*#__PURE__*/React.createElement(_StyledImg, {
-        src: item.url,
+      }, item.type == "image" || item.type == undefined && item.url !== undefined ? /*#__PURE__*/React.createElement(_StyledDiv9, {
+        style: {
+          backgroundImage: `url(${item.url})`
+        },
         alt: item.alt
-      }) : item.type == "video" ? /*#__PURE__*/React.createElement(_StyledDiv9, null, /*#__PURE__*/React.createElement("video", {
+      }) : item.type == "video" ? /*#__PURE__*/React.createElement(_StyledDiv10, null, /*#__PURE__*/React.createElement("video", {
         src: item.url,
         alt: item.alt,
         muted: true,
         controls: true
-      })) : /*#__PURE__*/React.createElement("div", null, "Media Type Error"), /*#__PURE__*/React.createElement(_StyledDiv10, null, /*#__PURE__*/React.createElement(_StyledButton2, {
+      })) : /*#__PURE__*/React.createElement("div", null, "Media Type Error"), /*#__PURE__*/React.createElement(_StyledDiv11, null, /*#__PURE__*/React.createElement(_StyledButton2, {
         icon: "trash",
         text: "",
         label: "Remover essa imagem",
@@ -981,7 +982,7 @@ const RenderInterface = (props, blockOptions) => {
       mode: "browse",
       button: "link",
       text: "+"
-    }))), layout.type === "switcher" && /*#__PURE__*/React.createElement(_StyledDiv11, null, /*#__PURE__*/React.createElement(react_switch__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    }))), layout.type === "switcher" && /*#__PURE__*/React.createElement(_StyledDiv12, null, /*#__PURE__*/React.createElement(react_switch__WEBPACK_IMPORTED_MODULE_1__["default"], {
       onChange: value => onChange(attribute, value),
       checked: attributes[attribute]
     }), layout?.switcherTrue && attributes[attribute] && /*#__PURE__*/React.createElement(_StyledSpan, null, layout.switcherTrue, " "), layout?.switcherFalse && !attributes[attribute] && /*#__PURE__*/React.createElement(_StyledSpan2, null, layout.switcherFalse, " ")), layout.type === "selectControl" && /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement(_wordpress_components__WEBPACK_IMPORTED_MODULE_6__.SelectControl, {
@@ -989,7 +990,7 @@ const RenderInterface = (props, blockOptions) => {
       value: attributes[attribute],
       onChange: value => onChange(attribute, value),
       options: layout.options
-    })), layout.type === "richText" && /*#__PURE__*/React.createElement(_StyledDiv12, {
+    })), layout.type === "richText" && /*#__PURE__*/React.createElement(_StyledDiv13, {
       $_css5: [{
         "width": "100%",
         "borderRadius": "0.125rem",
@@ -1020,7 +1021,7 @@ const RenderInterface = (props, blockOptions) => {
     }, /*#__PURE__*/React.createElement(_rte__WEBPACK_IMPORTED_MODULE_3__.RichTextField, {
       value: attributes[attribute],
       onChange: value => onChange(attribute, value)
-    })), /*#__PURE__*/React.createElement(_StyledDiv13, {
+    })), /*#__PURE__*/React.createElement(_StyledDiv14, {
       $_css6: [layout?.bottom === "line" ? {
         "marginTop": "1rem",
         "marginBottom": "1rem",
@@ -1109,19 +1110,19 @@ var _StyledDiv8 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])(
   displayName: "render___StyledDiv8",
   componentId: "sc-rafs7q-8"
 })(["", ""], p => p.$_css4);
-var _StyledImg = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("img").withConfig({
-  displayName: "render___StyledImg",
-  componentId: "sc-rafs7q-9"
-})(["width:90%;height:90%;object-fit:cover;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);box-sizing:border-box;"]);
 var _StyledDiv9 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
   displayName: "render___StyledDiv9",
+  componentId: "sc-rafs7q-9"
+})(["background-size:contain;background-position:center;background-repeat:no-repeat;position:absolute;top:0;left:0;width:100%;height:100%;transform:scale(0.95);"]);
+var _StyledDiv10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
+  displayName: "render___StyledDiv10",
   componentId: "sc-rafs7q-10"
 })({
   "position": "absolute",
   "top": "25%"
 });
-var _StyledDiv10 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
-  displayName: "render___StyledDiv10",
+var _StyledDiv11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
+  displayName: "render___StyledDiv11",
   componentId: "sc-rafs7q-11"
 })({
   "position": "absolute",
@@ -1153,8 +1154,8 @@ var _StyledButton2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"
     "color": "rgb(255 255 255 / var(--tw-text-opacity))"
   }
 });
-var _StyledDiv11 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
-  displayName: "render___StyledDiv11",
+var _StyledDiv12 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
+  displayName: "render___StyledDiv12",
   componentId: "sc-rafs7q-13"
 })({
   "marginLeft": "0.5rem",
@@ -1173,12 +1174,12 @@ var _StyledSpan2 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])
 })({
   "marginLeft": "0.5rem"
 });
-var _StyledDiv12 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
-  displayName: "render___StyledDiv12",
-  componentId: "sc-rafs7q-16"
-})(["", ""], p => p.$_css5);
 var _StyledDiv13 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
   displayName: "render___StyledDiv13",
+  componentId: "sc-rafs7q-16"
+})(["", ""], p => p.$_css5);
+var _StyledDiv14 = (0,styled_components__WEBPACK_IMPORTED_MODULE_8__["default"])("div").withConfig({
+  displayName: "render___StyledDiv14",
   componentId: "sc-rafs7q-17"
 })(["", ""], p => p.$_css6);
 

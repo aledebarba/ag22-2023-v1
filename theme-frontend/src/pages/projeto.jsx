@@ -126,8 +126,6 @@ const Header = ( { title, data, changeMedia } ) => {
 			Object.keys(changeMedia).length === 0
 		) return;
 		
-		console.log( data, changeMedia )
-
 		if( data.headerType == "Slides" && Object.keys(changeMedia).length > 0 ) {
 			
 			video =    changeMedia.video;
@@ -193,11 +191,11 @@ const Header = ( { title, data, changeMedia } ) => {
 				object-fit="cover"
 				className="absolute scale-[2] top-1/2 -translate-y-1/2 sm:(scale-150) md:(scale-100)"
 			/>
-			<div id="project-header--video-overlay" 
-				tw="relative w-screen h-full top-0 left-0 bg-black/70"
-			/>				
+						
 		</Container> 
 		: null }
+
+		<FadeOverlay />
 
 		<Container hcenter id="project-header--title" 
 			style={{height:height}} 
@@ -219,6 +217,9 @@ const Header = ( { title, data, changeMedia } ) => {
 	</>
 }
 
+const FadeOverlay = tw.div`
+	relative w-screen h-full top-0 left-0 bg-black/50 z-0
+`
 const ContentVideo  = ({ title, data }) => {
 	
 	const { video, videoUrl, videoOrigin, poster } = {...data};

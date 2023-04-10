@@ -11,7 +11,6 @@ import { ReactComponent as LogoDez } from './assets/dez-anos.svg'
 
 const SobreNos = props => {
   const options = _app.options()  
-  console.log( _app )
   const ref = React.useRef()
 
   return (
@@ -47,8 +46,8 @@ const AbouUsHeroHeader = () => {
                 <span tw="text-primary font-semibold tracking-wide">AG22</span> 
             </h1>
         </Container>      
+    <SectionEnding />
     </Container>
-    <SectionEnding/>
     </>
 }
 
@@ -56,7 +55,7 @@ const InBrandWeTrust = () => {
   console.log( _app.options() )
   return (
     <>
-      <div tw="relative">
+      <div tw="relative z-20">
         <video autoPlay muted loop controls 
           tw="scale-90 w-[calc( 24rem + 24vw )] min-w-[280px] h-[auto] object-cover mx-auto -translate-y-[12vh] rounded-2xl md:(scale-100)"           
         >
@@ -70,7 +69,7 @@ const InBrandWeTrust = () => {
             left: 50%;
             transform: translateX(-50%);
             height: 10vh;
-            box-shadow: 0 35px 30px -1px red;
+            box-shadow: 0 20px 50px -6px red;
             z-index: -1;
           `}
         />
