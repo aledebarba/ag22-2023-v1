@@ -45,7 +45,6 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         }
 
         setOptions( {...options, casesList: newCasesList} )
-        console.log( "newCasesList ---> ", newCasesList )
 
     },[])
 
@@ -82,6 +81,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         setOptions( {...options, casesList: newCasesList} )
     }
 
+    console.log( options.casesList )
     return ( <>
         
         <SortableGrid 
