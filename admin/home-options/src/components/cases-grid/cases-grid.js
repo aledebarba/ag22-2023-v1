@@ -19,19 +19,15 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         let newCasesList;
         // if casesList is empty, fill it with empty cases.
         if( !options.casesList || options.casesList.length === 0 ) {
-            if( options.cases ) {
-                newCasesList = options.cases.map( (item, index)=> ({
-                    id: item.id,
-                    title: item.data,
-                    data: {
-                        image: 'https://placehold.co/600x400',
-                        poster: 'https://placehold.co/600x400',
-                        link: 'https://placehold.co/600x400',
-                    }
-                }) )
-            } else {
-                newCasesList = [...Array( parseInt( gridCells ) ).keys()].map( i => emptyCase() );
-            }
+            newCasesList = options.cases ? options.cases.map( (item, index)=> ({
+                id: item.id,
+                title: item.data,
+                data: {
+                    image: 'https://placehold.co/600x400',
+                    poster: 'https://placehold.co/600x400',
+                    link: 'https://placehold.co/600x400',
+                }
+            }) ) : [...Array( parseInt( gridCells ) ).keys()].map( i => emptyCase() );
         }
         else {
             newCasesList = options.casesList;
@@ -48,8 +44,8 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         }
 
         setOptions( {...options, casesList: newCasesList} )
-        console.log( newCasesList )
-        console.log( options )
+        console.log( "newCasesList: ", newCasesList )
+
     },[ options.casesList, options.MaxCases ])
 
     const handleSelectCase = ( selectedItem ) => {
@@ -60,7 +56,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         newCasesList[k] = v;
         setOptions( {...options, casesList: newCasesList } ) 
     }
-
+    
     function emptyCase(){
 
         return {
@@ -85,6 +81,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         setOptions( {...options, casesList: newCasesList} )
     }
  
+    console.log( "options.casesList: ", options )
     return ( <>
         
         <SortableGrid 
