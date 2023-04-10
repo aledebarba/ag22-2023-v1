@@ -37,6 +37,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
 
         setOptions( {...options, casesList: newCasesList} )
         console.log( newCasesList )
+        console.log( options )
     },[ options.casesList, options.MaxCases ])
 
     const handleSelectCase = ( selectedItem ) => {
