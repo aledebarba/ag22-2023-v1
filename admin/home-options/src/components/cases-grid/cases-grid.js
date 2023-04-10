@@ -14,29 +14,30 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
 
     const [ cell, setCell ] = useState(0);
     const [ modalOpen, setModalOpen ] = useState(false);
-      
+
     useEffect(()=>{
         let newCasesList;
         // if casesList is empty, fill it with empty cases.
         if( !options.casesList || options.casesList.length === 0 ) {
-            newCasesList = options.cases ? options.cases.map( (item, index)=> ({
-                id: item.id,
-                title: item.title,
-                data: {
-                    image: 'https://placehold.co/600x400',
-                    poster: 'https://placehold.co/600x400',
-                    link: 'https://placehold.co/600x400',
-                }
-            }) ) : [...Array( parseInt( gridCells ) ).keys()].map( i => emptyCase() );
+            newCasesList = options.cases 
+                ? options.cases.map( (item, index) => { return {
+                    id: item.id,
+                    title: item.title,
+                    data: {
+                        image: 'https://placehold.co/600x400',
+                        poster: 'https://placehold.co/600x400',
+                        link: 'https://placehold.co/600x400',
+                    }
+                }})
+                : [...Array( parseInt( options.maxCases ) ).keys()].map( i => emptyCase( i ) );
         }
         else {
             newCasesList = options.casesList;
-            for( let i = 0; i < gridCells; i++ ) {
+            for( let i = 0; i < options.maxCases; i++ ) {
                 if( !newCasesList[i] ) {
                     newCasesList[i] = emptyCase();
                 }
             }
-            // if casesList is bigger than gridCells, remove extra cases.
             if( options.casesList.length > gridCells ) {
                 newCasesList = options.casesList;
                 newCasesList.splice( gridCells, newCasesList.length - gridCells );
@@ -44,7 +45,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         }
 
         setOptions( {...options, casesList: newCasesList} )
-        console.log( "newCasesList ---: ", newCasesList )
+        console.log( "newCasesList ---> ", newCasesList )
 
     },[])
 
@@ -57,15 +58,15 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         setOptions( {...options, casesList: newCasesList } ) 
     }
     
-    function emptyCase(){
+    function emptyCase( i ){
 
         return {
-            id: -1,
-            title: '',
+            id: i,
+            title: `case list item ${i}`,
             data: {
-                image: '',
-                poster: '',
-                link: '',
+                image: 'https://placehold.co/600x400',
+                poster: 'https://placehold.co/600x400',
+                link: 'https://placehold.co/600x400',
             }
         }
     }
@@ -80,8 +81,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         newCasesList[index] = emptyCase();
         setOptions( {...options, casesList: newCasesList} )
     }
- 
-    console.log( "options.casesList: ", options )
+
     return ( <>
         
         <SortableGrid 
@@ -91,7 +91,6 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
             >
         
         { grid.map( ( item, index ) => {  
-            console.log( "here ", item, index, options.casesList )            
             const caseData = options.casesList 
                 ? options.casesList[index] 
                     ? options.casesList[index] 
@@ -127,16 +126,16 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
             
     const GalleryControls = ( { index, select, remove } ) => {
         return (
-            <div tw="absolute right-0 top-0 grid grid-rows-3 gap-1.5 rounded-xl mt-1 mb-1 mr-1 p-3 bg-yellow-50/60 [backdrop-filter: blur(4px)]  z-30 
-            [box-shadow: inset 2px 2px 8px -1px black, inset -2px -2px 8px 1px white]
-
-
+            <div tw="
+                absolute right-0 top-0 
+                grid grid-rows-3 gap-1.5 
+                rounded-xl mt-1 mb-1 mr-1 p-3 
+                bg-yellow-50/60 [backdrop-filter: blur(4px)]  z-30 
+                [box-shadow: inset 2px 2px 8px -1px black, inset -2px -2px 8px 1px white]
             ">
-                
                 <GalleryControlsIcon icon="uil:image-redo" onClick={()=>{ select() }} />
                 <GalleryControlsIcon icon="bi:trash" onClick={()=>{ remove() }} />
                 <GalleryControlsIcon icon="fluent:drag-24-filled" className="dragHandle" />
-
             </div>
         )
     }
