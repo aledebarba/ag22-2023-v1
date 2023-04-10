@@ -19,7 +19,19 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         let newCasesList;
         // if casesList is empty, fill it with empty cases.
         if( !options.casesList || options.casesList.length === 0 ) {
-            newCasesList = [...Array( parseInt( gridCells ) ).keys()].map( i => emptyCase() );
+            if( options.cases ) {
+                newCasesList = options.cases.map( (item, index)=> ({
+                    id: item.id,
+                    title: item.data,
+                    data: {
+                        image: 'https://placehold.co/600x400',
+                        poster: 'https://placehold.co/600x400',
+                        link: 'https://placehold.co/600x400',
+                    }
+                }) )
+            } else {
+                newCasesList = [...Array( parseInt( gridCells ) ).keys()].map( i => emptyCase() );
+            }
         }
         else {
             newCasesList = options.casesList;
@@ -50,6 +62,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
     }
 
     function emptyCase(){
+
         return {
             id: -1,
             title: '',
