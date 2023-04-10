@@ -9,6 +9,7 @@ import { fetchOptions, saveOptions } from './components/options'
 import { MediaBtn,MediaSelectBox } from './components/wpmediagal/media-gallery-button'
 import { Section, Panel, Row, Col, Option } from './components/options-layout-grid'
 import { CasesGrid } from './components/cases-grid'
+import { BrandsList } from './components/brands-list'
 
 const App = () => {
   const [ optionsChanged, setOptionsChanged] = useState(false)
@@ -24,6 +25,7 @@ const App = () => {
     socialOnFooter: [],
     cases: [],
     casesList: [],
+    brandsList: [],
     maxCases: 5,
     heroImage: '',
     introImage: '',
@@ -113,11 +115,14 @@ const App = () => {
       {optionsChanged ? ( // mostra o aviso de opções alteradas e o botão de salvar
         <div
           css={[
-            tw`fixed top-[3rem] right-4 z-50 w-[320px] h-fit bg-slate-700/70 box-border flex gap-4 p-4 shadow-lg rounded-2xl`,
-            `backdrop-filter: blur(4px);`
+            tw`fixed top-[2.2rem] right-[0.5rem] z-50 w-fit h-fit bg-slate-700/70 box-border flex gap-4 py-0.5 px-6 shadow-lg rounded-md `,
+            `
+              backdrop-filter: blur(4px);
+              box-shadow: 3px 3px 10px -2px #000;
+            `
           ]}
         >
-          <Icon icon="fluent-emoji:hand-with-fingers-splayed" width={40} 
+          {/* <Icon icon="fluent-emoji:hand-with-fingers-splayed" width={40} 
             css="
               position: absolute;
               top: 8px;
@@ -133,7 +138,7 @@ const App = () => {
                 100% { transform: rotate(0deg); }
               }
             "
-          />
+          /> */}
           <button
             tw='relative bg-red-500 text-white font-bold p-2 w-fit shadow-lg my-4 mx-auto duration-200 cursor-pointer border-transparent outline-transparent text-lg rounded-md hover:(bg-red-800 duration-200 text-xl) active:(bg-red-500 duration-200 text-xl)'
             onClick={handleSaveOptions}
@@ -269,9 +274,6 @@ const App = () => {
               />
             )}
           </Option>
-        </Row>
-        <Row>
-          <Col>
             <Option
               label='Quantidade de cases que serão exibidos na seção cases'
               width='10%'
@@ -287,6 +289,9 @@ const App = () => {
                 tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg text-xl'
               />
             </Option>
+          </Row>
+        </Section>
+          {/* <Col>
             <Option label='Ordem dos projetos na seção cases' width='55%'>
               {options.cases && (
                 <DndList
@@ -296,20 +301,21 @@ const App = () => {
                 />
               )}
             </Option>
-          </Col>
-          <Col colx2>
-            { rawCases 
-                ? <CasesGrid  
-                      options     = { options }
-                      cases       = { rawCases }
-                      setOptions  = { setOptions }
-                  />
-               : <h2>Loading...</h2> 
-            }
-          </Col>
-        </Row>
-
-        <Option label='Imagem de fundo da seção de introdução' width='100%'>
+          </Col> */}
+         <Section title="Seção de cases/projetos" tw="w-full">
+            <Option label="Organize os cases">
+                { rawCases 
+                    ? <CasesGrid  
+                          options     = { options }
+                          cases       = { rawCases }
+                          setOptions  = { setOptions }
+                      />
+                  : <h2>Loading...</h2> 
+                }
+              </Option>
+         
+        
+        <Option label='Imagem de fundo da seção de introdução'>
           <MediaSelectBox
             onSelect={image =>
               setOptions({ ...options, introImage: image[0].url })
@@ -338,7 +344,11 @@ const App = () => {
           </MediaSelectBox>
         </Option>
       </Section>
-
+      <Section title="Seção de marcas na home page" tw="w-full">
+        <Option label="Organize as marcas de acordo com a ordem em que devem aparecer">
+          <BrandsList setOptions = { setOptions } options = { options } />
+        </Option>
+      </Section>
       <Section title='Opções da página Sobre Nós'>
         <Option label='Video da seção sobre nós' width='50vw'>
           {options.aboutMovie !== '' ? (
@@ -521,93 +531,101 @@ const App = () => {
       </Section>
 
       <Section title='Informações de Contato'>
-        <Option label='Telefone' width='40%'>
-          <input
-            type='text'
-            placeholder='Telefone'
-            value={options.telefone}
-            onChange={e => setOptions({ ...options, telefone: e.target.value })}
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
-        <Option label='Endereço' width='40%'>
-          <input
-            type='text'
-            placeholder='Endereço'
-            value={options.endereco}
-            onChange={e => setOptions({ ...options, endereco: e.target.value })}
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
-        <Option label='Bairro' width='40%'>
-          <input
-            type='text'
-            placeholder='Bairro'
-            value={options.bairro}
-            onChange={e => setOptions({ ...options, bairro: e.target.value })}
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
-        <Option label='Cidade' width='40%'>
-          <input
-            type='text'
-            placeholder='Cidade'
-            value={options.cidade}
-            onChange={e => setOptions({ ...options, cidade: e.target.value })}
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
-        <Option label='Estado' width='40%'>
-          <input
-            type='text'
-            placeholder='Estado'
-            value={options.estado}
-            onChange={e => setOptions({ ...options, estado: e.target.value })}
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
-        <Option label='Email Principal' width='40%'>
-          <input
-            type='email'
-            placeholder='Email Principal'
-            value={options.emailPrincipal}
-            onChange={e =>
-              setOptions({ ...options, emailPrincipal: e.target.value })
-            }
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
-        <Option label='Email para Vagas' width='40%'>
-          <input
-            type='email'
-            placeholder='Email para Vagas'
-            value={options.emailVagas}
-            onChange={e =>
-              setOptions({ ...options, emailVagas: e.target.value })
-            }
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
-        <Option label='Copyright' width='40%'>
-          <input
-            type='text'
-            placeholder='Copyright'
-            value={options.copyright}
-            onChange={e =>
-              setOptions({ ...options, copyright: e.target.value })
-            }
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
-        <Option label='Desenvolvido por' width='40%'>
-          <input
-            type='text'
-            placeholder='Desenvolvido por'
-            value={options.devby}
-            onChange={e => setOptions({ ...options, devby: e.target.value })}
-            tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
-          />
-        </Option>
+        <Row>
+          <Col>
+            <Option label='Telefone' width='40%'>
+              <input
+                type='text'
+                placeholder='Telefone'
+                value={options.telefone}
+                onChange={e => setOptions({ ...options, telefone: e.target.value })}
+                tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+              />
+            </Option>
+            <Option label='Endereço' width='40%'>
+              <input
+                type='text'
+                placeholder='Endereço'
+                value={options.endereco}
+                onChange={e => setOptions({ ...options, endereco: e.target.value })}
+                tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+              />
+            </Option>
+            <Option label='Bairro' width='40%'>
+              <input
+                type='text'
+                placeholder='Bairro'
+                value={options.bairro}
+                onChange={e => setOptions({ ...options, bairro: e.target.value })}
+                tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+              />
+            </Option>
+            <Option label='Cidade' width='40%'>
+              <input
+                type='text'
+                placeholder='Cidade'
+                value={options.cidade}
+                onChange={e => setOptions({ ...options, cidade: e.target.value })}
+                tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+              />
+            </Option>
+            <Option label='Estado' width='40%'>
+              <input
+                type='text'
+                placeholder='Estado'
+                value={options.estado}
+                onChange={e => setOptions({ ...options, estado: e.target.value })}
+                tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+              />
+            </Option>
+          </Col>
+          
+      
+        <Col fill>
+          <Option label='Email Principal' width='40%'>
+            <input
+              type='email'
+              placeholder='Email Principal'
+              value={options.emailPrincipal}
+              tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+              onChange={e =>
+                setOptions({ ...options, emailPrincipal: e.target.value })
+              }
+            />
+          </Option>
+          <Option label='Email para Vagas' width='40%'>
+            <input
+              type='email'
+              placeholder='Email para Vagas'
+              value={options.emailVagas}
+              tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+              onChange={e =>
+                setOptions({ ...options, emailVagas: e.target.value })
+              }
+            />
+          </Option>
+          <Option label='Copyright' width='40%'>
+            <input
+              type='text'
+              placeholder='Copyright'
+              value={options.copyright}
+              onChange={e =>
+                setOptions({ ...options, copyright: e.target.value })
+              }
+              tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+            />
+          </Option>
+          <Option label='Desenvolvido por' width='40%'>
+            <input
+              type='text'
+              placeholder='Desenvolvido por'
+              value={options.devby}
+              onChange={e => setOptions({ ...options, devby: e.target.value })}
+              tw='border border-slate-200 p-2 rounded-lg bg-white shadow-lg w-full'
+            />
+          </Option>
+        </Col>
+        </Row>
       </Section>
     </Panel>
   )
