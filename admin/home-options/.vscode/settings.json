@@ -1,0 +1,32 @@
+{
+    "workbench.colorCustomizations": {
+        "activityBar.activeBackground": "#d6fc72",
+        "activityBar.background": "#d6fc72",
+        "activityBar.foreground": "#15202b",
+        "activityBar.inactiveForeground": "#15202b99",
+        "activityBarBadge.background": "#05a0da",
+        "activityBarBadge.foreground": "#e7e7e7",
+        "commandCenter.border": "#15202b99",
+        "editorGroup.border": "#d6fc72",
+        "panel.border": "#d6fc72",
+        "sash.hoverBorder": "#d6fc72",
+        "sideBar.border": "#d6fc72",
+        "statusBar.background": "#c7fb40",
+        "statusBar.border": "#c7fb40",
+        "statusBar.debuggingBackground": "#7440fb",
+        "statusBar.debuggingBorder": "#7440fb",
+        "statusBar.debuggingForeground": "#e7e7e7",
+        "statusBar.foreground": "#15202b",
+        "statusBarItem.hoverBackground": "#b8fa0e",
+        "statusBarItem.remoteBackground": "#c7fb40",
+        "statusBarItem.remoteForeground": "#15202b",
+        "tab.activeBorder": "#d6fc72",
+        "titleBar.activeBackground": "#c7fb40",
+        "titleBar.activeForeground": "#15202b",
+        "titleBar.border": "#c7fb40",
+        "titleBar.inactiveBackground": "#c7fb4099",
+        "titleBar.inactiveForeground": "#15202b99"
+    },
+    "peacock.color": "#c7fb40",
+    "docwriter.style": "JSDoc"
+}
