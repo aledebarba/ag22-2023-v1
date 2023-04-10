@@ -21,7 +21,7 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
         if( !options.casesList || options.casesList.length === 0 ) {
             newCasesList = options.cases ? options.cases.map( (item, index)=> ({
                 id: item.id,
-                title: item.data,
+                title: item.title,
                 data: {
                     image: 'https://placehold.co/600x400',
                     poster: 'https://placehold.co/600x400',
