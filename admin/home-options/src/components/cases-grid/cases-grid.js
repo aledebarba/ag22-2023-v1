@@ -28,11 +28,11 @@ export const CasesGrid = ( {options, cases, setOptions} ) => {
                     newCasesList[i] = emptyCase();
                 }
             }
-        }
-        // if casesList is bigger than gridCells, remove extra cases.
-        if( options.casesList.length > gridCells ) {
-            newCasesList = options.casesList;
-            newCasesList.splice( gridCells, newCasesList.length - gridCells );
+            // if casesList is bigger than gridCells, remove extra cases.
+            if( options.casesList.length > gridCells ) {
+                newCasesList = options.casesList;
+                newCasesList.splice( gridCells, newCasesList.length - gridCells );
+            }
         }
 
         setOptions( {...options, casesList: newCasesList} )
