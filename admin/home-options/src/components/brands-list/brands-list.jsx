@@ -27,7 +27,22 @@ export const BrandsList = ( { options, setOptions } ) => {
 
     if( brandList === undefined || brandList.length === 0 ) return <>Loading...</>;
 
-    return <div>
+    return <div 
+                css={`
+                    .dropArea {
+                        position: relative;
+                    }
+
+                    .dropArea::before {
+                        content: '';
+                        position: absolute;
+                        z-index: 1;
+                        width: 100%;
+                        height: 100%;
+                        background-color: darkred;
+                    }  
+                `}
+         >
          <ReactSortable
             list={ brandList }
             setList={ handleChangeOrder }

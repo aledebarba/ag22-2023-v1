@@ -50,21 +50,38 @@ export default function SortableGrid({ children, items, onReorder, cols, ...othe
                 </ReactSortable>
             </StyledSortableGrid> 
         }
-        { children &&
-            <ReactSortable                
-                list={ gridItems }
-                setList={ onList }
-                animation={150}
-                ghostClass="dropArea"
-                handle=".dragHandle"
-                filter=".ignoreDrag"
-                preventOnFilter={true}
-                className="sortable-grid"
-                //onEnd={({ oldIndex, newIndex }) => onDragDropEnds(oldIndex, newIndex)}
-                {...otherprops}
-                >
-                { children }                  
-            </ReactSortable>
+        { children && 
+            <div 
+             css={`
+                .dropArea {
+                    position: relative;
+                }
+
+                .dropArea::before {
+                    content: '';
+                    position: absolute;
+                    z-index: 1;
+                    width: 100%;
+                    height: 100%;
+                    background-color: darkred;
+                }  
+            `}
+            >
+                <ReactSortable                
+                    list={ gridItems }
+                    setList={ onList }
+                    animation={150}
+                    ghostClass="dropArea"
+                    handle=".dragHandle"
+                    filter=".ignoreDrag"
+                    preventOnFilter={true}
+                    className="sortable-grid"
+                    //onEnd={({ oldIndex, newIndex }) => onDragDropEnds(oldIndex, newIndex)}
+                    {...otherprops}
+                    >
+                    { children }                  
+                </ReactSortable>
+            </div>
         }
     </>);
 }
