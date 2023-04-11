@@ -60,7 +60,9 @@ const App = () => {
 
   useEffect(() => {
       fetchOptions().then(res => {
-        if (res.error || (res.error && res.code == 404)) {
+        if (res.error && res.code !== 404 ) {
+          console.error(res.message)
+          console.error("A aplicação não pode se recuperar desse erro.")
           return
         }
 
