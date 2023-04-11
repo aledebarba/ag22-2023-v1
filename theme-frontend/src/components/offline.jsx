@@ -7,7 +7,7 @@ export const Offline = () => {
 
     return(
         <main 
-            tw="relative bg-secondary-900"
+            tw="fixed top-0 left-0 w-screen h-screen bg-secondary-900 [z-index: 1000000]"
             
             >
             <h1

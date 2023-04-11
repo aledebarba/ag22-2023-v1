@@ -16,9 +16,11 @@ require_once( get_template_directory() . '/inc/php/sendmail.php' );
      * This action will retrieve the global data options and then render the meta tags
      */
     add_action('wp_head', function(){       
+      
       $global_options = get_option('superpost_global_options');
-      $global_options = json_decode($global_options);
+      if( !$global_options ) return;
 
+      $global_options = json_decode($global_options);      
       echo <<<HTML
         <title>{$global_options->title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
