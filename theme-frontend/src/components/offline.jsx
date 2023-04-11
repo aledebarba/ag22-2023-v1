@@ -3,21 +3,30 @@ import { _app } from "../utils/functions";
 
 export const Offline = () => {
 
-    let offlineMessage = _app.options().offlineMessage ? _app.options().offlineMessage : "<div style='color: white'>Nosso site está <div style='color: red'>offline.</div>";
+    const Words = ( { text } ) => {
+        const words = text.split(" ");
+        return (<div tw="absolute flex
+                    top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
+                    w-1/2 z-10 text-secondary-100
+                    font-thin 
+                    leading-normal
+                    text-8xl
+                    gap-8
+                    flex-row
+                    flex-wrap
+                    "
+                >
+                {words.map( (word) => <div tw="h-[1em] last:(text-red-500)">{word}</div>)}
+        </div>)
+    }
+    let offlineMessage = _app.options().offlineMessage ? _app.options().offlineMessage 
+        : "Nosso site está offline";
 
     return(
         <main 
-            tw="fixed top-0 left-0 w-screen h-screen bg-secondary-900 [z-index: 1000000]"
-            
+            tw="fixed top-0 left-0 w-screen h-screen bg-secondary-900 [z-index: 1000000]"            
             >
-            <h1
-                tw="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[5ch] z-10 text-secondary-100 font-thin leading-normal"
-                css={`
-                    font-size: clamp( 32px, 10vw, 102px);
-                `}
-                >
-                <div dangerouslySetInnerHTML={{ __html: offlineMessage }} />
-            </h1>
+            <Words text={offlineMessage} />
             <div
                 tw="w-screen h-screen overflow-hidden bg-ag22Black flex justify-center items-center"
                 css={`
