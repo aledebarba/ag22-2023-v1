@@ -66,6 +66,7 @@ const App = () => {
           return
         }
 
+        console.log( "starting ... ")
         let data = res?.code == 404 ? options : res
         let cases = getCases()
         let socials = getSocials()
