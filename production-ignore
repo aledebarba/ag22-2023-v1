@@ -1,4 +1,3 @@
-# Logs
 logs
 *.log
 npm-debug.log*
@@ -126,13 +125,27 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
-#ignores to production
-admin/home-options/src
-admin/home-options/src/*
-admin/build/*.map
-inc/data-models/**/block/src
-inc/data-models/**/block/src/*
-inc/data-models/**/block/build/*.map
+
+#production ignore
+.vscode
+.babelrc
+.gitignore
+package.json
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+tailwind.config.js
+webpack.config.js
+production-ignore
+build/*.map
+admin/src
+admin/src/
+admin/src/*
+admin/src/**/*
 theme-frontend/src
+theme-frontend/src/
 theme-frontend/src/*
-theme-frontend/build/*.map
+theme-frontend/src/**/*
+inc/data-model/**/block/src
+inc/data-model/**/block/src/*
+inc/data-model/**/block/src/**/*
