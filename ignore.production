@@ -128,10 +128,15 @@ dist
 .vscode
 theme-frontend/src
 admin/home-options/src
+admin/home-options/package*.*
 inc/data-models/cliente/block/src
+inc/data-models/cliente/block//package*.*
 inc/data-models/contato/block/src
+inc/data-models/contato/block//package*.*
 inc/data-models/projeto/block/src
+inc/data-models/projeto/block//package*.*
 inc/data-models/servico/block/src
+inc/data-models/servico/block//package*.*
 temp
 .babelrc
 .gitignore
