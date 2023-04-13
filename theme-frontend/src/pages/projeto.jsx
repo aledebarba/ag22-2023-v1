@@ -267,6 +267,7 @@ const ContentVideo  = ({ title, data }) => {
 							fluid={true}
 							width="100%"
 							height="100%"
+							controls={true}
 							object-fit="cover"
 							className="react-player"
 						/>

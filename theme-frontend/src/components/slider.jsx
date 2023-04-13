@@ -68,7 +68,7 @@ export const Slider = ( { slides, onChange } ) => {
             if (isVideo) { 
               return <div tw="px-2" key={index} className="card-panel">
                       <div  tw="relative w-[80%] pt-[46.25%] mx-[10%] rounded-2xl shadow-2xl overflow-hidden" >
-                          <video tw="absolute top-0 w-full h-full object-cover" autoPlay muted loop src={item.url} ref={playerRef} />
+                          <video tw="absolute top-0 w-full h-full object-cover" controls autoPlay muted loop src={item.url} ref={playerRef} />
                       </div>
                 </div>
             }
