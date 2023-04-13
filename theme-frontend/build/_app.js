@@ -30195,16 +30195,19 @@ const Header = ({
     "object-fit": "cover",
     className: "absolute scale-[2] top-1/2 -translate-y-1/2 sm:(scale-150) md:(scale-100)"
   })) : null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default().createElement(FadeOverlay, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default().createElement(_components_containers__WEBPACK_IMPORTED_MODULE_2__.Container, {
+    absolute: true,
+    center: true,
     hcenter: true,
     id: "project-header--title",
     style: {
-      height: height
+      height: height,
+      top: 0
     },
     ref: headerRef
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default().createElement(_StyledH, null, title), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default().createElement(_StyledH2, null, title)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default().createElement(_components_circles__WEBPACK_IMPORTED_MODULE_1__.BigRedCircle, {
     style: {
       position: "absolute",
-      bottom: 0,
+      bottom: -24,
       left: headerRect?.left - window.innerHeight
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_11___default().createElement(_components_SectionEnding__WEBPACK_IMPORTED_MODULE_0__.SectionEnding, null)));

@@ -146,6 +146,7 @@ const Header = ( { title, data, changeMedia } ) => {
 		posterRef.current?.getAnimations().forEach((animation) =>  {
 			animation.cancel(); animation.play();
 		});
+		
 		videoRef.current?.getAnimations().forEach((animation) =>  {
 			animation.cancel(); animation.play();
 		});
@@ -197,8 +198,8 @@ const Header = ( { title, data, changeMedia } ) => {
 
 		<FadeOverlay />
 
-		<Container hcenter id="project-header--title" 
-			style={{height:height}} 
+		<Container absolute center hcenter id="project-header--title" 
+			style={{ height: height, top: 0 }} 
 			ref={headerRef}
 			>
 			<h1 tw="hidden md:block text-white w-2/3 px-8">
@@ -207,10 +208,11 @@ const Header = ( { title, data, changeMedia } ) => {
 			<h2 tw="text-white w-2/3 px-8 md:hidden">
 				{title}
 			</h2>
+
 		</Container>	
 
 		<BigRedCircle 
-			style={{ position: "absolute", bottom: 0, left: headerRect?.left - ( window.innerHeight ) }}
+			style={{ position: "absolute", bottom: -24, left: headerRect?.left - ( window.innerHeight ) }}
 		/>
 		<SectionEnding />
 	</Container>
