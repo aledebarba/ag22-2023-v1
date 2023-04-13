@@ -125,9 +125,12 @@ dist
 .yarn/install-state.gz
 .pnp.*
 
+.vscode
+package.json
 theme-frontend/src
 admin/home-options/src
 inc/data-models/cliente/block/src
 inc/data-models/contato/block/src
 inc/data-models/projeto/block/src
 inc/data-models/servico/block/src
+temp
