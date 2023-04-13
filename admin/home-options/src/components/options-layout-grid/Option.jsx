@@ -4,7 +4,7 @@ import { Icon } from '@iconify/react';
 export const Option = ({ label, children }) => 
 <>
     <div css={[
-        tw`flex flex-col gap-2 px-2 pt-2 pb-4`,
+        tw`flex flex-col gap-4 px-4 pt-2 pb-4`,
         tw`bg-white/80 rounded-md shadow-md duration-300`,
         tw`hover:(bg-white/100 duration-300)`,
         ]}

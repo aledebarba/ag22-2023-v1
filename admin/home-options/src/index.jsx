@@ -139,13 +139,13 @@ const App = () => {
           globais
         </div>
       </h1>
-      <div tw='font-normal text-center w-fit mx-auto grid place-content-center place-items-center'>
+      <div tw='text-center text-white  w-20 mx-auto grid place-content-center place-items-center px-14 py-3 bg-sky-600 rounded-full duration-150 hover:([transform: scale(1.1)] shadow-md text-white)'>
         <a
-          href='https://ag22.uxdir.com/'
+          href='https://ag22.com.br/'
           target='_blank'
-          tw='text-sky-600 font-bold text-lg'
+          tw='text-white text-lg hover:(text-white)'
         >
-          <Icon icon="fa-link"/> ag22.uxdir.com
+          ag22.com.br
         </a>
       </div>
 

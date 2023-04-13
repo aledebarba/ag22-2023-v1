@@ -103,7 +103,6 @@ function customize_dashboard() {
             <style>
                 .custom-dashboard-options {
                     position: relative;
-                    width: 90%;
                     display: flex;
                     flex-wrap: wrap;
                     gap: 1.2rem;                    
@@ -130,11 +129,11 @@ function customize_dashboard() {
                 }                
             </style>
             <div class="header w-100">
-                <h1 class="relative items-center italic gap-05 serif center thin">
+                <h1 class="relative italic gap-05 serif center thin">
                     <span class="relative dashicons dashicons-wordpress" style="margin-top: -4px;"></span> 
                     Painel de Controle Wordpress
                 </h1>
-                <div class="my-2 alert w-100" style="--color: tomato;">
+                <div class="my-2 alert w-75" style="--color: tomato;">
                     <span class="dashicons dashicons-warning"></span>
                     <div>
                         Fique alerta e tenha certeza do que está fazendo, pois qualquer alteração feita aqui pode afetar o funcionamento do site,

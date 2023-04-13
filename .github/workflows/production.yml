@@ -1,0 +1,29 @@
+on: 
+  push:
+    branches:
+      - 'production'  
+name: 🚀 Deploy website on push top main
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ftp.alemacedo.com
+        username: alemacedo
+        password: ${{ secrets.ftp_ag22 }}
+        protocol: ftp
+        server-dir: ag22.com.br/wp-content/themes/ag22-theme/
+        exclude: |
+          **/.git*
+          **/.git*/**
+          **/node_modules/**
+          **/src/** 
+          tailwind.config.js
+          *.lock
+          *.config.js

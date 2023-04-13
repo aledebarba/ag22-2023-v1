@@ -9,7 +9,7 @@ export const Col = ( props ) => {
         <div 
             css={[
                 tw`
-                flex flex-col gap-1 w-full box-border`,
+                flex flex-col gap-6 w-full box-border`,
                 colx2 && tw`col-span-3`,
                 colx3 && tw`col-span-4`,
                 colx4 && tw`col-span-5`,
