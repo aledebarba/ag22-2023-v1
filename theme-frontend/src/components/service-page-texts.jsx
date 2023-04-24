@@ -1,6 +1,7 @@
 import { Container } from './containers'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { useEffect } from 'react'
 import tw from 'twin.macro'
 
 export const TextAtLeft = ({title, textMain, tags, image}) => {
@@ -120,6 +121,99 @@ export const TextAtRight = ({title, textMain, tags, image}) => {
 	</>
 }
 
+export const MobileLeft = ({title, textMain, tags, image}) => {
+	
+		const imgRef = React.useRef()
+		useEffect(()=>{
+			//use gsap to animate the image from left=100%
+			gsap.registerPlugin(ScrollTrigger)
+			gsap.ticker.fps(30)
+			gsap.from( imgRef?.current, {
+				duration: 0.8,
+				ease: "power4.out",
+				x: "110vw",
+				scrollTrigger: {
+					trigger: imgRef?.current,
+					start: "top 80%",
+				},
+			} )
+		}, [])
+
+	return (
+	<div 
+		data-info="service-container"
+		tw="relative flex flex-col px-[8vw] gap-2 w-full" >
+		
+		<div data-info="service-title">
+			<H2blackDash tw="text-4xl!">{title}</H2blackDash>
+		</div>
+		
+		<div data-info="service-text">
+			<p tw="mt-4 leading-normal" dangerouslySetInnerHTML={{__html:textMain}}></p>
+		</div>
+		
+		<div data-info="service-tags" tw="flex gap-2 mt-2 flex-wrap leading-[0.8]">
+			{ tags ? tags.map( tag => <div tw="text-primary">{tag}</div>) : null }
+		</div>
+		
+		<div data-info="service-image-container" tw="relative h-[280px]">
+			<div data-info="red-bar" tw="h-[250px] w-[100vw] left-[24px] bg-primary absolute [border-radius: 12px 0 0 12px;] top-1/2 transform -translate-y-1/2"/>
+			<img
+				data-info="service-image" ref={imgRef}
+				tw="absolute top-1/2 transform -translate-y-1/2 h-[210px] [border-radius: 12px] overflow-hidden!  object-cover"
+				src={image}
+			/>
+		</div>
+	</div>
+	)
+}
+
+export const MobileRight = ({title, textMain, tags, image}) => {
+	
+	const imgRef = React.useRef()
+	useEffect(()=>{
+		//use gsap to animate the image from left=100%
+		gsap.registerPlugin(ScrollTrigger)
+		gsap.ticker.fps(30)
+		gsap.from( imgRef?.current, {
+			duration: 0.8,
+			ease: "power4.out",
+			x: "-110vw",
+			scrollTrigger: {
+				trigger: imgRef?.current,
+				start: "top 80%",
+			},
+		} )
+	}, [])
+
+return (
+<div 
+	data-info="service-container"
+	tw="relative flex flex-col px-[8vw] gap-2 w-full" >
+	
+	<div data-info="service-title">
+		<H2blackDash tw="text-4xl!">{title}</H2blackDash>
+	</div>
+	
+	<div data-info="service-text">
+		<p tw="mt-4 leading-normal" dangerouslySetInnerHTML={{__html:textMain}}></p>
+	</div>
+	
+	<div data-info="service-tags" tw="flex gap-2 mt-2 flex-wrap leading-[0.8]">
+		{ tags ? tags.map( tag => <div tw="text-primary">{tag}</div>) : null }
+	</div>
+	
+	<div data-info="service-image-container" tw="relative h-[280px]">
+		<div data-info="red-bar" tw="h-[250px] w-[100vw] right-[24px] bg-primary absolute [border-radius: 0 12px 12px 0;] top-1/2 transform -translate-y-1/2"/>
+		<img
+			data-info="service-image" ref={imgRef}
+			tw="absolute top-1/2 transform -translate-y-1/2 h-[210px] right-[0px] [border-radius: 12px] overflow-hidden! object-cover"
+			src={image}
+		/>
+	</div>
+</div>
+)
+}
 
 const H2blackDash = ( props ) => { 
 	const { children, ...otherProps } = props

@@ -4,8 +4,9 @@ import { MainMenu } from '../components/header/nav';
 import { Footer } from '../components/footer';
 import { HeroPageHeader } from '../components/heroheader';
 import { getTagsFromText } from '../components/get-tags-from-text';
-import { TextAtLeft, TextAtRight } from '../components/service-page-texts'
+import { TextAtLeft, TextAtRight, MobileLeft, MobileRight } from '../components/service-page-texts'
 import { _app } from '../utils/functions'
+import { useScreenSize } from '../components/utils';
 
 const Servicos = ( props ) => {
 
@@ -35,11 +36,22 @@ export default Servicos;
 const Servico = ( { title, text, position, image } ) => {
 
 	const [ tags, textMain ] = getTagsFromText( text )
-
-	return <>		
-			{ position == "left" 
+	const { width, height } = useScreenSize();
+	const isMobile = width < 768;
+	
+	if (!isMobile) { return <>		
+			{ 
+				position == "left" 
 				? <TextAtLeft  title={title} textMain={textMain} tags={tags} image={image}/> 
 				: <TextAtRight title={title} textMain={textMain} tags={tags} image={image}/>
 			}
+	</> }
+
+	return <>
+		{
+			position == "left"
+			? <MobileLeft  title={title} textMain={textMain} tags={tags} image={image}/>
+			: <MobileRight title={title} textMain={textMain} tags={tags} image={image}/>
+		}
 	</>
 }
