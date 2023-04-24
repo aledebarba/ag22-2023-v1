@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect } from 'react';
 import { ScrollSmoother } from '../utils/scroll';
 import tw from 'twin.macro';
 
@@ -166,4 +166,15 @@ export const useRect = ref => {
 	, []);
 
 	return rect;
+}
+
+export const useScreenSize = () => {
+    const getWindowSizes = () => ({ width: window.innerWidth, height: window.innerHeight });
+    const [windowSizes, setWindowSizes] = useState(getWindowSizes());
+    useLayoutEffect(() => {
+        const handleResize = () => setWindowSizes(getWindowSizes());
+        window.addEventListener('resize', handleResize, true);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+    return windowSizes;
 }

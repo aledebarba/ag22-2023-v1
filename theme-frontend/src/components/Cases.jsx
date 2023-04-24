@@ -7,7 +7,7 @@ import { Buttonx } from './button'
 import { Container } from './containers'
 import { BigRedCircle } from './circles'
 import { useEffect, useState, useRef } from 'react'
-import { useRect } from './utils'
+import { useRect, useScreenSize } from './utils'
 
 export const Cases = ( { casesList } ) => {
 
@@ -17,42 +17,32 @@ export const Cases = ( { casesList } ) => {
 	//const options = _app.options()
 	const [cases, setCases] = useState( casesList )
 	
-	useEffect(() => {
-		// apiFetch({ path: 'database/v1/projetos/' }).then(data => {
-		// 	let ordered = options.cases.map(item => {
-		// 		let caseId = item.id
-		// 		let found = data.find(caseItem => caseItem.id === caseId)
-		// 		return found
-		// 	})
-		// 	if (ordered.length > options.maxCases) {
-		// 		ordered = ordered.slice(0, options.maxCases)
-		// 	}
-		// 	setCases(ordered)			
-		// })
-	}, [])
-
 	return <div id="cases" >
 		<Container  fluid tw="bg-secondary-50 m-0 py-14">
-					<Container absolute tw="hidden md:(block)" >
-						<BigRedCircle style={{ zIndex: 0, position: "absolute", top: "-45vh", left: 120 + casesRect?.left - window.innerHeight }} />
-					</Container>
-					<Container >
-						<H2Dash>Cases</H2Dash>
-						<div ref={casesRef}
-							 tw="grid grid-cols-1 gap-2 auto-rows-min px-4 mt-8 mb-8 z-10
-								md:(grid grid-cols-3 gap-8 mt-16)">
-							{cases &&
-								cases.map((item, index) => (
-									<CaseCard item={item} index={index} key={index} />
-								))}
-						</div>
-					</Container>
+			<Container absolute tw="hidden md:(block)" >
+				<BigRedCircle style={{ zIndex: 0, position: "absolute", top: "-45vh", left: 120 + casesRect?.left - window.innerHeight }} />
+			</Container>
+			<Container >
+				<H2Dash>Cases</H2Dash>
+				<div ref={casesRef}
+						tw="grid grid-cols-1 gap-8 auto-rows-min px-4 mt-8 mb-8 z-10
+							md:(grid grid-cols-3 gap-8 mt-16)">
+					{cases &&
+						cases.map((item, index) => (
+							<CaseCard item={item} index={index} key={index} />
+						))}
+				</div>
+			</Container>
 		</Container>
 	</div>
 }
 
 const CaseCard = ({ item, index }) => {
-	return (
+	
+	const mobile = 560
+	const { width, height } = useScreenSize();
+
+	if ( width > mobile ) return (
 		<div
 			css={[
 				index === 0 && tw`md:(col-span-2)`,
@@ -65,6 +55,7 @@ const CaseCard = ({ item, index }) => {
 
 					@media (min-width: 768px) {
 						bottom: -80%;
+						display: block;
 					}
 				}
 
@@ -76,6 +67,7 @@ const CaseCard = ({ item, index }) => {
 
 				&:hover {
 					transition: all 1s ease-in-out;
+					
 					img {
 						transform: scale(1.2);
 						transition: all 0.5s ease-in-out;
@@ -93,7 +85,7 @@ const CaseCard = ({ item, index }) => {
 				}
 				`)
 			]}
-		>
+			>
 			<img
 				css={[tw`w-full h-full object-cover relative`]}
 				src={item.data.poster}
@@ -119,7 +111,7 @@ const CaseCard = ({ item, index }) => {
 				</p> */}
 				<h6 tw="text-white">
 					{item.title}
-				</h6>
+				</h6>				
 				<div tw='mt-1'>
 					<Buttonx small>
 						<Link to={`projetos/${item.slug}`}>Saiba mais</Link>
@@ -128,5 +120,27 @@ const CaseCard = ({ item, index }) => {
 			</div>
 		</div>
 	)
+
+    return (
+		<div
+			tw="flex flex-col justify-start mx-auto items-start w-[clamp(300px, 90vw, 460px)] relative overflow-hidden gap-6 p-4 rounded-2xl bg-[#f5f3f5]
+				[box-shadow: 0px 1px 7px 0 rgba(0,0,0,0.15)]"
+			>
+			<div tw="self-stretch grow-0 shrink-0 h-[171px] relative overflow-hidden rounded">
+				<img
+					src={item.data.poster}
+					tw="w-[331px] h-[220.97px] absolute left-[-8px] top-[-25px] rounded object-cover"
+				/>
+			</div>
+			<p tw="grow-0 shrink-0 w-[267px] text-xl font-bold text-left text-[#413f41]">
+				Embalagens linhas PPG Refinish
+			</p>
+			<div
+				tw="flex justify-center items-center self-stretch grow-0 shrink-0 relative gap-2 px-8 py-4 rounded-lg bg-[#e62337]
+				[box-shadow: 0px 2px 5px 0 rgba(230,35,55,0.2)]"
+			>
+				<p tw="grow-0 shrink-0 text-base font-bold text-left text-white">Saiba mais</p>
+			</div>
+		</div>
+	)
 }
-4
