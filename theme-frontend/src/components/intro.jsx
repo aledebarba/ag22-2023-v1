@@ -1,13 +1,16 @@
-import React from 'react';
 import tw from 'twin.macro';
-import { Container } from './containers';
+import React from 'react';
 import CountUp from 'react-countup';
 import { useRect } from './utils';
+import { Container } from './containers';
 
 export const Intro = ({ image }) => { 
 	
 	const introTextRef = React.useRef();
 	const introTextRect = useRect(introTextRef);	
+	const maxTime  = 5;
+	const maxCount = 1000;
+	const speed = ( countTo ) => (countTo * maxTime) / maxCount;
 
 	return <>
 		<Container id="section-intro" fluid style={ { height: introTextRect?.height+256, padding: "128px 0" } }>
@@ -50,19 +53,19 @@ export const Intro = ({ image }) => {
 							md:(grid grid-cols-2)"
 						>
 						<div id="anos-no-mercado">
-							<h3 tw={"font-bold text-primary leading-tight"}>+<CountUp end="10" enableScrollSpy={true}  duration={6} />&nbsp;anos</h3>
+							<h3 tw={"font-bold text-primary leading-tight"}>+<CountUp end="10" enableScrollSpy={true} scrollSpyOnce duration={ 1.5 } separator="." useEasing={false}/>&nbsp;anos</h3>
 							<h4 tw={"text-secondary font-normal leading-tight mt-[4px]"}>no mercado</h4>
 						</div>
 						<div id="projetos-de-embalagem">
-							<h3 tw={"font-bold text-primary leading-tight "}>+<CountUp end="50" enableScrollSpy={true}  duration={5} />&nbsp;projetos</h3>
+							<h3 tw={"font-bold text-primary leading-tight "}>+<CountUp end="50" enableScrollSpy={true} scrollSpyOnce duration={ 1.5 } separator="." useEasing={false}/>&nbsp;projetos</h3>
 							<h4 tw={"text-secondary font-normal leading-tight mt-[4px]"}>de embalagens, presente na América do Sul</h4>
 						</div>
 						<div id="marcas-criadas">
-							<h3 tw={"font-bold text-primary leading-tight"}>+<CountUp end="150" enableScrollSpy={true}  duration={4} />&nbsp;marcas</h3>
+							<h3 tw={"font-bold text-primary leading-tight"}>+<CountUp end="150" enableScrollSpy={true} scrollSpyOnce duration={ 2.5 } separator="." useEasing={false}/>&nbsp;marcas</h3>
 							<h4 tw={"text-secondary font-normal leading-tight mt-[4px]"}>criadas e ativas pelo mundo</h4>
 						</div>
 						<div id="story-telling">
-							<h3 tw={"font-bold text-primary leading-tight"}>+<CountUp end="1000" enableScrollSpy={true}  duration={3} />&nbsp;horas</h3>
+							<h3 tw={"font-bold text-primary leading-tight"}>+<CountUp end="1000" enableScrollSpy={true} scrollSpyOnce duration={ 2.5 } separator="." useEasing={false}/>&nbsp;horas</h3>
 							<h4 tw={"text-secondary font-normal leading-tight mt-[4px]"}>de storytelling criadas</h4>
 						</div>
 				</div>
