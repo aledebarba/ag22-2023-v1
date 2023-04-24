@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
   window.addEventListener("beforeunload", (e) => {
-      console.log( "store ", window.scrollY);
       sessionStorage.setItem('scrollpos', window.scrollY);
   });
 

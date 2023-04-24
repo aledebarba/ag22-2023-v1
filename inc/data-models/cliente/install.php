@@ -7,24 +7,10 @@ $plural   = $singular.'s';
 $Csingular = ucfirst($singular);
 $Cplural   = ucfirst($plural);
 
-add_action('init', function() use($singular, $base) {
+add_action('init', function() use($singular) {
 
-    wp_register_style(
-        'superblock-style-'.$singular,
-        get_stylesheet_directory_uri().'/inc/data-models/'.$base.'/block/build/index.css'
-    );
-
-    wp_register_script(
-        'superblock-'.$singular,
-        get_stylesheet_directory_uri().'/inc/data-models/'.$base.'/block/build/index.js',
-        ['wp-blocks', 'wp-element', 'wp-editor']
-    );
-
-    register_block_type('superblock/'.$singular, [
-        'editor_script' => 'superblock-'.$singular,
-        'editor_style' => 'superblock-style-'.$singular,
-        'render_callback' => function($attributes, $content) use($singular) {
-            $block_data = $attributes;
+    register_block_type(__DIR__."/block", [        
+        'render_callback' => function($attributes) use($singular) {
             $data = json_encode($attributes);
             $res = <<<HTML
                 <pre data-type='data-{$singular}' class='data-{$singular}' style='display: none;' start>$data</pre>
@@ -62,6 +48,7 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
         'menu_position' => null,
         'labels' => $custom_labels,
         'menu_icon' => 'dashicons-welcome-widgets-menus',
+        "publicly_queryable" => true,
         'template' => [
             ['superblock/'.$singular, [
                 'lock' => [
@@ -69,21 +56,28 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
                     'remove' => true,
                 ],
             ]],
-                ],
+        ],
         'template_lock' => 'all',
       ]);
     });
 
     // --- create a rest api endpoint for the custom post type
-    add_action('rest_api_init', function () use($base, $plural, $singular){
+    add_action('rest_api_init', function () use($plural){
         register_rest_route('database/v1', '/'.$plural, [
             'methods' => 'GET',
             'permission_callback' => '__return_true',
             'callback' => function()use($plural){
-                $args = [
-                    'post_type' => $plural,
-                    'posts_per_page' => -1, //return all posts
-                ];
+                $args = array(
+                    "post_type"      => [$plural],
+                    "orderby" => ["title" => "ASC"],
+                    "posts_per_page" => -1,
+                );
+                if (isset($_GET['id'])) {
+                    $args['post__in'] = [$_GET['id']];
+                }
+                if (isset($_GET['slug'])) {
+                    $args['post_name__in'] = [$_GET['slug']];
+                }
                 $query = new WP_Query($args);
                 $posts = $query->posts;
                 $response = [];
@@ -98,8 +92,6 @@ add_action('init',function($basename) use ($base, $plural, $singular, $custom_la
                 return $response;
             },
         ]);
-    });
-    
-    
+    });      
 
 ?>

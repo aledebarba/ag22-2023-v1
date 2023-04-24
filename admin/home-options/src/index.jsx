@@ -10,6 +10,7 @@ import { MediaBtn,MediaSelectBox } from './components/wpmediagal/media-gallery-b
 import { Section, Panel, Row, Col, Option } from './components/options-layout-grid'
 import { CasesGrid } from './components/cases-grid'
 import { BrandsList } from './components/brands-list'
+import { ServicesList } from './components/services-list'
 
 const App = () => {
   const [ optionsChanged, setOptionsChanged] = useState(false)
@@ -26,6 +27,7 @@ const App = () => {
     cases: [],
     casesList: [],
     brandsList: [],
+    servicesList: [],
     maxCases: 5,
     heroImage: '',
     introImage: '',
@@ -322,6 +324,12 @@ const App = () => {
       <Section title="Seção de marcas na home page" tw="w-full">
         <Option label="Organize as marcas de acordo com a ordem em que devem aparecer">
           <BrandsList setOptions = { setOptions } options = { options } />
+        </Option>
+      </Section>
+
+      <Section title='Opções da página Serviços'>
+        <Option label="Ordem de aprsentação dos itens">
+          <ServicesList setOptions = { setOptions } options = { options } />
         </Option>
       </Section>
       <Section title='Opções da página Sobre Nós'>

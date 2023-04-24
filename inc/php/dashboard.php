@@ -227,6 +227,7 @@ add_action( 'login_enqueue_scripts', 'custom_login_screen' );
 function custom_login_screen() {
     common_css();
  }
+
 function common_css(){ 
     wp_enqueue_style('dashboard_styles', get_template_directory_uri() . '/inc/assets/style/dashboard.css', array(), false, false);
     add_action( 'wp_enqueue_scripts', 'dashboard_styles' );

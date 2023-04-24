@@ -114,9 +114,9 @@ const CaseCard = ({ item, index }) => {
 					`
 				]}
 			>
-				<p tw='text-detail text-primary-200 tracking-widest pb-[0.2em] mb-0'>
+				{/* <p tw='text-detail text-primary-200 tracking-widest pb-[0.2em] mb-0'>
 					{item.data.category}
-				</p>
+				</p> */}
 				<h6 tw="text-white">
 					{item.title}
 				</h6>

@@ -7,25 +7,10 @@ $plural   = $singular.'s';
 $Csingular = ucfirst($singular);
 $Cplural   = ucfirst($plural);
 
+add_action('init', function() use($singular) {
 
-add_action('init', function() use($singular, $base) {
-
-    wp_register_style(
-        'superblock-style-'.$singular,
-        get_stylesheet_directory_uri().'/inc/data-models/'.$base.'/block/build/index.css'
-    );
-
-    wp_register_script(
-        'superblock-'.$singular,
-        get_stylesheet_directory_uri().'/inc/data-models/'.$base.'/block/build/index.js',
-        ['wp-blocks', 'wp-element', 'wp-editor']
-    );
-
-    register_block_type('superblock/'.$singular, [
-        'editor_script' => 'superblock-'.$singular,
-        'editor_style' => 'superblock-style-'.$singular,
-        'render_callback' => function($attributes, $content) use($singular) {
-            $block_data = $attributes;
+    register_block_type(__DIR__."/block", [        
+        'render_callback' => function($attributes) use($singular) {
             $data = json_encode($attributes);
             $res = <<<HTML
                 <pre data-type='data-{$singular}' class='data-{$singular}' style='display: none;' start>$data</pre>

@@ -11,6 +11,8 @@ require_once( get_template_directory() . '/inc/php/dashboard.php' );
 require( get_template_directory() . '/inc/php/loader.php' );
 require_once( get_template_directory() . '/inc/php/sendmail.php' );    
     
+// hide admin bar
+add_filter('show_admin_bar', '__return_false');
 
     /**
      * This action will retrieve the global data options and then render the meta tags
@@ -57,8 +59,6 @@ require_once( get_template_directory() . '/inc/php/sendmail.php' );
     }
     add_filter('upload_mimes', 'cc_mime_types');
 
-    
-    
     // scripts for admin area
     add_action( 'admin_enqueue_scripts', 'load_custom_admin_scripts' );
     function load_custom_admin_scripts() {

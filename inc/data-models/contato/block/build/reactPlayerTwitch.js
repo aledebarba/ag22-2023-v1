@@ -1,1 +1,226 @@
-"use strict";(globalThis.webpackChunkdatamodelbase=globalThis.webpackChunkdatamodelbase||[]).push([[216],{566:(e,t,r)=>{function n(e){return n="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(e){return typeof e}:function(e){return e&&"function"==typeof Symbol&&e.constructor===Symbol&&e!==Symbol.prototype?"symbol":typeof e},n(e)}Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var o=function(e){if(e&&e.__esModule)return e;if(null===e||"object"!==n(e)&&"function"!=typeof e)return{default:e};var t=i();if(t&&t.has(e))return t.get(e);var r={},o=Object.defineProperty&&Object.getOwnPropertyDescriptor;for(var a in e)if(Object.prototype.hasOwnProperty.call(e,a)){var l=o?Object.getOwnPropertyDescriptor(e,a):null;l&&(l.get||l.set)?Object.defineProperty(r,a,l):r[a]=e[a]}return r.default=e,t&&t.set(e,r),r}(r(196)),a=r(276),l=r(331);function i(){if("function"!=typeof WeakMap)return null;var e=new WeakMap;return i=function(){return e},e}function c(e,t){var r=Object.keys(e);if(Object.getOwnPropertySymbols){var n=Object.getOwnPropertySymbols(e);t&&(n=n.filter((function(t){return Object.getOwnPropertyDescriptor(e,t).enumerable}))),r.push.apply(r,n)}return r}function u(e,t){for(var r=0;r<t.length;r++){var n=t[r];n.enumerable=n.enumerable||!1,n.configurable=!0,"value"in n&&(n.writable=!0),Object.defineProperty(e,n.key,n)}}function p(e,t){return p=Object.setPrototypeOf||function(e,t){return e.__proto__=t,e},p(e,t)}function s(e){if(void 0===e)throw new ReferenceError("this hasn't been initialised - super() hasn't been called");return e}function f(e){return f=Object.setPrototypeOf?Object.getPrototypeOf:function(e){return e.__proto__||Object.getPrototypeOf(e)},f(e)}function y(e,t,r){return t in e?Object.defineProperty(e,t,{value:r,enumerable:!0,configurable:!0,writable:!0}):e[t]=r,e}var d=function(e){!function(e,t){if("function"!=typeof t&&null!==t)throw new TypeError("Super expression must either be null or a function");e.prototype=Object.create(t&&t.prototype,{constructor:{value:e,writable:!0,configurable:!0}}),t&&p(e,t)}(b,e);var t,r,i,d,h=(i=b,d=function(){if("undefined"==typeof Reflect||!Reflect.construct)return!1;if(Reflect.construct.sham)return!1;if("function"==typeof Proxy)return!0;try{return Date.prototype.toString.call(Reflect.construct(Date,[],(function(){}))),!0}catch(e){return!1}}(),function(){var e,t,r,o=f(i);if(d){var a=f(this).constructor;e=Reflect.construct(o,arguments,a)}else e=o.apply(this,arguments);return t=this,!(r=e)||"object"!==n(r)&&"function"!=typeof r?s(t):r});function b(){var e;!function(e,t){if(!(e instanceof t))throw new TypeError("Cannot call a class as a function")}(this,b);for(var t=arguments.length,r=new Array(t),n=0;n<t;n++)r[n]=arguments[n];return y(s(e=h.call.apply(h,[this].concat(r))),"callPlayer",a.callPlayer),y(s(e),"playerID",e.props.config.playerId||"".concat("twitch-player-").concat((0,a.randomString)())),y(s(e),"mute",(function(){e.callPlayer("setMuted",!0)})),y(s(e),"unmute",(function(){e.callPlayer("setMuted",!1)})),e}return t=b,r=[{key:"componentDidMount",value:function(){this.props.onMount&&this.props.onMount(this)}},{key:"load",value:function(e,t){var r=this,n=this.props,o=n.playsinline,i=n.onError,u=n.config,p=n.controls,s=l.MATCH_URL_TWITCH_CHANNEL.test(e),f=s?e.match(l.MATCH_URL_TWITCH_CHANNEL)[1]:e.match(l.MATCH_URL_TWITCH_VIDEO)[1];t?s?this.player.setChannel(f):this.player.setVideo("v"+f):(0,a.getSDK)("https://player.twitch.tv/js/embed/v1.js","Twitch").then((function(t){r.player=new t.Player(r.playerID,function(e){for(var t=1;t<arguments.length;t++){var r=null!=arguments[t]?arguments[t]:{};t%2?c(Object(r),!0).forEach((function(t){y(e,t,r[t])})):Object.getOwnPropertyDescriptors?Object.defineProperties(e,Object.getOwnPropertyDescriptors(r)):c(Object(r)).forEach((function(t){Object.defineProperty(e,t,Object.getOwnPropertyDescriptor(r,t))}))}return e}({video:s?"":f,channel:s?f:"",height:"100%",width:"100%",playsinline:o,autoplay:r.props.playing,muted:r.props.muted,controls:!!s||p,time:(0,a.parseStartTime)(e)},u.options));var n=t.Player,l=n.READY,i=n.PLAYING,d=n.PAUSE,h=n.ENDED,b=n.ONLINE,v=n.OFFLINE,O=n.SEEK;r.player.addEventListener(l,r.props.onReady),r.player.addEventListener(i,r.props.onPlay),r.player.addEventListener(d,r.props.onPause),r.player.addEventListener(h,r.props.onEnded),r.player.addEventListener(O,r.props.onSeek),r.player.addEventListener(b,r.props.onLoaded),r.player.addEventListener(v,r.props.onLoaded)}),i)}},{key:"play",value:function(){this.callPlayer("play")}},{key:"pause",value:function(){this.callPlayer("pause")}},{key:"stop",value:function(){this.callPlayer("pause")}},{key:"seekTo",value:function(e){this.callPlayer("seek",e)}},{key:"setVolume",value:function(e){this.callPlayer("setVolume",e)}},{key:"getDuration",value:function(){return this.callPlayer("getDuration")}},{key:"getCurrentTime",value:function(){return this.callPlayer("getCurrentTime")}},{key:"getSecondsLoaded",value:function(){return null}},{key:"render",value:function(){return o.default.createElement("div",{style:{width:"100%",height:"100%"},id:this.playerID})}}],r&&u(t.prototype,r),b}(o.Component);t.default=d,y(d,"displayName","Twitch"),y(d,"canPlay",l.canPlay.twitch),y(d,"loopOnEnded",!0)}}]);
+"use strict";
+(globalThis["webpackChunkdatamodelbase"] = globalThis["webpackChunkdatamodelbase"] || []).push([["reactPlayerTwitch"],{
+
+/***/ "./node_modules/.pnpm/react-player@2.12.0_react@18.2.0/node_modules/react-player/lazy/players/Twitch.js":
+/*!**************************************************************************************************************!*\
+  !*** ./node_modules/.pnpm/react-player@2.12.0_react@18.2.0/node_modules/react-player/lazy/players/Twitch.js ***!
+  \**************************************************************************************************************/
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+Object.defineProperty(exports, "__esModule", ({
+  value: true
+}));
+exports["default"] = void 0;
+
+var _react = _interopRequireWildcard(__webpack_require__(/*! react */ "react"));
+
+var _utils = __webpack_require__(/*! ../utils */ "./node_modules/.pnpm/react-player@2.12.0_react@18.2.0/node_modules/react-player/lazy/utils.js");
+
+var _patterns = __webpack_require__(/*! ../patterns */ "./node_modules/.pnpm/react-player@2.12.0_react@18.2.0/node_modules/react-player/lazy/patterns.js");
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(Object(source), true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var SDK_URL = 'https://player.twitch.tv/js/embed/v1.js';
+var SDK_GLOBAL = 'Twitch';
+var PLAYER_ID_PREFIX = 'twitch-player-';
+
+var Twitch = /*#__PURE__*/function (_Component) {
+  _inherits(Twitch, _Component);
+
+  var _super = _createSuper(Twitch);
+
+  function Twitch() {
+    var _this;
+
+    _classCallCheck(this, Twitch);
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    _this = _super.call.apply(_super, [this].concat(args));
+
+    _defineProperty(_assertThisInitialized(_this), "callPlayer", _utils.callPlayer);
+
+    _defineProperty(_assertThisInitialized(_this), "playerID", _this.props.config.playerId || "".concat(PLAYER_ID_PREFIX).concat((0, _utils.randomString)()));
+
+    _defineProperty(_assertThisInitialized(_this), "mute", function () {
+      _this.callPlayer('setMuted', true);
+    });
+
+    _defineProperty(_assertThisInitialized(_this), "unmute", function () {
+      _this.callPlayer('setMuted', false);
+    });
+
+    return _this;
+  }
+
+  _createClass(Twitch, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.props.onMount && this.props.onMount(this);
+    }
+  }, {
+    key: "load",
+    value: function load(url, isReady) {
+      var _this2 = this;
+
+      var _this$props = this.props,
+          playsinline = _this$props.playsinline,
+          onError = _this$props.onError,
+          config = _this$props.config,
+          controls = _this$props.controls;
+
+      var isChannel = _patterns.MATCH_URL_TWITCH_CHANNEL.test(url);
+
+      var id = isChannel ? url.match(_patterns.MATCH_URL_TWITCH_CHANNEL)[1] : url.match(_patterns.MATCH_URL_TWITCH_VIDEO)[1];
+
+      if (isReady) {
+        if (isChannel) {
+          this.player.setChannel(id);
+        } else {
+          this.player.setVideo('v' + id);
+        }
+
+        return;
+      }
+
+      (0, _utils.getSDK)(SDK_URL, SDK_GLOBAL).then(function (Twitch) {
+        _this2.player = new Twitch.Player(_this2.playerID, _objectSpread({
+          video: isChannel ? '' : id,
+          channel: isChannel ? id : '',
+          height: '100%',
+          width: '100%',
+          playsinline: playsinline,
+          autoplay: _this2.props.playing,
+          muted: _this2.props.muted,
+          // https://github.com/CookPete/react-player/issues/733#issuecomment-549085859
+          controls: isChannel ? true : controls,
+          time: (0, _utils.parseStartTime)(url)
+        }, config.options));
+        var _Twitch$Player = Twitch.Player,
+            READY = _Twitch$Player.READY,
+            PLAYING = _Twitch$Player.PLAYING,
+            PAUSE = _Twitch$Player.PAUSE,
+            ENDED = _Twitch$Player.ENDED,
+            ONLINE = _Twitch$Player.ONLINE,
+            OFFLINE = _Twitch$Player.OFFLINE,
+            SEEK = _Twitch$Player.SEEK;
+
+        _this2.player.addEventListener(READY, _this2.props.onReady);
+
+        _this2.player.addEventListener(PLAYING, _this2.props.onPlay);
+
+        _this2.player.addEventListener(PAUSE, _this2.props.onPause);
+
+        _this2.player.addEventListener(ENDED, _this2.props.onEnded);
+
+        _this2.player.addEventListener(SEEK, _this2.props.onSeek); // Prevent weird isLoading behaviour when streams are offline
+
+
+        _this2.player.addEventListener(ONLINE, _this2.props.onLoaded);
+
+        _this2.player.addEventListener(OFFLINE, _this2.props.onLoaded);
+      }, onError);
+    }
+  }, {
+    key: "play",
+    value: function play() {
+      this.callPlayer('play');
+    }
+  }, {
+    key: "pause",
+    value: function pause() {
+      this.callPlayer('pause');
+    }
+  }, {
+    key: "stop",
+    value: function stop() {
+      this.callPlayer('pause');
+    }
+  }, {
+    key: "seekTo",
+    value: function seekTo(seconds) {
+      this.callPlayer('seek', seconds);
+    }
+  }, {
+    key: "setVolume",
+    value: function setVolume(fraction) {
+      this.callPlayer('setVolume', fraction);
+    }
+  }, {
+    key: "getDuration",
+    value: function getDuration() {
+      return this.callPlayer('getDuration');
+    }
+  }, {
+    key: "getCurrentTime",
+    value: function getCurrentTime() {
+      return this.callPlayer('getCurrentTime');
+    }
+  }, {
+    key: "getSecondsLoaded",
+    value: function getSecondsLoaded() {
+      return null;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var style = {
+        width: '100%',
+        height: '100%'
+      };
+      return /*#__PURE__*/_react["default"].createElement("div", {
+        style: style,
+        id: this.playerID
+      });
+    }
+  }]);
+
+  return Twitch;
+}(_react.Component);
+
+exports["default"] = Twitch;
+
+_defineProperty(Twitch, "displayName", 'Twitch');
+
+_defineProperty(Twitch, "canPlay", _patterns.canPlay.twitch);
+
+_defineProperty(Twitch, "loopOnEnded", true);
+
+/***/ })
+
+}]);
+//# sourceMappingURL=reactPlayerTwitch.js.map
