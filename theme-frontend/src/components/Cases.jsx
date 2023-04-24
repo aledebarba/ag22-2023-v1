@@ -129,17 +129,19 @@ const CaseCard = ({ item, index }) => {
 			<div tw="self-stretch grow-0 shrink-0 h-[171px] relative overflow-hidden rounded">
 				<img
 					src={item.data.poster}
-					tw="w-[331px] h-[220.97px] absolute left-[-8px] top-[-25px] rounded object-cover"
+					tw="w-[full] absolute left-[-8px] top-[-25px] [border-radius: 12px] overflow-hidden object-cover"
 				/>
 			</div>
 			<p tw="grow-0 shrink-0 w-[267px] text-xl font-bold text-left text-[#413f41]">
-				Embalagens linhas PPG Refinish
+				{item.title}
 			</p>
 			<div
 				tw="flex justify-center items-center self-stretch grow-0 shrink-0 relative gap-2 px-8 py-4 rounded-lg bg-[#e62337]
 				[box-shadow: 0px 2px 5px 0 rgba(230,35,55,0.2)]"
 			>
-				<p tw="grow-0 shrink-0 text-base font-bold text-left text-white">Saiba mais</p>
+			<Link to={`projetos/${item.slug}`} tw="w-full h-full">
+					<p tw="grow-0 shrink-0 text-base font-bold text-center text-white">Saiba mais</p>
+			</Link>
 			</div>
 		</div>
 	)
