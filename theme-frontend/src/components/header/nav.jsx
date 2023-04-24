@@ -39,7 +39,7 @@ const MenuItems = ( { mobile, onClose, menuItems } ) => {
         { label: "Serviços", link: "/servicos#top", path:"/servicos", id: "#top" },
         { label: "Cases", link: "/#cases", path:"/", id: "#cases" },
         { label: "Clientes", link: "/#clientes", path:"/", id: "#clientes" },
-        { label: "Trabalhe Conosco", link: "/#vagas", path:"/", id: "#vagas" },
+        { label: "Trabalhe conosco", link: "/#vagas", path:"/", id: "#vagas" },
         { label: "Contato", link: "/#contato", path:"/", id: "#contato" },        
     ]
     
@@ -101,6 +101,3 @@ const MenuItems = ( { mobile, onClose, menuItems } ) => {
         </>  
     )
 }
-
-
-

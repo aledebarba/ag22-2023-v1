@@ -57,22 +57,22 @@ const SocialNetworks = ({ social }) => {
 
 const FooterNav = ( { copyright, devby }) => {
   const items = [
-    { label: "Quem Somos", link: "/sobre#top" },
+    { label: "Quem somos", link: "/sobre#top" },
     { label: "Serviços", link: "/servicos#top" },
     { label: "Cases", link: "/#cases" },
     { label: "Clientes", link: "/#clientes" },
-    { label: "Trabalhe Conosco", link: "/#vagas" },
+    { label: "Trabalhe conosco", link: "/#vagas" },
     { label: "Contato", link: "/#contato" },        
   ]
   return <>
-    <div tw="grid grid-cols-1 grid-flow-row px-8 md:(grid grid-cols-2 grid-rows-[repeat(4,minmax(0,3rem))] gap-x-[8vw] px-2 auto-rows-min)">  
+    <div tw="grid grid-cols-1 grid-flow-row mx-auto w-2/3 mt-2 md:(grid grid-cols-2 grid-rows-[repeat(4,minmax(0,3rem))] gap-x-[8vw] px-2 auto-rows-min)">  
       {items.map((item, index) => (
-        <Link to={item.link} tw="text-white mb-6 md:(my-0 py-0)" key={`footer-menu-item-key-${index}`}>
-          <h6 tw="text-white leading-tight">{item.label}</h6>
-          <div tw="w-full h-1 bg-primary mt-1"/>
+        <Link to={item.link} tw="text-white my-4 px-6 md:(my-0 py-2)" key={`footer-menu-item-key-${index}`} >
+          <h6 tw="text-white leading-tight border-solid border-b-4 pb-2 border-primary duration-200 hover:(border-white)">{item.label}</h6>
+          {/* <div tw="w-full h-1 bg-primary mt-1"/> */}
         </Link> 
       ))}
-      <small tw="hidden text-white mt-8 md:(block mt-4)">
+      <small tw="hidden text-white pt-4 ml-6 md:(block mt-4)">
             {copyright}&nbsp;{devby}
       </small>
   </div>
