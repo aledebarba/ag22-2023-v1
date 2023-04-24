@@ -24,7 +24,7 @@ export const Servicos = ( { list } ) => {
 						</Card>
 						})}						
 				</CardBox>
-			<Link smooth to="/servicos#top"><Buttonx outline center tw="mx-8 md:(mx-auto)">Conheça mais sobre nossos serviços</Buttonx></Link>
+			<Link smooth to="/servicos#top"><Buttonx outline center tw="mx-auto">Conheça mais sobre nossos serviços</Buttonx></Link>
 		</Container> 
 	</Container>
 }

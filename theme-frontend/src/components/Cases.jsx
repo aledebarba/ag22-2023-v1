@@ -139,9 +139,9 @@ const CaseCard = ({ item, index }) => {
 				tw="flex justify-center items-center self-stretch grow-0 shrink-0 relative gap-2 px-8 py-4 rounded-lg bg-[#e62337]
 				[box-shadow: 0px 2px 5px 0 rgba(230,35,55,0.2)]"
 			>
-			<Link to={`projetos/${item.slug}`} tw="w-full h-full">
-					<p tw="grow-0 shrink-0 text-base font-bold text-center text-white">Saiba mais</p>
-			</Link>
+				<Link to={`projetos/${item.slug}`} tw="w-full h-full">
+						<p tw="grow-0 shrink-0 text-base font-bold text-center text-white">Saiba mais</p>
+				</Link>
 			</div>
 		</div>
 	)
