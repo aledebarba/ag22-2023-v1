@@ -24,7 +24,7 @@ const Index = () => {
 			<div ref={content} id="smooth-content" tw="flex flex-col">
 				<HeroHeader/>
 				<Intro image={options.introImage}/>
-				<Servicos/>
+				<Servicos list={ options.ServicesList }/>
 				<Cases casesList={options.casesList}/>
 				<Clientes />
 				<TrabalheConosco email={options.emailVagas}/>

@@ -8,29 +8,9 @@ import { HashLink as Link } from 'react-router-hash-link';
 import tw from 'twin.macro';
 import { getTagsFromText } from "./get-tags-from-text"
 
-export const Servicos = () => { 
+export const Servicos = ( { list } ) => { 
 		
-		const [ servicos, setServicos ] = useState( [] );
-		//TODO: essa opção deveria estar em um banco de dados
-		const homeServicesOrder = [
-			{ slug: 'branding' },
-			{ slug: 'social-media' },
-			{ slug: 'planning' },
-			{ slug: 'packaging' },
-		]
-		useState(()=>{
-			apiFetch({ path: 'database/v1/servicos' })
-			.then( (data) => {
-				const inOrder = (data, order) => { 
-					return order.map(( orderItem ) => {
-						let orderSlug = orderItem.slug;
-						let found = data.find( ( databaseItem ) => databaseItem?.slug === orderSlug);
-						return found;
-					})};				
-					setServicos( inOrder(data, homeServicesOrder ))
-			} )
-		}, [])
-			
+		const [ servicos, setServicos ] = useState( list.slice(0, 4) );				
 			
 		return <Container fluid id="servicos" tw="bg-secondary-50 py-14">
 		 	<Container id="servicos">
@@ -44,7 +24,7 @@ export const Servicos = () => {
 						</Card>
 						})}						
 				</CardBox>
-			<Link smooth to="/servicos#top"><Buttonx outline center tw="mx-8 md:(mx-auto)">Conheça mais sobre nosso serviços</Buttonx></Link>
+			<Link smooth to="/servicos#top"><Buttonx outline center tw="mx-8 md:(mx-auto)">Conheça mais sobre nossos serviços</Buttonx></Link>
 		</Container> 
 	</Container>
 }

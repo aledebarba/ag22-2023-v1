@@ -236,7 +236,7 @@ const ContentVideo  = ({ title, data }) => {
 						rounded-2xl
 						w-[85%] left-1/2 -translate-x-1/2
 						pt-[56.25%]
-						[box-shadow: 0px 30px 40px -5px red]
+						[box-shadow: 0px 30px 40px -5px #f00b]
 					" 
 					>
 					<h4 

@@ -1,20 +1,16 @@
 import tw from 'twin.macro';
 import React from 'react';
-import apiFetch from "@wordpress/api-fetch";
 import { MainMenu } from '../components/header/nav';
 import { Footer } from '../components/footer';
 import { HeroPageHeader } from '../components/heroheader';
 import { getTagsFromText } from '../components/get-tags-from-text';
 import { TextAtLeft, TextAtRight } from '../components/service-page-texts'
+import { _app } from '../utils/functions'
 
 const Servicos = ( props ) => {
 
-	const[ ourServices, setOurServices ] = React.useState( [] );
-	React.useEffect(() => {
-		apiFetch({ path: 'database/v1/servicos/' }).then(data => {
-			setOurServices( data )
-		})
-	}, [])
+	const list = _app.options().ServicesList;
+	const[ ourServices, setOurServices ] = React.useState( list );	
 
 return (
 	<main tw="w-screen min-h-[200vh] relative">

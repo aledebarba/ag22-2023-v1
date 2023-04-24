@@ -35,7 +35,7 @@ export const MainMenu = () => {
 const MenuItems = ( { mobile, onClose, menuItems } ) => {
     
     const items = menuItems ? menuItems : [
-        { label: "Quem Somos", link: "/sobre#top", path:"/", id: "#top" },
+        { label: "Quem somos", link: "/sobre#top", path:"/", id: "#top" },
         { label: "Serviços", link: "/servicos#top", path:"/servicos", id: "#top" },
         { label: "Cases", link: "/#cases", path:"/", id: "#cases" },
         { label: "Clientes", link: "/#clientes", path:"/", id: "#clientes" },

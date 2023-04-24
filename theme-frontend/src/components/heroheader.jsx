@@ -98,7 +98,7 @@ export const HeroPageHeader = () => {
     <Container absolute center tw="top-0 h-[50vh] z-20">
       <h1 tw="text-white box-content relative top-1/2 -translate-y-1/2 pl-8" ref={titleRef}>
         <span tw={'block font-thin'}>Nossos</span>
-        <span tw={'text-primary block font-bold'}>Serviços</span>
+        <span tw={'text-primary block font-bold'}>serviços</span>
       </h1>
     </Container>
     <SectionEnding />
