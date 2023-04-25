@@ -47,7 +47,7 @@ const SocialNetworks = ({ social }) => {
       {social?.map((item, index) => <>
         <div key={`contact-on-footer-${index}`}>
           <a href={item.data.link} target="_blank" rel="noreferrer">
-            <Icon icon={item.data.icone} tw="text-primary text-4xl mx-2"/>
+            <Icon icon={item.data.icone} tw="text-primary text-4xl mx-2 duration-300 hover:(text-white duration-300)"/>
           </a>
         </div>
       </>)}
