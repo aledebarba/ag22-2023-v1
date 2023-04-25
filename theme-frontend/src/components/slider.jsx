@@ -67,7 +67,7 @@ export const Slider = ( { slides, onChange } ) => {
                                   &::after {
                                     content: '';
                                     position: absolute;
-                                    bottom: 20px;
+                                    bottom: 40px;
                                     left: 50%; 
                                     transform: translateX(-50%);
                                     width: 65%;
@@ -95,7 +95,7 @@ export const Slider = ( { slides, onChange } ) => {
                             &::after {
                               content: '';
                               position: absolute;
-                              bottom: 20px;
+                              bottom: 40px;
                               left: 50%; 
                               transform: translateX(-50%);
                               width: 65%;
