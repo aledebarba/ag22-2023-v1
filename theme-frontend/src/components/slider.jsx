@@ -37,7 +37,7 @@ export const Slider = ( { slides, onChange } ) => {
   return (
     <Container center css={`
         z-index: 10;
-        margin-top: -15vh;
+        margin-top: -20vh;
         padding: 0 2rem;
         overflow: visible;
         .flicking-arrow-next.is-circle, .flicking-arrow-prev.is-circle {
@@ -62,7 +62,7 @@ export const Slider = ( { slides, onChange } ) => {
                       tw="relative px-2 overflow-visible h-fit"                                           
                     >
                     { 
-                      isImage && <div tw="px-2 py-12"
+                      isImage && <div tw="px-2 py-16"
                               css={`
                                   &::after {
                                     content: '';
