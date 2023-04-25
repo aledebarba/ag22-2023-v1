@@ -142,7 +142,7 @@ export const MobileLeft = ({title, textMain, tags, image}) => {
 	return (
 	<div 
 		data-info="service-container"
-		tw="relative flex flex-col px-[8vw] gap-2 w-full" >
+		tw="relative flex flex-col px-[8vw] gap-2 w-full mb-20" >
 		
 		<div data-info="service-title">
 			<H2blackDash tw="text-4xl!">{title}</H2blackDash>
@@ -189,7 +189,7 @@ export const MobileRight = ({title, textMain, tags, image}) => {
 return (
 <div 
 	data-info="service-container"
-	tw="relative flex flex-col px-[8vw] gap-2 w-full" >
+	tw="relative flex flex-col px-[8vw] gap-2 w-full mb-20" >
 	
 	<div data-info="service-title">
 		<H2blackDash tw="text-4xl!">{title}</H2blackDash>
