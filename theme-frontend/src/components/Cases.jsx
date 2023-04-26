@@ -9,6 +9,8 @@ import { BigRedCircle } from './circles'
 import { useEffect, useState, useRef } from 'react'
 import { useRect, useScreenSize } from './utils'
 
+
+
 export const Cases = ( { casesList } ) => {
 
 	const casesRef = useRef()

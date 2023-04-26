@@ -2,10 +2,75 @@ import tw from 'twin.macro'
 import apiFetch from '@wordpress/api-fetch'
 import { _app } from '../utils/functions'
 import { H2Dash } from './headings'
-import { ContainerFluidH } from './containers'
+import { Container, ContainerFluidH } from './containers'
 import { useState, useEffect } from 'react'
 
-export const Clientes = () => {
+export const Clientes = ( { brandsList } ) => {
+	return <div id="cases" tw="relative w-screen min-h-screen h-fit overflow-hidden">
+		<Container data-info="background-container" tw="absolute w-screen min-h-screen h-full top-0 left-0 overflow-hidden blur-[100px] bg-[#F5F3F5]">
+			<AnimatedCircle bottom left />
+			<AnimatedCircle top right />
+    </Container>
+    <Container data-info="brands-container" tw="min-h-screen pt-20">
+        <H2Dash>Cases</H2Dash>
+        <div 
+          data-info="brands-grid"
+          tw="grid grid-cols-2 gap-5 px-8 md:(grid-cols-4) py-10"
+          >
+          {brandsList && brandsList.map((item, index) => (
+            <div  data-info="brand-item" key={`case-brand-${index}`} 
+                  tw="relative [aspect-ratio: 245 / 184] border-solid border-secondary border bg-white/80
+                      [background: linear-gradient(298.85deg, rgba(255, 255, 255, 0.688) 2.01%, rgba(255, 255, 255, 0) 98.27%)]
+                      [border: 2px solid #B2B0B2]
+                      [backdrop-filter: blur(20px)]
+                      [border-radius: 16px]    
+                  "
+              >
+              <img src={item.data.logo} alt={item.title} tw="w-[70%] h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
+            </div>
+          ))}
+        </div>
+      </Container>
+	</div>
+}
+
+const Circle = tw.div`absolute bg-primary w-[50vw] h-[50vw] [border-radius: 999rem]`
+const AnimatedCircle = ({ top, bottom, left, right }) => {
+	return <Circle 
+				data-info="animated-circle"	
+				css={`
+					${top && `top: -25vw;`}
+					${bottom && `bottom: -25vw;`}
+					${left && `left: -25vw;`}
+					${right && `right: -25vw;`}
+
+					${bottom && `animation: smooth-diagonal-1 15s ease-in infinite;`}
+					${top && `animation: smooth-diagonal-2 15s ease-out infinite;`}
+          transform-origin: center;
+          opacity: 0.5;
+					
+          @keyframes smooth-diagonal-1 {
+						0%, 100% {
+							transform: translate(0, 0);
+						}
+						50% {
+							transform: translate(25vw, 25vh);
+						}
+          }
+
+          @keyframes smooth-diagonal-2 {
+						0%, 100% {
+							transform: translate(25vw, 25vh);
+						}
+						50% {
+							transform: translate(0vw, 0vw);
+						}
+					}
+				`}
+			/>
+}
+
+export const Clientes2 = () => {
   const [clientes, setClientes] = useState([])
   const logoWidth = window.innerWidth > 768 ? 333 : 240
   const options = _app.options();
