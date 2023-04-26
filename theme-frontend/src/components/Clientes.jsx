@@ -12,7 +12,7 @@ export const Clientes = ( { brandsList } ) => {
 			<AnimatedCircle top right />
     </Container>
     <Container data-info="brands-container" tw="min-h-screen pt-20">
-        <H2Dash>Cases</H2Dash>
+        <H2Dash>Clientes</H2Dash>
         <div 
           data-info="brands-grid"
           tw="grid grid-cols-2 gap-5 px-8 md:(grid-cols-4) py-10"
