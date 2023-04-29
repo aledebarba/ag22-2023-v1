@@ -26,8 +26,8 @@ const App = () => {
     socialOnFooter: [],
     cases: [],
     casesList: [],
-    brandsList: [],
-    servicesList: [],
+    BrandsList: [],
+    ServicesList: [],
     maxCases: 5,
     heroImage: '',
     introImage: '',
@@ -64,29 +64,32 @@ const App = () => {
       fetchOptions().then(res => {
         if (res.error && res.code !== 404 ) {
           console.error(res.message)
-          console.error("A aplicação não pode se recuperar desse erro.")
-          return
+          throw new Error("A aplicação não pode se recuperar desse erro.")
         }
 
-        console.log( "starting ... ")
         let data = res?.code == 404 ? options : res
         let cases = getCases()
         let socials = getSocials()
         let rCases = getRawCases()
+        let brandsList = getBrandsList()
 
-        Promise.all([cases, socials, rCases]).then(values => {
-          data.cases =
-            data.cases.length == 0
+        Promise.all([cases, socials, rCases, brandsList ]).then(values => {
+
+          data.cases = data.cases.length == 0
               ? (data.cases = values[0])
               : combineArrays(data.cases, values[0])
-          data.socialOnContact =
-            data.socialOnContact?.length == 0
+          
+          data.socialOnContact = data.socialOnContact?.length == 0
               ? values[1]
-              : combineArrays(data.socialOnContact, values[1])
-          data.socialOnFooter =
-            data.socialOnFooter?.length == 0
+              : combineArrays( data.socialOnContact, values[1])
+
+          data.socialOnFooter = data.socialOnFooter?.length == 0
               ? values[1]
-              : combineArrays(data.socialOnFooter, values[1])
+              : combineArrays( data.socialOnFooter, values[1])
+
+          data.BrandsList = data.BrandsList?.length == 0
+              ? values[3]
+              : combineArrays( data.BrandsList, values[3] )
 
           setOptions(data)
           setReadedOptions(data)
@@ -328,7 +331,7 @@ const App = () => {
       </Section>
 
       <Section title='Opções da página Serviços'>
-        <Option label="Ordem de aprsentação dos itens">
+        <Option label="Ordem de aprsentação dos itens (os 4 primeiros aparecem na landing page)">
           <ServicesList setOptions = { setOptions } options = { options } />
         </Option>
       </Section>
@@ -621,12 +624,14 @@ const Line = () => {
 }
 
 function combineArrays (options, database) {
+
   let dbIds = database.map(item => item.id)
   let inter = options.filter(item => dbIds.includes(item.id))
   let interIds = inter.map(item => item.id)
   let diff = database.filter(item => !interIds.includes(item.id))
   let result = [...inter, ...diff]
   return result
+
 }
 
 const getCases = () => {
@@ -653,9 +658,16 @@ const getSocials = () => {
     path: '/database/v1/contatos/',
     method: 'GET'
   }).then(response => {
-    let contactsOrder = response.map((item, index) => {
+    let reducedData = response.map((item, index) => {
       return { id: item.id, title: item.title }
     })
-    return contactsOrder
+    return reducedData
   })
+}
+
+const getBrandsList = () => {
+  return apiFetch({
+    path: '/database/v1/clientes/',
+    method: 'GET'
+  }).then(response => response)
 }

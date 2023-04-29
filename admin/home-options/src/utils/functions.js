@@ -1,5 +1,14 @@
 import { useState, useEffect } from 'react';
 
+export const app = new Proxy( _app, {
+	get: ( target, name ) => {
+		if ( name in target ) {
+			return target[ name ]();
+		}
+		return null;
+	}
+});
+
 export const _app = {
 	pages: () => {
 		let instance = document.querySelector( getWPChunkElementAttr() ).dataset.instance;

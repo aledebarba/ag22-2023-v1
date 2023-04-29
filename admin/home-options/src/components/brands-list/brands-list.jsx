@@ -24,7 +24,7 @@ export const BrandsList = ( { options, setOptions } ) => {
     }
 
     if( brandList === undefined || brandList.length === 0 ) return <>Loading...</>;
-
+    
     return <div 
                 css={`
                     .dropArea {
@@ -52,10 +52,16 @@ export const BrandsList = ( { options, setOptions } ) => {
             className="sortable-grid"
             tw="grid grid-cols-4 gap-8 auto-rows-auto"
             >
-            { brandList.map( item => <div key={item.id} className="relative grid-item dragHandle grid place-content-center place-items-center">
-                <div tw="box-border h-40 bg-gray-200 bg-no-repeat bg-center rounded-lg cursor-grab [box-shadow: 3px 3px 10px -3px black]"
-                style={{ backgroundImage: `url(${item.data.logo})`, backgroundSize: "10vw"}}/>
-            </div> ) }                    
+            { 
+                brandList.map( item => {
+                return (
+                    <div key={item.id} className="relative grid-item dragHandle grid place-content-center place-items-center">
+                        <div tw="box-border h-40 bg-gray-200 bg-no-repeat bg-center rounded-lg cursor-grab [box-shadow: 3px 3px 10px -3px black]"
+                            style={{ backgroundImage: `url(${item.data?.logo})`, backgroundSize: "10vw"}}
+                        />
+                    </div>
+                )})
+            }                    
         </ReactSortable>
     </div>
 

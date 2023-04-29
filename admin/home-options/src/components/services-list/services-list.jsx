@@ -52,12 +52,12 @@ export const ServicesList = ( { options, setOptions } ) => {
             className="sortable-grid"
             tw="grid grid-cols-4 gap-8 auto-rows-auto"
             >
-            { serviceList.map( item => {
+            { serviceList.map( (item, index) => {
                 return (
                     <div key={item.id} className="relative grid-item dragHandle grid place-content-center place-items-center">
                         <div 
                              tw="box-border h-40 bg-gray-200 bg-no-repeat bg-center rounded-lg cursor-grab [box-shadow: 3px 3px 10px -3px black] grid place-content-center"
-                             style={{ backgroundImage: `url(${item.data.image})`, backgroundSize: "cover"}}
+                             style={{ backgroundImage: `url(${item.data.image})`, backgroundSize: "cover", outline: index < 4 ? "3px solid tomato" : "none" }}
                         >
                             <div tw="text-white bg-gray-500/80 py-2 px-4 text-2xl rounded border-solid border-2 border-gray-200">
                                 {item.title}
