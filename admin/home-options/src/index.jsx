@@ -17,6 +17,7 @@ const App = () => {
   const [ readedOptions, setReadedOptions] = useState()
   const [ rawCases, setRawCases ] = useState([]);
   const [ firstTime, setFirstTime] = useState(true)
+  const [ isSaving, setIsSaving ] = useState(false)
 
   const [ options, setOptions ] = useState({
     online: true,
@@ -101,38 +102,52 @@ const App = () => {
   }, [])
 
   const handleSaveOptions = () => {
+    setIsSaving(true)
     saveOptions(options).then(result => {
       if (result.success) {
         setOptionsChanged(false)
         setReadedOptions(options)
+        setIsSaving(false)
       }
       if (result.error) {
         console.error(result.message)
+        setIsSaving(false)
       }
     })
   }
 
   if (firstTime) {
-    return <h1>Loading...</h1>
+    return <div tw="w-full h-[50vh] absolute transform -translate-x-1/2 top-[10vh] flex justify-center items-center">
+      <div tw="flex gap-8">
+          <Icon icon="line-md:loading-twotone-loop" width="60px"/>
+          <h1 tw="text-secondary">Carregando opções...</h1>
+      </div>
+    </div>
   }
   
   return (
     <Panel id='wellcome-page--main-options'>
       {optionsChanged ? ( // mostra o aviso de opções alteradas e o botão de salvar
         <div
-          css={[
-            tw`fixed top-[2.2rem] right-[0.5rem] z-50 w-fit h-fit bg-slate-700/70 box-border flex gap-4 py-0.5 px-6 shadow-lg rounded-md `,
-            `
-              backdrop-filter: blur(4px);
-              box-shadow: 3px 3px 10px -2px #000;
-            `
-          ]}
+          css={`
+            
+            ${tw`fixed top-[2.2rem] right-[0.5rem] z-50 w-fit h-fit bg-slate-700/70 box-border flex gap-4 py-0.5 px-6 shadow-lg rounded-md `}
+
+            backdrop-filter: blur(4px);
+            box-shadow: 3px 3px 10px -2px #000;
+
+            button {
+              ${isSaving && `opacity: 0.5; pointer-events: none;` }
+              ${!isSaving && `opacity: 1; pointer-events: all;` }
+            }
+          
+          `}
         >         
           <button
             tw='relative bg-red-500 text-white font-bold p-2 w-fit shadow-lg my-4 mx-auto duration-200 cursor-pointer border-transparent outline-transparent text-lg rounded-md hover:(bg-red-800 duration-200 text-xl) active:(bg-red-500 duration-200 text-xl)'
-            onClick={handleSaveOptions}
+            onClick={ handleSaveOptions }            
           >
-            Salvar opções
+            {isSaving ? <div tw="flex flex-nowrap gap-8"><Icon icon="line-md:loading-twotone-loop" /><span>Salvando...</span></div> : "Salvar opções"}
           </button>         
         </div>
       ) : null}
@@ -140,17 +155,16 @@ const App = () => {
       <h1 tw='flex flex-col font-thin lowercase text-[42px] text-center md:(flex flex-row) items-center mt-[3.5rem] mx-auto w-fit tracking-normal leading-normal'>
         <Icon icon='dashicons:superhero-alt' tw='text-sky-600 text-[72px]' />{' '}
         <div>
-          <span tw='text-[50px] -mt-1'>A</span>dministração do site e opções
-          globais
+          <span tw='text-[50px] -mt-1'>administração do site e opções globais</span>
         </div>
       </h1>
       <div tw='text-center text-white  w-20 mx-auto grid place-content-center place-items-center px-14 py-3 bg-sky-600 rounded-full duration-150 hover:([transform: scale(1.1)] shadow-md text-white)'>
         <a
           href='https://ag22.com.br/'
           target='_blank'
-          tw='text-white text-lg hover:(text-white)'
+          tw='text-white text-lg flex flex-nowrap gap-2 justify-center items-center hover:(text-white)'
         >
-          ag22.com.br
+          <Icon icon="mdi:file-link" width="24px" /><span>ag22.com.br</span>
         </a>
       </div>
 
