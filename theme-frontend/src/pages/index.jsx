@@ -1,45 +1,33 @@
-import React from 'react';
-import tw from 'twin.macro';
-import { _app } from '../utils/functions'
-import { Intro } from '../components/intro';
-import { Cases } from '../components/Cases';
-import { Footer } from '../components/footer';
-import { Contato } from '../components/Contato';
-import { MainMenu } from '../components/header/nav';
-import { Clientes } from '../components/Clientes';
-import { Servicos } from '../components/servicos';
-import { HeroHeader } from '../components/heroheader';
-import { TrabalheConosco } from '../components/TrabalheConosco';
-
-window.history.scrollRestoration = "manual";
+import tw from "twin.macro"
+import React from "react";
+import { app, Intro, Cases, Footer, Contato, MainMenu, Clientes, Servicos, HeroHeader, TrabalheConosco } from "./assets/index-page-components"
 
 const Index = () => {
 
 	const wrapper = React.useRef(null);
 	const content = React.useRef(null);
-	const options = _app.options();
 
 	return (
 		<main tw="w-screen min-h-[400vh] relative" ref={wrapper}>
 			<MainMenu />
 			<div ref={content} id="smooth-content" tw="flex flex-col">
 				<HeroHeader/>
-				<Intro image={options.introImage}/>
-				<Servicos list={ options.ServicesList }/>
-				<Cases casesList={options.casesList}/>
-				<Clientes brandsList={options?.BrandsList} />
-				<TrabalheConosco email={options.emailVagas}/>
+				<Intro image={ app.options?.introImage} />
+				<Servicos list={ app.options?.ServicesList }/>
+				<Cases casesList={ app.options?.casesList}/>
+				<Clientes brandsList={ app.options?.BrandsList} />
+				<TrabalheConosco email={ app.options?.emailVagas}/>
 				<Contato 
-					email={options.emailPrincipal}
-					endereco={options.endereco}
-					cidade={options.cidade}
-					estado={options.estado}
-					bairro={options.bairro}					
-					telefone={options.telefone}
+					email={ app.options?.emailPrincipal }
+					endereco={ app.options?.endereco}
+					cidade={ app.options?.cidade}
+					estado={ app.options?.estado}
+					bairro={ app.options?.bairro}					
+					telefone={ app.options?.telefone}
 				/>
 				<Footer
-					copyright={options.copyright}
-					devby={options.devby}
+					copyright={ app.options?.copyright}
+					devby={ app.options?.devby}
 				/>
 			</div>
 		</main>

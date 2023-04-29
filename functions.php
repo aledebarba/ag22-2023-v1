@@ -22,7 +22,16 @@ add_filter('show_admin_bar', '__return_false');
       $global_options = get_option('superpost_global_options');
       if( !$global_options ) return;
 
-      $global_options = json_decode($global_options);      
+      $global_options = json_decode($global_options);
+      // scan $global_options and upgrade http to https values
+      foreach($global_options as $key => $value){
+        if( gettype($value) == 'string' ) {
+          if( strpos($value, 'http://') !== false ){
+            $global_options->$key = str_replace('http://', 'https://', $value);
+          }
+        }
+      }
+            
       echo <<<HTML
         <title>{$global_options->title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />

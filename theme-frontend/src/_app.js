@@ -1,3 +1,4 @@
+import './styles/index.css'; // load global definitions and start tailwind engine
 import React from 'react';
 import { render } from 'react-dom';
 import { Loading } from './components/loading';

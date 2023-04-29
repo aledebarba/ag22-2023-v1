@@ -44,11 +44,9 @@ export const ServiceLi = () => {
                         return <ServiceListItem>
 							<div className='servicecontent' tw={"basis-4/12"}>
 								<ServiceTitle>{servico.title}</ServiceTitle>
-                            <ServiceText>{servico.data.desc}</ServiceText>
+                            	<ServiceText>{servico.data.desc}</ServiceText>
 							</div>
-                            
-							<ServiceImg>
-							</ServiceImg>
+							<ServiceImg />
                         </ServiceListItem>
 						
                         })}                        

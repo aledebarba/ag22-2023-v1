@@ -332,7 +332,7 @@ const App = () => {
 
       <Section title='Opções da página Serviços'>
         <Option label="Ordem de aprsentação dos itens (os 4 primeiros aparecem na landing page)">
-          <ServicesList setOptions = { setOptions } options = { options } />
+          <ServicesList setOptions = { setOptions } options = { options }  />
         </Option>
       </Section>
       <Section title='Opções da página Sobre Nós'>

@@ -27,7 +27,7 @@ export const TextAtLeft = ({title, textMain, tags, image}) => {
 			<Container fluid id="sevice-group-text-left" tw="flex flex-nowrap">
 				<div tw="w-[50vw] h-[33vh] md:h-[25vh]"></div>
 				<div tw="w-[50vw] h-[33vh] md:h-[25vh] ml-32 bg-primary rounded-tl-2xl rounded-bl-2xl">
-					<img src={image} tw="h-[90%] w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarRef}/>
+					<img src={image.replace("http://","https://")} tw="h-[90%] w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarRef}/>
 				</div>
 			</Container>
 			<Container absolute center tw="flex">
@@ -53,7 +53,7 @@ export const TextAtLeft = ({title, textMain, tags, image}) => {
 			</div>
 			<div id="sevice-group-text-left" tw="flex flex-nowrap">
 				<div tw="w-[100vw] h-[33vh] ml-10 bg-primary rounded-tl-2xl rounded-bl-2xl">
-					<img src={image} tw="h-[90%] w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarMobRef}/>
+					<img src={image.replace("http://","https://")} tw="h-[90%] w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarMobRef}/>
 				</div>
 			</div>
 		</div>
@@ -84,7 +84,7 @@ export const TextAtRight = ({title, textMain, tags, image}) => {
 		<Container fluid id="service-group--desktop" tw="hidden md:(h-[25vh] my-32 flex items-center)">
 			<Container fluid id="sevice-group-text-right" tw="flex flex-nowrap">
 				<div tw="relative w-[50vw] h-[33vh] md:h-[25vh] mr-32 bg-primary rounded-tr-2xl rounded-br-2xl">
-					<img src={image} tw="h-[90%] w-auto object-cover absolute top-1/2 -translate-y-1/2 -right-4 rounded-2xl " ref={redBarRef}/>
+					<img src={image.replace("http://","https://")} tw="h-[90%] w-auto object-cover absolute top-1/2 -translate-y-1/2 -right-4 rounded-2xl " ref={redBarRef}/>
 				</div>
 				<div tw="w-[50vw] h-[33vh] md:h-[25vh]"></div>
 			</Container>
@@ -112,7 +112,7 @@ export const TextAtRight = ({title, textMain, tags, image}) => {
 			</div>
 			<div id="sevice-group-text-left" tw="flex flex-nowrap">
 				<div tw="w-[90vw] h-[33vh] mr-8 bg-primary rounded-tr-2xl rounded-br-2xl">
-					<img src={image} tw="h-[90%] ml-12 w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarMobRef}/>
+					<img src={image.replace("http://","https://")} tw="h-[90%] ml-12 w-auto object-cover relative top-1/2 -translate-y-1/2 -translate-x-4 rounded-2xl" ref={redBarMobRef}/>
 				</div>
 			</div>
 		</div>
@@ -161,7 +161,7 @@ export const MobileLeft = ({title, textMain, tags, image}) => {
 			<img
 				data-info="service-image" ref={imgRef}
 				tw="absolute top-1/2 transform -translate-y-1/2 h-[210px] [border-radius: 12px] overflow-hidden!  object-cover"
-				src={image}
+				src={image.replace("http://","https://")}
 			/>
 		</div>
 	</div>
@@ -208,7 +208,7 @@ return (
 		<img
 			data-info="service-image" ref={imgRef}
 			tw="absolute top-1/2 transform -translate-y-1/2 h-[210px] right-[0px] [border-radius: 12px] overflow-hidden! object-cover"
-			src={image}
+			src={image.replace("http://","https://")}
 		/>
 	</div>
 </div>

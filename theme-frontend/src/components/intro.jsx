@@ -16,7 +16,7 @@ export const Intro = ({ image }) => {
 		<Container id="section-intro" fluid style={ { height: introTextRect?.height+256, padding: "128px 0" } }>
 			
 			<Container id="section-intro--image" absolute fluid tw="hidden lg:(block)">
-				<img src={image} alt="intro image" 
+				<img src={image.replace("http://", "https://")} alt="intro image" 
 					style={{ position: "absolute", left: 0, width: introTextRect?.left - 80, height: introTextRect?.height }}
 					tw="[object-position:90%_bottom] object-cover  rounded-tr-3xl rounded-br-3xl md:(object-right-bottom )"
 				/>

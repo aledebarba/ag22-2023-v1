@@ -12,8 +12,6 @@ const Servicos = ( props ) => {
 
 	const list = _app.options().ServicesList;
 	const[ ourServices, setOurServices ] = React.useState( list );	
-	console.log( 'verificação de reset ')
-	var global_exposed_app = _app
 	
 return (
 	<main tw="w-screen min-h-[200vh] relative">

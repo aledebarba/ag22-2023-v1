@@ -7,14 +7,17 @@ import tw from "twin.macro";
 export const ServicesList = ( { options, setOptions } ) => {
  
     const [ serviceList, setServiceList ] = useState( [] );
-    useEffect(()=>{
+
+    useEffect(()=> {
+
         if( options.ServicesList === undefined || options.ServicesList.length === 0 ) {
-            const path="database/v1/servicos";
-            apiFetch({path}).then( (data) => {
-                setServiceList( data )
-            } );    
+            const newServicesList = getServices().then( (data) => data );
+            setServiceList( newServicesList )
         } else {
-            setServiceList( options.ServicesList )
+            const dataBase = getServices().then( (data) => {
+                const newServicesList = combineArrays( options.ServicesList, data );
+                setServiceList( newServicesList )            
+            })
         }
     },[])
 
@@ -24,6 +27,8 @@ export const ServicesList = ( { options, setOptions } ) => {
     }
 
     if( serviceList === undefined || serviceList.length === 0 ) return <>Loading...</>;
+
+
 
     return <div 
                 css={`
@@ -53,11 +58,13 @@ export const ServicesList = ( { options, setOptions } ) => {
             tw="grid grid-cols-4 gap-8 auto-rows-auto"
             >
             { serviceList.map( (item, index) => {
+                //upgrade the image to https
+                const itemImage = `url(${item.data.image.replace("http://", "https://")})`
                 return (
                     <div key={item.id} className="relative grid-item dragHandle grid place-content-center place-items-center">
                         <div 
                              tw="box-border h-40 bg-gray-200 bg-no-repeat bg-center rounded-lg cursor-grab [box-shadow: 3px 3px 10px -3px black] grid place-content-center"
-                             style={{ backgroundImage: `url(${item.data.image})`, backgroundSize: "cover", outline: index < 4 ? "3px solid tomato" : "none" }}
+                             style={{ backgroundImage: itemImage, backgroundSize: "cover", outline: index < 4 ? "3px solid tomato" : "none" }}
                         >
                             <div tw="text-white bg-gray-500/80 py-2 px-4 text-2xl rounded border-solid border-2 border-gray-200">
                                 {item.title}
@@ -68,3 +75,22 @@ export const ServicesList = ( { options, setOptions } ) => {
         </ReactSortable>
     </div>
 }
+
+function getServices() {
+    const path="database/v1/servicos";    
+    const servicesList = apiFetch({path}).then( (data) => {
+        return data
+    });
+    return servicesList
+}
+
+function combineArrays (options, database) {
+    console.log( options, database )
+    let dbIds = database.map(item => item.id)
+    let inter = options.filter(item => dbIds.includes(item.id))
+    let interIds = inter.map(item => item.id)
+    let diff = database.filter(item => !interIds.includes(item.id))
+    let result = [...inter, ...diff]
+    return result
+  
+  }

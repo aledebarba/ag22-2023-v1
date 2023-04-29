@@ -149,14 +149,14 @@ export const ServiceText = ({children}) => {
     )
 }
 
-export const ServiceImg = ({children}) => {
+export const ServiceImg = ({ url }) => {
     return (
         <figure tw={"basis-8/12 h-56 my-auto overflow-hidden group-odd:order-first group-odd:rounded-r-xl group-even:rounded-l-xl bg-primary"}>
             <img 
                 css={[
                     tw`object-scale-down w-full`,				
                 ]}
-                src={children}
+                src={ url.replace("http://", "https://") }
             />
         </figure>
     )

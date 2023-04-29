@@ -52,14 +52,13 @@ const AbouUsHeroHeader = () => {
 }
 
 const InBrandWeTrust = () => {
-  console.log( _app.options() )
   return (
     <>
       <div tw="relative z-20">
         <video autoPlay muted loop controls 
           tw="scale-90 w-[calc( 24rem + 24vw )] min-w-[280px] h-[auto] object-cover mx-auto -translate-y-[12vh] rounded-2xl md:(scale-100)"           
         >
-          <source src={_app.options().aboutMovie} type="video/webm" />
+          <source src={_app.options().aboutMovie.replace("http://","https://")} type="video/webm" />
           <source src="https://uxdir.com/files/videos/ag22/V%c3%addeo%20Linhas%20PPG%20Refinish.mp4" type="video/mp4" />
         </video>
         <div id="video-about-us--shadow"
@@ -78,8 +77,8 @@ const InBrandWeTrust = () => {
        <Container tw="relative -top-[12vh] flex flex-col px-8 md:(flex flex-row items-center)"
         >        
         <div id="logo-about-us"     
-          //TODO: fix-image-loading from external server               
-              tw="w-full h-[15vh] bg-no-repeat bg-center bg-contain [background-image: url(https://uxdir.com/files/videos/ag22/png/logo_page_aboutup.svg)] md:(h-[35vh])" 
+              tw="w-full h-[15vh] bg-no-repeat bg-center bg-contain md:(h-[35vh])" 
+              style={ { backgroundImage: `url('https://uxdir.com/files/videos/ag22/png/logo_page_aboutup.svg')` } }
           />           
         <div tw='bg-transparent w-[100%] gap-8 flex flex-col py-8 items-start md:p-8'>
           <h2 tw="hidden md:(flex flex-col)">
@@ -112,7 +111,7 @@ const DezAnos = () => {
             tw="overflow-hidden mx-auto my-20 md:(flex items-center bg-primary rounded-lg overflow-hidden max-w-4xl pl-0 pr-8 justify-between)"
             css={`outline: 10px solid white; outline-offset: -3px;`}
             >
-          <LogoDez/>
+          <LogoDez width="100%"/> {/* safari wont display svg without explicit width declaration */}
           <p tw="text-black ml-2 text-lg my-8 px-8 md:(flex-[1 0 50%] my-0 text-sm px-8 text-white)">
             Hoje podemos dizer que a experiência nos ensinou o que fazer, porque fazer e como fazer. 
             Alcançamos essa marca de tempo que é só o começo da nossa jornada 

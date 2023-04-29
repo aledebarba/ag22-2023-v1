@@ -6,7 +6,7 @@ import { Container, ContainerFluidH } from './containers'
 import { useState, useEffect } from 'react'
 
 export const Clientes = ( { brandsList } ) => {
-	return <div id="cases" tw="relative w-screen min-h-screen h-fit overflow-hidden">
+	return <div id="clientes" tw="relative w-screen min-h-screen h-fit overflow-hidden">
 		<Container data-info="background-container" tw="absolute w-screen min-h-screen h-full top-0 left-0 overflow-hidden blur-[100px] bg-[#F5F3F5]">
 			<AnimatedCircle bottom left />
 			<AnimatedCircle top right />
@@ -26,7 +26,7 @@ export const Clientes = ( { brandsList } ) => {
                       [border-radius: 16px]    
                   "
               >
-              <img src={item.data.logo} alt={item.title} tw="w-[70%] h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
+              <img src={item.data.logo.replace("http://", "https://")} alt={item.title} tw="w-[70%] h-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"/>
             </div>
           ))}
         </div>

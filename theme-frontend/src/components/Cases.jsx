@@ -90,7 +90,7 @@ const CaseCard = ({ item, index }) => {
 			>
 			<img
 				css={[tw`w-full h-full object-cover relative`]}
-				src={item.data.poster}
+				src={item.data.poster.replace("http://", "https://")}
 			/>
 			<div
 				className='overlay-info'
@@ -130,7 +130,7 @@ const CaseCard = ({ item, index }) => {
 			>
 			<div tw="self-stretch grow-0 shrink-0 h-[171px] relative overflow-hidden rounded">
 				<img
-					src={item.data.poster}
+					src={item.data.poster.replace("http://", "https://")}
 					tw="w-[full] absolute left-[-8px] top-[-25px] [border-radius: 12px] overflow-hidden object-cover"
 				/>
 			</div>

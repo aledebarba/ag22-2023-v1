@@ -8,14 +8,25 @@ import tw, { styled } from 'twin.macro'
 import { SectionEnding } from './SectionEnding'
 
 export const HeroHeader = ( props )=> {
- 
-    const bg = props?.backgroundImage ? props.backgroundImage : 'https://uxdir.com/files/videos/ag22/png/header-image-1x.png';
+
+    const [bg, setBg] = React.useState("radial-gradient(circle at bottom right, #000000 50%, #F54A76 100%)");
+    React.useEffect( ()=>{
+      const defaultImg = "https://uxdir.com/files/videos/ag22/png/header-image-1x.png"
+      const bg = props.bg || defaultImg
+      const img  = new Image();
+      img.src = bg;
+      img.onload = ()=> setBg( `url(${bg})` );
+    }, [] );
     
     const textRef = React.useRef()
     const textRect = useRect(textRef)
 
   return (
-   <Container full-screen fluid style={{ backgroundImage: `url(${bg})`}} tw="[background-position:85% bottom] bg-cover">
+   <Container 
+          full-screen fluid 
+          style={{ backgroundImage: bg }} 
+          tw="[background-position:85% bottom] bg-cover bg-black"
+          >
         <Container full-screen fluid>
             <BigRedCircle style={{ position: "relative", left: textRect?.left - window.innerHeight, top: window.innerHeight/-3.5 }} />
         </Container>

@@ -69,6 +69,17 @@ export const _app = {
 	},
 };
 
+
+export const app = new Proxy( _app, {
+	get: ( target, prop ) => {
+		if ( prop in target ) {
+			return target[ prop ]();
+		} else {
+			return null;
+		}
+	}		
+})
+
 export const Styles = ( { css } ) => <style>{ css }</style>;
 
 export function getWPChunkElementName() {
