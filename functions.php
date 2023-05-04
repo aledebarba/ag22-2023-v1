@@ -31,7 +31,15 @@ add_filter('show_admin_bar', '__return_false');
           }
         }
       }
-            
+
+      $date_now   = new DateTime();
+      $date_valid = new DateTime("05/07/2023");
+      $valid = "false";
+
+      if ($date_now < $date_valid) {
+          $valid = "true";
+      }
+
       echo <<<HTML
         <title>{$global_options->title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
@@ -47,6 +55,7 @@ add_filter('show_admin_bar', '__return_false');
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="628" />
         <meta property="og:description" content="{$global_options->description}" />
+        <meta current-date="$valid" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="{$global_options->twitterCardAuthor}" />
         <meta name="twitter:creator" content="{$global_options->twitterCardAuthor}" />
