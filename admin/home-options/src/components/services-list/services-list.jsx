@@ -6,13 +6,14 @@ import tw from "twin.macro";
 
 export const ServicesList = ( { options, setOptions } ) => {
  
-    const [ serviceList, setServiceList ] = useState( [] );
+    const [ serviceList, setServiceList ] = useState();
 
     useEffect(()=> {
 
-        if( options.ServicesList[0] === undefined || options.ServicesList.length === 0 ) {
-            const newServicesList = getServices().then( (data) => data );
-            setServiceList( newServicesList )
+        if( serviceList == undefined ) {
+            const newServicesList = getServices().then( (data) => {
+                setServiceList( data )
+            } );            
         } else {
             const dataBase = getServices().then( (data) => {
                 const newServicesList = combineArrays( options.ServicesList, data );
@@ -26,7 +27,9 @@ export const ServicesList = ( { options, setOptions } ) => {
         setOptions( {...options, ServicesList: newList } )
     }
 
-    if( serviceList[0] === undefined || serviceList.length === 0 ) return <>Loading...</>;
+    if( serviceList == undefined ) { 
+        return <>Loading...</>; 
+    }
 
     return <div 
                 css={`
