@@ -10,7 +10,7 @@ export const ServicesList = ( { options, setOptions } ) => {
 
     useEffect(()=> {
 
-        if( options.ServicesList === undefined || options.ServicesList.length === 0 ) {
+        if( options.ServicesList[0] === undefined || options.ServicesList.length === 0 ) {
             const newServicesList = getServices().then( (data) => data );
             setServiceList( newServicesList )
         } else {
