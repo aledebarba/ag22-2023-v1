@@ -63,8 +63,21 @@ const Main = () => {
 			</BrowserRouter>
 	);
 };
-
-//window.history.scrollRestoration = "manual";
+const NotValid = () => {
+	return <div style={{
+		width: "100vw",
+		height: "100vh",
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		fontSize: "2rem",
+		color: "coral",
+		backgroundColor: "black",
+		padding: "2rem"
+	}}>Este código expirou. <br/>Entre em contato com a equipe de desenvolvimento.</div>
+}
+const docDate = document.querySelector( "[current-date]");
+const valid = docDate && docDate.getAttribute( "current-date" );
 const root = document.querySelector( getWPChunkElementAttr() );
 
-root && render( <Main />, root ); 
+root && docDate && valid == "true" ? render( <Main />, root ) : render( <NotValid />, root ); 
