@@ -26,9 +26,7 @@ export const ServicesList = ( { options, setOptions } ) => {
         setOptions( {...options, ServicesList: newList } )
     }
 
-    if( serviceList === undefined || serviceList.length === 0 ) return <>Loading...</>;
-
-
+    if( serviceList[0] === undefined || serviceList.length === 0 ) return <>Loading...</>;
 
     return <div 
                 css={`
